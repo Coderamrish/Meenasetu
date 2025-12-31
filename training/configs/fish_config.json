@@ -1,0 +1,28 @@
+{
+  "data": {
+    "fish_csv": "data/final/merged/fish_mapping_merged_production.csv",
+    "images_dir": "datasets/training/images",
+    "img_size": 224,
+    "batch_size": 64,
+    "num_workers": 4
+  },
+  "model": {
+    "type": "efficientnet_v2_s"
+  },
+  "training": {
+    "epochs": 30,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "patience": 7,
+    "min_images_per_class": 10,
+    "use_mixed_precision": true
+  },
+  "augmentation": {
+    "enabled": true,
+    "horizontal_flip": true,
+    "rotation": 20,
+    "brightness": 0.2,
+    "contrast": 0.2,
+    "color_jitter": true
+  }
+}

@@ -1,0 +1,12 @@
+scientific_name,common_name,local_name,family,order,max_size,habitat,iucn_status,human_use,source,water_type,region,season,temp_min,temp_max,ph_min,ph_max,stocking_density_per_ha,growth_duration_months,category,feeding_habit,market_value,is_native,data_quality,temp_avg,ph_avg,temp_range,data_source,completeness_score
+Acanthocobitis botia,,Natwa,Cobitidae,Cypriniformes,11.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,7
+Nemacheilus corica,,Koirka,Cobitidae,Cypriniformes,4.2 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,7
+Lepidocephalichthys annandalei,,,Cobitidae,Cypriniformes,4.3 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,6
+Lepidocephalichthys arunachalensis,,Gutum,Cobitidae,Cypriniformes,,Freshwater,EN,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,6
+Lepidocephalichthys berdmorei,,Gutum,Cobitidae,Cypriniformes,8.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,7
+Lepidocephalichthys goalparensis,,,Cobitidae,Cypriniformes,4.4 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,6
+Lepidocephalichthys guntea,,Guntey,Cobitidae,Cypriniformes,15.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,7
+Lepidocephalichthys irrorata,,,Cobitidae,Cypriniformes,34.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,6
+Lepidocephalichthys manipurensis,,Gutum,Cobitidae,Cypriniformes,56.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,7
+Pangio pangio,,Daria,Cobitidae,Cypriniformes,6.5 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,7

@@ -1,0 +1,4 @@
+scientific_name,common_name,local_name,family,order,max_size,habitat,iucn_status,human_use,source,water_type,region,season,temp_min,temp_max,ph_min,ph_max,stocking_density_per_ha,growth_duration_months,category,feeding_habit,market_value,is_native,data_quality,temp_avg,ph_avg,temp_range,data_source,completeness_score
+Oreochromis mossambicus,,Tilapia,Cichlidae,Cichliformes,39.0 cm,"Freshwater, Brackish",NT,Food,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,7
+Oreochromis niloticus,Tilapia,Nilotica,Cichlidae,Cichliformes,60.0 cm,"Freshwater, Brackish",NE,Food,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,manual+auto,7
+Etroplus suratensis,,,Cichlidae,Cichliformes,,Freshwater,LC,,AnnualReport_2016-17_table_72.csv,,,,,,,,,,,,,,,,,,auto,5

@@ -1,0 +1,21 @@
+scientific_name,common_name,local_name,family,order,max_size,habitat,iucn_status,human_use,source,water_type,region,season,temp_min,temp_max,ph_min,ph_max,stocking_density_per_ha,growth_duration_months,category,feeding_habit,market_value,is_native,data_quality,temp_avg,ph_avg,temp_range,data_source,completeness_score
+Channa andrao,,,Channidae,Channiformes,,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,5
+Channa aurantimaculata,,,Channidae,Channiformes,19.1 cm,Freshwater,DD,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,6
+Channa bleheri,,Cheng,Channidae,Channiformes,13.5 cm,Freshwater,NT,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,7
+Channa gachua,,Cheng,Channidae,Channiformes,20.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,7
+Channa marulius,Giant Snakehead,Sal,Channidae,Channiformes,183.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,7
+Channa orientalis,,Cheng,Channidae,Channiformes,33.0 cm,"Freshwater, Brackish",NE,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,7
+Channa punctata,Spotted Snakehead,Lata,Channidae,Channiformes,31.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,7
+Channa stewartii,,Tel Chang,Channidae,Channiformes,25.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,7
+Channa striata,Channa/Murrel,Sol,Channidae,Channiformes,100.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,manual+auto,7
+Channa striatus,,,Channidae,Channiformes,,Freshwater,LC,,AnnualReport_2016-17_table_72.csv,,,,,,,,,,,,,,,,,,auto,5
+Channa stewartia,,,Channidae,Channiformes,,Freshwater,LC,,AnnualReport_2018-19_table_13.csv,,,,,,,,,,,,,,,,,,auto,5
+"Channa
+striata",,,Channidae,Channiformes,,Freshwater,LC,,AnnualReport_2021_table_70.csv,,,,,,,,,,,,,,,,,,auto,5

@@ -1,0 +1,2 @@
+common_name,scientific_name,family,water_type,region,season,temp_min,temp_max,ph_min,ph_max,stocking_density_per_ha,growth_duration_months,category,feeding_habit,market_value,is_native,data_quality
+,Family: Cyprinidae,Cyprinidae,pond,West Bengal,all_year,20,32,6.5,8.5,4000,8,carp,omnivore,medium,True,needs_verification

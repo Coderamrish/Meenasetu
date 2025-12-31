@@ -1,0 +1,1195 @@
+scientific_name,common_name,local_name,family,order,max_size,habitat,iucn_status,human_use,source,water_type,region,season,temp_min,temp_max,ph_min,ph_max,stocking_density_per_ha,growth_duration_months,category,feeding_habit,market_value,is_native,data_quality,temp_avg,ph_avg,temp_range,data_source,completeness_score,temp_score
+Anguilla bengalensis,Indian Mottled Eel,Ban,Anguillidae,Anguilliformes,200 cm,"Freshwater, Brackish",NT,Food,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Monopterus cuchia,,Kuchia,Synbranchidae,Synbranchiformes,70 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Pisodonophis boro,,Kucho,Ophichthidae,Anguilliformes,100 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Xenentodon cancila,Freshwater Garfish,Kakia,Belonidae,Beloniformes,40 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Corica soborna,,Kachki,Clupeidae,Clupeiformes,4.1 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Gonialosa manmina,,Khoira,Clupeidae,Clupeiformes,14.1 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Gudusia chapra,Indian River Shad,Khaira,Pristigasteridae,Clupeiformes,20 cm,"Freshwater, Brackish",EN,Food,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Gudusia variegata,,Khoira,Pristigasteridae,Clupeiformes,16 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Setipinna phasa,,Phesa,Engraulidae,Clupeiformes,40.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Setipinna taty,,Phansa,Engraulidae,Clupeiformes,15.3 cm,"Freshwater, Brackish",NE,Food,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Aborichthys elongatus,,Gutum,Balitoridae,Cypriniformes,7.4 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Aborichthys kempi,,,Balitoridae,Cypriniformes,8.1 cm,Freshwater,NT,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,4,5
+Acanthocobitis botia,,Natwa,Cobitidae,Cypriniformes,11.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Balitora brucei,,Balitora,Balitoridae,Cypriniformes,10.5 cm,Freshwater,NT,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Neonoemacheilus assamensis,,,Balitoridae,Cypriniformes,4.3 cm,Freshwater,NT,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,4,5
+Nemacheilus corica,,Koirka,Cobitidae,Cypriniformes,4.2 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Schistura beavani,,Creek loach,Nemacheilidae,Cypriniformes,8.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Schistura fasciata,,Poia,Nemacheilidae,Cypriniformes,6.8 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Schistura multifasciata,,,Nemacheilidae,Cypriniformes,9.8 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,4,5
+Schistura savona,,Khorka,Nemacheilidae,Cypriniformes,2.4 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Schistura scaturigina,,,Nemacheilidae,Cypriniformes,10.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,4,5
+Schistura tirapensis,,Poia,Nemacheilidae,Cypriniformes,5.6 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Botia almorhae,,Lohachata,Botiidae,Cypriniformes,15.5 cm,Freshwater,EN,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Botia birdi,,Loach,Botiidae,Cypriniformes,18.6 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Botia dario,Bengal Loach,Betrongi,Botiidae,Cypriniformes,15.1 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Botia lohachata,,Lohachata,Botiidae,Cypriniformes,11.0 cm,Freshwater,EN,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Botia histrionic,,Lohachata,Botiidae,Cypriniformes,11.7 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Botia rostrata,,Ladder loach,Botiidae,Cypriniformes,25.0 cm,Freshwater,VU,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Canthophrys gongota,,Ghor poia,Cobitidae,Cypriniformes,13.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Lepidocephalichthys annandalei,,,Cobitidae,Cypriniformes,4.3 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,4,5
+Lepidocephalichthys arunachalensis,,Gutum,Cobitidae,Cypriniformes,,Freshwater,EN,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,4,5
+Lepidocephalichthys berdmorei,,Gutum,Cobitidae,Cypriniformes,8.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Lepidocephalichthys goalparensis,,,Cobitidae,Cypriniformes,4.4 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,4,5
+Lepidocephalichthys guntea,Guntea Loach,Guntey,Cobitidae,Cypriniformes,15.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Lepidocephalichthys irrorata,,,Cobitidae,Cypriniformes,34.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,4,5
+Lepidocephalichthys manipurensis,,Gutum,Cobitidae,Cypriniformes,56.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Pangio pangio,,Daria,Cobitidae,Cypriniformes,6.5 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Somileptes gongota,,Ghor Poia,Cobitidae,Cypriniformes,13.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Amblypharyngodon microlepis,,Mourala,Cyprinidae,Cypriniformes,10.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Amblypharyngodon mola,Mola Carplet,Mourola,Cyprinidae,Cypriniformes,20.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Aspidoparia jaya,,,Cyprinidae,Cypriniformes,15.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,4,5
+Bangana dero,,,Cyprinidae,Cypriniformes,75.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,4,5
+Barilius barila,,Boroli,Cyprinidae,Cypriniformes,10.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Barilius barna,,Ghol,Cyprinidae,Cypriniformes,15.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Barilius bendelisis,Hamilton's Barila,Joia,Cyprinidae,Cypriniformes,22.7 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,5,5
+Barilius tileo,,Boroli,Cyprinidae,Cypriniformes,30.5 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Barilius vagra,,Boroli,Cyprinidae,Cypriniformes,12.8 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Cabdio morar,,Baspati,Cyprinidae,Cypriniformes,20.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Carassius auratus,Goldfish,,Cyprinidae,Cypriniformes,48.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,manual+auto,4,5
+Chela cachius,Silver Hatchet Chela,,Cyprinidae,Cypriniformes,6.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,4,5
+Chela laubuca,,Dankena,Cyprinidae,Cypriniformes,7.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Chagunius chagunio,,Pithkati,Cyprinidae,Cypriniformes,50.0 cm,Freshwater,DD,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Cirrhinus mrigala,Mrigal,Mrigel,Cyprinidae,Cypriniformes,99.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,manual+auto,5,5
+Cirrhinus reba,Reba Carp,Bhangonbata,Cyprinidae,Cypriniformes,30.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Crossocheilus latius,,Kala Bata,Cyprinidae,Cypriniformes,15.2 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Ctenopharyngodon idellus,,Grass carp,Cyprinidae,Cypriniformes,150 cm,Freshwater,NE,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Cyprinion semiplotum,,Chepti puthi,Cyprinidae,Cypriniformes,60.0 cm,Freshwater,VU,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Cyprinus carpio,Common Carp,Common carp,Cyprinidae,Cypriniformes,120 cm,"Freshwater, Brackish",VU,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,manual+auto,5,5
+Danio dangila,,Darikana,Cyprinidae,Cypriniformes,15.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Danio rerio,Zebrafish,Techokha,Cyprinidae,Cypriniformes,3.8 cm,Freshwater,NT,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Danionella priapus,,,Cyprinidae,Cypriniformes,1.6 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,4,5
+Devario aequipinnatus,Giant Danio,Chebli,Cyprinidae,Cypriniformes,15.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Devario assamensis,,,Cyprinidae,Cypriniformes,9.0 cm,Freshwater,VU,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,4,5
+Devario devario,,Techokha,Cyprinidae,Cypriniformes,10.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Devario regina,,"Gharbanka
+chela",Cyprinidae,Cypriniformes,7.8 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Esomus danricus,,Dankya,Cyprinidae,Cypriniformes,13.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Garra annandalei,,,Cyprinidae,Cypriniformes,23.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,4,5
+Garra arupi,,,Cyprinidae,Cypriniformes,7.2 cm,Freshwater,NE,"Food,",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,4,5
+Garra gotyla,,Klagachhi,Cyprinidae,Cypriniformes,18.0 cm,Freshwater,VU,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Garra kempi,,Klagachhi,Cyprinidae,Cypriniformes,11.3 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Garra lamta,,Klagachhi,Cyprinidae,Cypriniformes,20.4 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Garra lissorhynchus,,,Cyprinidae,Cypriniformes,9.1 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,4,5
+Garra nasuta,,,Cyprinidae,Cypriniformes,20.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,4,5
+Garra mullya,,Mottu,Cyprinidae,Cypriniformes,17.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Catla catla,Catla,Catla,Cyprinidae,Cypriniformes,182 cm,"Freshwater, Brackish",NE,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,manual+auto,5,5
+Hypophthalmichthys molitrix,Silver Carp,Silver carp,Cyprinidae,Cypriniformes,105 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,manual+auto,5,5
+Hypophthalmichthys nobilis,,Bighead carp,Cyprinidae,Cypriniformes,146 cm,Freshwater,DD,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Labeo angra,,Kharsa,Cyprinidae,Cypriniformes,22.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Labeo bata,Bata,Bata,Cyprinidae,Cypriniformes,61.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Labeo boga,,Bata,Cyprinidae,Cypriniformes,30.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Labeo calbasu,Kalbasu,Kalbose,Cyprinidae,Cypriniformes,90.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Labeo dero,,Kursha,Cyprinidae,Cypriniformes,75.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Labeo dyocheilus,,Silghorea,Cyprinidae,Cypriniformes,90.0 cm,Freshwater,VU,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Labeo fimbriatus,Fringed-lipped Peninsula Carp,,Cyprinidae,Cypriniformes,91.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,4,5
+Labeo gonius,Kuria Labeo,Kurechi,Cyprinidae,Cypriniformes,150.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Labeo nandina,,,Cyprinidae,Cypriniformes,81.2 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,4,5
+Labeo pangusia,,Utti,Cyprinidae,Cypriniformes,90.0 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Labeo rohita,Rohu,Rui,Cyprinidae,Cypriniformes,200.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,manual+auto,5,5
+Laubuka laubuca,,Laubuca,Cyprinidae,Cypriniformes,7.0 cm,"Freshwater, Brackish",LC,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Megarasbora elanga,,,Cyprinidae,Cypriniformes,21.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,4,5
+Neolissochilus hexagonolepis,,Katli,Cyprinidae,Cypriniformes,120.0 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Neolissochilus hexastichus,,,Cyprinidae,Cypriniformes,,Freshwater,NT,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,3,5
+Oreichthys cosuatis,,Punti,Cyprinidae,Cypriniformes,8.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Oreichthys crenuchoides,,Punti,Cyprinidae,Cypriniformes,3.1 cm,Freshwater,DD,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Osteobrama belangeri,,Gilachaki,Cyprinidae,Cypriniformes,38.0 cm,Freshwater,NT,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Osteobrama cotio,Cotio,Gilachaki,Cyprinidae,Cypriniformes,15.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5,5
+Pethia aurea,,,Cyprinidae,Cypriniformes,2.4 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,4,5
+Pethia gelius,,Gilipunti,Cyprinidae,Cypriniformes,5.1 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Pethia guganio,,Punti,Cyprinidae,Cypriniformes,80 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Pethia phutunio,,Punti,Cyprinidae,Cypriniformes,3.5 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Pethia shalynius,,Bhusandi Punti,Cyprinidae,Cypriniformes,6.0 cm,Freshwater,VU,Food,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Pethia ticto,,Titpunti,Cyprinidae,Cypriniformes,10.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Puntius chola,Swamp Barb,Chela Punti,Cyprinidae,Cypriniformes,15.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Puntius puntio,,Puntio Barb,Cyprinidae,Cypriniformes,7.5 cm,Freshwater,NE,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Puntius sophore,Pool Barb,Punti,Cyprinidae,Cypriniformes,20.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Puntius terio,,Teripunti,Cyprinidae,Cypriniformes,10.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Puntius vittatus,,Tor Mahasol,Cyprinidae,Cypriniformes,5.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Raiamas bola,,Bhola,Cyprinidae,Cypriniformes,35.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Rasbora daniconius,Slender Rasbora,Darikana,Cyprinidae,Cypriniformes,15.0 cm,"Freshwater, Brackish",LC,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Rasbora rasbora,,Darikana,Cyprinidae,Cypriniformes,13.0 cm,"Freshwater, Brackish",LC,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Salmophasia bacaila,,Chela,Cyprinidae,Cypriniformes,18.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Salmophasia horai,,Chela,Cyprinidae,Cypriniformes,10.0 cm,Freshwater,VU,Food,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Salmophasia phulo,,Phulo Chela,Cyprinidae,Cypriniformes,12.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Salmophasia sardinella,,Jhola,Cyprinidae,Cypriniformes,15.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Schizothorax richardsonii,,,Cyprinidae,Cypriniformes,60.0 cm,Freshwater,VU,Food,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,4,5
+Securicula gora,,Ghorchelwa,Cyprinidae,Cypriniformes,24.5 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Systomus clavatus,,,Cyprinidae,Cypriniformes,24.0 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,4,5
+Systomus sarana,Olive Barb,Swarna Punti,Cyprinidae,Cypriniformes,42.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Tor putitora,Golden Mahseer,Putitor,Cyprinidae,Cypriniformes,275.0 cm,Freshwater,EN,Food,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Psilorhynchus arunachalensis,,,Psilorhynchidae,Cypriniformes,,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,3,5
+Psilorhynchus balitora,,Balitora,Psilorhynchidae,Cypriniformes,7.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Psilorhynchus nudithoracicus,,,Psilorhynchidae,Cypriniformes,5.8 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,4,5
+Psilorhynchus homaloptera,,Balitora,Psilorhynchidae,Cypriniformes,9.4 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Psilorhynchus sucatio,,Balitora,Psilorhynchidae,Cypriniformes,8.2 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Aplocheilus panchax,,Kanpona,Aplocheilidae,Cyprinodontiformes,9.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Gambusia affinis,,,Poeciliidae,Cyprinodontiformes,4.0 cm,"Freshwater, Brackish",LC,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,4,5
+Poecilia reticulata,Guppy,,Poeciliidae,Cyprinodontiformes,5.0 cm,"Freshwater, Brackish",NE,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,manual+auto,4,5
+Rhinomugil corsula,,Khsola,Mugilidae,Mugiliformes,45.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Sicamugil cascasia,,,Mugilidae,Mugiliformes,10.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,4,5
+Chitala chitala,Clown Knifefish,Chital,Notopteridae,Osteoglossiformes,122.0 cm,Freshwater,NT,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Notopterus notopterus,Bronze Featherback,Pholui,Notopteridae,Osteoglossiformes,60.0 cm,"Freshwater, Brackish",NE,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Chanda nama,,Chanda,Ambassidae,Perciformes,11.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Parambassis baculis,,,Ambassidae,Perciformes,5.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,4,5
+Parambassis lala,,,Ambassidae,Perciformes,3.9 cm,"Freshwater, Brackish",NT,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,4,5
+Parambassis ranga,,Chanda,Ambassidae,Perciformes,8.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5,5
+Anabas cobojius,,,Anabantidae,Anabantiformes,30.0 cm,Freshwater,DD,Food,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,4,5
+Badis andrewraoi,,,Badidae,Perciformes,3.9 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,4,5
+Badis assamensis,,Napit,Badidae,Perciformes,6.8 cm,Freshwater,DD,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,5,5
+Badis autumnum,,,Badidae,Perciformes,3.6 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,4,5
+Badis badis,Dwarf Chameleon Fish,Botkoi,Badidae,Perciformes,5.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,5,5
+Badis kyanos,,,Badidae,Perciformes,3.5 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,4,5
+Badis laspiophilus,,,Badidae,Perciformes,2.1 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,4,5
+Badis soraya,,,Badidae,Perciformes,3.2 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,4,5
+Badis singenensis,,,Badidae,Perciformes,3.7 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,4,5
+Channa andrao,,,Channidae,Channiformes,,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,3,5
+Channa aurantimaculata,,,Channidae,Channiformes,19.1 cm,Freshwater,DD,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,4,5
+Channa bleheri,,Cheng,Channidae,Channiformes,13.5 cm,Freshwater,NT,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,5,5
+Channa gachua,,Cheng,Channidae,Channiformes,20.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,5,5
+Channa marulius,Giant Snakehead,Sal,Channidae,Channiformes,183.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,5,5
+Channa orientalis,,Cheng,Channidae,Channiformes,33.0 cm,"Freshwater, Brackish",NE,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,5,5
+Channa punctata,Spotted Snakehead,Lata,Channidae,Channiformes,31.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,5,5
+Channa stewartii,,Tel Chang,Channidae,Channiformes,25.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,5,5
+Channa striata,Channa/Murrel,Sol,Channidae,Channiformes,100.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,manual+auto,5,5
+Oreochromis mossambicus,,Tilapia,Cichlidae,Cichliformes,39.0 cm,"Freshwater, Brackish",NT,Food,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,5,5
+Oreochromis niloticus,Tilapia,Nilotica,Cichlidae,Cichliformes,60.0 cm,"Freshwater, Brackish",NE,Food,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,manual+auto,5,5
+Datnioides polota,,,Datniodidae,Perciformes,30.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,4,5
+Eleotris fusca,,,Eleotridae,Perciformes,26.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,4,5
+Apocryptes bato,,,Gobiidae,Perciformes,26.0 cm,"Freshwater, Brackish",NE,Food,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,4,5
+Brachyamblyopus brachysoma,,,Gobiidae,Perciformes,10.5 cm,"Freshwater, Brackish",NE,Food,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,4,5
+Glossogobius giuris,Tank Goby,Bele,Gobiidae,Gobiiformes,50.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,5,5
+Odontamblyopus rubicundus,,,Gobiidae,Perciformes,25.0 cm,"Freshwater, Brackish",NE,Food,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,4,5
+Pseudapocryptes elongatus,,,Gobiidae,Perciformes,20.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,4,5
+Nandus nandus,Gangetic Leaffish,Bheda,Nandidae,Perciformes,20.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,5,5
+Ctenops nobilis,,Koleehona,Osphronemidae,Anabantiformes,10.5 cm,"Freshwater, Brackish",NT,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,5,5
+Osphronemus goramy,,,Osphronemidae,Perciformes,70.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,4,5
+Trichogaster fasciata,Banded Gourami,Kholse,Osphronemidae,Anabantiformes,12.5 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,5,5
+Trichogaster chuna,,,Osphronemidae,Anabantiformes,7.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,4,5
+Trichogaster lalius,,Khoira,Osphronemidae,Anabantiformes,8.8 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,5,5
+Trichogaster labiosa,,,Osphronemidae,Anabantiformes,9.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,4,5
+Amblyceps apangi,,,Amblycipitidae,Siluriformes,7.3 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,4,5
+Amblyceps arunchalensis,,,Amblycipitidae,Siluriformes,8.1 cm,Freshwater,EN,Food,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,4,5
+Amblyceps cerinum,,,Amblycipitidae,Siluriformes,9.7 cm,Freshwater,NE,Food,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,4,5
+Amblyceps mangois,,Gang magur,Amblycipitidae,Siluriformes,12.5 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,5,5
+Amblyceps tuberculatum,,Gang magur,Amblycipitidae,Siluriformes,9.7 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,5,5
+Arius gagora,,,Arridae,Siluriformes,91.4 cm,"Freshwater, Brackish",NT,Food,WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,4,5
+Batasio batasio,Tista Batasio,Batasio,Bagridae,Siluriformes,10.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,5,5
+Batasio merianiensis,,Batasio,Bagridae,Siluriformes,6.6 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Batasio spilurus,,,Bagridae,Siluriformes,4.2 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,4,5
+Batasio tengana,,Batashi,Bagridae,Siluriformes,9.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Chandramara chandramara,,,Bagridae,Siluriformes,5.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,4,5
+Hemibagrus menoda,,,Bagridae,Siluriformes,45.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,4,5
+Mystus bleekeri,,Tengra,Bagridae,Siluriformes,15.5 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Mystus carcio,,,Bagridae,Siluriformes,5.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,4,5
+Mystus cavasius,,Tengra,Bagridae,Siluriformes,40.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Mystus dibrugarensis,,,Bagridae,Siluriformes,,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,3,5
+Mystus gulio,,Golsha tengra,Bagridae,Siluriformes,46.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Mystus tengara,,Tangra,Bagridae,Siluriformes,18.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Mystus vittatus,Striped Dwarf Catfish,Tangra,Bagridae,Siluriformes,21.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Olyra longicaudata,,Bot-singhi,Bagridae,Siluriformes,11.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Rita gogra,,,Bagridae,Siluriformes,26.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,4,5
+Rita rita,Rita,Rita,Bagridae,Siluriformes,150.0 cm,"Freshwater, Brackish",LC,Ornamental,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Sperata aor,,Aar,Bagridae,Siluriformes,180 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Sperata seenghala,Giant River Catfish,Tangra,Bagridae,Siluriformes,150 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Chaca chaca,,Checa,Chacidae,Siluriformes,20.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Clarias batrachus,Magur (Catfish),Magur,Clariidae,Siluriformes,47.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,manual+auto,5,5
+Clarias gariepinus,,Thai magur,Clariidae,Siluriformes,170.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Clarias magur,,,Clariidae,Siluriformes,21.3 cm,Freshwater,EN,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,4,5
+Heteropneustes fossilis,Singhi (Catfish),Singi,Heteropneustidae,Siluriformes,30.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,manual+auto,5,5
+Pterygoplichthys multiradiatus,,,Loricariidae,Siluriformes,50.0 cm,Freshwater,NE,"Ornamental,
+Food",WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,4,5
+Pangasius pangasius,Yellowtail Catfish,Pangus,Pangasiidae,Siluriformes,9.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Pangasianodon hypophthalmus,Pangasius,African pangus,Pangasiidae,Siluriformes,130.0 cm,Freshwater,EN,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,manual+auto,5,5
+Plotosus canius,,Kan magur,Plotosidae,Siluriformes,150.0 cm,"Freshwater, Brackish",NE,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Ailia coila,,Kajoli,Schilbeidae,Siluriformes,30.0 cm,"Freshwater, Brackish",NT,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Ailiichthys punctata,,,Schilbedidae,Siluriformes,10.0 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,4,5
+Clupisoma garua,,Gharya,Schilbeidae,Siluriformes,60.9 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Clupisoma montana,,Kocha,Schilbeidae,Siluriformes,29.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Eutropiichthys murius,,Muri bacha,Schilbeidae,Siluriformes,28.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Eutropiichthys vacha,,Bacha,Schilbeidae,Siluriformes,34.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Neotropius atherinoides,,Batasi tangra,Schilbedidae,Siluriformes,15.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Silonia silondia,,Sillan,Schilbeidae,Siluriformes,183.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Ompok bimaculatus,Butter Catfish,Pabda,Siluridae,Siluriformes,45.0 cm,"Freshwater, Brackish",NT,"Ornamental,
+Food",WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Ompok pabda,,Pabda,Siluridae,Siluriformes,30.0 cm,Freshwater,NT,"Ornamental,
+Food",WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Ompok pabo,,Pabda,Siluridae,Siluriformes,25.0 cm,Freshwater,NT,"Ornamental,
+Food",WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Pterocryptis berdmorei,,,Siluridae,Siluriformes,21.4 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,4,5
+Wallago attu,Freshwater Shark,Boal,Siluridae,Siluriformes,240.0 cm,"Freshwater, Brackish",NT,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Bagarius bagarius,,Garua,Sisoridae,Siluriformes,200.0 cm,"Freshwater, Brackish",NT,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Bagarius yarrelli,,,Sisoridae,Siluriformes,200.0 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,4,5
+Conta pectinata,,Tinkata,Sisoridae,Siluriformes,4.9 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Erethistes pusillus,,Tinkantia,Sisoridae,Siluriformes,4.2 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Erethistoides infuscatus,,,Sisoridae,Siluriformes,4.5 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,4,5
+Erethistoides montana,,Tinkantia,Sisoridae,Siluriformes,4.8 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Gagata cenia,Indian Gagata,Jungle,Sisoridae,Siluriformes,15.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5,5
+Gagata gagata,,,Sisoridae,Siluriformes,31.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,4,5
+Gagata dolichonema,,Kaoya tengra,Sisoridae,Siluriformes,13.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,5,5
+Glyptothorax cavia,,Kani tengra,Sisoridae,Siluriformes,28.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,5,5
+Glyptothorax dikrongensis,,,Sisoridae,Siluriformes,9.4 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,4,5
+Glyptothorax gracilis,,,Sisoridae,Siluriformes,12.7 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,4,5
+Glyptothorax indicus,,Kani tengra,Sisoridae,Siluriformes,11.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,5,5
+Glyptothorax radiolus,,,Sisoridae,Siluriformes,11.9 cm,Freshwater,NE,Food,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,4,5
+Glyptothorax striatus,,,Sisoridae,Siluriformes,21.5 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,4,5
+Glyptothorax telchitta,Telchitta Stone Catfish,Kani tengra,Sisoridae,Siluriformes,10.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,5,5
+Gogangra viridescens,,,Sisoridae,Siluriformes,8.5 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,4,5
+Hara hara,,Tinkata,Sisoridae,Siluriformes,13.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,5,5
+Hara horai,,,Sisoridae,Siluriformes,8.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,4,5
+Hara jerdoni,,Tinkata,Sisoridae,Siluriformes,4.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,5,5
+Hara koladynensis,,Tinkata,Sisoridae,Siluriformes,6.6 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,5,5
+Nangra assamensis,,,Sisoridae,Siluriformes,9.2 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,4,5
+Nangra nangra,,,Sisoridae,Siluriformes,5.5 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,4,5
+Pseudolaguvia ferula,,Tinkata,Sisoridae,Siluriformes,2.5 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,5,5
+Pseudolaguvia ferruginea,,,Sisoridae,Siluriformes,2.9 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,4,5
+Pseudolaguvia flavida,,,Sisoridae,Siluriformes,2.5 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,4,5
+Pseudolaguvia foveolata,,,Sisoridae,Siluriformes,3.0 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,4,5
+Pseudolaguvia ribeiroi,,,Sisoridae,Siluriformes,10.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,4,5
+Pseudolaguvia shawi,,Tinkata,Sisoridae,Siluriformes,3.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,5,5
+Sisor barakensis,,Sisor,Sisoridae,Siluriformes,,Freshwater,VU,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,4,5
+Sisor rabdophorus,,Sisor,Sisoridae,Siluriformes,18.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,5,5
+Pillaia indica,,,Chaudhuriidae,Synbranchiformes,7.7 cm,Freshwater,EN,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,4,5
+Macrognathus aculeatus,,Ban,Mastacembelidae,Synbranchiformes,38.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,5,5
+Macrognathus aral,One-stripe Spiny Eel,Pankal,Mastacembelidae,Synbranchiformes,63.5 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,5,5
+Macrognathus morehensis,,Bhaim,Mastacembelidae,Synbranchiformes,,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,4,5
+Macrognathus pancalus,Barred Spiny Eel,Pankal,Mastacembelidae,Synbranchiformes,18.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,5,5
+Mastacembelus armatus,Zig-zag Eel,Ban,Mastacembelidae,Synbranchiformes,90.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,5,5
+Monopterus albus,,,Synbranchidae,Synbranchiformes,100.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,4,5
+Ophisternon bengalense,,Bero,Synbranchidae,Synbranchiformes,100.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,5,5
+Microphis cuncalus,,Dot,Syngnathidae,Syngnathiformes,17.5 cm,"Freshwater, Brackish",LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,5,5
+Microphis deocata,,,Syngnathidae,Syngnathiformes,15.0 cm,Freshwater,NT,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,4,5
+Leiodon cutcutia,,Tepa,Tetraodontidae,Tetradontiformes,15.0 cm,"Freshwater, Brackish",LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,5,5
+Tetraodon fluviatilis,,Potoka,Tetraodontidae,Tetradontiformes,17.0 cm,"Freshwater, Brackish",NE,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,5,5
+Kaljani in,,,,,,Freshwater,LC,,5-1-164-616_table_0.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Creek loach,,,,,,Freshwater,LC,,5-1-164-616_table_1.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Ladder loach,,,,,,Freshwater,LC,,5-1-164-616_table_1.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Ghor poia,,,,,,Freshwater,LC,,5-1-164-616_table_1.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Grass carp,,,,,,Freshwater,LC,,5-1-164-616_table_2.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Chepti puthi,,,,,,Freshwater,LC,,5-1-164-616_table_2.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Common carp,,,,,,Freshwater,LC,,5-1-164-616_table_2.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Silver carp,,,,,,Freshwater,LC,,5-1-164-616_table_2.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Bighead carp,,,,,,Freshwater,LC,,5-1-164-616_table_2.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Gang magur,,,,,,Freshwater,LC,,5-1-164-616_table_4.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Golsha tengra,,,,,,Freshwater,LC,,5-1-164-616_table_5.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Thai magur,,,,,,Freshwater,LC,,5-1-164-616_table_5.csv,,,,,,,,,,,,,,,,,,auto,1,3
+African pangus,,,,,,Freshwater,LC,,5-1-164-616_table_5.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Kan magur,,,,,,Freshwater,LC,,5-1-164-616_table_5.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Muri bacha,,,,,,Freshwater,LC,,5-1-164-616_table_5.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Batasi tangra,,,,,,Freshwater,LC,,5-1-164-616_table_5.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Kaoya tengra,,,,,,Freshwater,LC,,5-1-164-616_table_6.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Kani tengra,,,,,,Freshwater,LC,,5-1-164-616_table_6.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Outreach activities,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_10.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Training programmes,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_10.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Manpower development,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_10.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Workshops organized,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_10.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Participation in,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_10.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Infrastructure development,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_10.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Aquaculture development,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_108.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Compared to,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_110.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Male sacrifice,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_110.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Choice of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_110.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Live feed,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_110.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Cumbersome management,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_110.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Broodstock management,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_110.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Quick disposal,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_110.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Farmers need,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_110.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fish can,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_110.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Smaller water,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_110.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Complete package,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_112.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Poorly developed,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_112.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Treat similar,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_112.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Higher investment,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_112.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Future strategy,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_112.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Cage mesh,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_115.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Weight of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_115.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Stock characterization,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_123.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Carp breeding,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_126.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Basics of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_126.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Nutrient management,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_126.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Management of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_126.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Species diversification,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_129.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Total biomass,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_131.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Value added,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_131.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fish meal,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_133.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Groundnut oil,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_133.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Rice bran,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_133.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Mannan oligosaccharide,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_133.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Proximate composition,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_133.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Crude protein,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_133.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Crude fiber,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_133.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Water quality,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_133.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Nitroblue tetrazolium,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_135.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Myeloperoxidase activity,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_135.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Lysozyme activity,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_135.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Pradesh into,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_135.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Upliftment of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_135.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Comparative studies,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_135.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Telangana states,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_135.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Initial weight,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_136.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Approaches of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_139.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Training on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_139.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Hands on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_139.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Breeding of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_139.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Production of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_139.csv,,,,,,,,,,,,,,,,,,auto,1,3
+School on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_141.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Development in,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_141.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Training in,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_141.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Advances in,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_141.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Farming for,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_141.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Trends in,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_143.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Multiple breeding,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_145.csv,,,,,,,,,,,,,,,,,,auto,1,3
+College of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_147.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Students of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_147.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Beneficiaries under,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_147.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Farmers under,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_147.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Trainees of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_147.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Students from,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_147.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Farmers from,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_147.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Officers of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_149.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Farmers of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_149.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Skill up,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_149.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fish farmers,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_149.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Exposure visits,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_149.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Bhubaneswar guided,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_151.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Bengal guided,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_151.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Trainee from,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_151.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Staff of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_151.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Odisha guided,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_151.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Aquacu lture,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_153.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Students under,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_155.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Purpose of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_159.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Sewage fed,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_159.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Group visits,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_159.csv,,,,,,,,,,,,,,,,,,auto,1,3
+University of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_159.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Faculty of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_161.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fishery officers,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_161.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Extension activities,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_161.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fish culture,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_165.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Tribal fishermen,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_165.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Macherla block,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_165.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Ornamental fish,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_165.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Tribal women,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_165.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Sarakana village,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_183.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Balipatna block,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_183.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Puri dist,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_183.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Rain tree,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_183.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fish feed,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_185.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fish processing,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_187.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Services pvt,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_187.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Feed plant,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_189.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Agrochem pvt,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_189.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Technology based,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_191.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Product testing,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_191.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Transfer of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_191.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Spot agglutination,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_191.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Under process,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_191.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Amarpur village,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_200.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Aquaculture in,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_200.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Supplementary feeding,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_200.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Number of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_202.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Farm trail,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_202.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Front line,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_202.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Mandatory training,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_202.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Sponsored trainings,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_202.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Significant technologies,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_202.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Technology assessed,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_202.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Technology demonstrated,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_202.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Crop production,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_202.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Scented rice,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_202.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Upland rice,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_202.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Ginger var,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_202.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Hand operated,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_202.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Mixture licking,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_202.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Pro super,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_202.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Honey bee,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_202.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Seed source,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_204.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Post office,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_204.csv,,,,,,,,,,,,,,,,,,auto,1,3
+For further,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_204.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Black gram,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_206.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Green gram,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_206.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Watermelon variety,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_206.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Benefic iaries,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_208.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Lead for,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_208.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Financial support,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_208.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Supply of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_208.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Interface meet,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_208.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Agreed to,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_208.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Brainstorming session,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_213.csv,,,,,,,,,,,,,,,,,,auto,1,3
+State level,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_213.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Award from,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_217.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fellow from,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_217.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fellowship to,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_217.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fellow of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_217.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Scientist received,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_217.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Scheme of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_220.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Awards for,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_220.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Consultant to,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_227.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Three years,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_227.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Bilateral research,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_227.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Bioinformatics in,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_230.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Institute of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_230.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Models in,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_230.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Hindi as,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_230.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Ministry of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_230.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Diagnostics for,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_230.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Practices in,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_230.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Preparation of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_230.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Workshop on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_230.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Application of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_232.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Program for,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_232.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Programme on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_232.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Scientists from,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_232.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Government of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_233.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Technical staffs,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_235.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Enhancing efficiency,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_235.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Seminar on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_239.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Meeting with,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_239.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Meeting on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_239.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Congress on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_239.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Complex for,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_239.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Session on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_239.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Total length,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_24.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Average body,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_24.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Meeting convened,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_241.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Meeting of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_241.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Meeting between,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_241.csv,,,,,,,,,,,,,,,,,,auto,1,3
+All scientists,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_241.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Review meeting,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_241.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Meeting for,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_241.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Demonstration on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_243.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Writeshop on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_243.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Univeristy of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_243.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Meeting to,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_243.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Member in,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_245.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Workshop of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_245.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Conference on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_245.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Bihar at,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_247.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Doubling of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_247.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Package of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_247.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Department of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_247.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Novem ber,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_247.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Resistance for,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_247.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Programme of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_249.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Prophylaxis in,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_249.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Yearly review,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_249.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Consultation on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_249.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Scope of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_249.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Meeting in,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_251.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Visit to,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_251.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Bidhan nagar,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_251.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Convocation of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_251.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Vishnu educational,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_251.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Roadmap of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_251.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Symposium on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_251.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Centre for,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_251.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Meeting at,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_253.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Industry meet,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_255.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Priorities of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_255.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Conclave on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_259.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Week organized,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_259.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Exhibition during,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_259.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Exhibition dring,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_261.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Post larvae,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_27.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Staff transferred,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_280.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Genetic upgradation,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_282.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Development of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_282.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Single nucleotide,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_282.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Jayanti rohu,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_282.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Selective breeding,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_282.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Sustainable freshwater,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_282.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Refinement of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_282.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Scaling up,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_282.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Brood stock,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_282.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Studies on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_282.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Integrated disease,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_284.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Characterization of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_284.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Bacterial bio,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_284.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Neuroendocrine regulation,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_284.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Diversification towards,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_284.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Standardization of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_284.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Macrobrachium rosenbergii,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_284.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Litopeneus vannamei,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_284.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Carbon sequestration,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_286.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Evaluation of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_286.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Nutritional intervention,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_286.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Study on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_286.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Ontogeny of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_286.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Amelioration of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_286.csv,,,,,,,,,,,,,,,,,,auto,1,3
+An alternative,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_288.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Stock improvement,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_288.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Whole genome,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_288.csv,,,,,,,,,,,,,,,,,,auto,1,3
+National surveillance,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_290.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Carp seed,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_290.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Network project,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_290.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Deciphering gene,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_290.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Intellectual property,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_290.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Initiative on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_290.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Consortia research,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_290.csv,,,,,,,,,,,,,,,,,,auto,1,3
+National network,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_292.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Novel approaches,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_292.csv,,,,,,,,,,,,,,,,,,auto,1,3
+India network,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_292.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Cryopreservation of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_292.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Promoting improved,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_292.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Activities on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_295.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Activity on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_295.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Outreach activity,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_295.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Factors affecting,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_298.csv,,,,,,,,,,,,,,,,,,auto,1,3
+In vitro,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_298.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Amblypharyngodon molla,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2016-17_table_298.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Sea water,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_30.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Captive breeding,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_30.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Initial stocking,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_36.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Water use,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_43.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Institute farm,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_43.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Harvested body,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_45.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fingerling survival,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_45.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Water requirement,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_47.csv,,,,,,,,,,,,,,,,,,auto,1,3
+No aeration,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_47.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Tor mosal,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2016-17_table_51.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Pipili canal,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_51.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Puntius sarana,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2016-17_table_51.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Mahanadi stretch,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_51.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Rita chrysea,,,Bagridae,Siluriformes,,Freshwater,LC,,AnnualReport_2016-17_table_51.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Mahanadi stretches,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_51.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Raising of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_51.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Advance fingerling,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_51.csv,,,,,,,,,,,,,,,,,,auto,1,3
+External sources,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_6.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Externally funded,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_6.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Revenue generated,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_6.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Farm produce,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_6.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Licence fee,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_6.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Analytical testing,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_6.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Services render,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_6.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Interest on,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_6.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Improved catla,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_60.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Puntius gonionotus,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2016-17_table_60.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Assembly details,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_63.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Largest contig,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_63.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Mean contig,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_63.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Towards enrichment,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_63.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Research work,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_65.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Molecular diagnosis,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_65.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Genome walking,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_65.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Directorate of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_67.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Different approaches,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_67.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Genetic diversity,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_67.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Anabas testudineus,Climbing Perch,,Anabantidae,Anabantiformes,,Freshwater,LC,,AnnualReport_2016-17_table_72.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Channa striatus,,,Channidae,Channiformes,,Freshwater,LC,,AnnualReport_2016-17_table_72.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Etroplus suratensis,,,Cichlidae,Cichliformes,,Freshwater,LC,,AnnualReport_2016-17_table_72.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Horabagrus brachysoma,,,Bagridae,Siluriformes,,Freshwater,LC,,AnnualReport_2016-17_table_72.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Mystus aor,,,Bagridae,Siluriformes,,Freshwater,LC,,AnnualReport_2016-17_table_72.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Tor khudree,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2016-17_table_72.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Puntius pulchellus,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2016-17_table_72.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Mechanism of,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_75.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Different transcription,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_75.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Staff position,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_8.csv,,,,,,,,,,,,,,,,,,auto,1,3
+In position,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_8.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fatty acids,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_81.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Ingredient compositions,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_81.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Mahua oil,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_81.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Mustard oil,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_81.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Deoil rice,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_81.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Vegetable oil,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_81.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Crude fibre,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_83.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Total ash,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_83.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Ether extract,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_83.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Nitrogen free,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_83.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Spawn stage,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_85.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Feed intake,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_85.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Weight gain,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_85.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Rakhi kumari,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_85.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Puntius javanicus,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2016-17_table_88.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Pangasianodon hypophthalamus,,,Pangasiidae,Siluriformes,,Freshwater,LC,,AnnualReport_2016-17_table_88.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Fatty acid,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_88.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Nanoparticles used,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_91.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Streptococcus sp,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_91.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Nanoparticles synthesized,,,,,,Freshwater,LC,,AnnualReport_2016-17_table_99.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Channa stewartia,,,Channidae,Channiformes,,Freshwater,LC,,AnnualReport_2018-19_table_13.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Spot analysis,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_14.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Without top,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_17.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Metanophrys sinensis,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_2.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Parasite load,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_21.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Milt volume,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_23.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Soybean meal,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_25.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Gross energy,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_25.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Final weight,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_26.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Intitial body,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_29.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Final body,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_29.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Survival rate,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_29.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Steroidal part,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_31.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Steroidal aglycone,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_31.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Aeromonas veronii,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_32.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Aeromonas hydrophila,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_32.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Serratia marcescens,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_32.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Pseudomonas aeroginosa,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_32.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Citrobacter fruendi,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_32.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Staphylococcus sp,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_32.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Enterobacter sp,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_32.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Total number,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_33.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Isoforms got,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_33.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Annotated isoforms,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_33.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Percentage of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_34.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Mean orthogroup,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_34.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Median orthogroup,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_34.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Trading corporation,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_39.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Quality seed,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_39.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Ashirya aquaculture,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_39.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Aqua venture,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_39.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Pearl farming,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_39.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Schemes of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_4.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Summary in,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_4.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Crude lipid,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_40.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Induced breeding,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_43.csv,,,,,,,,,,,,,,,,,,auto,1,3
+International training,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_43.csv,,,,,,,,,,,,,,,,,,auto,1,3
+National training,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_43.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Freshwater ornamental,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_43.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Developments in,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_44.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Aquaculture as,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_44.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Technology for,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_45.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Training of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_45.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Recent advances,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_45.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Programme for,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_45.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Study tour,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_46.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Trainees from,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_48.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Staff member,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_52.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Award for,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_52.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Extension worker,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_52.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Farm made,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_55.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Hilsa culture,,,Clupeidae,Clupeiformes,,Freshwater,LC,,AnnualReport_2018-19_table_55.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Production in,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_55.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Live telecast,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_55.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Discussion on,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_55.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Machhali palan,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_55.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Establishment of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_56.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Twinning project,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_56.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Student training,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_56.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Purified recombinant,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_57.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Enquires at,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_58.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Coordinated at,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_58.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Field visit,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_58.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Exposure visit,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_58.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Services rendered,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_6.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Recoveries of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_6.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Assessment of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_61.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fruit drop,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_61.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Incorporation of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_61.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Culture of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_61.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Safe storage,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_61.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Sugarcane bud,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_61.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Management in,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_62.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Sweet con,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_62.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Management for,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_62.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Techniques in,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_62.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Kadaknath poultry,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_62.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Trace mineral,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_62.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Scientific carp,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_62.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Paddy straw,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_62.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Paddy stored,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_62.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Practicing farmers,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_63.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Extension functionaries,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_63.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Certificate of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_64.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Society of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_64.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Interaction with,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_65.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Training course,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_65.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Focal point,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_65.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Creating impact,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_66.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Antimicrobial resistance,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_66.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Specialization on,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_66.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Training programme,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_66.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Tool for,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_66.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Induction training,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_67.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Refresher training,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_68.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Selection committee,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_70.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Interaction meeting,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_70.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Committee on,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_70.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Signing of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_70.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Advocacy meeting,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_70.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Site selection,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_71.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Viva voice,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_71.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Inaugural function,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_71.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fish farm,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_71.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Cadre strength,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_72.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Launching workshop,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_72.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Guest in,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_72.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Inauguration of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_72.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Offseason breeding,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_73.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Seminar focusing,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_73.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Board of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_73.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Session of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_73.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Stake holder,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_73.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Committee meeting,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_73.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Workshop for,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_73.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Observation of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_74.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Advisory meeting,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_74.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Invitation for,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_74.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Interactions meet,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_75.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Twenty third,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_75.csv,,,,,,,,,,,,,,,,,,auto,1,3
+New project,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_75.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Mela cum,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_75.csv,,,,,,,,,,,,,,,,,,auto,1,3
+External expert,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_75.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Expert for,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_75.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Awareness programme,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_76.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Congress of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_76.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Conference of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_76.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Acted as,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_76.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Centre of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_77.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Awareness cum,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_77.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Sequencing of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_77.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Interactive workshop,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_77.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Research sub,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_77.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Innovations for,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_78.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Hindi workshop,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_78.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Attended selection,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_78.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Consultation meet,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_78.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Panel on,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_78.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Brainstorming workshop,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_78.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Delivered a,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_78.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Annual meeting,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_79.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Project meeting,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_79.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Advisory committee,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_79.csv,,,,,,,,,,,,,,,,,,auto,1,3
+First institutional,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_79.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Assessment committee,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_79.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Day organized,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_80.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Open day,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_80.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Institution of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_80.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Celebration of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_80.csv,,,,,,,,,,,,,,,,,,auto,1,3
+System for,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_81.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Mathsya mela,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_81.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Society for,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_81.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Retirement benefits,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_82.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Proteomic analysis,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_83.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Impact assessment,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_83.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Pilotting a,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_83.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Diversification in,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_83.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Diseases of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_83.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Plankton productivity,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_83.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Pethia narayani,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2018-19_table_84.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Stock development,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_84.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Exploring ornamental,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_85.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Effect of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_85.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Protocol development,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_85.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Efficient use,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_85.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Growth performance,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_85.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Genetic improvement,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_85.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Extn upto,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_86.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Molecular screening,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_87.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Value addition,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_88.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Genetic enhancement,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_88.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Network program,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_88.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Program on,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_88.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Bioprocessing of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_88.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Dissemination of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_88.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Demonstration of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_88.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Capacity building,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_88.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Regulatory roles,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_88.csv,,,,,,,,,,,,,,,,,,auto,1,3
+To elucidate,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_89.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Ecological assessment,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_89.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Deciphering genetic,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_89.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Consultancy service,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_95.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Impact of,,,,,,Freshwater,LC,,AnnualReport_2018-19_table_96.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Virtual knowledge,,,,,,Freshwater,LC,,AnnualReport_2020_table_100.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Participated on,,,,,,Freshwater,LC,,AnnualReport_2020_table_100.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Webinar on,,,,,,Freshwater,LC,,AnnualReport_2020_table_100.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Commission of,,,,,,Freshwater,LC,,AnnualReport_2020_table_100.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Online meeting,,,,,,Freshwater,LC,,AnnualReport_2020_table_100.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Tools in,,,,,,Freshwater,LC,,AnnualReport_2020_table_100.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Virtual workshop,,,,,,Freshwater,LC,,AnnualReport_2020_table_100.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Series on,,,,,,Freshwater,LC,,AnnualReport_2020_table_101.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Two days,,,,,,Freshwater,LC,,AnnualReport_2020_table_101.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Lecture on,,,,,,Freshwater,LC,,AnnualReport_2020_table_101.csv,,,,,,,,,,,,,,,,,,auto,1,3
+All staff,,,,,,Freshwater,LC,,AnnualReport_2020_table_101.csv,,,,,,,,,,,,,,,,,,auto,1,3
+International workshop,,,,,,Freshwater,LC,,AnnualReport_2020_table_101.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Anniversary of,,,,,,Freshwater,LC,,AnnualReport_2020_table_101.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Webinar participation,,,,,,Freshwater,LC,,AnnualReport_2020_table_101.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Virtual summit,,,,,,Freshwater,LC,,AnnualReport_2020_table_101.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Minister of,,,,,,Freshwater,LC,,AnnualReport_2020_table_101.csv,,,,,,,,,,,,,,,,,,auto,1,3
+India water,,,,,,Freshwater,LC,,AnnualReport_2020_table_101.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Organized by,,,,,,Freshwater,LC,,AnnualReport_2020_table_101.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Zoom meeting,,,,,,Freshwater,LC,,AnnualReport_2020_table_101.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Webinar series,,,,,,Freshwater,LC,,AnnualReport_2020_table_102.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Transformation of,,,,,,Freshwater,LC,,AnnualReport_2020_table_102.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Pacific region,,,,,,Freshwater,LC,,AnnualReport_2020_table_102.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Virtual meeting,,,,,,Freshwater,LC,,AnnualReport_2020_table_102.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Better with,,,,,,Freshwater,LC,,AnnualReport_2020_table_102.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Summit of,,,,,,Freshwater,LC,,AnnualReport_2020_table_103.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Release of,,,,,,Freshwater,LC,,AnnualReport_2020_table_103.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Scheme under,,,,,,Freshwater,LC,,AnnualReport_2020_table_104.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Mission for,,,,,,Freshwater,LC,,AnnualReport_2020_table_104.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Delivered lecture,,,,,,Freshwater,LC,,AnnualReport_2020_table_105.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Discussion with,,,,,,Freshwater,LC,,AnnualReport_2020_table_105.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Monthly meeting,,,,,,Freshwater,LC,,AnnualReport_2020_table_105.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Action to,,,,,,Freshwater,LC,,AnnualReport_2020_table_105.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Virtual rally,,,,,,Freshwater,LC,,AnnualReport_2020_table_106.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Division of,,,,,,Freshwater,LC,,AnnualReport_2020_table_106.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Research costing,,,,,,Freshwater,LC,,AnnualReport_2020_table_106.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Virtual mode,,,,,,Freshwater,LC,,AnnualReport_2020_table_106.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Days virtual,,,,,,Freshwater,LC,,AnnualReport_2020_table_106.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fish for,,,,,,Freshwater,LC,,AnnualReport_2020_table_107.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Zoom webinar,,,,,,Freshwater,LC,,AnnualReport_2020_table_107.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Webinar cum,,,,,,Freshwater,LC,,AnnualReport_2020_table_107.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Scenario of,,,,,,Freshwater,LC,,AnnualReport_2020_table_107.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Webinar meeting,,,,,,Freshwater,LC,,AnnualReport_2020_table_107.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Concept to,,,,,,Freshwater,LC,,AnnualReport_2020_table_108.csv,,,,,,,,,,,,,,,,,,auto,1,3
+All scientist,,,,,,Freshwater,LC,,AnnualReport_2020_table_108.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Money to,,,,,,Freshwater,LC,,AnnualReport_2020_table_108.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Launching programme,,,,,,Freshwater,LC,,AnnualReport_2020_table_108.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Differentially expressed,,,,,,Freshwater,LC,,AnnualReport_2020_table_110.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Implication of,,,,,,Freshwater,LC,,AnnualReport_2020_table_111.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Indian major,,,,,,Freshwater,LC,,AnnualReport_2020_table_111.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Enhancing larval,,,,,,Freshwater,LC,,AnnualReport_2020_table_111.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Inducing sterility,,,,,,Freshwater,LC,,AnnualReport_2020_table_111.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Identification of,,,,,,Freshwater,LC,,AnnualReport_2020_table_111.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Utilisation of,,,,,,Freshwater,LC,,AnnualReport_2020_table_111.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Exploring potential,,,,,,Freshwater,LC,,AnnualReport_2020_table_111.csv,,,,,,,,,,,,,,,,,,auto,1,3
+New extension,,,,,,Freshwater,LC,,AnnualReport_2020_table_114.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Strengthening fisheries,,,,,,Freshwater,LC,,AnnualReport_2020_table_114.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Estimation of,,,,,,Freshwater,LC,,AnnualReport_2020_table_115.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Investigation of,,,,,,Freshwater,LC,,AnnualReport_2020_table_115.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Encapsulated adherent,,,,,,Freshwater,LC,,AnnualReport_2020_table_116.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Enhancing gonadal,,,,,,Freshwater,LC,,AnnualReport_2020_table_118.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Ultra deep,,,,,,Freshwater,LC,,AnnualReport_2020_table_13.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fluorescent microscope,,,,,,Freshwater,LC,,AnnualReport_2020_table_13.csv,,,,,,,,,,,,,,,,,,auto,1,3
+System with,,,,,,Freshwater,LC,,AnnualReport_2020_table_13.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Shaker incubator,,,,,,Freshwater,LC,,AnnualReport_2020_table_13.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Scigenics biotech,,,,,,Freshwater,LC,,AnnualReport_2020_table_13.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Compound microscope,,,,,,Freshwater,LC,,AnnualReport_2020_table_13.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Ice flake,,,,,,Freshwater,LC,,AnnualReport_2020_table_13.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Brema ice,,,,,,Freshwater,LC,,AnnualReport_2020_table_13.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Analytical technologies,,,,,,Freshwater,LC,,AnnualReport_2020_table_13.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Water purification,,,,,,Freshwater,LC,,AnnualReport_2020_table_13.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Lab equipments,,,,,,Freshwater,LC,,AnnualReport_2020_table_13.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Electrophoresis unit,,,,,,Freshwater,LC,,AnnualReport_2020_table_13.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Automatic cell,,,,,,Freshwater,LC,,AnnualReport_2020_table_13.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Nabi microdigital,,,,,,Freshwater,LC,,AnnualReport_2020_table_13.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Osteobrama belangiri,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2020_table_14.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Airbreathing fishes,,,,,,Freshwater,LC,,AnnualReport_2020_table_14.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Mustus vittatus,,,,,,Freshwater,LC,,AnnualReport_2020_table_14.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Larvae having,,,,,,Freshwater,LC,,AnnualReport_2020_table_15.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Shaped larvae,,,,,,Freshwater,LC,,AnnualReport_2020_table_15.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Both valve,,,,,,Freshwater,LC,,AnnualReport_2020_table_15.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Average size,,,,,,Freshwater,LC,,AnnualReport_2020_table_18.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Final yield,,,,,,Freshwater,LC,,AnnualReport_2020_table_18.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Final survival,,,,,,Freshwater,LC,,AnnualReport_2020_table_18.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Feed given,,,,,,Freshwater,LC,,AnnualReport_2020_table_18.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Carbon source,,,,,,Freshwater,LC,,AnnualReport_2020_table_18.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Other operational,,,,,,Freshwater,LC,,AnnualReport_2020_table_18.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Selling price,,,,,,Freshwater,LC,,AnnualReport_2020_table_18.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Gross sale,,,,,,Freshwater,LC,,AnnualReport_2020_table_18.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Length of,,,,,,Freshwater,LC,,AnnualReport_2020_table_19.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Height of,,,,,,Freshwater,LC,,AnnualReport_2020_table_19.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Post spawning,,,,,,Freshwater,LC,,AnnualReport_2020_table_26.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Savings of,,,,,,Freshwater,LC,,AnnualReport_2020_table_40.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Access to,,,,,,Freshwater,LC,,AnnualReport_2020_table_43.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Ability to,,,,,,Freshwater,LC,,AnnualReport_2020_table_43.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Attitude towards,,,,,,Freshwater,LC,,AnnualReport_2020_table_43.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Control over,,,,,,Freshwater,LC,,AnnualReport_2020_table_43.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Knowledge on,,,,,,Freshwater,LC,,AnnualReport_2020_table_43.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Mean fish,,,,,,Freshwater,LC,,AnnualReport_2020_table_46.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Adoption level,,,,,,Freshwater,LC,,AnnualReport_2020_table_46.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Yield gap,,,,,,Freshwater,LC,,AnnualReport_2020_table_46.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Smart farming,,,,,,Freshwater,LC,,AnnualReport_2020_table_47.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Techno commercial,,,,,,Freshwater,LC,,AnnualReport_2020_table_48.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Promotion of,,,,,,Freshwater,LC,,AnnualReport_2020_table_5.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Video conference,,,,,,Freshwater,LC,,AnnualReport_2020_table_50.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Exhibition on,,,,,,Freshwater,LC,,AnnualReport_2020_table_50.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Pelleted feed,,,,,,Freshwater,LC,,AnnualReport_2020_table_52.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Maize dust,,,,,,Freshwater,LC,,AnnualReport_2020_table_52.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Freshwater pearl,,,,,,Freshwater,LC,,AnnualReport_2020_table_67.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Officers from,,,,,,Freshwater,LC,,AnnualReport_2020_table_70.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Edition of,,,,,,Freshwater,LC,,AnnualReport_2020_table_72.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Virtual training,,,,,,Freshwater,LC,,AnnualReport_2020_table_74.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Commercialization of,,,,,,Freshwater,LC,,AnnualReport_2020_table_75.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Banjari road,,,,,,Freshwater,LC,,AnnualReport_2020_table_76.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Technical staff,,,,,,Freshwater,LC,,AnnualReport_2020_table_78.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Post matriculation,,,,,,Freshwater,LC,,AnnualReport_2020_table_79.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Telecaste in,,,,,,Freshwater,LC,,AnnualReport_2020_table_80.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Acidic in,,,,,,Freshwater,LC,,AnnualReport_2020_table_81.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Total alkalinity,,,,,,Freshwater,LC,,AnnualReport_2020_table_81.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Panchayat office,,,,,,Freshwater,LC,,AnnualReport_2020_table_82.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Sunflower during,,,,,,Freshwater,LC,,AnnualReport_2020_table_84.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Low fish,,,,,,Freshwater,LC,,AnnualReport_2020_table_85.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Skill training,,,,,,Freshwater,LC,,AnnualReport_2020_table_86.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Council of,,,,,,Freshwater,LC,,AnnualReport_2020_table_86.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Online training,,,,,,Freshwater,LC,,AnnualReport_2020_table_87.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Sample preparation,,,,,,Freshwater,LC,,AnnualReport_2020_table_87.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Accreditation of,,,,,,Freshwater,LC,,AnnualReport_2020_table_87.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Analytics in,,,,,,Freshwater,LC,,AnnualReport_2020_table_87.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Education in,,,,,,Freshwater,LC,,AnnualReport_2020_table_87.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Real time,,,,,,Freshwater,LC,,AnnualReport_2020_table_87.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Center for,,,,,,Freshwater,LC,,AnnualReport_2020_table_87.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Designing of,,,,,,Freshwater,LC,,AnnualReport_2020_table_87.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Genetic data,,,,,,Freshwater,LC,,AnnualReport_2020_table_88.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Convening of,,,,,,Freshwater,LC,,AnnualReport_2020_table_89.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Participated in,,,,,,Freshwater,LC,,AnnualReport_2020_table_89.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Convention of,,,,,,Freshwater,LC,,AnnualReport_2020_table_89.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Scientists interface,,,,,,Freshwater,LC,,AnnualReport_2020_table_90.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Member of,,,,,,Freshwater,LC,,AnnualReport_2020_table_90.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Conference through,,,,,,Freshwater,LC,,AnnualReport_2020_table_91.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Webinar lecture,,,,,,Freshwater,LC,,AnnualReport_2020_table_91.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fish project,,,,,,Freshwater,LC,,AnnualReport_2020_table_91.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Conference with,,,,,,Freshwater,LC,,AnnualReport_2020_table_91.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Meeting regarding,,,,,,Freshwater,LC,,AnnualReport_2020_table_91.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Partnership meeting,,,,,,Freshwater,LC,,AnnualReport_2020_table_92.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Directors of,,,,,,Freshwater,LC,,AnnualReport_2020_table_92.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Director of,,,,,,Freshwater,LC,,AnnualReport_2020_table_92.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Web seminar,,,,,,Freshwater,LC,,AnnualReport_2020_table_92.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Development through,,,,,,Freshwater,LC,,AnnualReport_2020_table_92.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Advancement in,,,,,,Freshwater,LC,,AnnualReport_2020_table_92.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Virtual platform,,,,,,Freshwater,LC,,AnnualReport_2020_table_93.csv,,,,,,,,,,,,,,,,,,auto,1,3
+India for,,,,,,Freshwater,LC,,AnnualReport_2020_table_94.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Online workshop,,,,,,Freshwater,LC,,AnnualReport_2020_table_94.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Panellist in,,,,,,Freshwater,LC,,AnnualReport_2020_table_94.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Sciences for,,,,,,Freshwater,LC,,AnnualReport_2020_table_95.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Conference cum,,,,,,Freshwater,LC,,AnnualReport_2020_table_95.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Contributions of,,,,,,Freshwater,LC,,AnnualReport_2020_table_95.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Webex platform,,,,,,Freshwater,LC,,AnnualReport_2020_table_95.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Workshop to,,,,,,Freshwater,LC,,AnnualReport_2020_table_96.csv,,,,,,,,,,,,,,,,,,auto,1,3
+School of,,,,,,Freshwater,LC,,AnnualReport_2020_table_96.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Kolkata of,,,,,,Freshwater,LC,,AnnualReport_2020_table_97.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Virtual consultation,,,,,,Freshwater,LC,,AnnualReport_2020_table_97.csv,,,,,,,,,,,,,,,,,,auto,1,3
+National webinar,,,,,,Freshwater,LC,,AnnualReport_2020_table_97.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Parasitic disease,,,,,,Freshwater,LC,,AnnualReport_2020_table_97.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Perspectives of,,,,,,Freshwater,LC,,AnnualReport_2020_table_97.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Ceremony of,,,,,,Freshwater,LC,,AnnualReport_2020_table_98.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Journal of,,,,,,Freshwater,LC,,AnnualReport_2020_table_98.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Google platform,,,,,,Freshwater,LC,,AnnualReport_2020_table_98.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Scheme meeting,,,,,,Freshwater,LC,,AnnualReport_2020_table_98.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Orientation to,,,,,,Freshwater,LC,,AnnualReport_2020_table_99.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Agriculture in,,,,,,Freshwater,LC,,AnnualReport_2020_table_99.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Launch of,,,,,,Freshwater,LC,,AnnualReport_2020_table_99.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Introductory meeting,,,,,,Freshwater,LC,,AnnualReport_2020_table_99.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Approach for,,,,,,Freshwater,LC,,AnnualReport_2020_table_99.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Virtual event,,,,,,Freshwater,LC,,AnnualReport_2020_table_99.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Labeo kontius,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2021_table_10.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Hypselobarbus pulchellus,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2021_table_10.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Clarias dussumieri,,,Clariidae,Siluriformes,,Freshwater,LC,,AnnualReport_2021_table_10.csv,,,,,,,,,,,,,,,,,,auto,3,5
+Aste raonmd,,,,,,Freshwater,LC,,AnnualReport_2021_table_102.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Coordinator for,,,,,,Freshwater,LC,,AnnualReport_2021_table_102.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Omics approaches,,,,,,Freshwater,LC,,AnnualReport_2021_table_102.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Indian aquaculture,,,,,,Freshwater,LC,,AnnualReport_2021_table_103.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Network programme,,,,,,Freshwater,LC,,AnnualReport_2021_table_103.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Culture in,,,,,,Freshwater,LC,,AnnualReport_2021_table_104.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Phenotypic male,,,,,,Freshwater,LC,,AnnualReport_2021_table_14.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Phenotypic female,,,,,,Freshwater,LC,,AnnualReport_2021_table_14.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Berried prawns,,,,,,Freshwater,LC,,AnnualReport_2021_table_15.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Artemia hatching,,,,,,Freshwater,LC,,AnnualReport_2021_table_15.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Brackish water,,,,,,Freshwater,LC,,AnnualReport_2021_table_15.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Seawater holding,,,,,,Freshwater,LC,,AnnualReport_2021_table_15.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Initial length,,,,,,Freshwater,LC,,AnnualReport_2021_table_16.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Final length,,,,,,Freshwater,LC,,AnnualReport_2021_table_16.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Binding interaction,,,,,,Freshwater,LC,,AnnualReport_2021_table_20.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Specific growth,,,,,,Freshwater,LC,,AnnualReport_2021_table_27.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Feed conversion,,,,,,Freshwater,LC,,AnnualReport_2021_table_27.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Length gain,,,,,,Freshwater,LC,,AnnualReport_2021_table_28.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Geraconvde r,,,,,,Freshwater,LC,,AnnualReport_2021_table_3.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Increment in,,,,,,Freshwater,LC,,AnnualReport_2021_table_30.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Dry matter,,,,,,Freshwater,LC,,AnnualReport_2021_table_32.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Total fixed,,,,,,Freshwater,LC,,AnnualReport_2021_table_34.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Total variable,,,,,,Freshwater,LC,,AnnualReport_2021_table_34.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Total production,,,,,,Freshwater,LC,,AnnualReport_2021_table_34.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Total revenue,,,,,,Freshwater,LC,,AnnualReport_2021_table_34.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Carp hatchery,,,,,,Freshwater,LC,,AnnualReport_2021_table_35.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fish based,,,,,,Freshwater,LC,,AnnualReport_2021_table_36.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Introduction of,,,,,,Freshwater,LC,,AnnualReport_2021_table_36.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Nutri garden,,,,,,Freshwater,LC,,AnnualReport_2021_table_36.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Disease management,,,,,,Freshwater,LC,,AnnualReport_2021_table_38.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Enhancement in,,,,,,Freshwater,LC,,AnnualReport_2021_table_38.csv,,,,,,,,,,,,,,,,,,auto,1,3
+High value,,,,,,Freshwater,LC,,AnnualReport_2021_table_39.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Seed production,,,,,,Freshwater,LC,,AnnualReport_2021_table_39.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Culture for,,,,,,Freshwater,LC,,AnnualReport_2021_table_39.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Polyculture of,,,,,,Freshwater,LC,,AnnualReport_2021_table_39.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fish species,,,,,,Freshwater,LC,,AnnualReport_2021_table_39.csv,,,,,,,,,,,,,,,,,,auto,1,3
+October to,,,,,,Freshwater,LC,,AnnualReport_2021_table_40.csv,,,,,,,,,,,,,,,,,,auto,1,3
+November to,,,,,,Freshwater,LC,,AnnualReport_2021_table_40.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fish disease,,,,,,Freshwater,LC,,AnnualReport_2021_table_42.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Confederation of,,,,,,Freshwater,LC,,AnnualReport_2021_table_44.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Stocking density,,,,,,Freshwater,LC,,AnnualReport_2021_table_46.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Yield per,,,,,,Freshwater,LC,,AnnualReport_2021_table_46.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Sale price,,,,,,Freshwater,LC,,AnnualReport_2021_table_46.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Input cost,,,,,,Freshwater,LC,,AnnualReport_2021_table_46.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Stocking densi,,,,,,Freshwater,LC,,AnnualReport_2021_table_47.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Title of,,,,,,Freshwater,LC,,AnnualReport_2021_table_48.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Gajapati dist,,,,,,Freshwater,LC,,AnnualReport_2021_table_48.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Distribution of,,,,,,Freshwater,LC,,AnnualReport_2021_table_48.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Farmers scientist,,,,,,Freshwater,LC,,AnnualReport_2021_table_49.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Farmers meet,,,,,,Freshwater,LC,,AnnualReport_2021_table_49.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Aquaculture for,,,,,,Freshwater,LC,,AnnualReport_2021_table_49.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Teocthanl ician,,,,,,Freshwater,LC,,AnnualReport_2021_table_5.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Magur larval,,,,,,Freshwater,LC,,AnnualReport_2021_table_50.csv,,,,,,,,,,,,,,,,,,auto,1,3
+For facilitating,,,,,,Freshwater,LC,,AnnualReport_2021_table_50.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Bhubaneswar through,,,,,,Freshwater,LC,,AnnualReport_2021_table_51.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Providing technical,,,,,,Freshwater,LC,,AnnualReport_2021_table_51.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Foundation seed,,,,,,Freshwater,LC,,AnnualReport_2021_table_51.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Live program,,,,,,Freshwater,LC,,AnnualReport_2021_table_57.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Delhi on,,,,,,Freshwater,LC,,AnnualReport_2021_table_57.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Odisha on,,,,,,Freshwater,LC,,AnnualReport_2021_table_57.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Mahila mandal,,,,,,Freshwater,LC,,AnnualReport_2021_table_59.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Gumma block,,,,,,Freshwater,LC,,AnnualReport_2021_table_59.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Society in,,,,,,Freshwater,LC,,AnnualReport_2021_table_60.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Grow out,,,,,,Freshwater,LC,,AnnualReport_2021_table_63.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Assessing the,,,,,,Freshwater,LC,,AnnualReport_2021_table_65.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Coconut cultivation,,,,,,Freshwater,LC,,AnnualReport_2021_table_68.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Improved package,,,,,,Freshwater,LC,,AnnualReport_2021_table_68.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Teasle gourd,,,,,,Freshwater,LC,,AnnualReport_2021_table_68.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Friends of,,,,,,Freshwater,LC,,AnnualReport_2021_table_68.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Thesis entitled,,,,,,Freshwater,LC,,AnnualReport_2021_table_69.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Thesis en,,,,,,Freshwater,LC,,AnnualReport_2021_table_69.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Tridax procumbens,,,,,,Freshwater,LC,,AnnualReport_2021_table_69.csv,,,,,,,,,,,,,,,,,,auto,1,3
+During the,,,,,,Freshwater,LC,,AnnualReport_2021_table_70.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Choalen onfa,,,,,,Freshwater,LC,,AnnualReport_2021_table_70.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Goimbepliaorna tciavtel,,,,,,Freshwater,LC,,AnnualReport_2021_table_70.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Registration no,,,,,,Freshwater,LC,,AnnualReport_2021_table_70.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Data analysis,,,,,,Freshwater,LC,,AnnualReport_2021_table_71.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Applications in,,,,,,Freshwater,LC,,AnnualReport_2021_table_71.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Administrative staff,,,,,,Freshwater,LC,,AnnualReport_2021_table_71.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Labour at,,,,,,Freshwater,LC,,AnnualReport_2021_table_71.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Units at,,,,,,Freshwater,LC,,AnnualReport_2021_table_71.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Project organized,,,,,,Freshwater,LC,,AnnualReport_2021_table_72.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Interaction meet,,,,,,Freshwater,LC,,AnnualReport_2021_table_72.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Project evaluation,,,,,,Freshwater,LC,,AnnualReport_2021_table_72.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Third meeting,,,,,,Freshwater,LC,,AnnualReport_2021_table_73.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Projects in,,,,,,Freshwater,LC,,AnnualReport_2021_table_74.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Chamber of,,,,,,Freshwater,LC,,AnnualReport_2021_table_74.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Lecture delivered,,,,,,Freshwater,LC,,AnnualReport_2021_table_74.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Network for,,,,,,Freshwater,LC,,AnnualReport_2021_table_74.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Value to,,,,,,Freshwater,LC,,AnnualReport_2021_table_76.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Bhubaneswar under,,,,,,Freshwater,LC,,AnnualReport_2021_table_76.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Water day,,,,,,Freshwater,LC,,AnnualReport_2021_table_76.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Webinar under,,,,,,Freshwater,LC,,AnnualReport_2021_table_77.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Avenue for,,,,,,Freshwater,LC,,AnnualReport_2021_table_77.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Life delivered,,,,,,Freshwater,LC,,AnnualReport_2021_table_77.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Embassy of,,,,,,Freshwater,LC,,AnnualReport_2021_table_77.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Construction of,,,,,,Freshwater,LC,,AnnualReport_2021_table_78.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Application to,,,,,,Freshwater,LC,,AnnualReport_2021_table_78.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Transforming food,,,,,,Freshwater,LC,,AnnualReport_2021_table_78.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Environmentalist under,,,,,,Freshwater,LC,,AnnualReport_2021_table_78.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Dedication of,,,,,,Freshwater,LC,,AnnualReport_2021_table_79.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Chairmanship of,,,,,,Freshwater,LC,,AnnualReport_2021_table_79.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Virtual programme,,,,,,Freshwater,LC,,AnnualReport_2021_table_79.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Consultation meeting,,,,,,Freshwater,LC,,AnnualReport_2021_table_80.csv,,,,,,,,,,,,,,,,,,auto,1,3
+All scientific,,,,,,Freshwater,LC,,AnnualReport_2021_table_80.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Fertilizers in,,,,,,Freshwater,LC,,AnnualReport_2021_table_80.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Online lecture,,,,,,Freshwater,LC,,AnnualReport_2021_table_80.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Expert participation,,,,,,Freshwater,LC,,AnnualReport_2021_table_81.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Principles to,,,,,,Freshwater,LC,,AnnualReport_2021_table_81.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Prospects of,,,,,,Freshwater,LC,,AnnualReport_2021_table_81.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Guest of,,,,,,Freshwater,LC,,AnnualReport_2021_table_81.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Towards new,,,,,,Freshwater,LC,,AnnualReport_2021_table_82.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Brainstorming meeting,,,,,,Freshwater,LC,,AnnualReport_2021_table_82.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Invited lecture,,,,,,Freshwater,LC,,AnnualReport_2021_table_82.csv,,,,,,,,,,,,,,,,,,auto,1,3
+International symposium,,,,,,Freshwater,LC,,AnnualReport_2021_table_83.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Organic fish,,,,,,Freshwater,LC,,AnnualReport_2021_table_83.csv,,,,,,,,,,,,,,,,,,auto,1,3
+To extend,,,,,,Freshwater,LC,,AnnualReport_2021_table_83.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Awareness program,,,,,,Freshwater,LC,,AnnualReport_2021_table_83.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Invited as,,,,,,Freshwater,LC,,AnnualReport_2021_table_83.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Course on,,,,,,Freshwater,LC,,AnnualReport_2021_table_84.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Monitoring of,,,,,,Freshwater,LC,,AnnualReport_2021_table_84.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Series of,,,,,,Freshwater,LC,,AnnualReport_2021_table_84.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Challenges in,,,,,,Freshwater,LC,,AnnualReport_2021_table_84.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Virtually in,,,,,,Freshwater,LC,,AnnualReport_2021_table_84.csv,,,,,,,,,,,,,,,,,,auto,1,3
+World fish,,,,,,Freshwater,LC,,AnnualReport_2021_table_84.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Presented an,,,,,,Freshwater,LC,,AnnualReport_2021_table_85.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Bharat ki,,,,,,Freshwater,LC,,AnnualReport_2021_table_85.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Campaign on,,,,,,Freshwater,LC,,AnnualReport_2021_table_85.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Transformation inception,,,,,,Freshwater,LC,,AnnualReport_2021_table_86.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Delivered an,,,,,,Freshwater,LC,,AnnualReport_2021_table_86.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Delivered talk,,,,,,Freshwater,LC,,AnnualReport_2021_table_86.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Chambers of,,,,,,Freshwater,LC,,AnnualReport_2021_table_87.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Preparatory meeting,,,,,,Freshwater,LC,,AnnualReport_2021_table_87.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Guest lecture,,,,,,Freshwater,LC,,AnnualReport_2021_table_87.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Security in,,,,,,Freshwater,LC,,AnnualReport_2021_table_87.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Stone laying,,,,,,Freshwater,LC,,AnnualReport_2021_table_87.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Institutes organized,,,,,,Freshwater,LC,,AnnualReport_2021_table_88.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Participated as,,,,,,Freshwater,LC,,AnnualReport_2021_table_88.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Day workshop,,,,,,Freshwater,LC,,AnnualReport_2021_table_88.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Reporting in,,,,,,Freshwater,LC,,AnnualReport_2021_table_88.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Scientists of,,,,,,Freshwater,LC,,AnnualReport_2021_table_89.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Introspection to,,,,,,Freshwater,LC,,AnnualReport_2021_table_89.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Scientist of,,,,,,Freshwater,LC,,AnnualReport_2021_table_89.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Second meeting,,,,,,Freshwater,LC,,AnnualReport_2021_table_89.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Ningbosjialab equipments,,,,,,Freshwater,LC,,AnnualReport_2021_table_9.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Expert member,,,,,,Freshwater,LC,,AnnualReport_2021_table_90.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Kerala state,,,,,,Freshwater,LC,,AnnualReport_2021_table_90.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Week event,,,,,,Freshwater,LC,,AnnualReport_2021_table_90.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Office for,,,,,,Freshwater,LC,,AnnualReport_2021_table_90.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Emerging diseases,,,,,,Freshwater,LC,,AnnualReport_2021_table_91.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Mitigation of,,,,,,Freshwater,LC,,AnnualReport_2021_table_91.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Associated with,,,,,,Freshwater,LC,,AnnualReport_2021_table_91.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Region as,,,,,,Freshwater,LC,,AnnualReport_2021_table_91.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Discussed with,,,,,,Freshwater,LC,,AnnualReport_2021_table_92.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Bhubaneswar as,,,,,,Freshwater,LC,,AnnualReport_2021_table_92.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Valedictory function,,,,,,Freshwater,LC,,AnnualReport_2021_table_92.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Assam on,,,,,,Freshwater,LC,,AnnualReport_2021_table_92.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Attend one,,,,,,Freshwater,LC,,AnnualReport_2021_table_92.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Ssttrainadtaa rdization,,,,,,Freshwater,LC,,AnnualReport_2021_table_95.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Ashis saha,,,,,,Freshwater,LC,,AnnualReport_2021_table_96.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Optimization of,,,,,,Freshwater,LC,,AnnualReport_2021_table_96.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Ecological engineering,,,,,,Freshwater,LC,,AnnualReport_2021_table_96.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Production performance,,,,,,Freshwater,LC,,AnnualReport_2021_table_97.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Centre at,,,,,,Freshwater,LC,,AnnualReport_2021_table_98.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Genetic enhance,,,,,,Freshwater,LC,,AnnualReport_2021_table_99.csv,,,,,,,,,,,,,,,,,,auto,1,3
+Ctenopharyngodon idella,Grass Carp,,Cyprinidae,Cypriniformes,,Freshwater,NE,,,pond,West Bengal,all_year,20.0,30.0,7.0,8.5,2000.0,12.0,exotic_carp,herbivore,medium,False,verified,25.0,7.75,10.0,manual+auto,3,3
+Cyprinus rubrofuscus,Koi,,Cyprinidae,Cypriniformes,,Freshwater,NE,,,pond,Pan India,all_year,18.0,26.0,6.5,8.5,10000.0,12.0,ornamental,omnivore,medium,False,template,22.0,7.5,8.0,manual+auto,3,3

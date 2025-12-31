@@ -1,0 +1,9 @@
+CRITICAL ISSUES
+======================================================================
+
+
+DUPLICATES:
+
+IUCN_STATUS:
+  {'row': 1415, 'species': 'Ctenopharyngodon idella', 'status': 'NAN'}
+  {'row': 1416, 'species': 'Cyprinus rubrofuscus', 'status': 'NAN'}

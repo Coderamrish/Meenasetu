@@ -1,0 +1,4 @@
+scientific_name,common_name,local_name,family,order,max_size,habitat,iucn_status,human_use,source,water_type,region,season,temp_min,temp_max,ph_min,ph_max,stocking_density_per_ha,growth_duration_months,category,feeding_habit,market_value,is_native,data_quality,temp_avg,ph_avg,temp_range,data_source,completeness_score
+Tenualosa ilisha,Hilsa,Ilishmach,Clupeidae,Clupeiformes,60 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,manual+auto,7
+Tenualosa toil,,Chandan Ilish,Clupeidae,Clupeiformes,60 cm,"Freshwater, Brackish",NE,Food,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,7
+Hilsa culture,,,Clupeidae,Clupeiformes,,Freshwater,LC,,AnnualReport_2018-19_table_55.csv,,,,,,,,,,,,,,,,,,auto,5

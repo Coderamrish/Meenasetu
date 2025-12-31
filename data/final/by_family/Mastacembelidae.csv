@@ -1,0 +1,9 @@
+scientific_name,common_name,local_name,family,order,max_size,habitat,iucn_status,human_use,source,water_type,region,season,temp_min,temp_max,ph_min,ph_max,stocking_density_per_ha,growth_duration_months,category,feeding_habit,market_value,is_native,data_quality,temp_avg,ph_avg,temp_range,data_source,completeness_score
+Macrognathus aculeatus,,Ban,Mastacembelidae,Synbranchiformes,38.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,7
+Macrognathus aral,,Pankal,Mastacembelidae,Synbranchiformes,63.5 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,7
+Macrognathus morehensis,,Bhaim,Mastacembelidae,Synbranchiformes,,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,6
+Macrognathus pancalus,Barred Spiny Eel,Pankal,Mastacembelidae,Synbranchiformes,18.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,7
+Mastacembelus armatus,Zig-zag Eel,Ban,Mastacembelidae,Synbranchiformes,90.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,7

@@ -1,0 +1,7 @@
+scientific_name,common_name,local_name,family,order,max_size,habitat,iucn_status,human_use,source,water_type,region,season,temp_min,temp_max,ph_min,ph_max,stocking_density_per_ha,growth_duration_months,category,feeding_habit,market_value,is_native,data_quality,temp_avg,ph_avg,temp_range,data_source,completeness_score
+Chanda nama,,Chanda,Ambassidae,Perciformes,11.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,7
+Parambassis baculis,,,Ambassidae,Perciformes,5.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,6
+Parambassis lala,,,Ambassidae,Perciformes,3.9 cm,"Freshwater, Brackish",NT,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,6
+Parambassis ranga,,Chanda,Ambassidae,Perciformes,8.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,7

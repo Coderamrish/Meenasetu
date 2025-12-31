@@ -1,0 +1,8 @@
+scientific_name,common_name,local_name,family,order,max_size,habitat,iucn_status,human_use,source,water_type,region,season,temp_min,temp_max,ph_min,ph_max,stocking_density_per_ha,growth_duration_months,category,feeding_habit,market_value,is_native,data_quality,temp_avg,ph_avg,temp_range,data_source,completeness_score
+Botia almorhae,,Lohachata,Botiidae,Cypriniformes,15.5 cm,Freshwater,EN,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,7
+Botia birdi,,Loach,Botiidae,Cypriniformes,18.6 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,7
+Botia dario,,Betrongi,Botiidae,Cypriniformes,15.1 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,7
+Botia lohachata,,Lohachata,Botiidae,Cypriniformes,11.0 cm,Freshwater,EN,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,7
+Botia histrionic,,Lohachata,Botiidae,Cypriniformes,11.7 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,7
+Botia rostrata,,Ladder loach,Botiidae,Cypriniformes,25.0 cm,Freshwater,VU,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,7

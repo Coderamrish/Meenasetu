@@ -1,0 +1,28 @@
+scientific_name,common_name,local_name,family,order,max_size,habitat,iucn_status,human_use,source,water_type,region,season,temp_min,temp_max,ph_min,ph_max,stocking_density_per_ha,growth_duration_months,category,feeding_habit,market_value,is_native,data_quality,temp_avg,ph_avg,temp_range,data_source,completeness_score
+Bagarius bagarius,,Garua,Sisoridae,Siluriformes,200.0 cm,"Freshwater, Brackish",NT,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,7
+Bagarius yarrelli,,,Sisoridae,Siluriformes,200.0 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,6
+Erethistes pusillus,,Tinkantia,Sisoridae,Siluriformes,4.2 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,7
+Gagata cenia,,Jungle,Sisoridae,Siluriformes,15.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,7
+Gagata gagata,,,Sisoridae,Siluriformes,31.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,6
+Gagata dolichonema,,Kaoya tengra,Sisoridae,Siluriformes,13.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,7
+Glyptothorax cavia,,Kani tengra,Sisoridae,Siluriformes,28.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,7
+Glyptothorax dikrongensis,,,Sisoridae,Siluriformes,9.4 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,6
+Glyptothorax gracilis,,,Sisoridae,Siluriformes,12.7 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,6
+Glyptothorax indicus,,Kani tengra,Sisoridae,Siluriformes,11.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,7
+Glyptothorax radiolus,,,Sisoridae,Siluriformes,11.9 cm,Freshwater,NE,Food,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,6
+Glyptothorax striatus,,,Sisoridae,Siluriformes,21.5 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,6
+Glyptothorax telchitta,,Kani tengra,Sisoridae,Siluriformes,10.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,7
+Hara hara,,Tinkata,Sisoridae,Siluriformes,13.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,7
+Hara horai,,,Sisoridae,Siluriformes,8.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,6
+Hara jerdoni,,Tinkata,Sisoridae,Siluriformes,4.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,7
+Hara koladynensis,,Tinkata,Sisoridae,Siluriformes,6.6 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,7
+Nangra assamensis,,,Sisoridae,Siluriformes,9.2 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,6
+Nangra nangra,,,Sisoridae,Siluriformes,5.5 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,6
+Pseudolaguvia ferula,,Tinkata,Sisoridae,Siluriformes,2.5 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,7
+Pseudolaguvia ferruginea,,,Sisoridae,Siluriformes,2.9 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,6
+Pseudolaguvia flavida,,,Sisoridae,Siluriformes,2.5 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,6
+Pseudolaguvia foveolata,,,Sisoridae,Siluriformes,3.0 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,6
+Pseudolaguvia ribeiroi,,,Sisoridae,Siluriformes,10.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,6
+Pseudolaguvia shawi,,Tinkata,Sisoridae,Siluriformes,3.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,7
+Sisor barakensis,,Sisor,Sisoridae,Siluriformes,,Freshwater,VU,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,6
+Sisor rabdophorus,,Sisor,Sisoridae,Siluriformes,18.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6,,,,,,,,,,,,,,,,,,auto,7

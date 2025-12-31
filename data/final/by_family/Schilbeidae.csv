@@ -1,0 +1,7 @@
+scientific_name,common_name,local_name,family,order,max_size,habitat,iucn_status,human_use,source,water_type,region,season,temp_min,temp_max,ph_min,ph_max,stocking_density_per_ha,growth_duration_months,category,feeding_habit,market_value,is_native,data_quality,temp_avg,ph_avg,temp_range,data_source,completeness_score
+Ailia coila,,Kajoli,Schilbeidae,Siluriformes,30.0 cm,"Freshwater, Brackish",NT,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,7
+Clupisoma garua,,Gharya,Schilbeidae,Siluriformes,60.9 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,7
+Clupisoma montana,,Kocha,Schilbeidae,Siluriformes,29.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,7
+Eutropiichthys murius,,Muri bacha,Schilbeidae,Siluriformes,28.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,7
+Eutropiichthys vacha,,Bacha,Schilbeidae,Siluriformes,34.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,7
+Silonia silondia,,Sillan,Schilbeidae,Siluriformes,183.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,7

@@ -1,0 +1,34 @@
+{
+  "species_to_id": {
+    "Amblypharyngodon mola": 0,
+    "Aplocheilus panchax": 1,
+    "Badis badis": 2,
+    "Bagarius bagarius": 3,
+    "Batasio batasio": 4,
+    "Catla catla": 5,
+    "Chaca chaca": 6,
+    "Channa gachua": 7,
+    "Channa punctata": 8,
+    "Channa striata": 9,
+    "Chitala chitala": 10,
+    "Cirrhinus mrigala": 11,
+    "Clarias batrachus": 12,
+    "Clarias gariepinus": 13
+  },
+  "id_to_species": {
+    "0": "Amblypharyngodon mola",
+    "1": "Aplocheilus panchax",
+    "2": "Badis badis",
+    "3": "Bagarius bagarius",
+    "4": "Batasio batasio",
+    "5": "Catla catla",
+    "6": "Chaca chaca",
+    "7": "Channa gachua",
+    "8": "Channa punctata",
+    "9": "Channa striata",
+    "10": "Chitala chitala",
+    "11": "Cirrhinus mrigala",
+    "12": "Clarias batrachus",
+    "13": "Clarias gariepinus"
+  }
+}

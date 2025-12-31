@@ -1,0 +1,16 @@
+common_name,scientific_name,family,water_type,region,season,temp_min,temp_max,ph_min,ph_max,stocking_density_per_ha,growth_duration_months,category,feeding_habit,market_value,is_native,data_quality,temp_avg,ph_avg,temp_range
+Rohu,Labeo rohita,Cyprinidae,pond,West Bengal,all_year,22,32,7.0,8.5,5000,12,major_carp,omnivore,high,True,verified,27.0,7.75,10
+Catla,Catla catla,Cyprinidae,pond,West Bengal,all_year,22,32,7.0,8.5,4000,10,major_carp,planktivore,high,True,verified,27.0,7.75,10
+Mrigal,Cirrhinus mrigala,Cyprinidae,pond,West Bengal,all_year,22,32,7.0,8.5,4000,12,major_carp,bottom_feeder,high,True,verified,27.0,7.75,10
+Silver Carp,Hypophthalmichthys molitrix,Cyprinidae,pond,West Bengal,all_year,20,30,7.0,8.5,3000,10,exotic_carp,planktivore,medium,False,verified,25.0,7.75,10
+Grass Carp,Ctenopharyngodon idella,Cyprinidae,pond,West Bengal,all_year,20,30,7.0,8.5,2000,12,exotic_carp,herbivore,medium,False,verified,25.0,7.75,10
+Common Carp,Cyprinus carpio,Cyprinidae,pond,West Bengal,all_year,15,28,6.5,8.5,3000,10,exotic_carp,omnivore,medium,False,verified,21.5,7.5,13
+Tilapia,Oreochromis niloticus,Cichlidae,pond,Pan India,all_year,22,35,6.5,8.5,8000,6,exotic,omnivore,medium,False,verified,28.5,7.5,13
+Pangasius,Pangasianodon hypophthalmus,Pangasiidae,pond,West Bengal,all_year,22,32,7.0,8.5,5000,10,catfish,omnivore,medium,False,verified,27.0,7.75,10
+Magur (Catfish),Clarias batrachus,Clariidae,pond,West Bengal,monsoon,22,32,6.5,8.5,3000,10,catfish,carnivore,high,True,verified,27.0,7.5,10
+Singhi (Catfish),Heteropneustes fossilis,Heteropneustidae,pond,West Bengal,monsoon,22,32,6.5,8.5,3000,10,catfish,carnivore,high,True,verified,27.0,7.5,10
+Channa/Murrel,Channa striata,Channidae,pond,West Bengal,all_year,20,30,6.5,8.0,2000,12,murrel,carnivore,high,True,verified,25.0,7.25,10
+Hilsa,Tenualosa ilisha,Clupeidae,river,West Bengal (Ganges),monsoon,20,30,7.0,8.0,0,12,native,planktivore,very_high,True,verified,25.0,7.5,10
+Goldfish,Carassius auratus,Cyprinidae,pond,Pan India,all_year,15,28,6.5,8.5,10000,8,ornamental,omnivore,low,False,template,21.5,7.5,13
+Koi,Cyprinus rubrofuscus,Cyprinidae,pond,Pan India,all_year,18,26,6.5,8.5,10000,12,ornamental,omnivore,medium,False,template,22.0,7.5,8
+Guppy,Poecilia reticulata,Poeciliidae,aquarium,Pan India,all_year,22,28,6.5,8.0,15000,4,ornamental,omnivore,low,False,template,25.0,7.25,6

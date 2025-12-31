@@ -1,0 +1,103 @@
+scientific_name,common_name,local_name,family,order,max_size,habitat,iucn_status,human_use,source,water_type,region,season,temp_min,temp_max,ph_min,ph_max,stocking_density_per_ha,growth_duration_months,category,feeding_habit,market_value,is_native,data_quality,temp_avg,ph_avg,temp_range,data_source,completeness_score
+Amblypharyngodon microlepis,,Mourala,Cyprinidae,Cypriniformes,10.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,7
+Amblypharyngodon mola,,Mourola,Cyprinidae,Cypriniformes,20.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,7
+Aspidoparia jaya,,,Cyprinidae,Cypriniformes,15.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,6
+Barilius barila,,Boroli,Cyprinidae,Cypriniformes,10.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,7
+Barilius barna,,Ghol,Cyprinidae,Cypriniformes,15.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,7
+Barilius bendelisis,,Joia,Cyprinidae,Cypriniformes,22.7 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_1,,,,,,,,,,,,,,,,,,auto,7
+Barilius tileo,,Boroli,Cyprinidae,Cypriniformes,30.5 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Barilius vagra,,Boroli,Cyprinidae,Cypriniformes,12.8 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Cabdio morar,,Baspati,Cyprinidae,Cypriniformes,20.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Carassius auratus,Goldfish,,Cyprinidae,,48.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,manual+auto,5
+Chela cachius,,,Cyprinidae,Cypriniformes,6.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,6
+Chela laubuca,,Dankena,Cyprinidae,Cypriniformes,7.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Cirrhinus mrigala,Mrigal,Mrigel,Cyprinidae,Cypriniformes,99.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,manual+auto,7
+Cirrhinus reba,,Bhangonbata,Cyprinidae,Cypriniformes,30.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Ctenopharyngodon idellus,,Grass carp,Cyprinidae,Cypriniformes,150 cm,Freshwater,NE,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Cyprinus carpio,Common Carp,Common carp,Cyprinidae,Cypriniformes,120 cm,"Freshwater, Brackish",VU,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,manual+auto,7
+Danio dangila,,Darikana,Cyprinidae,Cypriniformes,15.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Danio rerio,,Techokha,Cyprinidae,Cypriniformes,3.8 cm,Freshwater,NT,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Devario aequipinnatus,,Chebli,Cyprinidae,Cypriniformes,15.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Devario assamensis,,,Cyprinidae,Cypriniformes,9.0 cm,Freshwater,VU,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,6
+Devario devario,,Techokha,Cyprinidae,Cypriniformes,10.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Devario regina,,"Gharbanka
+chela",Cyprinidae,Cypriniformes,7.8 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Esomus danricus,,Dankya,Cyprinidae,Cypriniformes,13.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Garra annandalei,,,Cyprinidae,Cypriniformes,23.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,6
+Garra arupi,,,Cyprinidae,Cypriniformes,7.2 cm,Freshwater,NE,"Food,",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,6
+Garra gotyla,,Klagachhi,Cyprinidae,Cypriniformes,18.0 cm,Freshwater,VU,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Garra kempi,,Klagachhi,Cyprinidae,Cypriniformes,11.3 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Garra lamta,,Klagachhi,Cyprinidae,Cypriniformes,20.4 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Garra lissorhynchus,,,Cyprinidae,Cypriniformes,9.1 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,6
+Garra nasuta,,,Cyprinidae,Cypriniformes,20.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,6
+Garra mullya,,Mottu,Cyprinidae,Cypriniformes,17.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Catla catla,Catla,Catla,Cyprinidae,Cypriniformes,182 cm,"Freshwater, Brackish",NE,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,manual+auto,7
+Hypophthalmichthys molitrix,Silver Carp,Silver carp,Cyprinidae,Cypriniformes,105 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,manual+auto,7
+Hypophthalmichthys nobilis,,Bighead carp,Cyprinidae,Cypriniformes,146 cm,Freshwater,DD,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Labeo angra,,Kharsa,Cyprinidae,Cypriniformes,22.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Labeo bata,,Bata,Cyprinidae,Cypriniformes,61.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Labeo boga,,Bata,Cyprinidae,Cypriniformes,30.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Labeo calbasu,,Kalbose,Cyprinidae,Cypriniformes,90.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Labeo dero,,Kursha,Cyprinidae,Cypriniformes,75.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Labeo dyocheilus,,Silghorea,Cyprinidae,Cypriniformes,90.0 cm,Freshwater,VU,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Labeo fimbriatus,,,Cyprinidae,Cypriniformes,91.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,6
+Labeo gonius,,Kurechi,Cyprinidae,Cypriniformes,150.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Labeo nandina,,,Cyprinidae,Cypriniformes,81.2 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,6
+Labeo pangusia,,Utti,Cyprinidae,Cypriniformes,90.0 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Labeo rohita,Rohu,Rui,Cyprinidae,Cypriniformes,200.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,manual+auto,7
+Neolissochilus hexagonolepis,,Katli,Cyprinidae,Cypriniformes,120.0 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Neolissochilus hexastichus,,,Cyprinidae,Cypriniformes,,Freshwater,NT,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,5
+Osteobrama belangeri,,Gilachaki,Cyprinidae,Cypriniformes,38.0 cm,Freshwater,NT,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Osteobrama cotio,,Gilachaki,Cyprinidae,Cypriniformes,15.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,7
+Pethia aurea,,,Cyprinidae,Cypriniformes,2.4 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_2,,,,,,,,,,,,,,,,,,auto,6
+Pethia gelius,,Gilipunti,Cyprinidae,Cypriniformes,5.1 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,7
+Pethia guganio,,Punti,Cyprinidae,Cypriniformes,80 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,7
+Pethia phutunio,,Punti,Cyprinidae,Cypriniformes,3.5 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,7
+Pethia shalynius,,Bhusandi Punti,Cyprinidae,Cypriniformes,6.0 cm,Freshwater,VU,Food,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,7
+Pethia ticto,,Titpunti,Cyprinidae,Cypriniformes,10.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,7
+Puntius chola,,Chela Punti,Cyprinidae,Cypriniformes,15.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,7
+Puntius puntio,,Puntio Barb,Cyprinidae,Cypriniformes,7.5 cm,Freshwater,NE,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,7
+Puntius sophore,Pool Barb,Punti,Cyprinidae,Cypriniformes,20.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,7
+Puntius terio,,Teripunti,Cyprinidae,Cypriniformes,10.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,7
+Puntius vittatus,,Tor Mahasol,Cyprinidae,Cypriniformes,5.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,7
+Rasbora daniconius,,Darikana,Cyprinidae,Cypriniformes,15.0 cm,"Freshwater, Brackish",LC,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,7
+Rasbora rasbora,,Darikana,Cyprinidae,Cypriniformes,13.0 cm,"Freshwater, Brackish",LC,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,7
+Systomus clavatus,,,Cyprinidae,Cypriniformes,24.0 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,6
+Systomus sarana,,Swarna Punti,Cyprinidae,Cypriniformes,42.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,7
+Tor putitora,,Putitor,Cyprinidae,Cypriniformes,275.0 cm,Freshwater,EN,Food,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,7
+Tor tor,,Mahasol,Cyprinidae,Cypriniformes,200.0 cm,Freshwater,EN,Food,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,7
+"Pethia
+narayani",,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2016-17_table_284.csv,,,,,,,,,,,,,,,,,,auto,5
+Amblypharyngodon molla,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2016-17_table_298.csv,,,,,,,,,,,,,,,,,,auto,5
+Tor mosal,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2016-17_table_51.csv,,,,,,,,,,,,,,,,,,auto,5
+Puntius sarana,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2016-17_table_51.csv,,,,,,,,,,,,,,,,,,auto,5
+Puntius gonionotus,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2016-17_table_60.csv,,,,,,,,,,,,,,,,,,auto,5
+Tor khudree,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2016-17_table_72.csv,,,,,,,,,,,,,,,,,,auto,5
+Puntius pulchellus,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2016-17_table_72.csv,,,,,,,,,,,,,,,,,,auto,5
+Puntius javanicus,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2016-17_table_88.csv,,,,,,,,,,,,,,,,,,auto,5
+Pethia narayani,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2018-19_table_84.csv,,,,,,,,,,,,,,,,,,auto,5
+Osteobrama belangiri,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2020_table_14.csv,,,,,,,,,,,,,,,,,,auto,5
+Labeo kontius,,,Cyprinidae,Cypriniformes,,Freshwater,LC,,AnnualReport_2021_table_10.csv,,,,,,,,,,,,,,,,,,auto,5
+Ctenopharyngodon idella,Grass Carp,,Cyprinidae,,,,,,,pond,West Bengal,all_year,20,30,7.0,8.5,2000,12,exotic_carp,herbivore,medium,False,verified,25.0,7.75,10,manual+auto,2
+Cyprinus rubrofuscus,Koi,,Cyprinidae,,,,,,,pond,Pan India,all_year,18,26,6.5,8.5,10000,12,ornamental,omnivore,medium,False,template,22.0,7.5,8,manual+auto,2

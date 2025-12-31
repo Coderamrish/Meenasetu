@@ -1,0 +1,6 @@
+scientific_name,common_name,local_name,family,order,max_size,habitat,iucn_status,human_use,source,water_type,region,season,temp_min,temp_max,ph_min,ph_max,stocking_density_per_ha,growth_duration_months,category,feeding_habit,market_value,is_native,data_quality,temp_avg,ph_avg,temp_range,data_source,completeness_score
+Psilorhynchus arunachalensis,,,Psilorhynchidae,Cypriniformes,,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,5
+Psilorhynchus balitora,,Balitora,Psilorhynchidae,Cypriniformes,7.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,7
+Psilorhynchus nudithoracicus,,,Psilorhynchidae,Cypriniformes,5.8 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,6
+Psilorhynchus homaloptera,,Balitora,Psilorhynchidae,Cypriniformes,9.4 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,7
+Psilorhynchus sucatio,,Balitora,Psilorhynchidae,Cypriniformes,8.2 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_3,,,,,,,,,,,,,,,,,,auto,7

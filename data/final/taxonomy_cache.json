@@ -1,0 +1,4662 @@
+{
+  "Pisodonophis boro": [
+    "Ophichthidae",
+    "Anguilliformes"
+  ],
+  "Corica soborna": [
+    "Clupeidae",
+    "Clupeiformes"
+  ],
+  "Gonialosa manmina": [
+    "Clupeidae",
+    "Clupeiformes"
+  ],
+  "Aborichthys elongatus": [
+    "Nemacheilidae",
+    "Cypriniformes"
+  ],
+  "Aborichthys kempi": [
+    "Nemacheilidae",
+    "Cypriniformes"
+  ],
+  "Neonoemacheilus assamensis": [
+    "Nemacheilidae",
+    "Cypriniformes"
+  ],
+  "Schistura beavani": [
+    "Nemacheilidae",
+    "Cypriniformes"
+  ],
+  "Schistura fasciata": [
+    "Nemacheilidae",
+    "Cypriniformes"
+  ],
+  "Schistura multifasciata": [
+    "Nemacheilidae",
+    "Cypriniformes"
+  ],
+  "Schistura savona": [
+    "Nemacheilidae",
+    "Cypriniformes"
+  ],
+  "Schistura scaturigina": [
+    "Nemacheilidae",
+    "Cypriniformes"
+  ],
+  "Schistura tirapensis": [
+    "Nemacheilidae",
+    "Cypriniformes"
+  ],
+  "Canthophrys gongota": [
+    "Cobitidae",
+    "Cypriniformes"
+  ],
+  "Somileptes gongota": [
+    "Cobitidae",
+    "Cypriniformes"
+  ],
+  "Bangana dero": [
+    "Cyprinidae",
+    "Cypriniformes"
+  ],
+  "Chagunius chagunio": [
+    "Cyprinidae",
+    "Cypriniformes"
+  ],
+  "Crossocheilus latius": [
+    "Cyprinidae",
+    "Cypriniformes"
+  ],
+  "Cyprinion semiplotum": [
+    "Cyprinidae",
+    "Cypriniformes"
+  ],
+  "Danionella priapus": [
+    "Cyprinidae",
+    "Cypriniformes"
+  ],
+  "Laubuka laubuca": [
+    "Cyprinidae",
+    "Cypriniformes"
+  ],
+  "Megarasbora elanga": [
+    "Cyprinidae",
+    "Cypriniformes"
+  ],
+  "Raiamas bola": [
+    "Cyprinidae",
+    "Cypriniformes"
+  ],
+  "Salmophasia bacaila": [
+    "Cyprinidae",
+    "Cypriniformes"
+  ],
+  "Salmophasia horai": [
+    "Cyprinidae",
+    "Cypriniformes"
+  ],
+  "Salmophasia phulo": [
+    "Cyprinidae",
+    "Cypriniformes"
+  ],
+  "Salmophasia sardinella": [
+    "Cyprinidae",
+    "Cypriniformes"
+  ],
+  "Schizothorax richardsonii": [
+    "Cyprinidae",
+    "Cypriniformes"
+  ],
+  "Securicula gora": [
+    "Cyprinidae",
+    "Cypriniformes"
+  ],
+  "Gambusia affinis": [
+    "Poeciliidae",
+    "Cyprinodontiformes"
+  ],
+  "Rhinomugil corsula": [
+    "Mugilidae",
+    "Mugiliformes"
+  ],
+  "Sicamugil cascasia": [
+    "Mugilidae",
+    "Mugiliformes"
+  ],
+  "Datnioides polota": [
+    "Datnioididae",
+    "Perciformes"
+  ],
+  "Eleotris fusca": [
+    "Eleotridae",
+    "Perciformes"
+  ],
+  "Apocryptes bato": [
+    "Gobiidae",
+    "Perciformes"
+  ],
+  "Brachyamblyopus brachysoma": [
+    "Gobiidae",
+    "Perciformes"
+  ],
+  "Odontamblyopus rubicundus": [
+    "Gobiidae",
+    "Perciformes"
+  ],
+  "Pseudapocryptes elongatus": [
+    "Gobiidae",
+    "Perciformes"
+  ],
+  "Osphronemus goramy": [
+    "Osphronemidae",
+    "Perciformes"
+  ],
+  "Amblyceps apangi": [
+    "Amblycipitidae",
+    "Siluriformes"
+  ],
+  "Amblyceps arunchalensis": [
+    "Amblycipitidae",
+    "Siluriformes"
+  ],
+  "Amblyceps cerinum": [
+    "Amblycipitidae",
+    "Siluriformes"
+  ],
+  "Amblyceps mangois": [
+    "Amblycipitidae",
+    "Siluriformes"
+  ],
+  "Amblyceps tuberculatum": [
+    "Amblycipitidae",
+    "Siluriformes"
+  ],
+  "Arius gagora": [
+    "Ariidae",
+    "Siluriformes"
+  ],
+  "Chandramara chandramara": [
+    "Bagridae",
+    "Siluriformes"
+  ],
+  "Olyra longicaudata": [
+    "Olyridae",
+    "Siluriformes"
+  ],
+  "Chaca chaca": [
+    "Chacidae",
+    "Siluriformes"
+  ],
+  "Pterygoplichthys multiradiatus": [
+    "Loricariidae",
+    "Siluriformes"
+  ],
+  "Pangasius pangasius": [
+    "Pangasiidae",
+    "Siluriformes"
+  ],
+  "Plotosus canius": [
+    "Plotosidae",
+    "Siluriformes"
+  ],
+  "Ailiichthys punctata": [
+    "Schilbeidae",
+    "Siluriformes"
+  ],
+  "Neotropius atherinoides": [
+    "Schilbeidae",
+    "Siluriformes"
+  ],
+  "Conta pectinata": [
+    "Erethistidae",
+    "Siluriformes"
+  ],
+  "Gogangra viridescens": [
+    "Sisoridae",
+    "Siluriformes"
+  ],
+  "Pillaia indica": [
+    "Chaudhuriidae",
+    "Synbranchiformes"
+  ],
+  "Microphis cuncalus": [
+    "Syngnathidae",
+    "Syngnathiformes"
+  ],
+  "Microphis deocata": [
+    "Syngnathidae",
+    "Syngnathiformes"
+  ],
+  "Leiodon cutcutia": [
+    "Tetraodontidae",
+    "Tetraodontiformes"
+  ],
+  "Tetraodon fluviatilis": [
+    "Tetraodontidae",
+    "Tetraodontiformes"
+  ],
+  "Mishra et": [
+    null,
+    null
+  ],
+  "Tributaries of": [
+    null,
+    null
+  ],
+  "Bhakta and": [
+    null,
+    null
+  ],
+  "River at": [
+    null,
+    null
+  ],
+  "Ten perennial": [
+    null,
+    null
+  ],
+  "Chakraborty and": [
+    null,
+    null
+  ],
+  "Major rivers": [
+    "Dolichopodidae",
+    "Diptera"
+  ],
+  "Patra and": [
+    null,
+    null
+  ],
+  "Karala river": [
+    null,
+    null
+  ],
+  "Patra et": [
+    null,
+    null
+  ],
+  "Saha and": [
+    null,
+    null
+  ],
+  "Burdwan district": [
+    null,
+    null
+  ],
+  "Bandyopadhyay and": [
+    null,
+    null
+  ],
+  "Sankosh rivers": [
+    null,
+    null
+  ],
+  "Bera et": [
+    null,
+    null
+  ],
+  "Reservoir in": [
+    null,
+    null
+  ],
+  "Kundu et": [
+    null,
+    null
+  ],
+  "Tangon and": [
+    null,
+    null
+  ],
+  "Mahapatra and": [
+    null,
+    null
+  ],
+  "Wetlands in": [
+    null,
+    null
+  ],
+  "Dey et": [
+    null,
+    null
+  ],
+  "Ghargharia river": [
+    null,
+    null
+  ],
+  "Kaljani in": [
+    null,
+    null
+  ],
+  "Dubey et": [
+    null,
+    null
+  ],
+  "Parganas district": [
+    null,
+    null
+  ],
+  "Mondal and": [
+    null,
+    null
+  ],
+  "Dams and": [
+    null,
+    null
+  ],
+  "Nath and": [
+    null,
+    null
+  ],
+  "River stretch": [
+    null,
+    null
+  ],
+  "Creek loach": [
+    null,
+    null
+  ],
+  "Ladder loach": [
+    null,
+    null
+  ],
+  "Ghor poia": [
+    null,
+    null
+  ],
+  "Grass carp": [
+    null,
+    null
+  ],
+  "Chepti puthi": [
+    null,
+    null
+  ],
+  "Common carp": [
+    null,
+    null
+  ],
+  "Gharbanka\nchela": [
+    null,
+    null
+  ],
+  "Silver carp": [
+    null,
+    null
+  ],
+  "Bighead carp": [
+    null,
+    null
+  ],
+  "Gang magur": [
+    null,
+    null
+  ],
+  "Golsha tengra": [
+    null,
+    null
+  ],
+  "Thai magur": [
+    null,
+    null
+  ],
+  "African pangus": [
+    null,
+    null
+  ],
+  "Kan magur": [
+    "SbA1",
+    "Acidobacteriales"
+  ],
+  "Muri bacha": [
+    null,
+    null
+  ],
+  "Kaoya tengra": [
+    null,
+    null
+  ],
+  "Kani tengra": [
+    "Gecarcinucidae",
+    "Decapoda"
+  ],
+  "Outreach activities": [
+    null,
+    null
+  ],
+  "Training programmes": [
+    null,
+    null
+  ],
+  "Manpower development": [
+    null,
+    null
+  ],
+  "Workshops organized": [
+    null,
+    null
+  ],
+  "Participation in": [
+    null,
+    null
+  ],
+  "Infrastructure development": [
+    null,
+    null
+  ],
+  "Property and": [
+    null,
+    null
+  ],
+  "Aquaculture development": [
+    null,
+    null
+  ],
+  "Compared to": [
+    null,
+    null
+  ],
+  "Male sacrifice": [
+    null,
+    null
+  ],
+  "Choice of": [
+    null,
+    null
+  ],
+  "Live feed": [
+    null,
+    null
+  ],
+  "Cumbersome management": [
+    null,
+    null
+  ],
+  "Broodstock management": [
+    null,
+    null
+  ],
+  "Quick disposal": [
+    null,
+    null
+  ],
+  "Farmers need": [
+    null,
+    null
+  ],
+  "Fish can": [
+    null,
+    null
+  ],
+  "Smaller water": [
+    null,
+    null
+  ],
+  "Complete package": [
+    null,
+    null
+  ],
+  "Poorly developed": [
+    null,
+    null
+  ],
+  "Risk of": [
+    null,
+    null
+  ],
+  "Risk and": [
+    null,
+    null
+  ],
+  "Treat similar": [
+    null,
+    null
+  ],
+  "Higher investment": [
+    null,
+    null
+  ],
+  "Future strategy": [
+    null,
+    null
+  ],
+  "With water": [
+    null,
+    null
+  ],
+  "Cage mesh": [
+    null,
+    null
+  ],
+  "Weight of": [
+    null,
+    null
+  ],
+  "Stock characterization": [
+    null,
+    null
+  ],
+  "Carp breeding": [
+    null,
+    null
+  ],
+  "Basics of": [
+    null,
+    null
+  ],
+  "Nutrient management": [
+    null,
+    null
+  ],
+  "Management of": [
+    null,
+    null
+  ],
+  "Species diversification": [
+    null,
+    null
+  ],
+  "Total biomass": [
+    null,
+    null
+  ],
+  "Value added": [
+    null,
+    null
+  ],
+  "Fish meal": [
+    null,
+    null
+  ],
+  "Groundnut oil": [
+    null,
+    null
+  ],
+  "Rice bran": [
+    null,
+    null
+  ],
+  "Mannan oligosaccharide": [
+    null,
+    null
+  ],
+  "Proximate composition": [
+    null,
+    null
+  ],
+  "Crude protein": [
+    null,
+    null
+  ],
+  "Crude fiber": [
+    null,
+    null
+  ],
+  "Water quality": [
+    null,
+    null
+  ],
+  "Nitroblue tetrazolium": [
+    null,
+    null
+  ],
+  "Myeloperoxidase activity": [
+    null,
+    null
+  ],
+  "Lysozyme activity": [
+    null,
+    null
+  ],
+  "Pradesh into": [
+    null,
+    null
+  ],
+  "Upliftment of": [
+    null,
+    null
+  ],
+  "Comparative studies": [
+    null,
+    null
+  ],
+  "Telangana states": [
+    null,
+    null
+  ],
+  "Initial weight": [
+    null,
+    null
+  ],
+  "Approaches of": [
+    null,
+    null
+  ],
+  "Training on": [
+    null,
+    null
+  ],
+  "Breeding of": [
+    null,
+    null
+  ],
+  "Breeding and": [
+    null,
+    null
+  ],
+  "Programme\non": [
+    null,
+    null
+  ],
+  "Production of": [
+    null,
+    null
+  ],
+  "School on": [
+    null,
+    null
+  ],
+  "Development in": [
+    null,
+    null
+  ],
+  "Training in": [
+    null,
+    null
+  ],
+  "Advances in": [
+    null,
+    null
+  ],
+  "Farming for": [
+    null,
+    null
+  ],
+  "Pisciculture and": [
+    null,
+    null
+  ],
+  "Production and": [
+    null,
+    null
+  ],
+  "Trends in": [
+    null,
+    null
+  ],
+  "Multiple breeding": [
+    null,
+    null
+  ],
+  "College of": [
+    null,
+    null
+  ],
+  "Students of": [
+    null,
+    null
+  ],
+  "Beneficiaries under": [
+    null,
+    null
+  ],
+  "Farmers under": [
+    null,
+    null
+  ],
+  "Trainees of": [
+    null,
+    null
+  ],
+  "Students from": [
+    null,
+    null
+  ],
+  "Farmers from": [
+    null,
+    null
+  ],
+  "Day at": [
+    null,
+    null
+  ],
+  "Officers of": [
+    null,
+    null
+  ],
+  "Farmers of": [
+    null,
+    null
+  ],
+  "Skill up": [
+    null,
+    null
+  ],
+  "Fish farmers": [
+    null,
+    null
+  ],
+  "Exposure visits": [
+    null,
+    null
+  ],
+  "Bhubaneswar guided": [
+    null,
+    null
+  ],
+  "Bengal guided": [
+    null,
+    null
+  ],
+  "Odisha\nguided": [
+    "Orchidaceae",
+    "Asparagales"
+  ],
+  "Trainee from": [
+    null,
+    null
+  ],
+  "Staff of": [
+    null,
+    null
+  ],
+  "Odisha guided": [
+    "Orchidaceae",
+    "Asparagales"
+  ],
+  "Aquacu lture": [
+    null,
+    null
+  ],
+  "Students under": [
+    null,
+    null
+  ],
+  "Purpose of": [
+    null,
+    null
+  ],
+  "Sewage fed": [
+    null,
+    null
+  ],
+  "Group visits": [
+    null,
+    null
+  ],
+  "Date of": [
+    null,
+    null
+  ],
+  "University of": [
+    null,
+    null
+  ],
+  "Fish and": [
+    null,
+    null
+  ],
+  "Faculty of": [
+    null,
+    null
+  ],
+  "Fishery officers": [
+    null,
+    null
+  ],
+  "Students and": [
+    null,
+    null
+  ],
+  "University\nof": [
+    null,
+    null
+  ],
+  "Officers and": [
+    null,
+    null
+  ],
+  "Extension activities": [
+    null,
+    null
+  ],
+  "Fish culture": [
+    null,
+    null
+  ],
+  "Tribal fishermen": [
+    null,
+    null
+  ],
+  "Macherla block": [
+    null,
+    null
+  ],
+  "Bhadrachalam\nblock": [
+    null,
+    null
+  ],
+  "Ornamental fish": [
+    null,
+    null
+  ],
+  "Tribal women": [
+    null,
+    null
+  ],
+  "Sarakana village": [
+    null,
+    null
+  ],
+  "Balipatna block": [
+    null,
+    null
+  ],
+  "Puri dist": [
+    "Corydalidae",
+    "Megaloptera"
+  ],
+  "Rain tree": [
+    null,
+    null
+  ],
+  "Talk on": [
+    null,
+    null
+  ],
+  "Fish feed": [
+    null,
+    null
+  ],
+  "Institutional\nconsultancy": [
+    null,
+    null
+  ],
+  "Plan\ndevelopment": [
+    null,
+    null
+  ],
+  "Fish processing": [
+    null,
+    null
+  ],
+  "Services pvt": [
+    null,
+    null
+  ],
+  "Feed plant": [
+    null,
+    null
+  ],
+  "Agrochem pvt": [
+    null,
+    null
+  ],
+  "Research\nstation": [
+    null,
+    null
+  ],
+  "Growth and": [
+    null,
+    null
+  ],
+  "Material\ntransfer": [
+    null,
+    null
+  ],
+  "Technology based": [
+    null,
+    null
+  ],
+  "Eesavyasa\ntechnologies": [
+    null,
+    null
+  ],
+  "Product testing": [
+    null,
+    null
+  ],
+  "Transfer of": [
+    null,
+    null
+  ],
+  "Spot agglutination": [
+    null,
+    null
+  ],
+  "Under process": [
+    null,
+    null
+  ],
+  "Amarpur village": [
+    null,
+    null
+  ],
+  "Aquaculture in": [
+    null,
+    null
+  ],
+  "Supplementary feeding": [
+    null,
+    null
+  ],
+  "Number of": [
+    null,
+    null
+  ],
+  "Farm trail": [
+    null,
+    null
+  ],
+  "Front line": [
+    null,
+    null
+  ],
+  "Mandatory training": [
+    null,
+    null
+  ],
+  "Sponsored trainings": [
+    null,
+    null
+  ],
+  "Significant technologies": [
+    null,
+    null
+  ],
+  "Technology assessed": [
+    null,
+    null
+  ],
+  "Technology demonstrated": [
+    null,
+    null
+  ],
+  "Crop production": [
+    null,
+    null
+  ],
+  "Scented rice": [
+    null,
+    null
+  ],
+  "Upland rice": [
+    null,
+    null
+  ],
+  "Yam in": [
+    null,
+    null
+  ],
+  "Ginger var": [
+    null,
+    null
+  ],
+  "Mixture licking": [
+    null,
+    null
+  ],
+  "Pro super": [
+    null,
+    null
+  ],
+  "Honey bee": [
+    null,
+    null
+  ],
+  "Seed source": [
+    null,
+    null
+  ],
+  "Post office": [
+    null,
+    null
+  ],
+  "For further": [
+    null,
+    null
+  ],
+  "Black gram": [
+    null,
+    null
+  ],
+  "Green gram": [
+    null,
+    null
+  ],
+  "Watermelon variety": [
+    null,
+    null
+  ],
+  "Benefic iaries": [
+    null,
+    null
+  ],
+  "Demonstration\nof": [
+    null,
+    null
+  ],
+  "Lead for": [
+    null,
+    null
+  ],
+  "Financial support": [
+    null,
+    null
+  ],
+  "Cluster\ndemonstration": [
+    null,
+    null
+  ],
+  "Supply of": [
+    null,
+    null
+  ],
+  "Interface meet": [
+    null,
+    null
+  ],
+  "Agreed to": [
+    null,
+    null
+  ],
+  "Brainstorming session": [
+    null,
+    null
+  ],
+  "State level": [
+    null,
+    null
+  ],
+  "Meeting\nfor": [
+    null,
+    null
+  ],
+  "Award from": [
+    null,
+    null
+  ],
+  "Fellow from": [
+    null,
+    null
+  ],
+  "Fellowship to": [
+    null,
+    null
+  ],
+  "Fellow of": [
+    null,
+    null
+  ],
+  "Scientist received": [
+    null,
+    null
+  ],
+  "Scheme of": [
+    null,
+    null
+  ],
+  "Awards for": [
+    null,
+    null
+  ],
+  "Consultant to": [
+    null,
+    null
+  ],
+  "Three years": [
+    null,
+    null
+  ],
+  "Bilateral research": [
+    null,
+    null
+  ],
+  "Biology and": [
+    null,
+    null
+  ],
+  "Genotypic\ntechnologies": [
+    null,
+    null
+  ],
+  "Bioinformatics in": [
+    null,
+    null
+  ],
+  "Plans and": [
+    null,
+    null
+  ],
+  "Benefits and": [
+    null,
+    null
+  ],
+  "Institute of": [
+    null,
+    null
+  ],
+  "Models in": [
+    null,
+    null
+  ],
+  "Hindi as": [
+    "Coccinellidae",
+    "Coleoptera"
+  ],
+  "Ministry of": [
+    null,
+    null
+  ],
+  "Diagnostics for": [
+    null,
+    null
+  ],
+  "Practices in": [
+    null,
+    null
+  ],
+  "Preparation of": [
+    null,
+    null
+  ],
+  "Workshop on": [
+    null,
+    null
+  ],
+  "Application of": [
+    null,
+    null
+  ],
+  "Technologies\nand": [
+    null,
+    null
+  ],
+  "Program for": [
+    null,
+    null
+  ],
+  "Programme on": [
+    null,
+    null
+  ],
+  "Course\non": [
+    null,
+    null
+  ],
+  "Scientists from": [
+    null,
+    null
+  ],
+  "Government of": [
+    null,
+    null
+  ],
+  "Management\nand": [
+    null,
+    null
+  ],
+  "Technical staffs": [
+    null,
+    null
+  ],
+  "Administrative\nstaffs": [
+    null,
+    null
+  ],
+  "Enhancing efficiency": [
+    null,
+    null
+  ],
+  "Behera\ni": [
+    null,
+    null
+  ],
+  "Visit\nto": [
+    null,
+    null
+  ],
+  "Ojha\nundicha": [
+    null,
+    null
+  ],
+  "Seminar on": [
+    null,
+    null
+  ],
+  "Meeting with": [
+    null,
+    null
+  ],
+  "Meeting on": [
+    null,
+    null
+  ],
+  "Congress on": [
+    null,
+    null
+  ],
+  "Complex for": [
+    null,
+    null
+  ],
+  "Session on": [
+    null,
+    null
+  ],
+  "Total length": [
+    null,
+    null
+  ],
+  "Average body": [
+    null,
+    null
+  ],
+  "Meeting convened": [
+    null,
+    null
+  ],
+  "Meeting of": [
+    null,
+    null
+  ],
+  "Meeting\nof": [
+    null,
+    null
+  ],
+  "Meeting between": [
+    null,
+    null
+  ],
+  "Meet on": [
+    null,
+    null
+  ],
+  "All scientists": [
+    null,
+    null
+  ],
+  "Review meeting": [
+    null,
+    null
+  ],
+  "Meeting for": [
+    null,
+    null
+  ],
+  "Demonstration on": [
+    null,
+    null
+  ],
+  "Chairman\nof": [
+    null,
+    null
+  ],
+  "Writeshop on": [
+    null,
+    null
+  ],
+  "Univeristy of": [
+    null,
+    null
+  ],
+  "Meeting to": [
+    null,
+    null
+  ],
+  "Visit and": [
+    null,
+    null
+  ],
+  "Member in": [
+    null,
+    null
+  ],
+  "Use in": [
+    null,
+    null
+  ],
+  "Workshop of": [
+    null,
+    null
+  ],
+  "Conference on": [
+    null,
+    null
+  ],
+  "Research and": [
+    null,
+    null
+  ],
+  "Bihar at": [
+    null,
+    null
+  ],
+  "Doubling of": [
+    null,
+    null
+  ],
+  "Package of": [
+    null,
+    null
+  ],
+  "Financial and": [
+    null,
+    null
+  ],
+  "Department of": [
+    null,
+    null
+  ],
+  "Novem ber": [
+    null,
+    null
+  ],
+  "Resistance for": [
+    null,
+    null
+  ],
+  "Programme of": [
+    null,
+    null
+  ],
+  "Prophylaxis in": [
+    null,
+    null
+  ],
+  "Yearly review": [
+    null,
+    null
+  ],
+  "Consultation on": [
+    null,
+    null
+  ],
+  "Joint\ncollaborative": [
+    null,
+    null
+  ],
+  "Scope of": [
+    null,
+    null
+  ],
+  "Meeting in": [
+    null,
+    null
+  ],
+  "Visit to": [
+    null,
+    null
+  ],
+  "Bidhan nagar": [
+    null,
+    null
+  ],
+  "Convocation of": [
+    null,
+    null
+  ],
+  "Vishnu educational": [
+    null,
+    null
+  ],
+  "Directors and": [
+    null,
+    null
+  ],
+  "Roadmap of": [
+    null,
+    null
+  ],
+  "Symposium on": [
+    null,
+    null
+  ],
+  "Centre for": [
+    null,
+    null
+  ],
+  "Meeting at": [
+    null,
+    null
+  ],
+  "Day of": [
+    null,
+    null
+  ],
+  "Technologies and": [
+    null,
+    null
+  ],
+  "Consultancy\nto": [
+    null,
+    null
+  ],
+  "Industry meet": [
+    null,
+    null
+  ],
+  "Priorities of": [
+    null,
+    null
+  ],
+  "Govt of": [
+    null,
+    null
+  ],
+  "College and": [
+    null,
+    null
+  ],
+  "Seminar and": [
+    null,
+    null
+  ],
+  "Institute\nof": [
+    null,
+    null
+  ],
+  "Day and": [
+    null,
+    null
+  ],
+  "Celebration and": [
+    null,
+    null
+  ],
+  "Conclave on": [
+    null,
+    null
+  ],
+  "Week organized": [
+    null,
+    null
+  ],
+  "Exhibition during": [
+    null,
+    null
+  ],
+  "Youth and": [
+    null,
+    null
+  ],
+  "Exhibition dring": [
+    null,
+    null
+  ],
+  "Allocation\ninternal": [
+    null,
+    null
+  ],
+  "Total\nallocation": [
+    null,
+    null
+  ],
+  "Retirement\nbenefits": [
+    null,
+    null
+  ],
+  "Post larvae": [
+    null,
+    null
+  ],
+  "Head of": [
+    null,
+    null
+  ],
+  "Finance and": [
+    null,
+    null
+  ],
+  "Muduli\ni": [
+    null,
+    null
+  ],
+  "Amanta\ni": [
+    "Erebidae",
+    "Lepidoptera"
+  ],
+  "Staff transferred": [
+    null,
+    null
+  ],
+  "Panda\ni": [
+    null,
+    null
+  ],
+  "Manjula\ns": [
+    null,
+    null
+  ],
+  "Jally\ni": [
+    null,
+    null
+  ],
+  "Genetic upgradation": [
+    null,
+    null
+  ],
+  "Development of": [
+    null,
+    null
+  ],
+  "Single nucleotide": [
+    null,
+    null
+  ],
+  "Jayanti rohu": [
+    null,
+    null
+  ],
+  "Selective breeding": [
+    null,
+    null
+  ],
+  "Sustainable freshwater": [
+    null,
+    null
+  ],
+  "Refinement of": [
+    null,
+    null
+  ],
+  "Scaling up": [
+    null,
+    null
+  ],
+  "Brood stock": [
+    null,
+    null
+  ],
+  "Studies on": [
+    null,
+    null
+  ],
+  "Integrated disease": [
+    null,
+    null
+  ],
+  "Characterization of": [
+    null,
+    null
+  ],
+  "Bacterial bio": [
+    null,
+    null
+  ],
+  "Neuroendocrine regulation": [
+    null,
+    null
+  ],
+  "Diversification towards": [
+    null,
+    null
+  ],
+  "Standardization of": [
+    null,
+    null
+  ],
+  "Macrobrachium rosenbergii": [
+    "Palaemonidae",
+    "Decapoda"
+  ],
+  "Litopeneus vannamei": [
+    "Penaeidae",
+    "Decapoda"
+  ],
+  "Carbon sequestration": [
+    null,
+    null
+  ],
+  "Evaluation of": [
+    null,
+    null
+  ],
+  "Nutritional intervention": [
+    null,
+    null
+  ],
+  "Study on": [
+    null,
+    null
+  ],
+  "Ontogeny of": [
+    null,
+    null
+  ],
+  "Amelioration of": [
+    null,
+    null
+  ],
+  "Fund\nfor": [
+    null,
+    null
+  ],
+  "Chattopadhy\nay": [
+    null,
+    null
+  ],
+  "Stock improvement": [
+    null,
+    null
+  ],
+  "Diversity and": [
+    null,
+    null
+  ],
+  "Whole genome": [
+    null,
+    null
+  ],
+  "National surveillance": [
+    null,
+    null
+  ],
+  "Carp seed": [
+    null,
+    null
+  ],
+  "Molecular and": [
+    null,
+    null
+  ],
+  "Network project": [
+    null,
+    null
+  ],
+  "Deciphering gene": [
+    null,
+    null
+  ],
+  "Science and": [
+    null,
+    null
+  ],
+  "Intellectual property": [
+    null,
+    null
+  ],
+  "Adaptation and": [
+    null,
+    null
+  ],
+  "Initiative on": [
+    null,
+    null
+  ],
+  "Consortia research": [
+    null,
+    null
+  ],
+  "National network": [
+    null,
+    null
+  ],
+  "Novel approaches": [
+    null,
+    null
+  ],
+  "India network": [
+    "Orchidaceae",
+    "Asparagales"
+  ],
+  "Productivity and": [
+    null,
+    null
+  ],
+  "Cryopreservation of": [
+    null,
+    null
+  ],
+  "Upgradation and": [
+    null,
+    null
+  ],
+  "Promoting improved": [
+    null,
+    null
+  ],
+  "Activities on": [
+    null,
+    null
+  ],
+  "Activity on": [
+    null,
+    null
+  ],
+  "Outreach activity": [
+    null,
+    null
+  ],
+  "Network\nmode": [
+    null,
+    null
+  ],
+  "Isolation and": [
+    null,
+    null
+  ],
+  "Science\nand": [
+    null,
+    null
+  ],
+  "Factors affecting": [
+    null,
+    null
+  ],
+  "In vitro": [
+    null,
+    null
+  ],
+  "Sea water": [
+    "Nymphalidae",
+    "Lepidoptera"
+  ],
+  "Captive breeding": [
+    null,
+    null
+  ],
+  "Initial stocking": [
+    null,
+    null
+  ],
+  "The fry": [
+    null,
+    null
+  ],
+  "Water use": [
+    null,
+    null
+  ],
+  "Institute farm": [
+    null,
+    null
+  ],
+  "Harvested body": [
+    null,
+    null
+  ],
+  "Fingerling survival": [
+    null,
+    null
+  ],
+  "Water requirement": [
+    null,
+    null
+  ],
+  "No aeration": [
+    null,
+    null
+  ],
+  "It was": [
+    null,
+    null
+  ],
+  "The study": [
+    null,
+    null
+  ],
+  "Tel river": [
+    null,
+    null
+  ],
+  "Pipili canal": [
+    null,
+    null
+  ],
+  "Mahanadi stretch": [
+    null,
+    null
+  ],
+  "Mahanadi stretches": [
+    null,
+    null
+  ],
+  "Raising of": [
+    null,
+    null
+  ],
+  "Advance fingerling": [
+    null,
+    null
+  ],
+  "External sources": [
+    null,
+    null
+  ],
+  "Externally funded": [
+    null,
+    null
+  ],
+  "Revenue generated": [
+    null,
+    null
+  ],
+  "Farm produce": [
+    null,
+    null
+  ],
+  "Sale of": [
+    null,
+    null
+  ],
+  "Licence fee": [
+    null,
+    null
+  ],
+  "Analytical testing": [
+    null,
+    null
+  ],
+  "Cost of": [
+    null,
+    null
+  ],
+  "Services render": [
+    null,
+    null
+  ],
+  "Interest on": [
+    null,
+    null
+  ],
+  "Improved catla": [
+    null,
+    null
+  ],
+  "Assembly details": [
+    null,
+    null
+  ],
+  "Largest contig": [
+    null,
+    null
+  ],
+  "Mean contig": [
+    null,
+    null
+  ],
+  "Towards enrichment": [
+    null,
+    null
+  ],
+  "Research work": [
+    null,
+    null
+  ],
+  "Molecular diagnosis": [
+    null,
+    null
+  ],
+  "Indian\neel": [
+    null,
+    null
+  ],
+  "Genome walking": [
+    null,
+    null
+  ],
+  "Directorate of": [
+    null,
+    null
+  ],
+  "Different approaches": [
+    null,
+    null
+  ],
+  "Pharmacophore\ndesign": [
+    null,
+    null
+  ],
+  "Genetic diversity": [
+    null,
+    null
+  ],
+  "Itacagagcgaagcttca\ncagtaccc": [
+    null,
+    null
+  ],
+  "Mechanism of": [
+    null,
+    null
+  ],
+  "Different transcription": [
+    null,
+    null
+  ],
+  "Staff position": [
+    null,
+    null
+  ],
+  "In position": [
+    null,
+    null
+  ],
+  "Fatty acids": [
+    null,
+    null
+  ],
+  "Ingredient compositions": [
+    null,
+    null
+  ],
+  "Til oil": [
+    null,
+    null
+  ],
+  "Mahua oil": [
+    "Hypnaceae",
+    "Hypnales"
+  ],
+  "Mustard oil": [
+    null,
+    null
+  ],
+  "Deoil rice": [
+    null,
+    null
+  ],
+  "Vegetable oil": [
+    null,
+    null
+  ],
+  "Crude fibre": [
+    null,
+    null
+  ],
+  "Total ash": [
+    null,
+    null
+  ],
+  "Ether extract": [
+    null,
+    null
+  ],
+  "Nitrogen free": [
+    null,
+    null
+  ],
+  "Spawn stage": [
+    null,
+    null
+  ],
+  "Feed intake": [
+    null,
+    null
+  ],
+  "Weight gain": [
+    null,
+    null
+  ],
+  "Rakhi kumari": [
+    null,
+    null
+  ],
+  "Fatty acid": [
+    null,
+    null
+  ],
+  "Nanoparticles used": [
+    null,
+    null
+  ],
+  "Streptococcus sp": [
+    "Streptococcaceae",
+    "Lactobacillales"
+  ],
+  "Nanoparticles synthesized": [
+    null,
+    null
+  ],
+  "Spot analysis": [
+    null,
+    null
+  ],
+  "Without top": [
+    null,
+    null
+  ],
+  "With top": [
+    null,
+    null
+  ],
+  "Metanophrys sinensis": [
+    "Orchitophryidae",
+    "Philasterida"
+  ],
+  "Parasite load": [
+    null,
+    null
+  ],
+  "Uncountable\nparasite": [
+    null,
+    null
+  ],
+  "Vaccin\nated": [
+    null,
+    null
+  ],
+  "Con\ntrol": [
+    null,
+    null
+  ],
+  "Milt volume": [
+    null,
+    null
+  ],
+  "Soybean meal": [
+    null,
+    null
+  ],
+  "Groundnut\noil": [
+    null,
+    null
+  ],
+  "Mustard\noil": [
+    null,
+    null
+  ],
+  "Sesame\noil": [
+    null,
+    null
+  ],
+  "Mahua\noil": [
+    "Hypnaceae",
+    "Hypnales"
+  ],
+  "Gross energy": [
+    null,
+    null
+  ],
+  "Final weight": [
+    null,
+    null
+  ],
+  "Intitial body": [
+    null,
+    null
+  ],
+  "Final body": [
+    null,
+    null
+  ],
+  "Survival rate": [
+    null,
+    null
+  ],
+  "Awards and": [
+    null,
+    null
+  ],
+  "Steroidal part": [
+    null,
+    null
+  ],
+  "Steroidal aglycone": [
+    null,
+    null
+  ],
+  "Aeromonas veronii": [
+    "Aeromonadaceae",
+    "Enterobacterales"
+  ],
+  "Aeromonas hydrophila": [
+    "Aeromonadaceae",
+    "Enterobacterales"
+  ],
+  "Pseudomonas aeroginosa": [
+    "Pseudomonadaceae",
+    "Pseudomonadales"
+  ],
+  "Citrobacter fruendi": [
+    "Enterobacteriaceae",
+    "Enterobacterales"
+  ],
+  "Staphylococcus sp": [
+    "Staphylococcaceae",
+    "Staphylococcales"
+  ],
+  "Enterobacter sp": [
+    "Enterobacteriaceae",
+    "Enterobacterales"
+  ],
+  "Total number": [
+    null,
+    null
+  ],
+  "Isoforms got": [
+    null,
+    null
+  ],
+  "Annotated isoforms": [
+    null,
+    null
+  ],
+  "Percentage of": [
+    null,
+    null
+  ],
+  "Mean orthogroup": [
+    null,
+    null
+  ],
+  "Median orthogroup": [
+    null,
+    null
+  ],
+  "Trading corporation": [
+    null,
+    null
+  ],
+  "Quality seed": [
+    null,
+    null
+  ],
+  "Ashirya aquaculture": [
+    null,
+    null
+  ],
+  "Aqua venture": [
+    null,
+    null
+  ],
+  "Pearl farming": [
+    null,
+    null
+  ],
+  "List of": [
+    null,
+    null
+  ],
+  "Schemes of": [
+    null,
+    null
+  ],
+  "Superannuations and": [
+    null,
+    null
+  ],
+  "Summary in": [
+    null,
+    null
+  ],
+  "Crude lipid": [
+    null,
+    null
+  ],
+  "Induced breeding": [
+    null,
+    null
+  ],
+  "International training": [
+    null,
+    null
+  ],
+  "National training": [
+    null,
+    null
+  ],
+  "Freshwater ornamental": [
+    null,
+    null
+  ],
+  "Developments in": [
+    null,
+    null
+  ],
+  "Aquaculture as": [
+    null,
+    null
+  ],
+  "Technology for": [
+    null,
+    null
+  ],
+  "Training of": [
+    null,
+    null
+  ],
+  "Recent advances": [
+    null,
+    null
+  ],
+  "Programme for": [
+    null,
+    null
+  ],
+  "Study tour": [
+    null,
+    null
+  ],
+  "Farmers and": [
+    null,
+    null
+  ],
+  "Trainees from": [
+    null,
+    null
+  ],
+  "Nutrition and": [
+    null,
+    null
+  ],
+  "Staff member": [
+    null,
+    null
+  ],
+  "Award for": [
+    null,
+    null
+  ],
+  "Extension worker": [
+    null,
+    null
+  ],
+  "Ideal pond": [
+    null,
+    null
+  ],
+  "Farm made": [
+    null,
+    null
+  ],
+  "Production in": [
+    null,
+    null
+  ],
+  "Live telecast": [
+    null,
+    null
+  ],
+  "Discussion on": [
+    null,
+    null
+  ],
+  "Machhali palan": [
+    null,
+    null
+  ],
+  "Feed to": [
+    null,
+    null
+  ],
+  "Establishment of": [
+    null,
+    null
+  ],
+  "Gauhati\nuniversity": [
+    null,
+    null
+  ],
+  "Twinning project": [
+    null,
+    null
+  ],
+  "Student training": [
+    null,
+    null
+  ],
+  "Purified recombinant": [
+    null,
+    null
+  ],
+  "Nandi et": [
+    null,
+    null
+  ],
+  "Enquires at": [
+    null,
+    null
+  ],
+  "Coordinated at": [
+    null,
+    null
+  ],
+  "Field visit": [
+    null,
+    null
+  ],
+  "Exposure visit": [
+    null,
+    null
+  ],
+  "Services rendered": [
+    null,
+    null
+  ],
+  "Recoveries of": [
+    null,
+    null
+  ],
+  "Assessment of": [
+    null,
+    null
+  ],
+  "Fruit drop": [
+    null,
+    null
+  ],
+  "Incorporation of": [
+    null,
+    null
+  ],
+  "Culture of": [
+    null,
+    null
+  ],
+  "Safe storage": [
+    null,
+    null
+  ],
+  "Sugarcane bud": [
+    null,
+    null
+  ],
+  "Management in": [
+    null,
+    null
+  ],
+  "Sweet con": [
+    null,
+    null
+  ],
+  "Management for": [
+    null,
+    null
+  ],
+  "Techniques in": [
+    null,
+    null
+  ],
+  "Kadaknath poultry": [
+    null,
+    null
+  ],
+  "Trace mineral": [
+    null,
+    null
+  ],
+  "Scientific carp": [
+    null,
+    null
+  ],
+  "Paddy straw": [
+    null,
+    null
+  ],
+  "Paddy stored": [
+    null,
+    null
+  ],
+  "Practicing farmers": [
+    null,
+    null
+  ],
+  "Extension functionaries": [
+    null,
+    null
+  ],
+  "Certificate of": [
+    null,
+    null
+  ],
+  "Society of": [
+    null,
+    null
+  ],
+  "Interaction with": [
+    null,
+    null
+  ],
+  "Training course": [
+    null,
+    null
+  ],
+  "Focal point": [
+    null,
+    null
+  ],
+  "Promotion and": [
+    null,
+    null
+  ],
+  "Creating impact": [
+    null,
+    null
+  ],
+  "Antimicrobial resistance": [
+    null,
+    null
+  ],
+  "Awareness and": [
+    null,
+    null
+  ],
+  "Specialization on": [
+    null,
+    null
+  ],
+  "Monitoring and": [
+    null,
+    null
+  ],
+  "Training programme": [
+    null,
+    null
+  ],
+  "Tool for": [
+    null,
+    null
+  ],
+  "Automation and": [
+    null,
+    null
+  ],
+  "Induction training": [
+    null,
+    null
+  ],
+  "Refresher training": [
+    null,
+    null
+  ],
+  "Niranjan\nlei": [
+    null,
+    null
+  ],
+  "Administration and": [
+    null,
+    null
+  ],
+  "Kumar\nehera": [
+    null,
+    null
+  ],
+  "Krushna\nena": [
+    null,
+    null
+  ],
+  "Ch\nhoi": [
+    null,
+    null
+  ],
+  "Selection committee": [
+    null,
+    null
+  ],
+  "Interaction meeting": [
+    null,
+    null
+  ],
+  "Committee on": [
+    null,
+    null
+  ],
+  "Signing of": [
+    null,
+    null
+  ],
+  "Advocacy meeting": [
+    null,
+    null
+  ],
+  "Site selection": [
+    "Flavobacteriaceae",
+    "Flavobacteriales"
+  ],
+  "Murshidabad\nand": [
+    null,
+    null
+  ],
+  "Viva voice": [
+    null,
+    null
+  ],
+  "Inaugural function": [
+    null,
+    null
+  ],
+  "Fish farm": [
+    null,
+    null
+  ],
+  "Committee\nmeeting": [
+    null,
+    null
+  ],
+  "Training and": [
+    null,
+    null
+  ],
+  "Cadre strength": [
+    null,
+    null
+  ],
+  "Launching workshop": [
+    null,
+    null
+  ],
+  "Body\nmeeting": [
+    null,
+    null
+  ],
+  "Guest in": [
+    null,
+    null
+  ],
+  "Inauguration of": [
+    null,
+    null
+  ],
+  "Offseason breeding": [
+    null,
+    null
+  ],
+  "Seminar focusing": [
+    null,
+    null
+  ],
+  "Board of": [
+    null,
+    null
+  ],
+  "Session of": [
+    null,
+    null
+  ],
+  "Fisheries\nand": [
+    null,
+    null
+  ],
+  "Stake holder": [
+    null,
+    null
+  ],
+  "Team of": [
+    null,
+    null
+  ],
+  "Committee meeting": [
+    null,
+    null
+  ],
+  "Workshop for": [
+    null,
+    null
+  ],
+  "Directorate\nof": [
+    null,
+    null
+  ],
+  "Observation of": [
+    null,
+    null
+  ],
+  "Advisory meeting": [
+    null,
+    null
+  ],
+  "Make in": [
+    null,
+    null
+  ],
+  "Invitation for": [
+    null,
+    null
+  ],
+  "Meet\non": [
+    null,
+    null
+  ],
+  "Aquaculture and": [
+    null,
+    null
+  ],
+  "Interactions meet": [
+    null,
+    null
+  ],
+  "Twenty third": [
+    null,
+    null
+  ],
+  "Ministry\nof": [
+    null,
+    null
+  ],
+  "New project": [
+    "Braconidae",
+    "Hymenoptera"
+  ],
+  "Mela cum": [
+    null,
+    null
+  ],
+  "External expert": [
+    null,
+    null
+  ],
+  "Expert for": [
+    null,
+    null
+  ],
+  "Awareness programme": [
+    null,
+    null
+  ],
+  "Congress of": [
+    null,
+    null
+  ],
+  "Farmers\ninteraction": [
+    null,
+    null
+  ],
+  "Conference of": [
+    null,
+    null
+  ],
+  "Acted as": [
+    null,
+    null
+  ],
+  "Fisheries and": [
+    null,
+    null
+  ],
+  "Centre of": [
+    null,
+    null
+  ],
+  "Scientific and": [
+    null,
+    null
+  ],
+  "Awareness cum": [
+    null,
+    null
+  ],
+  "Sequencing of": [
+    null,
+    null
+  ],
+  "Interactive workshop": [
+    null,
+    null
+  ],
+  "Research sub": [
+    null,
+    null
+  ],
+  "Innovations for": [
+    null,
+    null
+  ],
+  "Hindi workshop": [
+    null,
+    null
+  ],
+  "Interaction and": [
+    null,
+    null
+  ],
+  "Attended selection": [
+    null,
+    null
+  ],
+  "Consultation meet": [
+    null,
+    null
+  ],
+  "Panel on": [
+    "Combretaceae",
+    "Myrtales"
+  ],
+  "Brainstorming workshop": [
+    null,
+    null
+  ],
+  "Delivered a": [
+    null,
+    null
+  ],
+  "Mela and": [
+    null,
+    null
+  ],
+  "Annual meeting": [
+    null,
+    null
+  ],
+  "Project meeting": [
+    null,
+    null
+  ],
+  "Advisory committee": [
+    null,
+    null
+  ],
+  "First institutional": [
+    null,
+    null
+  ],
+  "Assessment committee": [
+    null,
+    null
+  ],
+  "Fair\norganized": [
+    null,
+    null
+  ],
+  "Mela of": [
+    null,
+    null
+  ],
+  "Day organized": [
+    null,
+    null
+  ],
+  "Open day": [
+    null,
+    null
+  ],
+  "Institution of": [
+    null,
+    null
+  ],
+  "Celebration of": [
+    null,
+    null
+  ],
+  "System for": [
+    null,
+    null
+  ],
+  "Mathsya mela": [
+    null,
+    null
+  ],
+  "Society for": [
+    null,
+    null
+  ],
+  "Retirement benefits": [
+    null,
+    null
+  ],
+  "Proteomic analysis": [
+    null,
+    null
+  ],
+  "Impact assessment": [
+    null,
+    null
+  ],
+  "Pilotting a": [
+    null,
+    null
+  ],
+  "Diversification in": [
+    null,
+    null
+  ],
+  "Development and": [
+    null,
+    null
+  ],
+  "Diseases of": [
+    null,
+    null
+  ],
+  "Plankton productivity": [
+    null,
+    null
+  ],
+  "Identification and": [
+    null,
+    null
+  ],
+  "Stock development": [
+    null,
+    null
+  ],
+  "Exploring ornamental": [
+    null,
+    null
+  ],
+  "Effect of": [
+    null,
+    null
+  ],
+  "Design and": [
+    null,
+    null
+  ],
+  "Protocol development": [
+    null,
+    null
+  ],
+  "Efficient use": [
+    null,
+    null
+  ],
+  "Growth performance": [
+    null,
+    null
+  ],
+  "Genetic improvement": [
+    null,
+    null
+  ],
+  "Engineering and": [
+    null,
+    null
+  ],
+  "Surveillance\nprogramme": [
+    null,
+    null
+  ],
+  "Platform\non": [
+    null,
+    null
+  ],
+  "Extn upto": [
+    null,
+    null
+  ],
+  "Sequencing\nand": [
+    null,
+    null
+  ],
+  "Agriculture and": [
+    null,
+    null
+  ],
+  "Molecular screening": [
+    null,
+    null
+  ],
+  "Value addition": [
+    null,
+    null
+  ],
+  "Genetic enhancement": [
+    null,
+    null
+  ],
+  "Network program": [
+    null,
+    null
+  ],
+  "Program on": [
+    null,
+    null
+  ],
+  "Bioprocessing of": [
+    null,
+    null
+  ],
+  "Dissemination of": [
+    null,
+    null
+  ],
+  "Demonstration of": [
+    null,
+    null
+  ],
+  "Upscaling and": [
+    null,
+    null
+  ],
+  "Capacity building": [
+    null,
+    null
+  ],
+  "Regulatory roles": [
+    null,
+    null
+  ],
+  "Program\nfor": [
+    null,
+    null
+  ],
+  "Ecological assessment": [
+    null,
+    null
+  ],
+  "Deciphering genetic": [
+    null,
+    null
+  ],
+  "Business\nand": [
+    null,
+    null
+  ],
+  "Sponsoring\nagency": [
+    null,
+    null
+  ],
+  "Developing and": [
+    null,
+    null
+  ],
+  "Consultancy service": [
+    null,
+    null
+  ],
+  "Bank\nassisted": [
+    null,
+    null
+  ],
+  "Impact of": [
+    null,
+    null
+  ],
+  "Virtual knowledge": [
+    null,
+    null
+  ],
+  "Participated on": [
+    null,
+    null
+  ],
+  "Webinar on": [
+    null,
+    null
+  ],
+  "Commission of": [
+    null,
+    null
+  ],
+  "Online meeting": [
+    null,
+    null
+  ],
+  "Tools in": [
+    null,
+    null
+  ],
+  "Virtual workshop": [
+    null,
+    null
+  ],
+  "Series on": [
+    null,
+    null
+  ],
+  "Chapter and": [
+    null,
+    null
+  ],
+  "Lecture on": [
+    null,
+    null
+  ],
+  "All staff": [
+    null,
+    null
+  ],
+  "International workshop": [
+    null,
+    null
+  ],
+  "Anniversary of": [
+    null,
+    null
+  ],
+  "Webinar participation": [
+    null,
+    null
+  ],
+  "Staff\nmembers": [
+    null,
+    null
+  ],
+  "Virtual summit": [
+    null,
+    null
+  ],
+  "Minister of": [
+    null,
+    null
+  ],
+  "Organized by": [
+    null,
+    null
+  ],
+  "Zoom meeting": [
+    null,
+    null
+  ],
+  "Webinar series": [
+    null,
+    null
+  ],
+  "Transformation of": [
+    null,
+    null
+  ],
+  "Pacific region": [
+    null,
+    null
+  ],
+  "Virtual meeting": [
+    null,
+    null
+  ],
+  "Better with": [
+    null,
+    null
+  ],
+  "Communication and": [
+    null,
+    null
+  ],
+  "Assessment and": [
+    null,
+    null
+  ],
+  "Dept of": [
+    null,
+    null
+  ],
+  "Summit of": [
+    null,
+    null
+  ],
+  "Release of": [
+    null,
+    null
+  ],
+  "Scheme under": [
+    null,
+    null
+  ],
+  "Setu\nfor": [
+    null,
+    null
+  ],
+  "Mission for": [
+    null,
+    null
+  ],
+  "Sanitation and": [
+    null,
+    null
+  ],
+  "Delivered lecture": [
+    null,
+    null
+  ],
+  "Discussion with": [
+    null,
+    null
+  ],
+  "Monthly meeting": [
+    null,
+    null
+  ],
+  "Fish on": [
+    null,
+    null
+  ],
+  "Action to": [
+    null,
+    null
+  ],
+  "Conference and": [
+    null,
+    null
+  ],
+  "Virtual rally": [
+    null,
+    null
+  ],
+  "Division of": [
+    null,
+    null
+  ],
+  "Research costing": [
+    null,
+    null
+  ],
+  "Virtual mode": [
+    null,
+    null
+  ],
+  "Days virtual": [
+    null,
+    null
+  ],
+  "Fish for": [
+    null,
+    null
+  ],
+  "Zoom webinar": [
+    null,
+    null
+  ],
+  "Webinar cum": [
+    null,
+    null
+  ],
+  "Scenario of": [
+    null,
+    null
+  ],
+  "Scientists\nand": [
+    null,
+    null
+  ],
+  "Webinar meeting": [
+    null,
+    null
+  ],
+  "Concept to": [
+    null,
+    null
+  ],
+  "All scientist": [
+    null,
+    null
+  ],
+  "Money to": [
+    null,
+    null
+  ],
+  "Launching programme": [
+    null,
+    null
+  ],
+  "Differentially expressed": [
+    null,
+    null
+  ],
+  "Implication of": [
+    null,
+    null
+  ],
+  "Enhancing larval": [
+    null,
+    null
+  ],
+  "Inducing sterility": [
+    null,
+    null
+  ],
+  "Identification of": [
+    null,
+    null
+  ],
+  "Utilisation of": [
+    null,
+    null
+  ],
+  "Exploring potential": [
+    null,
+    null
+  ],
+  "Strengthening fisheries": [
+    null,
+    null
+  ],
+  "Estimation of": [
+    null,
+    null
+  ],
+  "Investigation of": [
+    null,
+    null
+  ],
+  "Encapsulated adherent": [
+    null,
+    null
+  ],
+  "Scheme\nof": [
+    null,
+    null
+  ],
+  "Enhancing gonadal": [
+    null,
+    null
+  ],
+  "Ultra deep": [
+    null,
+    null
+  ],
+  "Fluorescent microscope": [
+    null,
+    null
+  ],
+  "System with": [
+    null,
+    null
+  ],
+  "Shaker incubator": [
+    null,
+    null
+  ],
+  "Scigenics biotech": [
+    null,
+    null
+  ],
+  "Compound microscope": [
+    null,
+    null
+  ],
+  "Ice flake": [
+    null,
+    null
+  ],
+  "Brema ice": [
+    null,
+    null
+  ],
+  "Analytical technologies": [
+    null,
+    null
+  ],
+  "Water purification": [
+    null,
+    null
+  ],
+  "Lab equipments": [
+    null,
+    null
+  ],
+  "Electrophoresis unit": [
+    null,
+    null
+  ],
+  "Automatic cell": [
+    null,
+    null
+  ],
+  "Nabi microdigital": [
+    null,
+    null
+  ],
+  "Airbreathing fishes": [
+    null,
+    null
+  ],
+  "Larvae having": [
+    null,
+    null
+  ],
+  "Shaped larvae": [
+    null,
+    null
+  ],
+  "Both valve": [
+    null,
+    null
+  ],
+  "Average size": [
+    null,
+    null
+  ],
+  "Final yield": [
+    null,
+    null
+  ],
+  "Final survival": [
+    null,
+    null
+  ],
+  "Feed given": [
+    null,
+    null
+  ],
+  "Carbon source": [
+    null,
+    null
+  ],
+  "Other operational": [
+    null,
+    null
+  ],
+  "Selling price": [
+    null,
+    null
+  ],
+  "Gross sale": [
+    null,
+    null
+  ],
+  "Length of": [
+    null,
+    null
+  ],
+  "Height of": [
+    null,
+    null
+  ],
+  "Reads\nmapped": [
+    null,
+    null
+  ],
+  "Alanine\naminotransferase": [
+    null,
+    null
+  ],
+  "Glutamate\nionotropic": [
+    null,
+    null
+  ],
+  "Aspartate\ndehydrogenase": [
+    null,
+    null
+  ],
+  "Argininosuccinate\nlyase": [
+    null,
+    null
+  ],
+  "Glutamate\ndehydrogenase": [
+    null,
+    null
+  ],
+  "Post spawning": [
+    null,
+    null
+  ],
+  "Savings of": [
+    null,
+    null
+  ],
+  "Access to": [
+    null,
+    null
+  ],
+  "Ability to": [
+    null,
+    null
+  ],
+  "Attitude towards": [
+    null,
+    null
+  ],
+  "Control over": [
+    null,
+    null
+  ],
+  "Knowledge on": [
+    null,
+    null
+  ],
+  "Pond area": [
+    null,
+    null
+  ],
+  "Mean fish": [
+    null,
+    null
+  ],
+  "Adoption level": [
+    null,
+    null
+  ],
+  "Yield gap": [
+    null,
+    null
+  ],
+  "Smart farming": [
+    null,
+    null
+  ],
+  "Techno commercial": [
+    null,
+    null
+  ],
+  "Transfer and": [
+    null,
+    null
+  ],
+  "Library and": [
+    null,
+    null
+  ],
+  "Promotion of": [
+    null,
+    null
+  ],
+  "Entrepreneurs and": [
+    null,
+    null
+  ],
+  "Video conference": [
+    null,
+    null
+  ],
+  "Exhibition on": [
+    null,
+    null
+  ],
+  "Pelleted feed": [
+    null,
+    null
+  ],
+  "Maize dust": [
+    null,
+    null
+  ],
+  "Condition\nfactor": [
+    null,
+    null
+  ],
+  "Methods\nfor": [
+    null,
+    null
+  ],
+  "Freshwater pearl": [
+    null,
+    null
+  ],
+  "Feed and": [
+    null,
+    null
+  ],
+  "Officers from": [
+    null,
+    null
+  ],
+  "Association\nof": [
+    null,
+    null
+  ],
+  "Edition of": [
+    null,
+    null
+  ],
+  "Exhibition\nand": [
+    null,
+    null
+  ],
+  "Virtual training": [
+    null,
+    null
+  ],
+  "Virtual\nplatform": [
+    null,
+    null
+  ],
+  "Bhubaneswar and": [
+    null,
+    null
+  ],
+  "Commercialization of": [
+    null,
+    null
+  ],
+  "Mutual\nagreement": [
+    null,
+    null
+  ],
+  "Banjari road": [
+    null,
+    null
+  ],
+  "Nanoplus\nfor": [
+    "Curculionidae",
+    "Coleoptera"
+  ],
+  "Discuss and": [
+    null,
+    null
+  ],
+  "Technical staff": [
+    null,
+    null
+  ],
+  "Post matriculation": [
+    null,
+    null
+  ],
+  "Telecaste in": [
+    null,
+    null
+  ],
+  "Tak on": [
+    null,
+    null
+  ],
+  "Acidic in": [
+    null,
+    null
+  ],
+  "Low to": [
+    null,
+    null
+  ],
+  "Total alkalinity": [
+    null,
+    null
+  ],
+  "Chakradharpur and": [
+    null,
+    null
+  ],
+  "Panchayat office": [
+    null,
+    null
+  ],
+  "Gangadharpur and": [
+    null,
+    null
+  ],
+  "Baburabad and": [
+    null,
+    null
+  ],
+  "Horticultural\nsaplings": [
+    null,
+    null
+  ],
+  "Deuli\nand": [
+    null,
+    null
+  ],
+  "Sunflower during": [
+    null,
+    null
+  ],
+  "Low fish": [
+    null,
+    null
+  ],
+  "Skill training": [
+    null,
+    null
+  ],
+  "Council of": [
+    null,
+    null
+  ],
+  "Name of": [
+    null,
+    null
+  ],
+  "Online training": [
+    null,
+    null
+  ],
+  "Sample preparation": [
+    null,
+    null
+  ],
+  "Accreditation of": [
+    null,
+    null
+  ],
+  "Delhi\nin": [
+    null,
+    null
+  ],
+  "Analytics in": [
+    null,
+    null
+  ],
+  "Education in": [
+    null,
+    null
+  ],
+  "Real time": [
+    null,
+    null
+  ],
+  "Climate\nchallenge": [
+    null,
+    null
+  ],
+  "Center for": [
+    null,
+    null
+  ],
+  "Designing of": [
+    null,
+    null
+  ],
+  "Genetic data": [
+    null,
+    null
+  ],
+  "Convening of": [
+    null,
+    null
+  ],
+  "Participated in": [
+    null,
+    null
+  ],
+  "District level": [
+    null,
+    null
+  ],
+  "Convention of": [
+    null,
+    null
+  ],
+  "Health and": [
+    null,
+    null
+  ],
+  "Conference\non": [
+    null,
+    null
+  ],
+  "Scientists interface": [
+    null,
+    null
+  ],
+  "Member of": [
+    null,
+    null
+  ],
+  "Conference through": [
+    null,
+    null
+  ],
+  "Webinar lecture": [
+    null,
+    null
+  ],
+  "Fish project": [
+    null,
+    null
+  ],
+  "Conference with": [
+    null,
+    null
+  ],
+  "Meeting regarding": [
+    null,
+    null
+  ],
+  "Partnership meeting": [
+    null,
+    null
+  ],
+  "Directors of": [
+    null,
+    null
+  ],
+  "Director of": [
+    null,
+    null
+  ],
+  "Web seminar": [
+    null,
+    null
+  ],
+  "Development through": [
+    null,
+    null
+  ],
+  "Meet\nthrough": [
+    null,
+    null
+  ],
+  "Advancement in": [
+    null,
+    null
+  ],
+  "Pandemics and": [
+    null,
+    null
+  ],
+  "Virtual platform": [
+    null,
+    null
+  ],
+  "Spectrum and": [
+    null,
+    null
+  ],
+  "Meeting\nthrough": [
+    null,
+    null
+  ],
+  "Veterinary and": [
+    null,
+    null
+  ],
+  "Online workshop": [
+    null,
+    null
+  ],
+  "Panellist in": [
+    null,
+    null
+  ],
+  "Sciences for": [
+    null,
+    null
+  ],
+  "Conference cum": [
+    null,
+    null
+  ],
+  "Contributions of": [
+    null,
+    null
+  ],
+  "Meeting\non": [
+    null,
+    null
+  ],
+  "Webex platform": [
+    null,
+    null
+  ],
+  "Inaugural\nlecture": [
+    null,
+    null
+  ],
+  "Better\nwith": [
+    null,
+    null
+  ],
+  "Workshop to": [
+    null,
+    null
+  ],
+  "School of": [
+    null,
+    null
+  ],
+  "Kolkata of": [
+    null,
+    null
+  ],
+  "Virtual consultation": [
+    null,
+    null
+  ],
+  "Scientists and": [
+    null,
+    null
+  ],
+  "National webinar": [
+    null,
+    null
+  ],
+  "Parasitic disease": [
+    null,
+    null
+  ],
+  "Perspectives of": [
+    null,
+    null
+  ],
+  "Ceremony of": [
+    null,
+    null
+  ],
+  "Journal of": [
+    null,
+    null
+  ],
+  "Google platform": [
+    null,
+    null
+  ],
+  "Scheme meeting": [
+    null,
+    null
+  ],
+  "Aug to": [
+    null,
+    null
+  ],
+  "Orientation to": [
+    null,
+    null
+  ],
+  "Centre\nfor": [
+    null,
+    null
+  ],
+  "Agriculture in": [
+    null,
+    null
+  ],
+  "Launch of": [
+    null,
+    null
+  ],
+  "Introductory meeting": [
+    null,
+    null
+  ],
+  "Approach for": [
+    null,
+    null
+  ],
+  "Virtual event": [
+    null,
+    null
+  ],
+  "Hypselobarbus pulchellus": [
+    "Cyprinidae",
+    "Cypriniformes"
+  ],
+  "Aste raonmd": [
+    null,
+    null
+  ],
+  "Coordinator for": [
+    null,
+    null
+  ],
+  "Omics approaches": [
+    null,
+    null
+  ],
+  "Network programme": [
+    null,
+    null
+  ],
+  "Culture in": [
+    null,
+    null
+  ],
+  "Dawkinsia\nassimilis": [
+    "Cyprinidae",
+    "Cypriniformes"
+  ],
+  "Phenotypic male": [
+    null,
+    null
+  ],
+  "Phenotypic female": [
+    null,
+    null
+  ],
+  "Berried prawns": [
+    null,
+    null
+  ],
+  "Artemia hatching": [
+    "Artemiidae",
+    "Anostraca"
+  ],
+  "Brackish water": [
+    null,
+    null
+  ],
+  "Seawater holding": [
+    null,
+    null
+  ],
+  "Initial length": [
+    null,
+    null
+  ],
+  "Final length": [
+    null,
+    null
+  ],
+  "Binding interaction": [
+    null,
+    null
+  ],
+  "Growth\nparameters": [
+    null,
+    null
+  ],
+  "Specific growth": [
+    null,
+    null
+  ],
+  "Feed conversion": [
+    null,
+    null
+  ],
+  "Protein\nefficiency": [
+    null,
+    null
+  ],
+  "Length gain": [
+    null,
+    null
+  ],
+  "Geraconvde r": [
+    null,
+    null
+  ],
+  "Increment in": [
+    null,
+    null
+  ],
+  "Dry matter": [
+    null,
+    null
+  ],
+  "Total fixed": [
+    null,
+    null
+  ],
+  "Total variable": [
+    null,
+    null
+  ],
+  "Total production": [
+    null,
+    null
+  ],
+  "Total revenue": [
+    null,
+    null
+  ],
+  "Rate of": [
+    null,
+    null
+  ],
+  "Carp hatchery": [
+    null,
+    null
+  ],
+  "Fish based": [
+    null,
+    null
+  ],
+  "Introduction of": [
+    null,
+    null
+  ],
+  "Nutri garden": [
+    null,
+    null
+  ],
+  "Disease management": [
+    null,
+    null
+  ],
+  "Enhancement in": [
+    null,
+    null
+  ],
+  "Feeds and": [
+    null,
+    null
+  ],
+  "Culture and": [
+    null,
+    null
+  ],
+  "High value": [
+    null,
+    null
+  ],
+  "Ps for": [
+    null,
+    null
+  ],
+  "Management\nkolus": [
+    null,
+    null
+  ],
+  "Seed production": [
+    null,
+    null
+  ],
+  "Culture for": [
+    null,
+    null
+  ],
+  "Program and": [
+    null,
+    null
+  ],
+  "Polyculture of": [
+    null,
+    null
+  ],
+  "Murrel and": [
+    null,
+    null
+  ],
+  "Soil and": [
+    null,
+    null
+  ],
+  "Fish species": [
+    null,
+    null
+  ],
+  "October to": [
+    null,
+    null
+  ],
+  "November to": [
+    null,
+    null
+  ],
+  "Headquarters\nand": [
+    null,
+    null
+  ],
+  "Fish disease": [
+    null,
+    null
+  ],
+  "Confederation of": [
+    null,
+    null
+  ],
+  "Stocking density": [
+    null,
+    null
+  ],
+  "Size at": [
+    null,
+    null
+  ],
+  "Yield per": [
+    null,
+    null
+  ],
+  "Sale price": [
+    null,
+    null
+  ],
+  "Input cost": [
+    null,
+    null
+  ],
+  "Stocking densi": [
+    null,
+    null
+  ],
+  "Title of": [
+    null,
+    null
+  ],
+  "Gajapati dist": [
+    null,
+    null
+  ],
+  "Distribution of": [
+    null,
+    null
+  ],
+  "Farmers scientist": [
+    null,
+    null
+  ],
+  "Fisheries\npolytechnic": [
+    null,
+    null
+  ],
+  "Farmers meet": [
+    null,
+    null
+  ],
+  "Aquaculture for": [
+    null,
+    null
+  ],
+  "Teocthanl ician": [
+    null,
+    null
+  ],
+  "Magur larval": [
+    null,
+    null
+  ],
+  "For facilitating": [
+    null,
+    null
+  ],
+  "Academic and": [
+    null,
+    null
+  ],
+  "Bhubaneswar through": [
+    null,
+    null
+  ],
+  "Providing technical": [
+    null,
+    null
+  ],
+  "Foundation seed": [
+    null,
+    null
+  ],
+  "Trade\nmark": [
+    null,
+    null
+  ],
+  "Genetics and": [
+    null,
+    null
+  ],
+  "Scientist and": [
+    null,
+    null
+  ],
+  "Live program": [
+    null,
+    null
+  ],
+  "Delhi on": [
+    null,
+    null
+  ],
+  "On farm": [
+    null,
+    null
+  ],
+  "Packing and": [
+    null,
+    null
+  ],
+  "Mahila mandal": [
+    null,
+    null
+  ],
+  "Gumma block": [
+    null,
+    null
+  ],
+  "Society in": [
+    null,
+    null
+  ],
+  "Grow out": [
+    null,
+    null
+  ],
+  "Kendrapara\nf": [
+    null,
+    null
+  ],
+  "Assessing the": [
+    null,
+    null
+  ],
+  "Coconut cultivation": [
+    null,
+    null
+  ],
+  "Improved package": [
+    null,
+    null
+  ],
+  "Teasle gourd": [
+    null,
+    null
+  ],
+  "Friends of": [
+    null,
+    null
+  ],
+  "Thesis entitled": [
+    null,
+    null
+  ],
+  "Thesis en": [
+    null,
+    null
+  ],
+  "Khorda\ndistrict": [
+    null,
+    null
+  ],
+  "Tridax procumbens": [
+    "Asteraceae",
+    "Asterales"
+  ],
+  "During the": [
+    null,
+    null
+  ],
+  "Choalen onfa": [
+    null,
+    null
+  ],
+  "Animal and": [
+    null,
+    null
+  ],
+  "Goimbepliaorna tciavtel": [
+    null,
+    null
+  ],
+  "Registration no": [
+    null,
+    null
+  ],
+  "Data analysis": [
+    "Noctuidae",
+    "Lepidoptera"
+  ],
+  "Applications in": [
+    null,
+    null
+  ],
+  "Administrative staff": [
+    null,
+    null
+  ],
+  "All the": [
+    null,
+    null
+  ],
+  "Labour at": [
+    null,
+    null
+  ],
+  "Units at": [
+    null,
+    null
+  ],
+  "Project organized": [
+    null,
+    null
+  ],
+  "Challenges\nand": [
+    null,
+    null
+  ],
+  "Interaction meet": [
+    null,
+    null
+  ],
+  "Project evaluation": [
+    null,
+    null
+  ],
+  "Third meeting": [
+    null,
+    null
+  ],
+  "Projects in": [
+    null,
+    null
+  ],
+  "Bengal\nand": [
+    null,
+    null
+  ],
+  "Chamber of": [
+    null,
+    null
+  ],
+  "Lecture delivered": [
+    null,
+    null
+  ],
+  "Network for": [
+    null,
+    null
+  ],
+  "Department\nof": [
+    null,
+    null
+  ],
+  "Value to": [
+    null,
+    null
+  ],
+  "Bhubaneswar under": [
+    null,
+    null
+  ],
+  "Water day": [
+    null,
+    null
+  ],
+  "Webinar under": [
+    null,
+    null
+  ],
+  "Avenue for": [
+    null,
+    null
+  ],
+  "Life delivered": [
+    null,
+    null
+  ],
+  "Embassy of": [
+    null,
+    null
+  ],
+  "Construction of": [
+    null,
+    null
+  ],
+  "Application to": [
+    null,
+    null
+  ],
+  "Transforming food": [
+    null,
+    null
+  ],
+  "Collaborative\nhub": [
+    null,
+    null
+  ],
+  "Environmentalist under": [
+    null,
+    null
+  ],
+  "Dedication of": [
+    null,
+    null
+  ],
+  "Chairmanship of": [
+    null,
+    null
+  ],
+  "Virtual programme": [
+    null,
+    null
+  ],
+  "Fisheries\nst": [
+    null,
+    null
+  ],
+  "Consultation meeting": [
+    null,
+    null
+  ],
+  "All scientific": [
+    null,
+    null
+  ],
+  "Fertilizers in": [
+    null,
+    null
+  ],
+  "Online lecture": [
+    null,
+    null
+  ],
+  "Expert participation": [
+    null,
+    null
+  ],
+  "Principles to": [
+    null,
+    null
+  ],
+  "Prospects of": [
+    null,
+    null
+  ],
+  "Veterinary\nand": [
+    null,
+    null
+  ],
+  "Guest of": [
+    null,
+    null
+  ],
+  "Towards new": [
+    null,
+    null
+  ],
+  "Brainstorming meeting": [
+    null,
+    null
+  ],
+  "Director and": [
+    null,
+    null
+  ],
+  "Invited lecture": [
+    null,
+    null
+  ],
+  "Sahoo and": [
+    null,
+    null
+  ],
+  "International symposium": [
+    null,
+    null
+  ],
+  "Organic fish": [
+    null,
+    null
+  ],
+  "The coastal": [
+    null,
+    null
+  ],
+  "Awareness program": [
+    null,
+    null
+  ],
+  "Invited as": [
+    null,
+    null
+  ],
+  "Course on": [
+    null,
+    null
+  ],
+  "Monitoring of": [
+    null,
+    null
+  ],
+  "Organisms and": [
+    null,
+    null
+  ],
+  "Series of": [
+    null,
+    null
+  ],
+  "Challenges in": [
+    null,
+    null
+  ],
+  "Virtually in": [
+    null,
+    null
+  ],
+  "World fish": [
+    null,
+    null
+  ],
+  "Presented an": [
+    null,
+    null
+  ],
+  "Campaign on": [
+    null,
+    null
+  ],
+  "Transformation inception": [
+    null,
+    null
+  ],
+  "Delivered an": [
+    null,
+    null
+  ],
+  "Delivered talk": [
+    null,
+    null
+  ],
+  "Chambers of": [
+    null,
+    null
+  ],
+  "Preparatory meeting": [
+    null,
+    null
+  ],
+  "Guest lecture": [
+    null,
+    null
+  ],
+  "Security in": [
+    null,
+    null
+  ],
+  "Stone laying": [
+    null,
+    null
+  ],
+  "Review and": [
+    null,
+    null
+  ],
+  "Institutes organized": [
+    null,
+    null
+  ],
+  "Participated as": [
+    null,
+    null
+  ],
+  "Institute\nfor": [
+    null,
+    null
+  ],
+  "Day workshop": [
+    null,
+    null
+  ],
+  "Reporting in": [
+    null,
+    null
+  ],
+  "Workshop and": [
+    null,
+    null
+  ],
+  "Vijayawada\nat": [
+    null,
+    null
+  ],
+  "Scientists of": [
+    null,
+    null
+  ],
+  "Introspection to": [
+    null,
+    null
+  ],
+  "Scientist of": [
+    null,
+    null
+  ],
+  "Second meeting": [
+    null,
+    null
+  ],
+  "Ningbosjialab equipments": [
+    null,
+    null
+  ],
+  "Expert member": [
+    null,
+    null
+  ],
+  "Kerala state": [
+    "Nolidae",
+    "Lepidoptera"
+  ],
+  "Week event": [
+    null,
+    null
+  ],
+  "Office for": [
+    null,
+    null
+  ],
+  "Emerging diseases": [
+    null,
+    null
+  ],
+  "Mitigation of": [
+    null,
+    null
+  ],
+  "Associated with": [
+    null,
+    null
+  ],
+  "Region as": [
+    null,
+    null
+  ],
+  "Scientists\nof": [
+    null,
+    null
+  ],
+  "Discussed with": [
+    null,
+    null
+  ],
+  "Bhubaneswar as": [
+    null,
+    null
+  ],
+  "Collaboration\nwith": [
+    null,
+    null
+  ],
+  "Valedictory function": [
+    null,
+    null
+  ],
+  "Assam on": [
+    null,
+    null
+  ],
+  "Attend one": [
+    null,
+    null
+  ],
+  "Ssttrainadtaa rdization": [
+    null,
+    null
+  ],
+  "Ashis saha": [
+    null,
+    null
+  ],
+  "Optimization of": [
+    null,
+    null
+  ],
+  "Ecological engineering": [
+    null,
+    null
+  ],
+  "Production performance": [
+    null,
+    null
+  ],
+  "Level and": [
+    null,
+    null
+  ],
+  "Engineering\nin": [
+    null,
+    null
+  ],
+  "Centre at": [
+    null,
+    null
+  ],
+  "Genetic enhance": [
+    null,
+    null
+  ],
+  "Program\non": [
+    null,
+    null
+  ],
+  "Recommended\npractice": [
+    null,
+    null
+  ]
+}

@@ -1,0 +1,27 @@
+scientific_name,common_name,local_name,family,order,max_size,habitat,iucn_status,human_use,source,water_type,region,season,temp_min,temp_max,ph_min,ph_max,stocking_density_per_ha,growth_duration_months,category,feeding_habit,market_value,is_native,data_quality,temp_avg,ph_avg,temp_range,data_source,completeness_score
+Batasio batasio,,Batasio,Bagridae,Siluriformes,10.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4,,,,,,,,,,,,,,,,,,auto,7
+Batasio merianiensis,,Batasio,Bagridae,Siluriformes,6.6 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,7
+Batasio spilurus,,,Bagridae,Siluriformes,4.2 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,6
+Batasio tengana,,Batashi,Bagridae,Siluriformes,9.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,7
+Hemibagrus menoda,,,Bagridae,Siluriformes,45.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,6
+Mystus bleekeri,,Tengra,Bagridae,Siluriformes,15.5 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,7
+Mystus carcio,,,Bagridae,Siluriformes,5.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,6
+Mystus cavasius,,Tengra,Bagridae,Siluriformes,40.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,7
+Mystus dibrugarensis,,,Bagridae,Siluriformes,,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,5
+Mystus gulio,,Golsha tengra,Bagridae,Siluriformes,46.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,7
+Mystus tengara,,Tangra,Bagridae,Siluriformes,18.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,7
+Mystus vittatus,Striped Dwarf Catfish,Tangra,Bagridae,Siluriformes,21.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,7
+Rita gogra,,,Bagridae,Siluriformes,26.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,6
+Rita rita,,Rita,Bagridae,Siluriformes,150.0 cm,"Freshwater, Brackish",LC,Ornamental,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,7
+Sperata aor,,Aar,Bagridae,Siluriformes,180 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,7
+Sperata seenghala,,Tangra,Bagridae,Siluriformes,150 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5,,,,,,,,,,,,,,,,,,auto,7
+Rita chrysea,,,Bagridae,Siluriformes,,Freshwater,LC,,AnnualReport_2016-17_table_51.csv,,,,,,,,,,,,,,,,,,auto,5
+Horabagrus brachysoma,,,Bagridae,Siluriformes,,Freshwater,LC,,AnnualReport_2016-17_table_72.csv,,,,,,,,,,,,,,,,,,auto,5
+Mystus aor,,,Bagridae,Siluriformes,,Freshwater,LC,,AnnualReport_2016-17_table_72.csv,,,,,,,,,,,,,,,,,,auto,5

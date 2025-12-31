@@ -1,0 +1,243 @@
+scientific_name,common_name,local_name,family,order,max_size,habitat,iucn_status,human_use,source
+Anguilla bengalensis,Indian Mottled Eel,Ban,Anguillidae,Anguilliformes,200 cm,"Freshwater, Brackish",NT,Food,WB_Fish_Diversity_table_1
+Monopterus cuchia,,Kuchia,Synbranchidae,Synbranchiformes,70 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_1
+Xenentodon cancila,Freshwater Garfish,Kakia,Belonidae,Beloniformes,40 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_1
+Gudusia chapra,,Khaira,Pristigasteridae,Clupeiformes,20 cm,"Freshwater, Brackish",EN,Food,WB_Fish_Diversity_table_1
+Gudusia variegata,,Khoira,Pristigasteridae,Clupeiformes,16 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_1
+Tenualosa ilisha,,Ilishmach,Clupeidae,Clupeiformes,60 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_1
+Tenualosa toil,,Chandan Ilish,Clupeidae,Clupeiformes,60 cm,"Freshwater, Brackish",NE,Food,WB_Fish_Diversity_table_1
+Setipinna phasa,,Phesa,Engraulidae,Clupeiformes,40.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_1
+Setipinna taty,,Phansa,Engraulidae,Clupeiformes,15.3 cm,"Freshwater, Brackish",NE,Food,WB_Fish_Diversity_table_1
+Acanthocobitis botia,,Natwa,Cobitidae,Cypriniformes,11.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1
+Balitora brucei,,Balitora,Balitoridae,Cypriniformes,10.5 cm,Freshwater,NT,Ornamental,WB_Fish_Diversity_table_1
+Nemacheilus corica,,Koirka,Cobitidae,Cypriniformes,4.2 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1
+Botia almorhae,,Lohachata,Botiidae,Cypriniformes,15.5 cm,Freshwater,EN,Ornamental,WB_Fish_Diversity_table_1
+Botia birdi,,Loach,Botiidae,Cypriniformes,18.6 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_1
+Botia dario,,Betrongi,Botiidae,Cypriniformes,15.1 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_1
+Botia lohachata,,Lohachata,Botiidae,Cypriniformes,11.0 cm,Freshwater,EN,Ornamental,WB_Fish_Diversity_table_1
+Botia histrionic,,Lohachata,Botiidae,Cypriniformes,11.7 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1
+Botia rostrata,,Ladder loach,Botiidae,Cypriniformes,25.0 cm,Freshwater,VU,Ornamental,WB_Fish_Diversity_table_1
+Lepidocephalichthys annandalei,,,Cobitidae,Cypriniformes,4.3 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1
+Lepidocephalichthys berdmorei,,Gutum,Cobitidae,Cypriniformes,8.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1
+Lepidocephalichthys goalparensis,,,Cobitidae,Cypriniformes,4.4 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1
+Lepidocephalichthys guntea,,Guntey,Cobitidae,Cypriniformes,15.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_1
+Lepidocephalichthys irrorata,,,Cobitidae,Cypriniformes,34.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1
+Lepidocephalichthys manipurensis,,Gutum,Cobitidae,Cypriniformes,56.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1
+Pangio pangio,,Daria,Cobitidae,Cypriniformes,6.5 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1
+Amblypharyngodon microlepis,,Mourala,Cyprinidae,Cypriniformes,10.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_1
+Amblypharyngodon mola,,Mourola,Cyprinidae,Cypriniformes,20.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_1
+Aspidoparia jaya,,,Cyprinidae,Cypriniformes,15.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_1
+Barilius barila,,Boroli,Cyprinidae,Cypriniformes,10.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_1
+Barilius barna,,Ghol,Cyprinidae,Cypriniformes,15.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_1
+Barilius bendelisis,,Joia,Cyprinidae,Cypriniformes,22.7 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_1
+Barilius tileo,,Boroli,Cyprinidae,Cypriniformes,30.5 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2
+Barilius vagra,,Boroli,Cyprinidae,Cypriniformes,12.8 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2
+Cabdio morar,,Baspati,Cyprinidae,Cypriniformes,20.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2
+Chela cachius,,,Cyprinidae,Cypriniformes,6.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2
+Chela laubuca,,Dankena,Cyprinidae,Cypriniformes,7.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2
+Cirrhinus mrigala,Mrigal,Mrigel,Cyprinidae,Cypriniformes,99.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2
+Cirrhinus reba,,Bhangonbata,Cyprinidae,Cypriniformes,30.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2
+Ctenopharyngodon idellus,,Grass carp,Cyprinidae,Cypriniformes,150 cm,Freshwater,NE,Food,WB_Fish_Diversity_table_2
+Cyprinus carpio,,Common carp,Cyprinidae,Cypriniformes,120 cm,"Freshwater, Brackish",VU,Food,WB_Fish_Diversity_table_2
+Danio dangila,,Darikana,Cyprinidae,Cypriniformes,15.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2
+Danio rerio,,Techokha,Cyprinidae,Cypriniformes,3.8 cm,Freshwater,NT,Ornamental,WB_Fish_Diversity_table_2
+Devario aequipinnatus,,Chebli,Cyprinidae,Cypriniformes,15.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2
+Devario assamensis,,,Cyprinidae,Cypriniformes,9.0 cm,Freshwater,VU,Ornamental,WB_Fish_Diversity_table_2
+Devario devario,,Techokha,Cyprinidae,Cypriniformes,10.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2
+Devario regina,,"Gharbanka
+chela",Cyprinidae,Cypriniformes,7.8 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2
+Esomus danricus,,Dankya,Cyprinidae,Cypriniformes,13.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2
+Garra annandalei,,,Cyprinidae,Cypriniformes,23.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2
+Garra arupi,,,Cyprinidae,Cypriniformes,7.2 cm,Freshwater,NE,"Food,",WB_Fish_Diversity_table_2
+Garra gotyla,,Klagachhi,Cyprinidae,Cypriniformes,18.0 cm,Freshwater,VU,Food,WB_Fish_Diversity_table_2
+Garra kempi,,Klagachhi,Cyprinidae,Cypriniformes,11.3 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2
+Garra lamta,,Klagachhi,Cyprinidae,Cypriniformes,20.4 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2
+Garra lissorhynchus,,,Cyprinidae,Cypriniformes,9.1 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2
+Garra nasuta,,,Cyprinidae,Cypriniformes,20.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2
+Garra mullya,,Mottu,Cyprinidae,Cypriniformes,17.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2
+Catla catla,Catla,Catla,Cyprinidae,Cypriniformes,182 cm,"Freshwater, Brackish",NE,Food,WB_Fish_Diversity_table_2
+Hypophthalmichthys molitrix,,Silver carp,Cyprinidae,Cypriniformes,105 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_2
+Hypophthalmichthys nobilis,,Bighead carp,Cyprinidae,Cypriniformes,146 cm,Freshwater,DD,Food,WB_Fish_Diversity_table_2
+Labeo angra,,Kharsa,Cyprinidae,Cypriniformes,22.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2
+Labeo bata,,Bata,Cyprinidae,Cypriniformes,61.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2
+Labeo boga,,Bata,Cyprinidae,Cypriniformes,30.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2
+Labeo calbasu,,Kalbose,Cyprinidae,Cypriniformes,90.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2
+Labeo dero,,Kursha,Cyprinidae,Cypriniformes,75.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_2
+Labeo dyocheilus,,Silghorea,Cyprinidae,Cypriniformes,90.0 cm,Freshwater,VU,Food,WB_Fish_Diversity_table_2
+Labeo fimbriatus,,,Cyprinidae,Cypriniformes,91.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2
+Labeo gonius,,Kurechi,Cyprinidae,Cypriniformes,150.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2
+Labeo nandina,,,Cyprinidae,Cypriniformes,81.2 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_2
+Labeo pangusia,,Utti,Cyprinidae,Cypriniformes,90.0 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_2
+Labeo rohita,Rohu,Rui,Cyprinidae,Cypriniformes,200.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_2
+Neolissochilus hexagonolepis,,Katli,Cyprinidae,Cypriniformes,120.0 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_2
+Osteobrama belangeri,,Gilachaki,Cyprinidae,Cypriniformes,38.0 cm,Freshwater,NT,"Ornamental,
+Food",WB_Fish_Diversity_table_2
+Osteobrama cotio,,Gilachaki,Cyprinidae,Cypriniformes,15.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_2
+Pethia aurea,,,Cyprinidae,Cypriniformes,2.4 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_2
+Pethia gelius,,Gilipunti,Cyprinidae,Cypriniformes,5.1 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3
+Pethia guganio,,Punti,Cyprinidae,Cypriniformes,80 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_3
+Pethia phutunio,,Punti,Cyprinidae,Cypriniformes,3.5 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3
+Pethia shalynius,,Bhusandi Punti,Cyprinidae,Cypriniformes,6.0 cm,Freshwater,VU,Food,WB_Fish_Diversity_table_3
+Pethia ticto,,Titpunti,Cyprinidae,Cypriniformes,10.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3
+Puntius chola,,Chela Punti,Cyprinidae,Cypriniformes,15.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3
+Puntius puntio,,Puntio Barb,Cyprinidae,Cypriniformes,7.5 cm,Freshwater,NE,"Ornamental,
+Food",WB_Fish_Diversity_table_3
+Puntius sophore,Pool Barb,Punti,Cyprinidae,Cypriniformes,20.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3
+Puntius terio,,Teripunti,Cyprinidae,Cypriniformes,10.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3
+Puntius vittatus,,Tor Mahasol,Cyprinidae,Cypriniformes,5.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3
+Rasbora daniconius,,Darikana,Cyprinidae,Cypriniformes,15.0 cm,"Freshwater, Brackish",LC,Ornamental,WB_Fish_Diversity_table_3
+Rasbora rasbora,,Darikana,Cyprinidae,Cypriniformes,13.0 cm,"Freshwater, Brackish",LC,Ornamental,WB_Fish_Diversity_table_3
+Systomus clavatus,,,Cyprinidae,Cypriniformes,24.0 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_3
+Systomus sarana,,Swarna Punti,Cyprinidae,Cypriniformes,42.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3
+Tor putitora,,Putitor,Cyprinidae,Cypriniformes,275.0 cm,Freshwater,EN,Food,WB_Fish_Diversity_table_3
+Tor tor,,Mahasol,Cyprinidae,Cypriniformes,200.0 cm,Freshwater,EN,Food,WB_Fish_Diversity_table_3
+Psilorhynchus balitora,,Balitora,Psilorhynchidae,Cypriniformes,7.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_3
+Psilorhynchus nudithoracicus,,,Psilorhynchidae,Cypriniformes,5.8 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_3
+Psilorhynchus homaloptera,,Balitora,Psilorhynchidae,Cypriniformes,9.4 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_3
+Psilorhynchus sucatio,,Balitora,Psilorhynchidae,Cypriniformes,8.2 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_3
+Aplocheilus panchax,,Kanpona,Aplocheilidae,Cyprinodontiformes,9.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_3
+Chitala chitala,Clown Knifefish,Chital,Notopteridae,Osteoglossiformes,122.0 cm,Freshwater,NT,"Ornamental,
+Food",WB_Fish_Diversity_table_3
+Notopterus notopterus,Bronze Featherback,Pholui,Notopteridae,Osteoglossiformes,60.0 cm,"Freshwater, Brackish",NE,"Ornamental,
+Food",WB_Fish_Diversity_table_3
+Chanda nama,,Chanda,Ambassidae,Perciformes,11.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3
+Parambassis baculis,,,Ambassidae,Perciformes,5.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_3
+Parambassis lala,,,Ambassidae,Perciformes,3.9 cm,"Freshwater, Brackish",NT,Ornamental,WB_Fish_Diversity_table_3
+Parambassis ranga,,Chanda,Ambassidae,Perciformes,8.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_3
+Anabas cobojius,,,Anabantidae,Anabantiformes,30.0 cm,Freshwater,DD,Food,WB_Fish_Diversity_table_3
+Badis andrewraoi,,,Badidae,Perciformes,3.9 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_4
+Badis assamensis,,Napit,Badidae,Perciformes,6.8 cm,Freshwater,DD,"Ornamental,
+Food",WB_Fish_Diversity_table_4
+Badis autumnum,,,Badidae,Perciformes,3.6 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_4
+Badis badis,,Botkoi,Badidae,Perciformes,5.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4
+Badis kyanos,,,Badidae,Perciformes,3.5 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_4
+Badis laspiophilus,,,Badidae,Perciformes,2.1 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_4
+Badis soraya,,,Badidae,Perciformes,3.2 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_4
+Badis singenensis,,,Badidae,Perciformes,3.7 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_4
+Channa aurantimaculata,,,Channidae,Channiformes,19.1 cm,Freshwater,DD,"Ornamental,
+Food",WB_Fish_Diversity_table_4
+Channa bleheri,,Cheng,Channidae,Channiformes,13.5 cm,Freshwater,NT,"Ornamental,
+Food",WB_Fish_Diversity_table_4
+Channa gachua,,Cheng,Channidae,Channiformes,20.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4
+Channa marulius,Giant Snakehead,Sal,Channidae,Channiformes,183.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4
+Channa orientalis,,Cheng,Channidae,Channiformes,33.0 cm,"Freshwater, Brackish",NE,"Ornamental,
+Food",WB_Fish_Diversity_table_4
+Channa punctata,Spotted Snakehead,Lata,Channidae,Channiformes,31.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4
+Channa stewartii,,Tel Chang,Channidae,Channiformes,25.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_4
+Channa striata,Striped Snakehead,Sol,Channidae,Channiformes,100.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4
+Oreochromis mossambicus,,Tilapia,Cichlidae,Cichliformes,39.0 cm,"Freshwater, Brackish",NT,Food,WB_Fish_Diversity_table_4
+Oreochromis niloticus,,Nilotica,Cichlidae,Cichliformes,60.0 cm,"Freshwater, Brackish",NE,Food,WB_Fish_Diversity_table_4
+Glossogobius giuris,,Bele,Gobiidae,Gobiiformes,50.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4
+Nandus nandus,,Bheda,Nandidae,Perciformes,20.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4
+Ctenops nobilis,,Koleehona,Osphronemidae,Anabantiformes,10.5 cm,"Freshwater, Brackish",NT,"Ornamental,
+Food",WB_Fish_Diversity_table_4
+Trichogaster fasciata,,Kholse,Osphronemidae,Anabantiformes,12.5 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_4
+Trichogaster chuna,,,Osphronemidae,Anabantiformes,7.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_4
+Trichogaster lalius,,Khoira,Osphronemidae,Anabantiformes,8.8 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_4
+Trichogaster labiosa,,,Osphronemidae,Anabantiformes,9.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_4
+Batasio batasio,,Batasio,Bagridae,Siluriformes,10.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_4
+Batasio merianiensis,,Batasio,Bagridae,Siluriformes,6.6 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_5
+Batasio spilurus,,,Bagridae,Siluriformes,4.2 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_5
+Batasio tengana,,Batashi,Bagridae,Siluriformes,9.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5
+Hemibagrus menoda,,,Bagridae,Siluriformes,45.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5
+Mystus bleekeri,,Tengra,Bagridae,Siluriformes,15.5 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5
+Mystus carcio,,,Bagridae,Siluriformes,5.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_5
+Mystus cavasius,,Tengra,Bagridae,Siluriformes,40.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5
+Mystus gulio,,Golsha tengra,Bagridae,Siluriformes,46.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5
+Mystus tengara,,Tangra,Bagridae,Siluriformes,18.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5
+Mystus vittatus,Striped Dwarf Catfish,Tangra,Bagridae,Siluriformes,21.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5
+Rita gogra,,,Bagridae,Siluriformes,26.0 cm,Freshwater,LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5
+Rita rita,,Rita,Bagridae,Siluriformes,150.0 cm,"Freshwater, Brackish",LC,Ornamental,WB_Fish_Diversity_table_5
+Sperata aor,,Aar,Bagridae,Siluriformes,180 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_5
+Sperata seenghala,,Tangra,Bagridae,Siluriformes,150 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5
+Clarias batrachus,Walking Catfish,Magur,Clariidae,Siluriformes,47.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5
+Clarias gariepinus,,Thai magur,Clariidae,Siluriformes,170.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_5
+Clarias magur,,,Clariidae,Siluriformes,21.3 cm,Freshwater,EN,Food,WB_Fish_Diversity_table_5
+Heteropneustes fossilis,Stinging Catfish,Singi,Heteropneustidae,Siluriformes,30.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_5
+Ailia coila,,Kajoli,Schilbeidae,Siluriformes,30.0 cm,"Freshwater, Brackish",NT,Food,WB_Fish_Diversity_table_5
+Clupisoma garua,,Gharya,Schilbeidae,Siluriformes,60.9 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5
+Clupisoma montana,,Kocha,Schilbeidae,Siluriformes,29.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_5
+Eutropiichthys murius,,Muri bacha,Schilbeidae,Siluriformes,28.0 cm,Freshwater,LC,Food,WB_Fish_Diversity_table_5
+Eutropiichthys vacha,,Bacha,Schilbeidae,Siluriformes,34.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5
+Silonia silondia,,Sillan,Schilbeidae,Siluriformes,183.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5
+Ompok bimaculatus,,Pabda,Siluridae,Siluriformes,45.0 cm,"Freshwater, Brackish",NT,"Ornamental,
+Food",WB_Fish_Diversity_table_5
+Ompok pabda,,Pabda,Siluridae,Siluriformes,30.0 cm,Freshwater,NT,"Ornamental,
+Food",WB_Fish_Diversity_table_5
+Ompok pabo,,Pabda,Siluridae,Siluriformes,25.0 cm,Freshwater,NT,"Ornamental,
+Food",WB_Fish_Diversity_table_5
+Pterocryptis berdmorei,,,Siluridae,Siluriformes,21.4 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_5
+Wallago attu,Freshwater Shark,Boal,Siluridae,Siluriformes,240.0 cm,"Freshwater, Brackish",NT,Food,WB_Fish_Diversity_table_5
+Bagarius bagarius,,Garua,Sisoridae,Siluriformes,200.0 cm,"Freshwater, Brackish",NT,Food,WB_Fish_Diversity_table_5
+Bagarius yarrelli,,,Sisoridae,Siluriformes,200.0 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_5
+Erethistes pusillus,,Tinkantia,Sisoridae,Siluriformes,4.2 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_5
+Gagata cenia,,Jungle,Sisoridae,Siluriformes,15.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5
+Gagata gagata,,,Sisoridae,Siluriformes,31.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_5
+Gagata dolichonema,,Kaoya tengra,Sisoridae,Siluriformes,13.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6
+Glyptothorax cavia,,Kani tengra,Sisoridae,Siluriformes,28.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6
+Glyptothorax dikrongensis,,,Sisoridae,Siluriformes,9.4 cm,Freshwater,NE,Ornamental,WB_Fish_Diversity_table_6
+Glyptothorax gracilis,,,Sisoridae,Siluriformes,12.7 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_6
+Glyptothorax indicus,,Kani tengra,Sisoridae,Siluriformes,11.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6
+Glyptothorax radiolus,,,Sisoridae,Siluriformes,11.9 cm,Freshwater,NE,Food,WB_Fish_Diversity_table_6
+Glyptothorax striatus,,,Sisoridae,Siluriformes,21.5 cm,Freshwater,NT,Food,WB_Fish_Diversity_table_6
+Glyptothorax telchitta,,Kani tengra,Sisoridae,Siluriformes,10.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6
+Hara hara,,Tinkata,Sisoridae,Siluriformes,13.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6
+Hara horai,,,Sisoridae,Siluriformes,8.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6
+Hara jerdoni,,Tinkata,Sisoridae,Siluriformes,4.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6
+Hara koladynensis,,Tinkata,Sisoridae,Siluriformes,6.6 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_6
+Nangra assamensis,,,Sisoridae,Siluriformes,9.2 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6
+Nangra nangra,,,Sisoridae,Siluriformes,5.5 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6
+Pseudolaguvia ferula,,Tinkata,Sisoridae,Siluriformes,2.5 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_6
+Pseudolaguvia ferruginea,,,Sisoridae,Siluriformes,2.9 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_6
+Pseudolaguvia flavida,,,Sisoridae,Siluriformes,2.5 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_6
+Pseudolaguvia foveolata,,,Sisoridae,Siluriformes,3.0 cm,Freshwater,DD,Ornamental,WB_Fish_Diversity_table_6
+Pseudolaguvia ribeiroi,,,Sisoridae,Siluriformes,10.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6
+Pseudolaguvia shawi,,Tinkata,Sisoridae,Siluriformes,3.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6
+Sisor rabdophorus,,Sisor,Sisoridae,Siluriformes,18.0 cm,Freshwater,LC,Ornamental,WB_Fish_Diversity_table_6
+Macrognathus aculeatus,,Ban,Mastacembelidae,Synbranchiformes,38.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_6
+Macrognathus aral,,Pankal,Mastacembelidae,Synbranchiformes,63.5 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_6
+Macrognathus pancalus,Barred Spiny Eel,Pankal,Mastacembelidae,Synbranchiformes,18.0 cm,"Freshwater, Brackish",LC,"Ornamental,
+Food",WB_Fish_Diversity_table_6
+Mastacembelus armatus,Zig-zag Eel,Ban,Mastacembelidae,Synbranchiformes,90.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_6
+Monopterus albus,,,Synbranchidae,Synbranchiformes,100.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_6
+Ophisternon bengalense,,Bero,Synbranchidae,Synbranchiformes,100.0 cm,"Freshwater, Brackish",LC,Food,WB_Fish_Diversity_table_6
