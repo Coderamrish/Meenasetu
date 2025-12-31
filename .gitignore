@@ -1,0 +1,12 @@
+# Virtual Environments
+venv/
+venv-backend/
+venv-training/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# ML models
+*.pth
+training/checkpoints/
