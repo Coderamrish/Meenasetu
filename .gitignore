@@ -1,12 +1,15 @@
-# Virtual Environments
+# Virtual environments
 venv/
 venv-backend/
 venv-training/
+
+# PDFs & documents
+*.pdf
+datasets/*.pdf
 
 # Python cache
 __pycache__/
 *.pyc
 
-# ML models
+# ML models handled by LFS
 *.pth
-training/checkpoints/
