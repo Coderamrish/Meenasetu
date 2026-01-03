@@ -1,0 +1,27 @@
+# MeenaSetu AI - Frontend Dependencies
+# Python 3.10+
+
+# Core Streamlit
+streamlit==1.31.0
+
+# API Communication
+requests==2.31.0
+
+# Data Processing
+pandas==2.1.4
+numpy==1.26.3
+
+# Visualizations
+plotly==5.18.0
+
+# Image Processing
+Pillow==10.2.0
+
+# Utilities
+python-dotenv==1.0.0
+
+# Optional: For better performance
+streamlit-option-menu==0.3.12
+
+# Optional: For enhanced UI components
+streamlit-extras==0.3.6

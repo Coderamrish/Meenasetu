@@ -1,0 +1,37 @@
+{
+  "build_stats": {
+    "start_time": "2026-01-03T02:35:12.717043",
+    "end_time": "2026-01-03T02:41:50.901781",
+    "total_files": 68,
+    "total_chunks": 17649,
+    "ml_classifications": 0,
+    "duration_seconds": 398.184738
+  },
+  "loader_stats": {
+    "pdf": 0,
+    "csv": 59,
+    "json": 1433,
+    "txt": 2,
+    "images": 0,
+    "classified_images": 0,
+    "errors": 0,
+    "total_docs": 16446
+  },
+  "ml_integration": {
+    "model_loaded": true,
+    "model_path": "C:\\Users\\AMRISH\\Documents\\Meenasetu\\training\\checkpoints\\best_model.pth",
+    "device": "cpu",
+    "images_classified": 0,
+    "total_classes": 14
+  },
+  "errors": [],
+  "config": {
+    "chunk_size": 800,
+    "chunk_overlap": 100,
+    "embed_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "source_directories": [
+      "C:\\Users\\AMRISH\\Documents\\Meenasetu\\data\\final",
+      "C:\\Users\\AMRISH\\Documents\\Meenasetu\\datasets"
+    ]
+  }
+}

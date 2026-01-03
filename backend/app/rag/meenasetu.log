@@ -1,0 +1,237 @@
+2026-01-02 22:50:19,248 - __main__ - INFO - ======================================================================
+2026-01-02 22:50:19,250 - __main__ - INFO - ======================================================================
+2026-01-02 22:50:19,254 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-02 22:50:24,075 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-02 22:53:47,950 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\models\vector_db
+2026-01-02 22:53:47,950 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\uploads
+2026-01-02 22:53:47,951 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\outputs
+2026-01-02 22:53:47,951 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\cache
+2026-01-02 22:53:47,952 - __main__ - INFO - ======================================================================
+2026-01-02 22:53:47,953 - __main__ - INFO - MEENASETU AI - AQUATIC BIODIVERSITY EXPERT
+2026-01-02 22:53:47,953 - __main__ - INFO - ======================================================================
+2026-01-02 22:53:47,953 - __main__ - INFO - Document Processor initialized
+2026-01-02 22:53:47,953 - __main__ - INFO - Initializing Embedding Manager...
+2026-01-02 22:53:47,955 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-02 22:53:52,626 - __main__ - INFO - Embeddings loaded: sentence-transformers/all-MiniLM-L6-v2
+2026-01-02 22:53:52,627 - __main__ - INFO - 🗄️ Initializing Vector Database...
+2026-01-02 22:53:52,650 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-02 22:53:52,738 - __main__ - INFO - ✅ Vector DB loaded: 0 documents
+2026-01-02 22:53:52,739 - __main__ - INFO - 🤖 Initializing Groq LLM...
+2026-01-02 22:53:54,123 - __main__ - INFO - ✅ Groq LLM ready: mixtral-8x7b-32768
+2026-01-02 22:53:54,123 - __main__ - INFO - 🔗 Initializing Advanced RAG Chain...
+2026-01-02 22:53:54,124 - __main__ - INFO - 🎨 Visualization Engine initialized
+2026-01-02 22:53:54,124 - __main__ - INFO - MeenaSetu AI fully initialized and ready!
+2026-01-02 22:53:54,125 - __main__ - INFO - 📥 Uploading file: C:\Users\AMRISH\Documents\Meenasetu\backend\uploads\aquatic_species.csv
+2026-01-02 22:53:54,134 - __main__ - INFO - ✅ Loaded CSV: C:\Users\AMRISH\Documents\Meenasetu\backend\uploads\aquatic_species.csv (6 rows)
+2026-01-02 22:53:54,321 - __main__ - ERROR - ❌ Error adding documents: Expected metadata value to be a str, int, float, bool, SparseVector, or None, got ['Species', 'Habitat', 'Temperature_C', 'Production_Tons', 'Protein_Content', 'Status'] which is a list in upsert.
+
+Try filtering complex metadata from the document using langchain_community.vectorstores.utils.filter_complex_metadata.
+2026-01-02 22:53:54,321 - __main__ - INFO - ❓ Question: Hello! 👋 Can you tell me about the fish species you know about?
+2026-01-02 22:53:54,322 - __main__ - INFO - ❓ Processing query: Hello! 👋 Can you tell me about the fish species yo...
+2026-01-02 22:53:54,833 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-01-02 22:53:54,834 - __main__ - ERROR - ❌ Chain invocation error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-01-02 22:53:54,846 - __main__ - INFO - ❓ Question: Which fish species has the highest protein content and temperature requirements?
+2026-01-02 22:53:54,847 - __main__ - INFO - ❓ Processing query: Which fish species has the highest protein content...
+2026-01-02 22:53:54,925 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-01-02 22:53:54,926 - __main__ - ERROR - ❌ Chain invocation error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-01-02 22:53:54,937 - __main__ - INFO - ❓ Question: What is the total fish production across all species in your database?
+2026-01-02 22:53:54,938 - __main__ - INFO - ❓ Processing query: What is the total fish production across all speci...
+2026-01-02 22:53:55,026 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-01-02 22:53:55,027 - __main__ - ERROR - ❌ Chain invocation error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-01-02 22:53:55,051 - __main__ - INFO - ❓ Question: Compare the habitats and characteristics of different fish species
+2026-01-02 22:53:55,051 - __main__ - INFO - ❓ Processing query: Compare the habitats and characteristics of differ...
+2026-01-02 22:53:55,127 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-01-02 22:53:55,128 - __main__ - ERROR - ❌ Chain invocation error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-01-02 22:53:55,138 - __main__ - INFO - 📊 Generating bar visualization...
+2026-01-02 22:53:56,299 - __main__ - INFO - ✅ Plot saved: C:\Users\AMRISH\Documents\Meenasetu\backend\outputs\bar_chart_20260102_225356.png
+2026-01-02 22:53:56,300 - __main__ - INFO - 📊 Generating pie visualization...
+2026-01-02 22:58:14,076 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\models\vector_db
+2026-01-02 22:58:14,077 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\uploads
+2026-01-02 22:58:14,077 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\outputs
+2026-01-02 22:58:14,077 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\cache
+2026-01-02 22:58:14,078 - __main__ - INFO - ======================================================================
+2026-01-02 22:58:14,078 - __main__ - INFO - MEENASETU AI - AQUATIC BIODIVERSITY EXPERT
+2026-01-02 22:58:14,078 - __main__ - INFO - ======================================================================
+2026-01-02 22:58:14,078 - __main__ - INFO - Document Processor initialized
+2026-01-02 22:58:14,078 - __main__ - INFO - Initializing Embedding Manager...
+2026-01-02 22:58:14,081 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-02 22:58:18,693 - __main__ - INFO - Embeddings loaded: sentence-transformers/all-MiniLM-L6-v2
+2026-01-02 22:58:18,693 - __main__ - INFO - 🗄️ Initializing Vector Database...
+2026-01-02 22:58:18,717 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-02 22:58:18,816 - __main__ - INFO - ✅ Vector DB loaded: 0 documents
+2026-01-02 22:58:18,816 - __main__ - INFO - 🤖 Initializing Groq LLM...
+2026-01-02 22:58:20,230 - __main__ - INFO - ✅ Groq LLM ready: mixtral-8x7b-32768
+2026-01-02 22:58:20,231 - __main__ - INFO - 🔗 Initializing Advanced RAG Chain...
+2026-01-02 22:58:20,231 - __main__ - INFO - 🎨 Visualization Engine initialized
+2026-01-02 22:58:20,231 - __main__ - INFO - MeenaSetu AI fully initialized and ready!
+2026-01-02 22:58:20,232 - __main__ - INFO - 📥 Uploading file: C:\Users\AMRISH\Documents\Meenasetu\backend\uploads\aquatic_species.csv
+2026-01-02 22:58:20,241 - __main__ - INFO - Loaded CSV: C:\Users\AMRISH\Documents\Meenasetu\backend\uploads\aquatic_species.csv (6 rows)
+2026-01-02 22:58:20,383 - __main__ - ERROR - ❌ Error adding documents: 'Chroma' object has no attribute 'persist'
+2026-01-02 22:58:20,384 - __main__ - INFO - ❓ Question: Hello! 👋 Can you tell me about the fish species you know about?
+2026-01-02 22:58:20,384 - __main__ - INFO - ❓ Processing query: Hello! 👋 Can you tell me about the fish species yo...
+2026-01-02 22:58:20,646 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-01-02 22:58:20,648 - __main__ - ERROR - ❌ Chain invocation error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-01-02 22:58:20,659 - __main__ - INFO - ❓ Question: Which fish species has the highest protein content and temperature requirements?
+2026-01-02 22:58:20,659 - __main__ - INFO - ❓ Processing query: Which fish species has the highest protein content...
+2026-01-02 22:58:20,728 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-01-02 22:58:20,729 - __main__ - ERROR - ❌ Chain invocation error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-01-02 22:58:20,740 - __main__ - INFO - ❓ Question: What is the total fish production across all species in your database?
+2026-01-02 22:58:20,741 - __main__ - INFO - ❓ Processing query: What is the total fish production across all speci...
+2026-01-02 22:58:20,813 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-01-02 22:58:20,814 - __main__ - ERROR - ❌ Chain invocation error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-01-02 22:58:20,825 - __main__ - INFO - ❓ Question: Compare the habitats and characteristics of different fish species
+2026-01-02 22:58:20,825 - __main__ - INFO - ❓ Processing query: Compare the habitats and characteristics of differ...
+2026-01-02 22:58:20,895 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2026-01-02 22:58:20,895 - __main__ - ERROR - ❌ Chain invocation error: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2026-01-02 22:58:20,907 - __main__ - INFO - 📊 Generating bar visualization...
+2026-01-02 22:58:21,354 - __main__ - INFO - ✅ Plot saved: C:\Users\AMRISH\Documents\Meenasetu\backend\outputs\bar_chart_20260102_225821.png
+2026-01-02 22:58:21,355 - __main__ - INFO - 📊 Generating pie visualization...
+2026-01-02 23:04:18,829 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\models\vector_db
+2026-01-02 23:04:18,830 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\uploads
+2026-01-02 23:04:18,830 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\outputs
+2026-01-02 23:04:18,831 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\cache
+2026-01-02 23:04:18,831 - __main__ - INFO - ======================================================================
+2026-01-02 23:04:18,831 - __main__ - INFO - MEENASETU AI - AQUATIC BIODIVERSITY EXPERT
+2026-01-02 23:04:18,832 - __main__ - INFO - ======================================================================
+2026-01-02 23:04:18,832 - __main__ - INFO - Document Processor initialized
+2026-01-02 23:04:18,832 - __main__ - INFO - Initializing Embedding Manager...
+2026-01-02 23:04:18,833 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-02 23:04:23,642 - __main__ - INFO - Embeddings loaded: sentence-transformers/all-MiniLM-L6-v2
+2026-01-02 23:04:23,642 - __main__ - INFO - 🗄️ Initializing Vector Database...
+2026-01-02 23:04:23,665 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-02 23:04:23,788 - __main__ - INFO - ✅ Vector DB loaded: 4 documents
+2026-01-02 23:04:23,788 - __main__ - INFO - 🤖 Initializing Groq LLM...
+2026-01-02 23:04:25,165 - __main__ - INFO - ✅ Groq LLM ready: mixtral-8x7b-32768
+2026-01-02 23:04:25,166 - __main__ - INFO - 🔗 Initializing Advanced RAG Chain...
+2026-01-02 23:04:25,167 - __main__ - INFO - 🎨 Visualization Engine initialized
+2026-01-02 23:04:25,167 - __main__ - INFO - MeenaSetu AI fully initialized and ready!
+2026-01-02 23:04:25,167 - __main__ - INFO - 📥 Uploading file: C:\Users\AMRISH\Documents\Meenasetu\backend\uploads\aquatic_species.csv
+2026-01-02 23:04:25,176 - __main__ - INFO - Loaded CSV: C:\Users\AMRISH\Documents\Meenasetu\backend\uploads\aquatic_species.csv (6 rows)
+2026-01-02 23:04:25,259 - __main__ - INFO - Added 4 documents to vector DB
+2026-01-02 23:04:25,259 - __main__ - INFO - ❓ Question: Hello! 👋 Can you tell me about the fish species you know about?
+2026-01-02 23:04:25,259 - __main__ - INFO - ❓ Processing query: Hello! 👋 Can you tell me about the fish species yo...
+2026-01-02 23:04:25,537 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-02 23:04:25,537 - __main__ - ERROR - ❌ Chain invocation error: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-01-02 23:04:25,550 - __main__ - INFO - ❓ Question: Which fish species has the highest protein content and temperature requirements?
+2026-01-02 23:04:25,550 - __main__ - INFO - ❓ Processing query: Which fish species has the highest protein content...
+2026-01-02 23:04:25,640 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-02 23:04:25,641 - __main__ - ERROR - ❌ Chain invocation error: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-01-02 23:04:25,653 - __main__ - INFO - ❓ Question: What is the total fish production across all species in your database?
+2026-01-02 23:04:25,653 - __main__ - INFO - ❓ Processing query: What is the total fish production across all speci...
+2026-01-02 23:04:25,733 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-02 23:04:25,733 - __main__ - ERROR - ❌ Chain invocation error: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-01-02 23:04:25,744 - __main__ - INFO - ❓ Question: Compare the habitats and characteristics of different fish species
+2026-01-02 23:04:25,745 - __main__ - INFO - ❓ Processing query: Compare the habitats and characteristics of differ...
+2026-01-02 23:04:25,820 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-02 23:04:25,821 - __main__ - ERROR - ❌ Chain invocation error: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-01-02 23:04:25,833 - __main__ - INFO - Generating bar visualization...
+2026-01-02 23:04:26,294 - __main__ - INFO - ✅ Plot saved: C:\Users\AMRISH\Documents\Meenasetu\backend\outputs\bar_chart_20260102_230426.png
+2026-01-02 23:04:26,295 - __main__ - INFO - Generating pie visualization...
+2026-01-02 23:04:26,569 - __main__ - INFO - ✅ Plot saved: C:\Users\AMRISH\Documents\Meenasetu\backend\outputs\pie_chart_20260102_230426.png
+2026-01-02 23:04:26,569 - __main__ - INFO - Generating line visualization...
+2026-01-02 23:04:26,942 - __main__ - INFO - ✅ Plot saved: C:\Users\AMRISH\Documents\Meenasetu\backend\outputs\line_chart_20260102_230426.png
+2026-01-02 23:07:10,158 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\models\vector_db
+2026-01-02 23:07:10,159 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\uploads
+2026-01-02 23:07:10,159 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\outputs
+2026-01-02 23:07:10,160 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\cache
+2026-01-02 23:07:10,160 - __main__ - INFO - ======================================================================
+2026-01-02 23:07:10,160 - __main__ - INFO - MEENASETU AI - AQUATIC BIODIVERSITY EXPERT
+2026-01-02 23:07:10,160 - __main__ - INFO - ======================================================================
+2026-01-02 23:07:10,160 - __main__ - INFO - Document Processor initialized
+2026-01-02 23:07:10,161 - __main__ - INFO - Initializing Embedding Manager...
+2026-01-02 23:07:10,163 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-02 23:07:15,242 - __main__ - INFO - Embeddings loaded: sentence-transformers/all-MiniLM-L6-v2
+2026-01-02 23:07:15,242 - __main__ - INFO - 🗄️ Initializing Vector Database...
+2026-01-02 23:07:15,266 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-02 23:07:15,391 - __main__ - INFO - ✅ Vector DB loaded: 8 documents
+2026-01-02 23:07:15,391 - __main__ - INFO - 🤖 Initializing Groq LLM...
+2026-01-02 23:07:16,773 - __main__ - INFO - ✅ Groq LLM ready: llama-3.1-70b-versatile
+2026-01-02 23:07:16,773 - __main__ - INFO - 🔗 Initializing Advanced RAG Chain...
+2026-01-02 23:07:16,774 - __main__ - INFO - 🎨 Visualization Engine initialized
+2026-01-02 23:07:16,774 - __main__ - INFO - MeenaSetu AI fully initialized and ready!
+2026-01-02 23:07:16,775 - __main__ - INFO - 📥 Uploading file: C:\Users\AMRISH\Documents\Meenasetu\backend\uploads\aquatic_species.csv
+2026-01-02 23:07:16,784 - __main__ - INFO - Loaded CSV: C:\Users\AMRISH\Documents\Meenasetu\backend\uploads\aquatic_species.csv (6 rows)
+2026-01-02 23:07:16,875 - __main__ - INFO - Added 4 documents to vector DB
+2026-01-02 23:07:16,877 - __main__ - INFO - ❓ Question: Hello! 👋 Can you tell me about the fish species you know about?
+2026-01-02 23:07:16,877 - __main__ - INFO - ❓ Processing query: Hello! 👋 Can you tell me about the fish species yo...
+2026-01-02 23:07:17,131 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-02 23:07:17,132 - __main__ - ERROR - ❌ Chain invocation error: Error code: 400 - {'error': {'message': 'The model `llama-3.1-70b-versatile` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-01-02 23:07:17,143 - __main__ - INFO - ❓ Question: Which fish species has the highest protein content and temperature requirements?
+2026-01-02 23:07:17,143 - __main__ - INFO - ❓ Processing query: Which fish species has the highest protein content...
+2026-01-02 23:07:17,214 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-02 23:07:17,215 - __main__ - ERROR - ❌ Chain invocation error: Error code: 400 - {'error': {'message': 'The model `llama-3.1-70b-versatile` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-01-02 23:07:17,227 - __main__ - INFO - ❓ Question: What is the total fish production across all species in your database?
+2026-01-02 23:07:17,228 - __main__ - INFO - ❓ Processing query: What is the total fish production across all speci...
+2026-01-02 23:07:17,300 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-02 23:07:17,301 - __main__ - ERROR - ❌ Chain invocation error: Error code: 400 - {'error': {'message': 'The model `llama-3.1-70b-versatile` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-01-02 23:07:17,312 - __main__ - INFO - ❓ Question: Compare the habitats and characteristics of different fish species
+2026-01-02 23:07:17,312 - __main__ - INFO - ❓ Processing query: Compare the habitats and characteristics of differ...
+2026-01-02 23:07:17,389 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-02 23:07:17,389 - __main__ - ERROR - ❌ Chain invocation error: Error code: 400 - {'error': {'message': 'The model `llama-3.1-70b-versatile` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-01-02 23:07:17,401 - __main__ - INFO - Generating bar visualization...
+2026-01-02 23:07:17,846 - __main__ - INFO - ✅ Plot saved: C:\Users\AMRISH\Documents\Meenasetu\backend\outputs\bar_chart_20260102_230717.png
+2026-01-02 23:07:17,847 - __main__ - INFO - Generating pie visualization...
+2026-01-02 23:07:18,114 - __main__ - INFO - ✅ Plot saved: C:\Users\AMRISH\Documents\Meenasetu\backend\outputs\pie_chart_20260102_230717.png
+2026-01-02 23:07:18,114 - __main__ - INFO - Generating line visualization...
+2026-01-02 23:07:18,470 - __main__ - INFO - ✅ Plot saved: C:\Users\AMRISH\Documents\Meenasetu\backend\outputs\line_chart_20260102_230718.png
+2026-01-02 23:31:33,999 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\models\vector_db
+2026-01-02 23:31:34,000 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\uploads
+2026-01-02 23:31:34,001 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\outputs
+2026-01-02 23:31:34,001 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\cache
+2026-01-02 23:31:34,002 - __main__ - INFO - ======================================================================
+2026-01-02 23:31:34,002 - __main__ - INFO - MEENASETU AI - AQUATIC BIODIVERSITY EXPERT
+2026-01-02 23:31:34,002 - __main__ - INFO - ======================================================================
+2026-01-02 23:31:34,002 - __main__ - INFO - Document Processor initialized
+2026-01-02 23:31:34,002 - __main__ - INFO - Initializing Embedding Manager...
+2026-01-02 23:31:34,005 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-02 23:31:38,427 - __main__ - INFO - Embeddings loaded: sentence-transformers/all-MiniLM-L6-v2
+2026-01-02 23:31:38,427 - __main__ - INFO - 🗄️ Initializing Vector Database...
+2026-01-02 23:31:38,456 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-02 23:31:38,647 - __main__ - INFO - ✅ Vector DB loaded: 12 documents
+2026-01-02 23:31:38,647 - __main__ - INFO - 🤖 Initializing Groq LLM...
+2026-01-02 23:31:40,045 - __main__ - INFO - ✅ Groq LLM ready: llama-3.3-70b-versatile
+2026-01-02 23:31:40,046 - __main__ - INFO - 🔗 Initializing Advanced RAG Chain...
+2026-01-02 23:31:40,048 - __main__ - INFO - 🎨 Visualization Engine initialized
+2026-01-02 23:31:40,048 - __main__ - INFO - MeenaSetu AI fully initialized and ready!
+2026-01-02 23:31:40,049 - __main__ - INFO - 📥 Uploading file: C:\Users\AMRISH\Documents\Meenasetu\backend\uploads\aquatic_species.csv
+2026-01-02 23:31:40,069 - __main__ - INFO - Loaded CSV: C:\Users\AMRISH\Documents\Meenasetu\backend\uploads\aquatic_species.csv (6 rows)
+2026-01-02 23:31:40,265 - __main__ - INFO - Added 4 documents to vector DB
+2026-01-02 23:31:40,267 - __main__ - INFO - ❓ Question: Hello! 👋 Can you tell me about the fish species you know about?
+2026-01-02 23:31:40,267 - __main__ - INFO - ❓ Processing query: Hello! 👋 Can you tell me about the fish species yo...
+2026-01-02 23:31:41,711 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-02 23:31:41,734 - __main__ - INFO - ✅ Query processed successfully
+2026-01-02 23:31:41,746 - __main__ - INFO - ❓ Question: Which fish species has the highest protein content and temperature requirements?
+2026-01-02 23:31:41,746 - __main__ - INFO - ❓ Processing query: Which fish species has the highest protein content...
+2026-01-02 23:31:42,938 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-02 23:31:42,940 - __main__ - INFO - ✅ Query processed successfully
+2026-01-02 23:31:42,953 - __main__ - INFO - ❓ Question: What is the total fish production across all species in your database?
+2026-01-02 23:31:42,953 - __main__ - INFO - ❓ Processing query: What is the total fish production across all speci...
+2026-01-02 23:31:44,477 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-02 23:31:44,479 - __main__ - INFO - ✅ Query processed successfully
+2026-01-02 23:31:44,490 - __main__ - INFO - ❓ Question: Compare the habitats and characteristics of different fish species
+2026-01-02 23:31:44,490 - __main__ - INFO - ❓ Processing query: Compare the habitats and characteristics of differ...
+2026-01-02 23:31:45,831 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-02 23:31:45,832 - __main__ - INFO - ✅ Query processed successfully
+2026-01-02 23:31:45,843 - __main__ - INFO - Generating bar visualization...
+2026-01-02 23:31:46,350 - __main__ - INFO - ✅ Plot saved: C:\Users\AMRISH\Documents\Meenasetu\backend\outputs\bar_chart_20260102_233146.png
+2026-01-02 23:31:46,351 - __main__ - INFO - Generating pie visualization...
+2026-01-02 23:31:46,626 - __main__ - INFO - ✅ Plot saved: C:\Users\AMRISH\Documents\Meenasetu\backend\outputs\pie_chart_20260102_233146.png
+2026-01-02 23:31:46,627 - __main__ - INFO - Generating line visualization...
+2026-01-02 23:31:47,002 - __main__ - INFO - ✅ Plot saved: C:\Users\AMRISH\Documents\Meenasetu\backend\outputs\line_chart_20260102_233146.png
+2026-01-03 03:00:10,614 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\app\models\vector_db
+2026-01-03 03:00:10,615 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\app\uploads
+2026-01-03 03:00:10,616 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\app\outputs
+2026-01-03 03:00:10,616 - __main__ - INFO - ✅ Directory ready: C:\Users\AMRISH\Documents\Meenasetu\backend\app\cache
+2026-01-03 03:00:10,618 - __main__ - INFO - ======================================================================
+2026-01-03 03:00:10,618 - __main__ - INFO - 🐠 MEENASETU AI - INTELLIGENT AQUATIC BIODIVERSITY EXPERT 🐠
+2026-01-03 03:00:10,618 - __main__ - INFO - ======================================================================
+2026-01-03 03:00:10,619 - __main__ - INFO - 🤖 Initializing Fish Classification Model on cpu
+2026-01-03 03:00:10,619 - __main__ - WARNING - ⚠️ ML model not found. Image classification will use basic analysis only.
+2026-01-03 03:00:10,619 - __main__ - INFO - 📄 Document Processor initialized with ML support
+2026-01-03 03:00:10,619 - __main__ - INFO - 🧠 Initializing Embedding Manager...
+2026-01-03 03:00:10,622 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-03 03:00:16,191 - __main__ - INFO - ✅ Embeddings ready: sentence-transformers/all-MiniLM-L6-v2
+2026-01-03 03:00:16,192 - __main__ - INFO - 🗄️ Initializing Vector Database...
+2026-01-03 03:00:16,247 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-03 03:00:16,675 - __main__ - INFO - ✅ Vector DB loaded: 0 documents
+2026-01-03 03:00:16,675 - __main__ - INFO - 🤖 Initializing Groq LLM...

@@ -1,0 +1,7 @@
+Species,Scientific_Name,Habitat,Temperature_C,Production_Tons,Protein_Content,Market_Price_USD,Conservation_Status
+Catfish,Clarias,Freshwater,22,500,18.5,3.5,Stable
+Rohu,Labeo rohita,Freshwater,28,800,19.2,4.2,High Demand
+Carp,Cyprinus carpio,Freshwater,25,600,17.8,3.8,Stable
+Tilapia,Oreochromis,Freshwater,26,700,19.5,3.9,Growing
+Salmon,Salmo salar,Saltwater,8,450,21.3,12.5,Declining
+Trout,Oncorhynchus,Cold Water,12,300,20.1,9.8,Stable
