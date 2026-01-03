@@ -1,0 +1,782 @@
+2026-01-03 00:02:38,568 - INFO - 🤖 Initializing Fish Classification Model on cpu
+2026-01-03 00:02:38,568 - WARNING - ⚠️ Model not found. Image classification will use basic features only.
+2026-01-03 00:02:38,569 - INFO - ======================================================================
+2026-01-03 00:02:38,569 - INFO - 🚀 PRODUCTION VECTOR DATABASE BUILD WITH ML
+2026-01-03 00:02:38,569 - INFO - ======================================================================
+2026-01-03 00:02:38,569 - INFO - 📂 Scanning: C:\Users\AMRISH\Documents\Meenasetu\data\final
+2026-01-03 00:02:38,571 - INFO - 📂 Scanning: C:\Users\AMRISH\Documents\Meenasetu\datasets
+2026-01-03 00:02:38,575 - INFO - 📊 Found 68 files to process
+2026-01-03 00:02:38,576 - INFO - 📥 Loading documents with ML classification...
+2026-01-03 00:02:38,629 - INFO - ✅ CSV: extracted_fish_data.csv (15 rows)
+2026-01-03 00:02:38,666 - INFO - ✅ CSV: extracted_taxonomy_map.csv (261 rows)
+2026-01-03 00:02:38,710 - INFO - ✅ CSV: fish_mapping.csv (15 rows)
+2026-01-03 00:02:38,725 - INFO - ✅ JSON: fish_mapping.json (15 entries)
+2026-01-03 00:02:38,761 - INFO - ✅ CSV: fish_mapping_auto.csv (1 rows)
+2026-01-03 00:02:38,913 - INFO - ✅ CSV: fish_mapping_auto_generated.csv (1420 rows)
+2026-01-03 00:02:39,077 - INFO - ✅ CSV: fish_mapping_cleaned.csv (1415 rows)
+2026-01-03 00:02:39,114 - INFO - ✅ CSV: fish_mapping_cleaned_complete.csv (188 rows)
+2026-01-03 00:02:39,315 - INFO - ✅ CSV: fish_mapping_cleaned_final.csv (1128 rows)
+2026-01-03 00:02:39,710 - INFO - ✅ CSV: fish_mapping_enriched.csv (1417 rows)
+2026-01-03 00:02:39,804 - INFO - ✅ CSV: fish_mapping_high_quality.csv (254 rows)
+2026-01-03 00:02:40,016 - INFO - ✅ CSV: fish_mapping_local_enriched.csv (1290 rows)
+2026-01-03 00:02:40,096 - INFO - ✅ JSON: fish_mapping_master.json (1417 entries)
+2026-01-03 00:02:40,354 - INFO - ✅ CSV: fish_mapping_master_pre_local_taxonomy.csv (1417 rows)
+2026-01-03 00:02:40,578 - INFO - ✅ CSV: fish_mapping_master_v2.csv (1418 rows)
+2026-01-03 00:02:40,839 - INFO - ✅ CSV: fish_mapping_master_v3.csv (1418 rows)
+2026-01-03 00:02:40,948 - INFO - ✅ CSV: fish_mapping_production.csv (251 rows)
+2026-01-03 00:02:41,046 - INFO - ✅ CSV: fish_mapping_production_ready.csv (282 rows)
+2026-01-03 00:02:41,078 - INFO - ✅ CSV: local_taxonomy_database.csv (261 rows)
+2026-01-03 00:02:41,096 - INFO - ✅ CSV: merge_conflicts.csv (3 rows)
+2026-01-03 00:02:41,110 - INFO - ✅ JSON: taxonomy_cache.json (1 entries)
+2026-01-03 00:02:41,221 - INFO - ✅ CSV: wb_fish_diversity_combined.csv (345 rows)
+2026-01-03 00:02:41,275 - INFO - ✅ CSV: Ambassidae.csv (4 rows)
+2026-01-03 00:02:41,327 - INFO - ✅ CSV: Anabantidae.csv (2 rows)
+2026-01-03 00:02:41,376 - INFO - ✅ CSV: Anguillidae.csv (1 rows)
+2026-01-03 00:02:41,427 - INFO - ✅ CSV: Aplocheilidae.csv (1 rows)
+2026-01-03 00:02:41,481 - INFO - ✅ CSV: Badidae.csv (8 rows)
+2026-01-03 00:02:41,535 - INFO - ✅ CSV: Bagridae.csv (19 rows)
+2026-01-03 00:02:41,590 - INFO - ✅ CSV: Balitoridae.csv (1 rows)
+2026-01-03 00:02:41,643 - INFO - ✅ CSV: Belonidae.csv (1 rows)
+2026-01-03 00:02:41,698 - INFO - ✅ CSV: Botiidae.csv (6 rows)
+2026-01-03 00:02:41,757 - INFO - ✅ CSV: Channidae.csv (12 rows)
+2026-01-03 00:02:41,808 - INFO - ✅ CSV: Cichlidae.csv (3 rows)
+2026-01-03 00:02:41,857 - INFO - ✅ CSV: Clariidae.csv (4 rows)
+2026-01-03 00:02:41,913 - INFO - ✅ CSV: Clupeidae.csv (3 rows)
+2026-01-03 00:02:41,965 - INFO - ✅ CSV: Cobitidae.csv (10 rows)
+2026-01-03 00:02:42,022 - INFO - ✅ CSV: Cyprinidae.csv (79 rows)
+2026-01-03 00:02:42,074 - INFO - ✅ CSV: Engraulidae.csv (2 rows)
+2026-01-03 00:02:42,125 - INFO - ✅ CSV: Gobiidae.csv (1 rows)
+2026-01-03 00:02:42,175 - INFO - ✅ CSV: Heteropneustidae.csv (1 rows)
+2026-01-03 00:02:42,229 - INFO - ✅ CSV: Mastacembelidae.csv (5 rows)
+2026-01-03 00:02:42,279 - INFO - ✅ CSV: Nandidae.csv (1 rows)
+2026-01-03 00:02:42,333 - INFO - ✅ CSV: Notopteridae.csv (2 rows)
+2026-01-03 00:02:42,388 - INFO - ✅ CSV: Osphronemidae.csv (5 rows)
+2026-01-03 00:02:42,439 - INFO - ✅ CSV: Pangasiidae.csv (1 rows)
+2026-01-03 00:02:42,493 - INFO - ✅ CSV: Poeciliidae.csv (1 rows)
+2026-01-03 00:02:42,547 - INFO - ✅ CSV: Pristigasteridae.csv (2 rows)
+2026-01-03 00:02:42,602 - INFO - ✅ CSV: Psilorhynchidae.csv (5 rows)
+2026-01-03 00:02:42,660 - INFO - ✅ CSV: Schilbeidae.csv (6 rows)
+2026-01-03 00:02:42,714 - INFO - ✅ CSV: Siluridae.csv (5 rows)
+2026-01-03 00:02:42,769 - INFO - ✅ CSV: Sisoridae.csv (27 rows)
+2026-01-03 00:02:42,825 - INFO - ✅ CSV: Synbranchidae.csv (3 rows)
+2026-01-03 00:02:42,915 - INFO - ✅ CSV: fish_mapping_merged_high_quality.csv (257 rows)
+2026-01-03 00:02:43,153 - INFO - ✅ CSV: fish_mapping_merged_master.csv (1417 rows)
+2026-01-03 00:02:43,251 - INFO - ✅ CSV: fish_mapping_merged_production.csv (254 rows)
+2026-01-03 00:02:43,344 - INFO - ✅ CSV: fish_mapping_top_300.csv (300 rows)
+2026-01-03 00:02:43,367 - INFO - ✅ CSV: merge_summary.csv (1 rows)
+2026-01-03 00:02:43,560 - INFO - ✅ CSV: needs_enhancement.csv (1131 rows)
+2026-01-03 00:02:43,584 - INFO - ✅ CSV: auto_enrichment_report.csv (40 rows)
+2026-01-03 00:02:43,612 - INFO - ✅ CSV: enhancement_priorities.csv (129 rows)
+2026-01-03 00:02:43,811 - INFO - ✅ CSV: needs_enrichment.csv (874 rows)
+2026-01-03 00:02:43,904 - INFO - ✅ CSV: needs_taxonomy.csv (1132 rows)
+2026-01-03 00:02:43,914 - INFO - ✅ TXT: validation_issues.txt
+2026-01-03 00:02:43,924 - INFO - ✅ TXT: validation_warnings.txt
+2026-01-03 00:02:43,925 - INFO - ✅ Loaded 20049 documents
+2026-01-03 00:02:43,925 - INFO - ✂️ Chunking documents...
+2026-01-03 00:02:44,886 - INFO - ✅ Created 21252 chunks
+2026-01-03 00:02:44,886 - INFO - 🧠 Initializing embeddings...
+2026-01-03 00:02:44,888 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-03 00:02:50,290 - INFO - 🗄️ Building vector database...
+2026-01-03 00:02:50,290 - INFO - Processing in batches of 50...
+2026-01-03 00:02:51,288 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-03 00:09:43,088 - INFO - ✅ Vector database built successfully
+2026-01-03 00:09:43,090 - INFO - 📊 Build report saved: C:\Users\AMRISH\Documents\Meenasetu\vector_db_build_report.json
+2026-01-03 00:09:43,090 - INFO - 
+======================================================================
+2026-01-03 00:09:43,090 - INFO - ✨ BUILD COMPLETE WITH ML INTEGRATION ✨
+2026-01-03 00:09:43,090 - INFO - ======================================================================
+2026-01-03 00:09:43,090 - INFO - 📁 Total Files: 68
+2026-01-03 00:09:43,090 - INFO - 📄 Total Documents: 20049
+2026-01-03 00:09:43,090 - INFO - ✂️ Total Chunks: 21252
+2026-01-03 00:09:43,090 - INFO - 🤖 ML Classifications: 0
+2026-01-03 00:09:43,091 - INFO - ⏱️ Duration: 424.52 seconds
+2026-01-03 00:09:43,091 - INFO - 
+📊 File Type Breakdown:
+2026-01-03 00:09:43,091 - INFO -    PDFs: 0
+2026-01-03 00:09:43,091 - INFO -    CSVs: 59
+2026-01-03 00:09:43,091 - INFO -    JSONs: 1433
+2026-01-03 00:09:43,091 - INFO -    TXTs: 2
+2026-01-03 00:09:43,091 - INFO -    Images: 0 (0 classified)
+2026-01-03 00:09:43,093 - INFO -    Errors: 0
+2026-01-03 00:09:43,093 - INFO - ======================================================================
+
+2026-01-03 00:18:30,375 - INFO - 🤖 Initializing Fish Classification Model on cpu
+2026-01-03 00:18:30,376 - WARNING - ⚠️ Model not found. Image classification will use basic features only.
+2026-01-03 00:18:30,376 - INFO - ======================================================================
+2026-01-03 00:18:30,377 - INFO - 🚀 PRODUCTION VECTOR DATABASE BUILD WITH ML
+2026-01-03 00:18:30,377 - INFO - ======================================================================
+2026-01-03 00:18:30,377 - INFO - 📂 Scanning: C:\Users\AMRISH\Documents\Meenasetu\data\final
+2026-01-03 00:18:30,379 - INFO - 📂 Scanning: C:\Users\AMRISH\Documents\Meenasetu\datasets
+2026-01-03 00:18:30,382 - INFO - 📊 Found 68 files to process
+2026-01-03 00:18:30,382 - INFO - 📥 Loading documents with ML classification...
+2026-01-03 00:18:30,405 - INFO - ✅ CSV: extracted_fish_data.csv (15 rows)
+2026-01-03 00:18:30,432 - INFO - ✅ CSV: extracted_taxonomy_map.csv (261 rows)
+2026-01-03 00:18:30,463 - INFO - ✅ CSV: fish_mapping.csv (15 rows)
+2026-01-03 00:18:30,465 - INFO - ✅ JSON: fish_mapping.json (15 entries)
+2026-01-03 00:18:30,490 - INFO - ✅ CSV: fish_mapping_auto.csv (1 rows)
+2026-01-03 00:18:30,614 - INFO - ✅ CSV: fish_mapping_auto_generated.csv (1420 rows)
+2026-01-03 00:18:30,733 - INFO - ✅ CSV: fish_mapping_cleaned.csv (1415 rows)
+2026-01-03 00:18:30,760 - INFO - ✅ CSV: fish_mapping_cleaned_complete.csv (188 rows)
+2026-01-03 00:18:30,925 - INFO - ✅ CSV: fish_mapping_cleaned_final.csv (1128 rows)
+2026-01-03 00:18:31,267 - INFO - ✅ CSV: fish_mapping_enriched.csv (1417 rows)
+2026-01-03 00:18:31,343 - INFO - ✅ CSV: fish_mapping_high_quality.csv (254 rows)
+2026-01-03 00:18:31,535 - INFO - ✅ CSV: fish_mapping_local_enriched.csv (1290 rows)
+2026-01-03 00:18:31,599 - INFO - ✅ JSON: fish_mapping_master.json (1417 entries)
+2026-01-03 00:18:31,808 - INFO - ✅ CSV: fish_mapping_master_pre_local_taxonomy.csv (1417 rows)
+2026-01-03 00:18:32,023 - INFO - ✅ CSV: fish_mapping_master_v2.csv (1418 rows)
+2026-01-03 00:18:32,225 - INFO - ✅ CSV: fish_mapping_master_v3.csv (1418 rows)
+2026-01-03 00:18:32,307 - INFO - ✅ CSV: fish_mapping_production.csv (251 rows)
+2026-01-03 00:18:32,387 - INFO - ✅ CSV: fish_mapping_production_ready.csv (282 rows)
+2026-01-03 00:18:32,410 - INFO - ✅ CSV: local_taxonomy_database.csv (261 rows)
+2026-01-03 00:18:32,417 - INFO - ✅ CSV: merge_conflicts.csv (3 rows)
+2026-01-03 00:18:32,421 - INFO - ✅ JSON: taxonomy_cache.json (1 entries)
+2026-01-03 00:18:32,512 - INFO - ✅ CSV: wb_fish_diversity_combined.csv (345 rows)
+2026-01-03 00:18:32,557 - INFO - ✅ CSV: Ambassidae.csv (4 rows)
+2026-01-03 00:18:32,599 - INFO - ✅ CSV: Anabantidae.csv (2 rows)
+2026-01-03 00:18:32,638 - INFO - ✅ CSV: Anguillidae.csv (1 rows)
+2026-01-03 00:18:32,680 - INFO - ✅ CSV: Aplocheilidae.csv (1 rows)
+2026-01-03 00:18:32,727 - INFO - ✅ CSV: Badidae.csv (8 rows)
+2026-01-03 00:18:32,771 - INFO - ✅ CSV: Bagridae.csv (19 rows)
+2026-01-03 00:18:32,814 - INFO - ✅ CSV: Balitoridae.csv (1 rows)
+2026-01-03 00:18:32,856 - INFO - ✅ CSV: Belonidae.csv (1 rows)
+2026-01-03 00:18:32,899 - INFO - ✅ CSV: Botiidae.csv (6 rows)
+2026-01-03 00:18:32,945 - INFO - ✅ CSV: Channidae.csv (12 rows)
+2026-01-03 00:18:32,988 - INFO - ✅ CSV: Cichlidae.csv (3 rows)
+2026-01-03 00:18:33,032 - INFO - ✅ CSV: Clariidae.csv (4 rows)
+2026-01-03 00:18:33,074 - INFO - ✅ CSV: Clupeidae.csv (3 rows)
+2026-01-03 00:18:33,119 - INFO - ✅ CSV: Cobitidae.csv (10 rows)
+2026-01-03 00:18:33,167 - INFO - ✅ CSV: Cyprinidae.csv (79 rows)
+2026-01-03 00:18:33,208 - INFO - ✅ CSV: Engraulidae.csv (2 rows)
+2026-01-03 00:18:33,249 - INFO - ✅ CSV: Gobiidae.csv (1 rows)
+2026-01-03 00:18:33,293 - INFO - ✅ CSV: Heteropneustidae.csv (1 rows)
+2026-01-03 00:18:33,334 - INFO - ✅ CSV: Mastacembelidae.csv (5 rows)
+2026-01-03 00:18:33,375 - INFO - ✅ CSV: Nandidae.csv (1 rows)
+2026-01-03 00:18:33,414 - INFO - ✅ CSV: Notopteridae.csv (2 rows)
+2026-01-03 00:18:33,459 - INFO - ✅ CSV: Osphronemidae.csv (5 rows)
+2026-01-03 00:18:33,500 - INFO - ✅ CSV: Pangasiidae.csv (1 rows)
+2026-01-03 00:18:33,543 - INFO - ✅ CSV: Poeciliidae.csv (1 rows)
+2026-01-03 00:18:33,587 - INFO - ✅ CSV: Pristigasteridae.csv (2 rows)
+2026-01-03 00:18:33,631 - INFO - ✅ CSV: Psilorhynchidae.csv (5 rows)
+2026-01-03 00:18:33,718 - INFO - ✅ CSV: Schilbeidae.csv (6 rows)
+2026-01-03 00:18:33,763 - INFO - ✅ CSV: Siluridae.csv (5 rows)
+2026-01-03 00:18:33,808 - INFO - ✅ CSV: Sisoridae.csv (27 rows)
+2026-01-03 00:18:33,851 - INFO - ✅ CSV: Synbranchidae.csv (3 rows)
+2026-01-03 00:18:33,927 - INFO - ✅ CSV: fish_mapping_merged_high_quality.csv (257 rows)
+2026-01-03 00:18:34,141 - INFO - ✅ CSV: fish_mapping_merged_master.csv (1417 rows)
+2026-01-03 00:18:34,229 - INFO - ✅ CSV: fish_mapping_merged_production.csv (254 rows)
+2026-01-03 00:18:34,312 - INFO - ✅ CSV: fish_mapping_top_300.csv (300 rows)
+2026-01-03 00:18:34,325 - INFO - ✅ CSV: merge_summary.csv (1 rows)
+2026-01-03 00:18:34,515 - INFO - ✅ CSV: needs_enhancement.csv (1131 rows)
+2026-01-03 00:18:34,527 - INFO - ✅ CSV: auto_enrichment_report.csv (40 rows)
+2026-01-03 00:18:34,543 - INFO - ✅ CSV: enhancement_priorities.csv (129 rows)
+2026-01-03 00:18:34,684 - INFO - ✅ CSV: needs_enrichment.csv (874 rows)
+2026-01-03 00:18:34,762 - INFO - ✅ CSV: needs_taxonomy.csv (1132 rows)
+2026-01-03 00:18:34,763 - INFO - ✅ TXT: validation_issues.txt
+2026-01-03 00:18:34,763 - INFO - ✅ TXT: validation_warnings.txt
+2026-01-03 00:18:34,764 - INFO - ✅ Loaded 20049 documents
+2026-01-03 00:18:34,764 - INFO - ✂️ Chunking documents...
+2026-01-03 00:18:35,612 - INFO - ✅ Created 21252 chunks
+2026-01-03 00:18:35,613 - INFO - 🧠 Initializing embeddings...
+2026-01-03 00:18:35,615 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-03 00:18:40,631 - INFO - 🗄️ Building vector database...
+2026-01-03 00:18:40,632 - INFO - Processing in batches of 50...
+2026-01-03 00:18:41,422 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-03 00:25:54,139 - INFO - ✅ Vector database built successfully
+2026-01-03 00:25:54,142 - INFO - 📊 Build report saved: C:\Users\AMRISH\Documents\Meenasetu\vector_db_build_report.json
+2026-01-03 00:25:54,142 - INFO - 
+======================================================================
+2026-01-03 00:25:54,142 - INFO - ✨ BUILD COMPLETE WITH ML INTEGRATION ✨
+2026-01-03 00:25:54,142 - INFO - ======================================================================
+2026-01-03 00:25:54,142 - INFO - 📁 Total Files: 68
+2026-01-03 00:25:54,143 - INFO - 📄 Total Documents: 20049
+2026-01-03 00:25:54,143 - INFO - ✂️ Total Chunks: 21252
+2026-01-03 00:25:54,143 - INFO - 🤖 ML Classifications: 0
+2026-01-03 00:25:54,143 - INFO - ⏱️ Duration: 443.76 seconds
+2026-01-03 00:25:54,143 - INFO - 
+📊 File Type Breakdown:
+2026-01-03 00:25:54,143 - INFO -    PDFs: 0
+2026-01-03 00:25:54,143 - INFO -    CSVs: 59
+2026-01-03 00:25:54,143 - INFO -    JSONs: 1433
+2026-01-03 00:25:54,144 - INFO -    TXTs: 2
+2026-01-03 00:25:54,144 - INFO -    Images: 0 (0 classified)
+2026-01-03 00:25:54,144 - INFO -    Errors: 0
+2026-01-03 00:25:54,144 - INFO - ======================================================================
+
+2026-01-03 00:27:07,285 - INFO - 🤖 Initializing Fish Classification Model on cpu
+2026-01-03 00:27:07,285 - INFO - 📥 Loading model from: C:\Users\AMRISH\Documents\Meenasetu\training\checkpoints\best_model.pth
+2026-01-03 00:27:44,892 - INFO - ✅ Model loaded successfully with 10 classes
+2026-01-03 00:27:44,894 - INFO - ======================================================================
+2026-01-03 00:27:44,894 - INFO - 🚀 PRODUCTION VECTOR DATABASE BUILD WITH ML
+2026-01-03 00:27:44,894 - INFO - ======================================================================
+2026-01-03 00:27:44,895 - INFO - 📂 Scanning: C:\Users\AMRISH\Documents\Meenasetu\data\final
+2026-01-03 00:27:44,897 - INFO - 📂 Scanning: C:\Users\AMRISH\Documents\Meenasetu\datasets
+2026-01-03 00:27:44,901 - INFO - 📊 Found 68 files to process
+2026-01-03 00:27:44,902 - INFO - 📥 Loading documents with ML classification...
+2026-01-03 00:27:44,925 - INFO - ✅ CSV: extracted_fish_data.csv (15 rows)
+2026-01-03 00:27:44,948 - INFO - ✅ CSV: extracted_taxonomy_map.csv (261 rows)
+2026-01-03 00:27:44,981 - INFO - ✅ CSV: fish_mapping.csv (15 rows)
+2026-01-03 00:27:44,983 - INFO - ✅ JSON: fish_mapping.json (15 entries)
+2026-01-03 00:27:45,010 - INFO - ✅ CSV: fish_mapping_auto.csv (1 rows)
+2026-01-03 00:27:45,142 - INFO - ✅ CSV: fish_mapping_auto_generated.csv (1420 rows)
+2026-01-03 00:27:45,467 - INFO - ✅ CSV: fish_mapping_cleaned.csv (1415 rows)
+2026-01-03 00:27:45,517 - INFO - ✅ CSV: fish_mapping_cleaned_complete.csv (188 rows)
+2026-01-03 00:27:45,760 - INFO - ✅ CSV: fish_mapping_cleaned_final.csv (1128 rows)
+2026-01-03 00:27:46,055 - INFO - ✅ CSV: fish_mapping_enriched.csv (1417 rows)
+2026-01-03 00:27:46,167 - INFO - ✅ CSV: fish_mapping_high_quality.csv (254 rows)
+2026-01-03 00:27:46,439 - INFO - ✅ CSV: fish_mapping_local_enriched.csv (1290 rows)
+2026-01-03 00:27:46,526 - INFO - ✅ JSON: fish_mapping_master.json (1417 entries)
+2026-01-03 00:27:46,831 - INFO - ✅ CSV: fish_mapping_master_pre_local_taxonomy.csv (1417 rows)
+2026-01-03 00:27:47,168 - INFO - ✅ CSV: fish_mapping_master_v2.csv (1418 rows)
+2026-01-03 00:27:47,487 - INFO - ✅ CSV: fish_mapping_master_v3.csv (1418 rows)
+2026-01-03 00:27:47,596 - INFO - ✅ CSV: fish_mapping_production.csv (251 rows)
+2026-01-03 00:27:47,710 - INFO - ✅ CSV: fish_mapping_production_ready.csv (282 rows)
+2026-01-03 00:27:47,744 - INFO - ✅ CSV: local_taxonomy_database.csv (261 rows)
+2026-01-03 00:27:47,754 - INFO - ✅ CSV: merge_conflicts.csv (3 rows)
+2026-01-03 00:27:47,760 - INFO - ✅ JSON: taxonomy_cache.json (1 entries)
+2026-01-03 00:27:47,896 - INFO - ✅ CSV: wb_fish_diversity_combined.csv (345 rows)
+2026-01-03 00:27:47,956 - INFO - ✅ CSV: Ambassidae.csv (4 rows)
+2026-01-03 00:27:48,016 - INFO - ✅ CSV: Anabantidae.csv (2 rows)
+2026-01-03 00:27:48,074 - INFO - ✅ CSV: Anguillidae.csv (1 rows)
+2026-01-03 00:27:48,134 - INFO - ✅ CSV: Aplocheilidae.csv (1 rows)
+2026-01-03 00:27:48,194 - INFO - ✅ CSV: Badidae.csv (8 rows)
+2026-01-03 00:27:48,258 - INFO - ✅ CSV: Bagridae.csv (19 rows)
+2026-01-03 00:27:48,320 - INFO - ✅ CSV: Balitoridae.csv (1 rows)
+2026-01-03 00:27:48,386 - INFO - ✅ CSV: Belonidae.csv (1 rows)
+2026-01-03 00:27:48,450 - INFO - ✅ CSV: Botiidae.csv (6 rows)
+2026-01-03 00:27:48,516 - INFO - ✅ CSV: Channidae.csv (12 rows)
+2026-01-03 00:27:48,579 - INFO - ✅ CSV: Cichlidae.csv (3 rows)
+2026-01-03 00:27:48,641 - INFO - ✅ CSV: Clariidae.csv (4 rows)
+2026-01-03 00:27:48,698 - INFO - ✅ CSV: Clupeidae.csv (3 rows)
+2026-01-03 00:27:48,762 - INFO - ✅ CSV: Cobitidae.csv (10 rows)
+2026-01-03 00:27:48,827 - INFO - ✅ CSV: Cyprinidae.csv (79 rows)
+2026-01-03 00:27:48,890 - INFO - ✅ CSV: Engraulidae.csv (2 rows)
+2026-01-03 00:27:48,952 - INFO - ✅ CSV: Gobiidae.csv (1 rows)
+2026-01-03 00:27:49,012 - INFO - ✅ CSV: Heteropneustidae.csv (1 rows)
+2026-01-03 00:27:49,078 - INFO - ✅ CSV: Mastacembelidae.csv (5 rows)
+2026-01-03 00:27:49,140 - INFO - ✅ CSV: Nandidae.csv (1 rows)
+2026-01-03 00:27:49,202 - INFO - ✅ CSV: Notopteridae.csv (2 rows)
+2026-01-03 00:27:49,265 - INFO - ✅ CSV: Osphronemidae.csv (5 rows)
+2026-01-03 00:27:49,325 - INFO - ✅ CSV: Pangasiidae.csv (1 rows)
+2026-01-03 00:27:49,387 - INFO - ✅ CSV: Poeciliidae.csv (1 rows)
+2026-01-03 00:27:49,450 - INFO - ✅ CSV: Pristigasteridae.csv (2 rows)
+2026-01-03 00:27:49,513 - INFO - ✅ CSV: Psilorhynchidae.csv (5 rows)
+2026-01-03 00:27:49,576 - INFO - ✅ CSV: Schilbeidae.csv (6 rows)
+2026-01-03 00:27:49,634 - INFO - ✅ CSV: Siluridae.csv (5 rows)
+2026-01-03 00:27:49,700 - INFO - ✅ CSV: Sisoridae.csv (27 rows)
+2026-01-03 00:27:49,760 - INFO - ✅ CSV: Synbranchidae.csv (3 rows)
+2026-01-03 00:27:49,870 - INFO - ✅ CSV: fish_mapping_merged_high_quality.csv (257 rows)
+2026-01-03 00:27:50,170 - INFO - ✅ CSV: fish_mapping_merged_master.csv (1417 rows)
+2026-01-03 00:27:50,277 - INFO - ✅ CSV: fish_mapping_merged_production.csv (254 rows)
+2026-01-03 00:27:50,378 - INFO - ✅ CSV: fish_mapping_top_300.csv (300 rows)
+2026-01-03 00:27:50,392 - INFO - ✅ CSV: merge_summary.csv (1 rows)
+2026-01-03 00:27:50,604 - INFO - ✅ CSV: needs_enhancement.csv (1131 rows)
+2026-01-03 00:27:50,615 - INFO - ✅ CSV: auto_enrichment_report.csv (40 rows)
+2026-01-03 00:27:50,633 - INFO - ✅ CSV: enhancement_priorities.csv (129 rows)
+2026-01-03 00:27:50,783 - INFO - ✅ CSV: needs_enrichment.csv (874 rows)
+2026-01-03 00:27:50,868 - INFO - ✅ CSV: needs_taxonomy.csv (1132 rows)
+2026-01-03 00:27:50,870 - INFO - ✅ TXT: validation_issues.txt
+2026-01-03 00:27:50,871 - INFO - ✅ TXT: validation_warnings.txt
+2026-01-03 00:27:50,871 - INFO - ✅ Loaded 20049 documents
+2026-01-03 00:27:50,871 - INFO - ✂️ Chunking documents...
+2026-01-03 00:27:51,737 - INFO - ✅ Created 21252 chunks
+2026-01-03 00:27:51,737 - INFO - 🧠 Initializing embeddings...
+2026-01-03 00:27:51,740 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-03 00:27:56,267 - INFO - 🗄️ Building vector database...
+2026-01-03 00:27:56,267 - INFO - Processing in batches of 50...
+2026-01-03 00:27:56,950 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-03 00:35:13,668 - INFO - ✅ Vector database built successfully
+2026-01-03 00:35:13,670 - INFO - 📊 Build report saved: C:\Users\AMRISH\Documents\Meenasetu\vector_db_build_report.json
+2026-01-03 00:35:13,670 - INFO - 
+======================================================================
+2026-01-03 00:35:13,670 - INFO - ✨ BUILD COMPLETE WITH ML INTEGRATION ✨
+2026-01-03 00:35:13,670 - INFO - ======================================================================
+2026-01-03 00:35:13,671 - INFO - 📁 Total Files: 68
+2026-01-03 00:35:13,671 - INFO - 📄 Total Documents: 20049
+2026-01-03 00:35:13,671 - INFO - ✂️ Total Chunks: 21252
+2026-01-03 00:35:13,671 - INFO - 🤖 ML Classifications: 0
+2026-01-03 00:35:13,671 - INFO - ⏱️ Duration: 448.77 seconds
+2026-01-03 00:35:13,671 - INFO - 
+📊 File Type Breakdown:
+2026-01-03 00:35:13,671 - INFO -    PDFs: 0
+2026-01-03 00:35:13,672 - INFO -    CSVs: 59
+2026-01-03 00:35:13,672 - INFO -    JSONs: 1433
+2026-01-03 00:35:13,672 - INFO -    TXTs: 2
+2026-01-03 00:35:13,672 - INFO -    Images: 0 (0 classified)
+2026-01-03 00:35:13,672 - INFO -    Errors: 0
+2026-01-03 00:35:13,672 - INFO - 
+🤖 ML Model Info:
+2026-01-03 00:35:13,673 - INFO -    Model: Loaded from C:\Users\AMRISH\Documents\Meenasetu\training\checkpoints\best_model.pth
+2026-01-03 00:35:13,673 - INFO -    Device: cpu
+2026-01-03 00:35:13,673 - INFO -    Classes: 0
+2026-01-03 00:35:13,673 - INFO - ======================================================================
+
+2026-01-03 01:13:46,180 - INFO - 🤖 Initializing Fish Classification Model on cpu
+2026-01-03 01:13:46,181 - INFO - 📥 Loading model from: C:\Users\AMRISH\Documents\Meenasetu\training\checkpoints\best_model.pth
+2026-01-03 01:13:46,300 - INFO - ✅ Loaded species_to_id from checkpoint: 14 classes
+2026-01-03 01:13:46,300 - WARNING - ⚠️ Using num_classes from mapping: 14
+2026-01-03 01:13:46,301 - INFO - ✅ Loaded class mapping from file: 14 classes
+2026-01-03 01:13:46,610 - WARNING - ⚠️ Strict loading failed, trying non-strict: Error(s) in loading state_dict for ResNet:
+	Missing key(s) in state_dict: "conv1.weight", "bn1.weight", "bn1.bias", "bn1.running_mean", "bn1.running_var", "layer1.0.conv1.weight", "layer1.0.bn1.weight", "layer1.0.bn1.bias", "layer1.0.bn1.running_mean", "layer1.0.bn1.running_var", "layer1.0.conv2.weight", "layer1.0.bn2.weight", "layer1.0.bn2.bias", "layer1.0.bn2.running_mean", "layer1.0.bn2.running_var", "layer1.0.conv3.weight", "layer1.0.bn3.weight", "layer1.0.bn3.bias", "layer1.0.bn3.running_mean", "layer1.0.bn3.running_var", "layer1.0.downsample.0.weight", "layer1.0.downsample.1.weight", "layer1.0.downsample.1.bias", "layer1.0.downsample.1.running_mean", "layer1.0.downsample.1.running_var", "layer1.1.conv1.weight", "layer1.1.bn1.weight", "layer1.1.bn1.bias", "layer1.1.bn1.running_mean", "layer1.1.bn1.running_var", "layer1.1.conv2.weight", "layer1.1.bn2.weight", "layer1.1.bn2.bias", "layer1.1.bn2.running_mean", "layer1.1.bn2.running_var", "layer1.1.conv3.weight", "layer1.1.bn3.weight", "layer1.1.bn3.bias", "layer1.1.bn3.running_mean", "layer1.1.bn3.running_var", "layer1.2.conv1.weight", "layer1.2.bn1.weight", "layer1.2.bn1.bias", "layer1.2.bn1.running_mean", "layer1.2.bn1.running_var", "layer1.2.conv2.weight", "layer1.2.bn2.weight", "layer1.2.bn2.bias", "layer1.2.bn2.running_mean", "layer1.2.bn2.running_var", "layer1.2.conv3.weight", "layer1.2.bn3.weight", "layer1.2.bn3.bias", "layer1.2.bn3.running_mean", "layer1.2.bn3.running_var", "layer2.0.conv1.weight", "layer2.0.bn1.weight", "layer2.0.bn1.bias", "layer2.0.bn1.running_mean", "layer2.0.bn1.running_var", "layer2.0.conv2.weight", "layer2.0.bn2.weight", "layer2.0.bn2.bias", "layer2.0.bn2.running_mean", "layer2.0.bn2.running_var", "layer2.0.conv3.weight", "layer2.0.bn3.weight", "layer2.0.bn3.bias", "layer2.0.bn3.running_mean", "layer2.0.bn3.running_var", "layer2.0.downsample.0.weight", "layer2.0.downsample.1.weight", "layer2.0.downsample.1.bias", "layer2.0.downsample.1.running_mean", "layer2.0.downsample.1.running_var", "layer2.1.conv1.weight", "layer2.1.bn1.weight", "layer2.1.bn1.bias", "layer2.1.bn1.running_mean", "layer2.1.bn1.running_var", "layer2.1.conv2.weight", "layer2.1.bn2.weight", "layer2.1.bn2.bias", "layer2.1.bn2.running_mean", "layer2.1.bn2.running_var", "layer2.1.conv3.weight", "layer2.1.bn3.weight", "layer2.1.bn3.bias", "layer2.1.bn3.running_mean", "layer2.1.bn3.running_var", "layer2.2.conv1.weight", "layer2.2.bn1.weight", "layer2.2.bn1.bias", "layer2.2.bn1.running_mean", "layer2.2.bn1.running_var", "layer2.2.conv2.weight", "layer2.2.bn2.weight", "layer2.2.bn2.bias", "layer2.2.bn2.running_mean", "layer2.2.bn2.running_var", "layer2.2.conv3.weight", "layer2.2.bn3.weight", "layer2.2.bn3.bias", "layer2.2.bn3.running_mean", "layer2.2.bn3.running_var", "layer2.3.conv1.weight", "layer2.3.bn1.weight", "layer2.3.bn1.bias", "layer2.3.bn1.running_mean", "layer2.3.bn1.running_var", "layer2.3.conv2.weight", "layer2.3.bn2.weight", "layer2.3.bn2.bias", "layer2.3.bn2.running_mean", "layer2.3.bn2.running_var", "layer2.3.conv3.weight", "layer2.3.bn3.weight", "layer2.3.bn3.bias", "layer2.3.bn3.running_mean", "layer2.3.bn3.running_var", "layer3.0.conv1.weight", "layer3.0.bn1.weight", "layer3.0.bn1.bias", "layer3.0.bn1.running_mean", "layer3.0.bn1.running_var", "layer3.0.conv2.weight", "layer3.0.bn2.weight", "layer3.0.bn2.bias", "layer3.0.bn2.running_mean", "layer3.0.bn2.running_var", "layer3.0.conv3.weight", "layer3.0.bn3.weight", "layer3.0.bn3.bias", "layer3.0.bn3.running_mean", "layer3.0.bn3.running_var", "layer3.0.downsample.0.weight", "layer3.0.downsample.1.weight", "layer3.0.downsample.1.bias", "layer3.0.downsample.1.running_mean", "layer3.0.downsample.1.running_var", "layer3.1.conv1.weight", "layer3.1.bn1.weight", "layer3.1.bn1.bias", "layer3.1.bn1.running_mean", "layer3.1.bn1.running_var", "layer3.1.conv2.weight", "layer3.1.bn2.weight", "layer3.1.bn2.bias", "layer3.1.bn2.running_mean", "layer3.1.bn2.running_var", "layer3.1.conv3.weight", "layer3.1.bn3.weight", "layer3.1.bn3.bias", "layer3.1.bn3.running_mean", "layer3.1.bn3.running_var", "layer3.2.conv1.weight", "layer3.2.bn1.weight", "layer3.2.bn1.bias", "layer3.2.bn1.running_mean", "layer3.2.bn1.running_var", "layer3.2.conv2.weight", "layer3.2.bn2.weight", "layer3.2.bn2.bias", "layer3.2.bn2.running_mean", "layer3.2.bn2.running_var", "layer3.2.conv3.weight", "layer3.2.bn3.weight", "layer3.2.bn3.bias", "layer3.2.bn3.running_mean", "layer3.2.bn3.running_var", "layer3.3.conv1.weight", "layer3.3.bn1.weight", "layer3.3.bn1.bias", "layer3.3.bn1.running_mean", "layer3.3.bn1.running_var", "layer3.3.conv2.weight", "layer3.3.bn2.weight", "layer3.3.bn2.bias", "layer3.3.bn2.running_mean", "layer3.3.bn2.running_var", "layer3.3.conv3.weight", "layer3.3.bn3.weight", "layer3.3.bn3.bias", "layer3.3.bn3.running_mean", "layer3.3.bn3.running_var", "layer3.4.conv1.weight", "layer3.4.bn1.weight", "layer3.4.bn1.bias", "layer3.4.bn1.running_mean", "layer3.4.bn1.running_var", "layer3.4.conv2.weight", "layer3.4.bn2.weight", "layer3.4.bn2.bias", "layer3.4.bn2.running_mean", "layer3.4.bn2.running_var", "layer3.4.conv3.weight", "layer3.4.bn3.weight", "layer3.4.bn3.bias", "layer3.4.bn3.running_mean", "layer3.4.bn3.running_var", "layer3.5.conv1.weight", "layer3.5.bn1.weight", "layer3.5.bn1.bias", "layer3.5.bn1.running_mean", "layer3.5.bn1.running_var", "layer3.5.conv2.weight", "layer3.5.bn2.weight", "layer3.5.bn2.bias", "layer3.5.bn2.running_mean", "layer3.5.bn2.running_var", "layer3.5.conv3.weight", "layer3.5.bn3.weight", "layer3.5.bn3.bias", "layer3.5.bn3.running_mean", "layer3.5.bn3.running_var", "layer4.0.conv1.weight", "layer4.0.bn1.weight", "layer4.0.bn1.bias", "layer4.0.bn1.running_mean", "layer4.0.bn1.running_var", "layer4.0.conv2.weight", "layer4.0.bn2.weight", "layer4.0.bn2.bias", "layer4.0.bn2.running_mean", "layer4.0.bn2.running_var", "layer4.0.conv3.weight", "layer4.0.bn3.weight", "layer4.0.bn3.bias", "layer4.0.bn3.running_mean", "layer4.0.bn3.running_var", "layer4.0.downsample.0.weight", "layer4.0.downsample.1.weight", "layer4.0.downsample.1.bias", "layer4.0.downsample.1.running_mean", "layer4.0.downsample.1.running_var", "layer4.1.conv1.weight", "layer4.1.bn1.weight", "layer4.1.bn1.bias", "layer4.1.bn1.running_mean", "layer4.1.bn1.running_var", "layer4.1.conv2.weight", "layer4.1.bn2.weight", "layer4.1.bn2.bias", "layer4.1.bn2.running_mean", "layer4.1.bn2.running_var", "layer4.1.conv3.weight", "layer4.1.bn3.weight", "layer4.1.bn3.bias", "layer4.1.bn3.running_mean", "layer4.1.bn3.running_var", "layer4.2.conv1.weight", "layer4.2.bn1.weight", "layer4.2.bn1.bias", "layer4.2.bn1.running_mean", "layer4.2.bn1.running_var", "layer4.2.conv2.weight", "layer4.2.bn2.weight", "layer4.2.bn2.bias", "layer4.2.bn2.running_mean", "layer4.2.bn2.running_var", "layer4.2.conv3.weight", "layer4.2.bn3.weight", "layer4.2.bn3.bias", "layer4.2.bn3.running_mean", "layer4.2.bn3.running_var", "fc.weight", "fc.bias". 
+	Unexpected key(s) in state_dict: "backbone.features.0.0.weight", "backbone.features.0.1.weight", "backbone.features.0.1.bias", "backbone.features.0.1.running_mean", "backbone.features.0.1.running_var", "backbone.features.0.1.num_batches_tracked", "backbone.features.1.0.block.0.0.weight", "backbone.features.1.0.block.0.1.weight", "backbone.features.1.0.block.0.1.bias", "backbone.features.1.0.block.0.1.running_mean", "backbone.features.1.0.block.0.1.running_var", "backbone.features.1.0.block.0.1.num_batches_tracked", "backbone.features.1.0.block.1.fc1.weight", "backbone.features.1.0.block.1.fc1.bias", "backbone.features.1.0.block.1.fc2.weight", "backbone.features.1.0.block.1.fc2.bias", "backbone.features.1.0.block.2.0.weight", "backbone.features.1.0.block.2.1.weight", "backbone.features.1.0.block.2.1.bias", "backbone.features.1.0.block.2.1.running_mean", "backbone.features.1.0.block.2.1.running_var", "backbone.features.1.0.block.2.1.num_batches_tracked", "backbone.features.2.0.block.0.0.weight", "backbone.features.2.0.block.0.1.weight", "backbone.features.2.0.block.0.1.bias", "backbone.features.2.0.block.0.1.running_mean", "backbone.features.2.0.block.0.1.running_var", "backbone.features.2.0.block.0.1.num_batches_tracked", "backbone.features.2.0.block.1.0.weight", "backbone.features.2.0.block.1.1.weight", "backbone.features.2.0.block.1.1.bias", "backbone.features.2.0.block.1.1.running_mean", "backbone.features.2.0.block.1.1.running_var", "backbone.features.2.0.block.1.1.num_batches_tracked", "backbone.features.2.0.block.2.fc1.weight", "backbone.features.2.0.block.2.fc1.bias", "backbone.features.2.0.block.2.fc2.weight", "backbone.features.2.0.block.2.fc2.bias", "backbone.features.2.0.block.3.0.weight", "backbone.features.2.0.block.3.1.weight", "backbone.features.2.0.block.3.1.bias", "backbone.features.2.0.block.3.1.running_mean", "backbone.features.2.0.block.3.1.running_var", "backbone.features.2.0.block.3.1.num_batches_tracked", "backbone.features.2.1.block.0.0.weight", "backbone.features.2.1.block.0.1.weight", "backbone.features.2.1.block.0.1.bias", "backbone.features.2.1.block.0.1.running_mean", "backbone.features.2.1.block.0.1.running_var", "backbone.features.2.1.block.0.1.num_batches_tracked", "backbone.features.2.1.block.1.0.weight", "backbone.features.2.1.block.1.1.weight", "backbone.features.2.1.block.1.1.bias", "backbone.features.2.1.block.1.1.running_mean", "backbone.features.2.1.block.1.1.running_var", "backbone.features.2.1.block.1.1.num_batches_tracked", "backbone.features.2.1.block.2.fc1.weight", "backbone.features.2.1.block.2.fc1.bias", "backbone.features.2.1.block.2.fc2.weight", "backbone.features.2.1.block.2.fc2.bias", "backbone.features.2.1.block.3.0.weight", "backbone.features.2.1.block.3.1.weight", "backbone.features.2.1.block.3.1.bias", "backbone.features.2.1.block.3.1.running_mean", "backbone.features.2.1.block.3.1.running_var", "backbone.features.2.1.block.3.1.num_batches_tracked", "backbone.features.3.0.block.0.0.weight", "backbone.features.3.0.block.0.1.weight", "backbone.features.3.0.block.0.1.bias", "backbone.features.3.0.block.0.1.running_mean", "backbone.features.3.0.block.0.1.running_var", "backbone.features.3.0.block.0.1.num_batches_tracked", "backbone.features.3.0.block.1.0.weight", "backbone.features.3.0.block.1.1.weight", "backbone.features.3.0.block.1.1.bias", "backbone.features.3.0.block.1.1.running_mean", "backbone.features.3.0.block.1.1.running_var", "backbone.features.3.0.block.1.1.num_batches_tracked", "backbone.features.3.0.block.2.fc1.weight", "backbone.features.3.0.block.2.fc1.bias", "backbone.features.3.0.block.2.fc2.weight", "backbone.features.3.0.block.2.fc2.bias", "backbone.features.3.0.block.3.0.weight", "backbone.features.3.0.block.3.1.weight", "backbone.features.3.0.block.3.1.bias", "backbone.features.3.0.block.3.1.running_mean", "backbone.features.3.0.block.3.1.running_var", "backbone.features.3.0.block.3.1.num_batches_tracked", "backbone.features.3.1.block.0.0.weight", "backbone.features.3.1.block.0.1.weight", "backbone.features.3.1.block.0.1.bias", "backbone.features.3.1.block.0.1.running_mean", "backbone.features.3.1.block.0.1.running_var", "backbone.features.3.1.block.0.1.num_batches_tracked", "backbone.features.3.1.block.1.0.weight", "backbone.features.3.1.block.1.1.weight", "backbone.features.3.1.block.1.1.bias", "backbone.features.3.1.block.1.1.running_mean", "backbone.features.3.1.block.1.1.running_var", "backbone.features.3.1.block.1.1.num_batches_tracked", "backbone.features.3.1.block.2.fc1.weight", "backbone.features.3.1.block.2.fc1.bias", "backbone.features.3.1.block.2.fc2.weight", "backbone.features.3.1.block.2.fc2.bias", "backbone.features.3.1.block.3.0.weight", "backbone.features.3.1.block.3.1.weight", "backbone.features.3.1.block.3.1.bias", "backbone.features.3.1.block.3.1.running_mean", "backbone.features.3.1.block.3.1.running_var", "backbone.features.3.1.block.3.1.num_batches_tracked", "backbone.features.4.0.block.0.0.weight", "backbone.features.4.0.block.0.1.weight", "backbone.features.4.0.block.0.1.bias", "backbone.features.4.0.block.0.1.running_mean", "backbone.features.4.0.block.0.1.running_var", "backbone.features.4.0.block.0.1.num_batches_tracked", "backbone.features.4.0.block.1.0.weight", "backbone.features.4.0.block.1.1.weight", "backbone.features.4.0.block.1.1.bias", "backbone.features.4.0.block.1.1.running_mean", "backbone.features.4.0.block.1.1.running_var", "backbone.features.4.0.block.1.1.num_batches_tracked", "backbone.features.4.0.block.2.fc1.weight", "backbone.features.4.0.block.2.fc1.bias", "backbone.features.4.0.block.2.fc2.weight", "backbone.features.4.0.block.2.fc2.bias", "backbone.features.4.0.block.3.0.weight", "backbone.features.4.0.block.3.1.weight", "backbone.features.4.0.block.3.1.bias", "backbone.features.4.0.block.3.1.running_mean", "backbone.features.4.0.block.3.1.running_var", "backbone.features.4.0.block.3.1.num_batches_tracked", "backbone.features.4.1.block.0.0.weight", "backbone.features.4.1.block.0.1.weight", "backbone.features.4.1.block.0.1.bias", "backbone.features.4.1.block.0.1.running_mean", "backbone.features.4.1.block.0.1.running_var", "backbone.features.4.1.block.0.1.num_batches_tracked", "backbone.features.4.1.block.1.0.weight", "backbone.features.4.1.block.1.1.weight", "backbone.features.4.1.block.1.1.bias", "backbone.features.4.1.block.1.1.running_mean", "backbone.features.4.1.block.1.1.running_var", "backbone.features.4.1.block.1.1.num_batches_tracked", "backbone.features.4.1.block.2.fc1.weight", "backbone.features.4.1.block.2.fc1.bias", "backbone.features.4.1.block.2.fc2.weight", "backbone.features.4.1.block.2.fc2.bias", "backbone.features.4.1.block.3.0.weight", "backbone.features.4.1.block.3.1.weight", "backbone.features.4.1.block.3.1.bias", "backbone.features.4.1.block.3.1.running_mean", "backbone.features.4.1.block.3.1.running_var", "backbone.features.4.1.block.3.1.num_batches_tracked", "backbone.features.4.2.block.0.0.weight", "backbone.features.4.2.block.0.1.weight", "backbone.features.4.2.block.0.1.bias", "backbone.features.4.2.block.0.1.running_mean", "backbone.features.4.2.block.0.1.running_var", "backbone.features.4.2.block.0.1.num_batches_tracked", "backbone.features.4.2.block.1.0.weight", "backbone.features.4.2.block.1.1.weight", "backbone.features.4.2.block.1.1.bias", "backbone.features.4.2.block.1.1.running_mean", "backbone.features.4.2.block.1.1.running_var", "backbone.features.4.2.block.1.1.num_batches_tracked", "backbone.features.4.2.block.2.fc1.weight", "backbone.features.4.2.block.2.fc1.bias", "backbone.features.4.2.block.2.fc2.weight", "backbone.features.4.2.block.2.fc2.bias", "backbone.features.4.2.block.3.0.weight", "backbone.features.4.2.block.3.1.weight", "backbone.features.4.2.block.3.1.bias", "backbone.features.4.2.block.3.1.running_mean", "backbone.features.4.2.block.3.1.running_var", "backbone.features.4.2.block.3.1.num_batches_tracked", "backbone.features.5.0.block.0.0.weight", "backbone.features.5.0.block.0.1.weight", "backbone.features.5.0.block.0.1.bias", "backbone.features.5.0.block.0.1.running_mean", "backbone.features.5.0.block.0.1.running_var", "backbone.features.5.0.block.0.1.num_batches_tracked", "backbone.features.5.0.block.1.0.weight", "backbone.features.5.0.block.1.1.weight", "backbone.features.5.0.block.1.1.bias", "backbone.features.5.0.block.1.1.running_mean", "backbone.features.5.0.block.1.1.running_var", "backbone.features.5.0.block.1.1.num_batches_tracked", "backbone.features.5.0.block.2.fc1.weight", "backbone.features.5.0.block.2.fc1.bias", "backbone.features.5.0.block.2.fc2.weight", "backbone.features.5.0.block.2.fc2.bias", "backbone.features.5.0.block.3.0.weight", "backbone.features.5.0.block.3.1.weight", "backbone.features.5.0.block.3.1.bias", "backbone.features.5.0.block.3.1.running_mean", "backbone.features.5.0.block.3.1.running_var", "backbone.features.5.0.block.3.1.num_batches_tracked", "backbone.features.5.1.block.0.0.weight", "backbone.features.5.1.block.0.1.weight", "backbone.features.5.1.block.0.1.bias", "backbone.features.5.1.block.0.1.running_mean", "backbone.features.5.1.block.0.1.running_var", "backbone.features.5.1.block.0.1.num_batches_tracked", "backbone.features.5.1.block.1.0.weight", "backbone.features.5.1.block.1.1.weight", "backbone.features.5.1.block.1.1.bias", "backbone.features.5.1.block.1.1.running_mean", "backbone.features.5.1.block.1.1.running_var", "backbone.features.5.1.block.1.1.num_batches_tracked", "backbone.features.5.1.block.2.fc1.weight", "backbone.features.5.1.block.2.fc1.bias", "backbone.features.5.1.block.2.fc2.weight", "backbone.features.5.1.block.2.fc2.bias", "backbone.features.5.1.block.3.0.weight", "backbone.features.5.1.block.3.1.weight", "backbone.features.5.1.block.3.1.bias", "backbone.features.5.1.block.3.1.running_mean", "backbone.features.5.1.block.3.1.running_var", "backbone.features.5.1.block.3.1.num_batches_tracked", "backbone.features.5.2.block.0.0.weight", "backbone.features.5.2.block.0.1.weight", "backbone.features.5.2.block.0.1.bias", "backbone.features.5.2.block.0.1.running_mean", "backbone.features.5.2.block.0.1.running_var", "backbone.features.5.2.block.0.1.num_batches_tracked", "backbone.features.5.2.block.1.0.weight", "backbone.features.5.2.block.1.1.weight", "backbone.features.5.2.block.1.1.bias", "backbone.features.5.2.block.1.1.running_mean", "backbone.features.5.2.block.1.1.running_var", "backbone.features.5.2.block.1.1.num_batches_tracked", "backbone.features.5.2.block.2.fc1.weight", "backbone.features.5.2.block.2.fc1.bias", "backbone.features.5.2.block.2.fc2.weight", "backbone.features.5.2.block.2.fc2.bias", "backbone.features.5.2.block.3.0.weight", "backbone.features.5.2.block.3.1.weight", "backbone.features.5.2.block.3.1.bias", "backbone.features.5.2.block.3.1.running_mean", "backbone.features.5.2.block.3.1.running_var", "backbone.features.5.2.block.3.1.num_batches_tracked", "backbone.features.6.0.block.0.0.weight", "backbone.features.6.0.block.0.1.weight", "backbone.features.6.0.block.0.1.bias", "backbone.features.6.0.block.0.1.running_mean", "backbone.features.6.0.block.0.1.running_var", "backbone.features.6.0.block.0.1.num_batches_tracked", "backbone.features.6.0.block.1.0.weight", "backbone.features.6.0.block.1.1.weight", "backbone.features.6.0.block.1.1.bias", "backbone.features.6.0.block.1.1.running_mean", "backbone.features.6.0.block.1.1.running_var", "backbone.features.6.0.block.1.1.num_batches_tracked", "backbone.features.6.0.block.2.fc1.weight", "backbone.features.6.0.block.2.fc1.bias", "backbone.features.6.0.block.2.fc2.weight", "backbone.features.6.0.block.2.fc2.bias", "backbone.features.6.0.block.3.0.weight", "backbone.features.6.0.block.3.1.weight", "backbone.features.6.0.block.3.1.bias", "backbone.features.6.0.block.3.1.running_mean", "backbone.features.6.0.block.3.1.running_var", "backbone.features.6.0.block.3.1.num_batches_tracked", "backbone.features.6.1.block.0.0.weight", "backbone.features.6.1.block.0.1.weight", "backbone.features.6.1.block.0.1.bias", "backbone.features.6.1.block.0.1.running_mean", "backbone.features.6.1.block.0.1.running_var", "backbone.features.6.1.block.0.1.num_batches_tracked", "backbone.features.6.1.block.1.0.weight", "backbone.features.6.1.block.1.1.weight", "backbone.features.6.1.block.1.1.bias", "backbone.features.6.1.block.1.1.running_mean", "backbone.features.6.1.block.1.1.running_var", "backbone.features.6.1.block.1.1.num_batches_tracked", "backbone.features.6.1.block.2.fc1.weight", "backbone.features.6.1.block.2.fc1.bias", "backbone.features.6.1.block.2.fc2.weight", "backbone.features.6.1.block.2.fc2.bias", "backbone.features.6.1.block.3.0.weight", "backbone.features.6.1.block.3.1.weight", "backbone.features.6.1.block.3.1.bias", "backbone.features.6.1.block.3.1.running_mean", "backbone.features.6.1.block.3.1.running_var", "backbone.features.6.1.block.3.1.num_batches_tracked", "backbone.features.6.2.block.0.0.weight", "backbone.features.6.2.block.0.1.weight", "backbone.features.6.2.block.0.1.bias", "backbone.features.6.2.block.0.1.running_mean", "backbone.features.6.2.block.0.1.running_var", "backbone.features.6.2.block.0.1.num_batches_tracked", "backbone.features.6.2.block.1.0.weight", "backbone.features.6.2.block.1.1.weight", "backbone.features.6.2.block.1.1.bias", "backbone.features.6.2.block.1.1.running_mean", "backbone.features.6.2.block.1.1.running_var", "backbone.features.6.2.block.1.1.num_batches_tracked", "backbone.features.6.2.block.2.fc1.weight", "backbone.features.6.2.block.2.fc1.bias", "backbone.features.6.2.block.2.fc2.weight", "backbone.features.6.2.block.2.fc2.bias", "backbone.features.6.2.block.3.0.weight", "backbone.features.6.2.block.3.1.weight", "backbone.features.6.2.block.3.1.bias", "backbone.features.6.2.block.3.1.running_mean", "backbone.features.6.2.block.3.1.running_var", "backbone.features.6.2.block.3.1.num_batches_tracked", "backbone.features.6.3.block.0.0.weight", "backbone.features.6.3.block.0.1.weight", "backbone.features.6.3.block.0.1.bias", "backbone.features.6.3.block.0.1.running_mean", "backbone.features.6.3.block.0.1.running_var", "backbone.features.6.3.block.0.1.num_batches_tracked", "backbone.features.6.3.block.1.0.weight", "backbone.features.6.3.block.1.1.weight", "backbone.features.6.3.block.1.1.bias", "backbone.features.6.3.block.1.1.running_mean", "backbone.features.6.3.block.1.1.running_var", "backbone.features.6.3.block.1.1.num_batches_tracked", "backbone.features.6.3.block.2.fc1.weight", "backbone.features.6.3.block.2.fc1.bias", "backbone.features.6.3.block.2.fc2.weight", "backbone.features.6.3.block.2.fc2.bias", "backbone.features.6.3.block.3.0.weight", "backbone.features.6.3.block.3.1.weight", "backbone.features.6.3.block.3.1.bias", "backbone.features.6.3.block.3.1.running_mean", "backbone.features.6.3.block.3.1.running_var", "backbone.features.6.3.block.3.1.num_batches_tracked", "backbone.features.7.0.block.0.0.weight", "backbone.features.7.0.block.0.1.weight", "backbone.features.7.0.block.0.1.bias", "backbone.features.7.0.block.0.1.running_mean", "backbone.features.7.0.block.0.1.running_var", "backbone.features.7.0.block.0.1.num_batches_tracked", "backbone.features.7.0.block.1.0.weight", "backbone.features.7.0.block.1.1.weight", "backbone.features.7.0.block.1.1.bias", "backbone.features.7.0.block.1.1.running_mean", "backbone.features.7.0.block.1.1.running_var", "backbone.features.7.0.block.1.1.num_batches_tracked", "backbone.features.7.0.block.2.fc1.weight", "backbone.features.7.0.block.2.fc1.bias", "backbone.features.7.0.block.2.fc2.weight", "backbone.features.7.0.block.2.fc2.bias", "backbone.features.7.0.block.3.0.weight", "backbone.features.7.0.block.3.1.weight", "backbone.features.7.0.block.3.1.bias", "backbone.features.7.0.block.3.1.running_mean", "backbone.features.7.0.block.3.1.running_var", "backbone.features.7.0.block.3.1.num_batches_tracked", "backbone.features.8.0.weight", "backbone.features.8.1.weight", "backbone.features.8.1.bias", "backbone.features.8.1.running_mean", "backbone.features.8.1.running_var", "backbone.features.8.1.num_batches_tracked", "backbone.classifier.1.weight", "backbone.classifier.1.bias", "backbone.classifier.2.weight", "backbone.classifier.2.bias", "backbone.classifier.2.running_mean", "backbone.classifier.2.running_var", "backbone.classifier.2.num_batches_tracked", "backbone.classifier.5.weight", "backbone.classifier.5.bias", "backbone.classifier.6.weight", "backbone.classifier.6.bias", "backbone.classifier.6.running_mean", "backbone.classifier.6.running_var", "backbone.classifier.6.num_batches_tracked", "backbone.classifier.9.weight", "backbone.classifier.9.bias". 
+2026-01-03 01:13:46,615 - INFO - ✅ Model weights loaded (non-strict mode)
+2026-01-03 01:13:46,617 - INFO - ✅ Model loaded successfully with 14 classes
+2026-01-03 01:13:46,617 - INFO - 🏷️ Sample species: ['Amblypharyngodon mola', 'Aplocheilus panchax', 'Badis badis', 'Bagarius bagarius', 'Batasio batasio']...
+2026-01-03 01:13:46,617 - INFO - 🐟 Total species in mapping: 14
+2026-01-03 01:13:46,619 - INFO - ======================================================================
+2026-01-03 01:13:46,620 - INFO - 🚀 PRODUCTION VECTOR DATABASE BUILD WITH ML
+2026-01-03 01:13:46,620 - INFO - ======================================================================
+2026-01-03 01:13:46,620 - INFO - 📂 Scanning: C:\Users\AMRISH\Documents\Meenasetu\data\final
+2026-01-03 01:13:46,621 - INFO - 📂 Scanning: C:\Users\AMRISH\Documents\Meenasetu\datasets
+2026-01-03 01:13:46,625 - INFO - 📊 Found 68 files to process
+2026-01-03 01:13:46,625 - INFO - 📥 Loading documents with ML classification...
+2026-01-03 01:13:46,645 - INFO - ✅ CSV: extracted_fish_data.csv (15 rows)
+2026-01-03 01:13:46,665 - INFO - ✅ CSV: extracted_taxonomy_map.csv (261 rows)
+2026-01-03 01:13:46,694 - INFO - ✅ CSV: fish_mapping.csv (15 rows)
+2026-01-03 01:13:46,695 - INFO - ✅ JSON: fish_mapping.json (15 entries)
+2026-01-03 01:13:46,715 - INFO - ✅ CSV: fish_mapping_auto.csv (1 rows)
+2026-01-03 01:13:46,824 - INFO - ✅ CSV: fish_mapping_auto_generated.csv (1420 rows)
+2026-01-03 01:13:47,069 - INFO - ✅ CSV: fish_mapping_cleaned.csv (1415 rows)
+2026-01-03 01:13:47,092 - INFO - ✅ CSV: fish_mapping_cleaned_complete.csv (188 rows)
+2026-01-03 01:13:47,229 - INFO - ✅ CSV: fish_mapping_cleaned_final.csv (1128 rows)
+2026-01-03 01:13:47,392 - INFO - ✅ CSV: fish_mapping_enriched.csv (1417 rows)
+2026-01-03 01:13:47,449 - INFO - ✅ CSV: fish_mapping_high_quality.csv (254 rows)
+2026-01-03 01:13:47,602 - INFO - ✅ CSV: fish_mapping_local_enriched.csv (1290 rows)
+2026-01-03 01:13:47,649 - INFO - ✅ JSON: fish_mapping_master.json (1417 entries)
+2026-01-03 01:13:47,840 - INFO - ✅ CSV: fish_mapping_master_pre_local_taxonomy.csv (1417 rows)
+2026-01-03 01:13:48,001 - INFO - ✅ CSV: fish_mapping_master_v2.csv (1418 rows)
+2026-01-03 01:13:48,181 - INFO - ✅ CSV: fish_mapping_master_v3.csv (1418 rows)
+2026-01-03 01:13:48,240 - INFO - ✅ CSV: fish_mapping_production.csv (251 rows)
+2026-01-03 01:13:48,303 - INFO - ✅ CSV: fish_mapping_production_ready.csv (282 rows)
+2026-01-03 01:13:48,320 - INFO - ✅ CSV: local_taxonomy_database.csv (261 rows)
+2026-01-03 01:13:48,326 - INFO - ✅ CSV: merge_conflicts.csv (3 rows)
+2026-01-03 01:13:48,329 - INFO - ✅ JSON: taxonomy_cache.json (1 entries)
+2026-01-03 01:13:48,399 - INFO - ✅ CSV: wb_fish_diversity_combined.csv (345 rows)
+2026-01-03 01:13:48,432 - INFO - ✅ CSV: Ambassidae.csv (4 rows)
+2026-01-03 01:13:48,464 - INFO - ✅ CSV: Anabantidae.csv (2 rows)
+2026-01-03 01:13:48,497 - INFO - ✅ CSV: Anguillidae.csv (1 rows)
+2026-01-03 01:13:48,529 - INFO - ✅ CSV: Aplocheilidae.csv (1 rows)
+2026-01-03 01:13:48,564 - INFO - ✅ CSV: Badidae.csv (8 rows)
+2026-01-03 01:13:48,597 - INFO - ✅ CSV: Bagridae.csv (19 rows)
+2026-01-03 01:13:48,632 - INFO - ✅ CSV: Balitoridae.csv (1 rows)
+2026-01-03 01:13:48,664 - INFO - ✅ CSV: Belonidae.csv (1 rows)
+2026-01-03 01:13:48,697 - INFO - ✅ CSV: Botiidae.csv (6 rows)
+2026-01-03 01:13:48,731 - INFO - ✅ CSV: Channidae.csv (12 rows)
+2026-01-03 01:13:48,764 - INFO - ✅ CSV: Cichlidae.csv (3 rows)
+2026-01-03 01:13:48,797 - INFO - ✅ CSV: Clariidae.csv (4 rows)
+2026-01-03 01:13:48,829 - INFO - ✅ CSV: Clupeidae.csv (3 rows)
+2026-01-03 01:13:48,864 - INFO - ✅ CSV: Cobitidae.csv (10 rows)
+2026-01-03 01:13:48,902 - INFO - ✅ CSV: Cyprinidae.csv (79 rows)
+2026-01-03 01:13:48,936 - INFO - ✅ CSV: Engraulidae.csv (2 rows)
+2026-01-03 01:13:48,969 - INFO - ✅ CSV: Gobiidae.csv (1 rows)
+2026-01-03 01:13:49,004 - INFO - ✅ CSV: Heteropneustidae.csv (1 rows)
+2026-01-03 01:13:49,037 - INFO - ✅ CSV: Mastacembelidae.csv (5 rows)
+2026-01-03 01:13:49,069 - INFO - ✅ CSV: Nandidae.csv (1 rows)
+2026-01-03 01:13:49,102 - INFO - ✅ CSV: Notopteridae.csv (2 rows)
+2026-01-03 01:13:49,136 - INFO - ✅ CSV: Osphronemidae.csv (5 rows)
+2026-01-03 01:13:49,169 - INFO - ✅ CSV: Pangasiidae.csv (1 rows)
+2026-01-03 01:13:49,202 - INFO - ✅ CSV: Poeciliidae.csv (1 rows)
+2026-01-03 01:13:49,236 - INFO - ✅ CSV: Pristigasteridae.csv (2 rows)
+2026-01-03 01:13:49,271 - INFO - ✅ CSV: Psilorhynchidae.csv (5 rows)
+2026-01-03 01:13:49,305 - INFO - ✅ CSV: Schilbeidae.csv (6 rows)
+2026-01-03 01:13:49,339 - INFO - ✅ CSV: Siluridae.csv (5 rows)
+2026-01-03 01:13:49,374 - INFO - ✅ CSV: Sisoridae.csv (27 rows)
+2026-01-03 01:13:49,408 - INFO - ✅ CSV: Synbranchidae.csv (3 rows)
+2026-01-03 01:13:49,471 - INFO - ✅ CSV: fish_mapping_merged_high_quality.csv (257 rows)
+2026-01-03 01:13:49,643 - INFO - ✅ CSV: fish_mapping_merged_master.csv (1417 rows)
+2026-01-03 01:13:49,706 - INFO - ✅ CSV: fish_mapping_merged_production.csv (254 rows)
+2026-01-03 01:13:49,772 - INFO - ✅ CSV: fish_mapping_top_300.csv (300 rows)
+2026-01-03 01:13:49,782 - INFO - ✅ CSV: merge_summary.csv (1 rows)
+2026-01-03 01:13:49,931 - INFO - ✅ CSV: needs_enhancement.csv (1131 rows)
+2026-01-03 01:13:49,940 - INFO - ✅ CSV: auto_enrichment_report.csv (40 rows)
+2026-01-03 01:13:49,954 - INFO - ✅ CSV: enhancement_priorities.csv (129 rows)
+2026-01-03 01:13:50,072 - INFO - ✅ CSV: needs_enrichment.csv (874 rows)
+2026-01-03 01:13:50,136 - INFO - ✅ CSV: needs_taxonomy.csv (1132 rows)
+2026-01-03 01:13:50,138 - INFO - ✅ TXT: validation_issues.txt
+2026-01-03 01:13:50,138 - INFO - ✅ TXT: validation_warnings.txt
+2026-01-03 01:13:50,139 - INFO - ✅ Loaded 20049 documents
+2026-01-03 01:13:50,139 - INFO - ✂️ Chunking documents...
+2026-01-03 01:13:50,828 - INFO - ✅ Created 21252 chunks
+2026-01-03 01:13:50,829 - INFO - 🧠 Initializing embeddings...
+2026-01-03 01:13:50,830 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-03 01:13:55,478 - INFO - 🗄️ Building vector database...
+2026-01-03 01:13:55,478 - INFO - Processing in batches of 50...
+2026-01-03 01:13:55,884 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-03 01:20:27,276 - INFO - ✅ Vector database built successfully
+2026-01-03 01:20:27,277 - INFO - 📊 Build report saved: C:\Users\AMRISH\Documents\Meenasetu\vector_db_build_report.json
+2026-01-03 01:20:27,277 - INFO - 
+======================================================================
+2026-01-03 01:20:27,277 - INFO - ✨ BUILD COMPLETE WITH ML INTEGRATION ✨
+2026-01-03 01:20:27,277 - INFO - ======================================================================
+2026-01-03 01:20:27,277 - INFO - 📁 Total Files: 68
+2026-01-03 01:20:27,277 - INFO - 📄 Total Documents: 20049
+2026-01-03 01:20:27,277 - INFO - ✂️ Total Chunks: 21252
+2026-01-03 01:20:27,277 - INFO - 🤖 ML Classifications: 0
+2026-01-03 01:20:27,278 - INFO - ⏱️ Duration: 400.66 seconds
+2026-01-03 01:20:27,278 - INFO - 
+📊 File Type Breakdown:
+2026-01-03 01:20:27,278 - INFO -    PDFs: 0
+2026-01-03 01:20:27,278 - INFO -    CSVs: 59
+2026-01-03 01:20:27,278 - INFO -    JSONs: 1433
+2026-01-03 01:20:27,278 - INFO -    TXTs: 2
+2026-01-03 01:20:27,278 - INFO -    Images: 0 (0 classified)
+2026-01-03 01:20:27,278 - INFO -    Errors: 0
+2026-01-03 01:20:27,278 - INFO - 
+🤖 ML Model Info:
+2026-01-03 01:20:27,279 - INFO -    Model: Loaded from C:\Users\AMRISH\Documents\Meenasetu\training\checkpoints\best_model.pth
+2026-01-03 01:20:27,279 - INFO -    Device: cpu
+2026-01-03 01:20:27,279 - INFO -    Classes: 14
+2026-01-03 01:20:27,279 - INFO - ======================================================================
+
+2026-01-03 01:35:52,156 - INFO - 🤖 Initializing Fish Classification Model on cpu
+2026-01-03 01:35:52,156 - INFO - 📥 Loading model from: C:\Users\AMRISH\Documents\Meenasetu\training\checkpoints\best_model.pth
+2026-01-03 01:35:52,268 - INFO - ✅ Loaded species_to_id: 14 classes
+2026-01-03 01:35:52,268 - INFO - 🎯 Detected 512 classes from state dict
+2026-01-03 01:35:52,268 - WARNING - ⚠️ Mismatch: state dict has 512, mapping has 14
+2026-01-03 01:35:52,269 - INFO - ✅ Loaded external class mapping: 14 classes
+2026-01-03 01:35:52,395 - INFO - 🏗️ Created EfficientNet-B0 model for 14 classes
+2026-01-03 01:35:52,395 - INFO -    Architecture: EfficientNet-B0 -> Dropout(0.5) -> Linear(1280, 14)
+2026-01-03 01:35:52,403 - WARNING - ⚠️ Strict loading failed, attempting key remapping...
+2026-01-03 01:35:52,410 - ERROR - ❌ Failed to load weights even with remapping: Error(s) in loading state_dict for FishClassifier:
+	size mismatch for backbone.classifier.1.weight: copying a param with shape torch.Size([512, 1280]) from checkpoint, the shape in current model is torch.Size([14, 1280]).
+	size mismatch for backbone.classifier.1.bias: copying a param with shape torch.Size([512]) from checkpoint, the shape in current model is torch.Size([14]).
+2026-01-03 01:35:52,419 - ERROR - ❌ Error loading model: Error(s) in loading state_dict for FishClassifier:
+	size mismatch for backbone.classifier.1.weight: copying a param with shape torch.Size([512, 1280]) from checkpoint, the shape in current model is torch.Size([14, 1280]).
+	size mismatch for backbone.classifier.1.bias: copying a param with shape torch.Size([512]) from checkpoint, the shape in current model is torch.Size([14]).
+2026-01-03 01:35:52,425 - INFO - ======================================================================
+2026-01-03 01:35:52,425 - INFO - 🚀 PRODUCTION VECTOR DATABASE BUILD WITH ML
+2026-01-03 01:35:52,425 - INFO - ======================================================================
+2026-01-03 01:35:52,426 - INFO - 📂 Scanning: C:\Users\AMRISH\Documents\Meenasetu\data\final
+2026-01-03 01:35:52,427 - INFO - 📂 Scanning: C:\Users\AMRISH\Documents\Meenasetu\datasets
+2026-01-03 01:35:52,431 - INFO - 📊 Found 68 files to process
+2026-01-03 01:35:52,432 - INFO - 📥 Loading documents with ML classification...
+2026-01-03 01:35:52,450 - INFO - ✅ CSV: extracted_fish_data.csv (15 rows, 16 documents)
+2026-01-03 01:35:52,473 - INFO - ✅ CSV: extracted_taxonomy_map.csv (261 rows, 262 documents)
+2026-01-03 01:35:52,502 - INFO - ✅ CSV: fish_mapping.csv (15 rows, 16 documents)
+2026-01-03 01:35:52,504 - INFO - ✅ JSON: fish_mapping.json (15 entries)
+2026-01-03 01:35:52,525 - INFO - ✅ CSV: fish_mapping_auto.csv (1 rows, 2 documents)
+2026-01-03 01:35:52,752 - INFO - ✅ CSV: fish_mapping_auto_generated.csv (1420 rows, 1001 documents)
+2026-01-03 01:35:52,826 - INFO - ✅ CSV: fish_mapping_cleaned.csv (1415 rows, 1001 documents)
+2026-01-03 01:35:52,849 - INFO - ✅ CSV: fish_mapping_cleaned_complete.csv (188 rows, 189 documents)
+2026-01-03 01:35:52,975 - INFO - ✅ CSV: fish_mapping_cleaned_final.csv (1128 rows, 1001 documents)
+2026-01-03 01:35:53,100 - INFO - ✅ CSV: fish_mapping_enriched.csv (1417 rows, 1001 documents)
+2026-01-03 01:35:53,159 - INFO - ✅ CSV: fish_mapping_high_quality.csv (254 rows, 255 documents)
+2026-01-03 01:35:53,285 - INFO - ✅ CSV: fish_mapping_local_enriched.csv (1290 rows, 1001 documents)
+2026-01-03 01:35:53,336 - INFO - ✅ JSON: fish_mapping_master.json (1417 entries)
+2026-01-03 01:35:53,465 - INFO - ✅ CSV: fish_mapping_master_pre_local_taxonomy.csv (1417 rows, 1001 documents)
+2026-01-03 01:35:53,589 - INFO - ✅ CSV: fish_mapping_master_v2.csv (1418 rows, 1001 documents)
+2026-01-03 01:35:53,713 - INFO - ✅ CSV: fish_mapping_master_v3.csv (1418 rows, 1001 documents)
+2026-01-03 01:35:53,773 - INFO - ✅ CSV: fish_mapping_production.csv (251 rows, 252 documents)
+2026-01-03 01:35:53,835 - INFO - ✅ CSV: fish_mapping_production_ready.csv (282 rows, 283 documents)
+2026-01-03 01:35:53,854 - INFO - ✅ CSV: local_taxonomy_database.csv (261 rows, 262 documents)
+2026-01-03 01:35:53,861 - INFO - ✅ CSV: merge_conflicts.csv (3 rows, 4 documents)
+2026-01-03 01:35:53,864 - INFO - ✅ JSON: taxonomy_cache.json (1 entries)
+2026-01-03 01:35:53,936 - INFO - ✅ CSV: wb_fish_diversity_combined.csv (345 rows, 346 documents)
+2026-01-03 01:35:53,968 - INFO - ✅ CSV: Ambassidae.csv (4 rows, 5 documents)
+2026-01-03 01:35:54,004 - INFO - ✅ CSV: Anabantidae.csv (2 rows, 3 documents)
+2026-01-03 01:35:54,037 - INFO - ✅ CSV: Anguillidae.csv (1 rows, 2 documents)
+2026-01-03 01:35:54,070 - INFO - ✅ CSV: Aplocheilidae.csv (1 rows, 2 documents)
+2026-01-03 01:35:54,103 - INFO - ✅ CSV: Badidae.csv (8 rows, 9 documents)
+2026-01-03 01:35:54,137 - INFO - ✅ CSV: Bagridae.csv (19 rows, 20 documents)
+2026-01-03 01:35:54,171 - INFO - ✅ CSV: Balitoridae.csv (1 rows, 2 documents)
+2026-01-03 01:35:54,202 - INFO - ✅ CSV: Belonidae.csv (1 rows, 2 documents)
+2026-01-03 01:35:54,236 - INFO - ✅ CSV: Botiidae.csv (6 rows, 7 documents)
+2026-01-03 01:35:54,270 - INFO - ✅ CSV: Channidae.csv (12 rows, 13 documents)
+2026-01-03 01:35:54,302 - INFO - ✅ CSV: Cichlidae.csv (3 rows, 4 documents)
+2026-01-03 01:35:54,335 - INFO - ✅ CSV: Clariidae.csv (4 rows, 5 documents)
+2026-01-03 01:35:54,368 - INFO - ✅ CSV: Clupeidae.csv (3 rows, 4 documents)
+2026-01-03 01:35:54,402 - INFO - ✅ CSV: Cobitidae.csv (10 rows, 11 documents)
+2026-01-03 01:35:54,439 - INFO - ✅ CSV: Cyprinidae.csv (79 rows, 80 documents)
+2026-01-03 01:35:54,472 - INFO - ✅ CSV: Engraulidae.csv (2 rows, 3 documents)
+2026-01-03 01:35:54,505 - INFO - ✅ CSV: Gobiidae.csv (1 rows, 2 documents)
+2026-01-03 01:35:54,537 - INFO - ✅ CSV: Heteropneustidae.csv (1 rows, 2 documents)
+2026-01-03 01:35:54,571 - INFO - ✅ CSV: Mastacembelidae.csv (5 rows, 6 documents)
+2026-01-03 01:35:54,603 - INFO - ✅ CSV: Nandidae.csv (1 rows, 2 documents)
+2026-01-03 01:35:54,635 - INFO - ✅ CSV: Notopteridae.csv (2 rows, 3 documents)
+2026-01-03 01:35:54,669 - INFO - ✅ CSV: Osphronemidae.csv (5 rows, 6 documents)
+2026-01-03 01:35:54,702 - INFO - ✅ CSV: Pangasiidae.csv (1 rows, 2 documents)
+2026-01-03 01:35:54,736 - INFO - ✅ CSV: Poeciliidae.csv (1 rows, 2 documents)
+2026-01-03 01:35:54,769 - INFO - ✅ CSV: Pristigasteridae.csv (2 rows, 3 documents)
+2026-01-03 01:35:54,804 - INFO - ✅ CSV: Psilorhynchidae.csv (5 rows, 6 documents)
+2026-01-03 01:35:54,837 - INFO - ✅ CSV: Schilbeidae.csv (6 rows, 7 documents)
+2026-01-03 01:35:54,872 - INFO - ✅ CSV: Siluridae.csv (5 rows, 6 documents)
+2026-01-03 01:35:54,908 - INFO - ✅ CSV: Sisoridae.csv (27 rows, 28 documents)
+2026-01-03 01:35:54,941 - INFO - ✅ CSV: Synbranchidae.csv (3 rows, 4 documents)
+2026-01-03 01:35:55,003 - INFO - ✅ CSV: fish_mapping_merged_high_quality.csv (257 rows, 258 documents)
+2026-01-03 01:35:55,141 - INFO - ✅ CSV: fish_mapping_merged_master.csv (1417 rows, 1001 documents)
+2026-01-03 01:35:55,203 - INFO - ✅ CSV: fish_mapping_merged_production.csv (254 rows, 255 documents)
+2026-01-03 01:35:55,268 - INFO - ✅ CSV: fish_mapping_top_300.csv (300 rows, 301 documents)
+2026-01-03 01:35:55,279 - INFO - ✅ CSV: merge_summary.csv (1 rows, 2 documents)
+2026-01-03 01:35:55,414 - INFO - ✅ CSV: needs_enhancement.csv (1131 rows, 1001 documents)
+2026-01-03 01:35:55,424 - INFO - ✅ CSV: auto_enrichment_report.csv (40 rows, 41 documents)
+2026-01-03 01:35:55,436 - INFO - ✅ CSV: enhancement_priorities.csv (129 rows, 130 documents)
+2026-01-03 01:35:55,551 - INFO - ✅ CSV: needs_enrichment.csv (874 rows, 875 documents)
+2026-01-03 01:35:55,612 - INFO - ✅ CSV: needs_taxonomy.csv (1132 rows, 1001 documents)
+2026-01-03 01:35:55,613 - INFO - ✅ TXT: validation_issues.txt
+2026-01-03 01:35:55,614 - INFO - ✅ TXT: validation_warnings.txt
+2026-01-03 01:35:55,615 - INFO - ✅ Loaded 16446 documents
+2026-01-03 01:35:55,615 - INFO - ✂️ Chunking documents...
+2026-01-03 01:35:56,039 - INFO - ✅ Created 17649 chunks
+2026-01-03 01:35:56,039 - INFO - 🧠 Initializing embeddings...
+2026-01-03 01:35:56,041 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-03 01:36:00,126 - INFO - 🗄️ Building vector database...
+2026-01-03 01:36:00,127 - INFO - Processing in batches of 50...
+2026-01-03 01:36:00,665 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-03 01:41:14,336 - INFO - ✅ Vector database built successfully
+2026-01-03 01:41:14,337 - INFO - 📊 Build report saved: C:\Users\AMRISH\Documents\Meenasetu\vector_db_build_report.json
+2026-01-03 01:41:14,337 - INFO - 
+======================================================================
+2026-01-03 01:41:14,337 - INFO - ✨ BUILD COMPLETE WITH ML INTEGRATION ✨
+2026-01-03 01:41:14,337 - INFO - ======================================================================
+2026-01-03 01:41:14,337 - INFO - 📁 Total Files: 68
+2026-01-03 01:41:14,338 - INFO - 📄 Total Documents: 16446
+2026-01-03 01:41:14,338 - INFO - ✂️ Total Chunks: 17649
+2026-01-03 01:41:14,338 - INFO - 🤖 ML Classifications: 0
+2026-01-03 01:41:14,338 - INFO - ⏱️ Duration: 321.91 seconds
+2026-01-03 01:41:14,338 - INFO - 
+📊 File Type Breakdown:
+2026-01-03 01:41:14,338 - INFO -    PDFs: 0
+2026-01-03 01:41:14,339 - INFO -    CSVs: 59
+2026-01-03 01:41:14,339 - INFO -    JSONs: 1433
+2026-01-03 01:41:14,339 - INFO -    TXTs: 2
+2026-01-03 01:41:14,339 - INFO -    Images: 0 (0 classified)
+2026-01-03 01:41:14,339 - INFO -    Errors: 0
+2026-01-03 01:41:14,339 - INFO - ======================================================================
+
+2026-01-03 01:41:14,358 - INFO - 🎉 Vector database build completed successfully!
+2026-01-03 01:49:09,631 - INFO - 🤖 Initializing Fish Classification Model on cpu
+2026-01-03 01:49:09,632 - INFO - 📥 Loading model from: C:\Users\AMRISH\Documents\Meenasetu\training\checkpoints\best_model.pth
+2026-01-03 01:49:09,743 - INFO - ✅ Loaded species_to_id: 14 classes
+2026-01-03 01:49:09,743 - INFO - 🎯 Detected 8 classes from state dict key: backbone.features.1.0.block.1.fc1.weight
+2026-01-03 01:49:09,743 - WARNING - ⚠️ MISMATCH: state dict has 8 classes, but mapping has 14 classes
+2026-01-03 01:49:09,744 - WARNING - ⚠️ Using state dict's 8 classes for model architecture
+2026-01-03 01:49:09,744 - INFO - ✅ Loaded external class mapping: 14 classes
+2026-01-03 01:49:09,840 - INFO - 🏗️ Created EfficientNet-B0 with CUSTOM CLASSIFIER for 14 classes
+2026-01-03 01:49:09,841 - INFO -    Architecture: EfficientNet-B0 -> [1280→512→256→14] with BatchNorm & Dropout
+2026-01-03 01:49:09,850 - INFO - ✅ Model weights loaded successfully (strict mode)
+2026-01-03 01:49:09,854 - INFO - ✅ Model loaded successfully with 14 classes
+2026-01-03 01:49:09,855 - INFO - 🏷️ Sample species: ['Amblypharyngodon mola', 'Aplocheilus panchax', 'Badis badis', 'Bagarius bagarius', 'Batasio batasio']...
+2026-01-03 01:49:09,855 - INFO - 🐟 Total species in mapping: 14
+2026-01-03 01:49:09,856 - INFO - ======================================================================
+2026-01-03 01:49:09,856 - INFO - 🚀 PRODUCTION VECTOR DATABASE BUILD WITH ML
+2026-01-03 01:49:09,856 - INFO - ======================================================================
+2026-01-03 01:49:09,857 - INFO - 📂 Scanning: C:\Users\AMRISH\Documents\Meenasetu\data\final
+2026-01-03 01:49:09,859 - INFO - 📂 Scanning: C:\Users\AMRISH\Documents\Meenasetu\datasets
+2026-01-03 01:49:09,862 - INFO - 📊 Found 68 files to process
+2026-01-03 01:49:09,862 - INFO - 📥 Loading documents with ML classification...
+2026-01-03 01:49:09,880 - INFO - ✅ CSV: extracted_fish_data.csv (15 rows, 16 documents)
+2026-01-03 01:49:09,900 - INFO - ✅ CSV: extracted_taxonomy_map.csv (261 rows, 262 documents)
+2026-01-03 01:49:09,927 - INFO - ✅ CSV: fish_mapping.csv (15 rows, 16 documents)
+2026-01-03 01:49:09,929 - INFO - ✅ JSON: fish_mapping.json (15 entries)
+2026-01-03 01:49:09,950 - INFO - ✅ CSV: fish_mapping_auto.csv (1 rows, 2 documents)
+2026-01-03 01:49:10,175 - INFO - ✅ CSV: fish_mapping_auto_generated.csv (1420 rows, 1001 documents)
+2026-01-03 01:49:10,250 - INFO - ✅ CSV: fish_mapping_cleaned.csv (1415 rows, 1001 documents)
+2026-01-03 01:49:10,273 - INFO - ✅ CSV: fish_mapping_cleaned_complete.csv (188 rows, 189 documents)
+2026-01-03 01:49:10,399 - INFO - ✅ CSV: fish_mapping_cleaned_final.csv (1128 rows, 1001 documents)
+2026-01-03 01:49:10,527 - INFO - ✅ CSV: fish_mapping_enriched.csv (1417 rows, 1001 documents)
+2026-01-03 01:49:10,586 - INFO - ✅ CSV: fish_mapping_high_quality.csv (254 rows, 255 documents)
+2026-01-03 01:49:10,716 - INFO - ✅ CSV: fish_mapping_local_enriched.csv (1290 rows, 1001 documents)
+2026-01-03 01:49:10,766 - INFO - ✅ JSON: fish_mapping_master.json (1417 entries)
+2026-01-03 01:49:10,897 - INFO - ✅ CSV: fish_mapping_master_pre_local_taxonomy.csv (1417 rows, 1001 documents)
+2026-01-03 01:49:11,021 - INFO - ✅ CSV: fish_mapping_master_v2.csv (1418 rows, 1001 documents)
+2026-01-03 01:49:11,146 - INFO - ✅ CSV: fish_mapping_master_v3.csv (1418 rows, 1001 documents)
+2026-01-03 01:49:11,206 - INFO - ✅ CSV: fish_mapping_production.csv (251 rows, 252 documents)
+2026-01-03 01:49:11,268 - INFO - ✅ CSV: fish_mapping_production_ready.csv (282 rows, 283 documents)
+2026-01-03 01:49:11,287 - INFO - ✅ CSV: local_taxonomy_database.csv (261 rows, 262 documents)
+2026-01-03 01:49:11,294 - INFO - ✅ CSV: merge_conflicts.csv (3 rows, 4 documents)
+2026-01-03 01:49:11,298 - INFO - ✅ JSON: taxonomy_cache.json (1 entries)
+2026-01-03 01:49:11,368 - INFO - ✅ CSV: wb_fish_diversity_combined.csv (345 rows, 346 documents)
+2026-01-03 01:49:11,400 - INFO - ✅ CSV: Ambassidae.csv (4 rows, 5 documents)
+2026-01-03 01:49:11,433 - INFO - ✅ CSV: Anabantidae.csv (2 rows, 3 documents)
+2026-01-03 01:49:11,465 - INFO - ✅ CSV: Anguillidae.csv (1 rows, 2 documents)
+2026-01-03 01:49:11,498 - INFO - ✅ CSV: Aplocheilidae.csv (1 rows, 2 documents)
+2026-01-03 01:49:11,531 - INFO - ✅ CSV: Badidae.csv (8 rows, 9 documents)
+2026-01-03 01:49:11,566 - INFO - ✅ CSV: Bagridae.csv (19 rows, 20 documents)
+2026-01-03 01:49:11,598 - INFO - ✅ CSV: Balitoridae.csv (1 rows, 2 documents)
+2026-01-03 01:49:11,629 - INFO - ✅ CSV: Belonidae.csv (1 rows, 2 documents)
+2026-01-03 01:49:11,661 - INFO - ✅ CSV: Botiidae.csv (6 rows, 7 documents)
+2026-01-03 01:49:11,696 - INFO - ✅ CSV: Channidae.csv (12 rows, 13 documents)
+2026-01-03 01:49:11,728 - INFO - ✅ CSV: Cichlidae.csv (3 rows, 4 documents)
+2026-01-03 01:49:11,761 - INFO - ✅ CSV: Clariidae.csv (4 rows, 5 documents)
+2026-01-03 01:49:11,794 - INFO - ✅ CSV: Clupeidae.csv (3 rows, 4 documents)
+2026-01-03 01:49:11,827 - INFO - ✅ CSV: Cobitidae.csv (10 rows, 11 documents)
+2026-01-03 01:49:11,865 - INFO - ✅ CSV: Cyprinidae.csv (79 rows, 80 documents)
+2026-01-03 01:49:11,898 - INFO - ✅ CSV: Engraulidae.csv (2 rows, 3 documents)
+2026-01-03 01:49:11,930 - INFO - ✅ CSV: Gobiidae.csv (1 rows, 2 documents)
+2026-01-03 01:49:11,963 - INFO - ✅ CSV: Heteropneustidae.csv (1 rows, 2 documents)
+2026-01-03 01:49:11,995 - INFO - ✅ CSV: Mastacembelidae.csv (5 rows, 6 documents)
+2026-01-03 01:49:12,027 - INFO - ✅ CSV: Nandidae.csv (1 rows, 2 documents)
+2026-01-03 01:49:12,059 - INFO - ✅ CSV: Notopteridae.csv (2 rows, 3 documents)
+2026-01-03 01:49:12,091 - INFO - ✅ CSV: Osphronemidae.csv (5 rows, 6 documents)
+2026-01-03 01:49:12,124 - INFO - ✅ CSV: Pangasiidae.csv (1 rows, 2 documents)
+2026-01-03 01:49:12,156 - INFO - ✅ CSV: Poeciliidae.csv (1 rows, 2 documents)
+2026-01-03 01:49:12,189 - INFO - ✅ CSV: Pristigasteridae.csv (2 rows, 3 documents)
+2026-01-03 01:49:12,222 - INFO - ✅ CSV: Psilorhynchidae.csv (5 rows, 6 documents)
+2026-01-03 01:49:12,256 - INFO - ✅ CSV: Schilbeidae.csv (6 rows, 7 documents)
+2026-01-03 01:49:12,288 - INFO - ✅ CSV: Siluridae.csv (5 rows, 6 documents)
+2026-01-03 01:49:12,323 - INFO - ✅ CSV: Sisoridae.csv (27 rows, 28 documents)
+2026-01-03 01:49:12,356 - INFO - ✅ CSV: Synbranchidae.csv (3 rows, 4 documents)
+2026-01-03 01:49:12,417 - INFO - ✅ CSV: fish_mapping_merged_high_quality.csv (257 rows, 258 documents)
+2026-01-03 01:49:12,554 - INFO - ✅ CSV: fish_mapping_merged_master.csv (1417 rows, 1001 documents)
+2026-01-03 01:49:12,616 - INFO - ✅ CSV: fish_mapping_merged_production.csv (254 rows, 255 documents)
+2026-01-03 01:49:12,682 - INFO - ✅ CSV: fish_mapping_top_300.csv (300 rows, 301 documents)
+2026-01-03 01:49:12,692 - INFO - ✅ CSV: merge_summary.csv (1 rows, 2 documents)
+2026-01-03 01:49:12,830 - INFO - ✅ CSV: needs_enhancement.csv (1131 rows, 1001 documents)
+2026-01-03 01:49:12,841 - INFO - ✅ CSV: auto_enrichment_report.csv (40 rows, 41 documents)
+2026-01-03 01:49:12,854 - INFO - ✅ CSV: enhancement_priorities.csv (129 rows, 130 documents)
+2026-01-03 01:49:12,969 - INFO - ✅ CSV: needs_enrichment.csv (874 rows, 875 documents)
+2026-01-03 01:49:13,028 - INFO - ✅ CSV: needs_taxonomy.csv (1132 rows, 1001 documents)
+2026-01-03 01:49:13,029 - INFO - ✅ TXT: validation_issues.txt
+2026-01-03 01:49:13,030 - INFO - ✅ TXT: validation_warnings.txt
+2026-01-03 01:49:13,031 - INFO - ✅ Loaded 16446 documents
+2026-01-03 01:49:13,031 - INFO - ✂️ Chunking documents...
+2026-01-03 01:49:13,471 - INFO - ✅ Created 17649 chunks
+2026-01-03 01:49:13,471 - INFO - 🧠 Initializing embeddings...
+2026-01-03 01:49:13,473 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-03 01:49:19,146 - INFO - 🗄️ Building vector database...
+2026-01-03 01:49:19,146 - INFO - Processing in batches of 50...
+2026-01-03 01:49:19,648 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-03 01:54:28,010 - INFO - ✅ Vector database built successfully
+2026-01-03 01:54:28,011 - INFO - 📊 Build report saved: C:\Users\AMRISH\Documents\Meenasetu\vector_db_build_report.json
+2026-01-03 01:54:28,012 - INFO - 
+======================================================================
+2026-01-03 01:54:28,012 - INFO - ✨ BUILD COMPLETE WITH ML INTEGRATION ✨
+2026-01-03 01:54:28,012 - INFO - ======================================================================
+2026-01-03 01:54:28,012 - INFO - 📁 Total Files: 68
+2026-01-03 01:54:28,012 - INFO - 📄 Total Documents: 16446
+2026-01-03 01:54:28,012 - INFO - ✂️ Total Chunks: 17649
+2026-01-03 01:54:28,012 - INFO - 🤖 ML Classifications: 0
+2026-01-03 01:54:28,012 - INFO - ⏱️ Duration: 318.15 seconds
+2026-01-03 01:54:28,012 - INFO - 
+📊 File Type Breakdown:
+2026-01-03 01:54:28,013 - INFO -    PDFs: 0
+2026-01-03 01:54:28,013 - INFO -    CSVs: 59
+2026-01-03 01:54:28,013 - INFO -    JSONs: 1433
+2026-01-03 01:54:28,013 - INFO -    TXTs: 2
+2026-01-03 01:54:28,013 - INFO -    Images: 0 (0 classified)
+2026-01-03 01:54:28,013 - INFO -    Errors: 0
+2026-01-03 01:54:28,013 - INFO - 
+🤖 ML Model Info:
+2026-01-03 01:54:28,014 - INFO -    Model: Loaded from C:\Users\AMRISH\Documents\Meenasetu\training\checkpoints\best_model.pth
+2026-01-03 01:54:28,014 - INFO -    Device: cpu
+2026-01-03 01:54:28,014 - INFO -    Classes: 14
+2026-01-03 01:54:28,014 - INFO - ======================================================================
+
+2026-01-03 01:54:28,030 - INFO - 🎉 Vector database build completed successfully!
+2026-01-03 02:35:12,359 - INFO - 🤖 Initializing Fish Classification Model on cpu
+2026-01-03 02:35:12,359 - INFO - 📥 Loading model from: C:\Users\AMRISH\Documents\Meenasetu\training\checkpoints\best_model.pth
+2026-01-03 02:35:12,510 - INFO - ✅ Loaded species_to_id: 14 classes
+2026-01-03 02:35:12,510 - INFO - 🎯 Detected 14 output classes from: backbone.classifier.9.weight
+2026-01-03 02:35:12,510 - INFO - ✅ Classes match: 14 classes in both checkpoint and mapping
+2026-01-03 02:35:12,511 - INFO - ✅ Loaded external class mapping: 14 classes
+2026-01-03 02:35:12,696 - INFO - 🏗️ Created EfficientNet-B0 with CUSTOM CLASSIFIER for 14 classes
+2026-01-03 02:35:12,696 - INFO -    Architecture: EfficientNet-B0 -> [1280→512→256→14] with BatchNorm & Dropout
+2026-01-03 02:35:12,708 - INFO - ✅ Model weights loaded successfully (strict mode)
+2026-01-03 02:35:12,713 - INFO - ✅ Model loaded successfully with 14 classes
+2026-01-03 02:35:12,713 - INFO - 🏷️ Sample species: ['Amblypharyngodon mola', 'Aplocheilus panchax', 'Badis badis', 'Bagarius bagarius', 'Batasio batasio']...
+2026-01-03 02:35:12,713 - INFO - 🐟 Total species in mapping: 14
+2026-01-03 02:35:12,717 - INFO - ======================================================================
+2026-01-03 02:35:12,717 - INFO - 🚀 PRODUCTION VECTOR DATABASE BUILD WITH ML
+2026-01-03 02:35:12,717 - INFO - ======================================================================
+2026-01-03 02:35:12,718 - INFO - 📂 Scanning: C:\Users\AMRISH\Documents\Meenasetu\data\final
+2026-01-03 02:35:12,720 - INFO - 📂 Scanning: C:\Users\AMRISH\Documents\Meenasetu\datasets
+2026-01-03 02:35:12,723 - INFO - 📊 Found 68 files to process
+2026-01-03 02:35:12,724 - INFO - 📥 Loading documents with ML classification...
+2026-01-03 02:35:12,748 - INFO - ✅ CSV: extracted_fish_data.csv (15 rows, 16 documents)
+2026-01-03 02:35:12,775 - INFO - ✅ CSV: extracted_taxonomy_map.csv (261 rows, 262 documents)
+2026-01-03 02:35:12,810 - INFO - ✅ CSV: fish_mapping.csv (15 rows, 16 documents)
+2026-01-03 02:35:12,812 - INFO - ✅ JSON: fish_mapping.json (15 entries)
+2026-01-03 02:35:12,837 - INFO - ✅ CSV: fish_mapping_auto.csv (1 rows, 2 documents)
+2026-01-03 02:35:13,091 - INFO - ✅ CSV: fish_mapping_auto_generated.csv (1420 rows, 1001 documents)
+2026-01-03 02:35:13,200 - INFO - ✅ CSV: fish_mapping_cleaned.csv (1415 rows, 1001 documents)
+2026-01-03 02:35:13,233 - INFO - ✅ CSV: fish_mapping_cleaned_complete.csv (188 rows, 189 documents)
+2026-01-03 02:35:13,422 - INFO - ✅ CSV: fish_mapping_cleaned_final.csv (1128 rows, 1001 documents)
+2026-01-03 02:35:13,594 - INFO - ✅ CSV: fish_mapping_enriched.csv (1417 rows, 1001 documents)
+2026-01-03 02:35:13,678 - INFO - ✅ CSV: fish_mapping_high_quality.csv (254 rows, 255 documents)
+2026-01-03 02:35:13,841 - INFO - ✅ CSV: fish_mapping_local_enriched.csv (1290 rows, 1001 documents)
+2026-01-03 02:35:13,920 - INFO - ✅ JSON: fish_mapping_master.json (1417 entries)
+2026-01-03 02:35:14,096 - INFO - ✅ CSV: fish_mapping_master_pre_local_taxonomy.csv (1417 rows, 1001 documents)
+2026-01-03 02:35:14,259 - INFO - ✅ CSV: fish_mapping_master_v2.csv (1418 rows, 1001 documents)
+2026-01-03 02:35:14,430 - INFO - ✅ CSV: fish_mapping_master_v3.csv (1418 rows, 1001 documents)
+2026-01-03 02:35:14,527 - INFO - ✅ CSV: fish_mapping_production.csv (251 rows, 252 documents)
+2026-01-03 02:35:14,611 - INFO - ✅ CSV: fish_mapping_production_ready.csv (282 rows, 283 documents)
+2026-01-03 02:35:14,636 - INFO - ✅ CSV: local_taxonomy_database.csv (261 rows, 262 documents)
+2026-01-03 02:35:14,643 - INFO - ✅ CSV: merge_conflicts.csv (3 rows, 4 documents)
+2026-01-03 02:35:14,650 - INFO - ✅ JSON: taxonomy_cache.json (1 entries)
+2026-01-03 02:35:14,743 - INFO - ✅ CSV: wb_fish_diversity_combined.csv (345 rows, 346 documents)
+2026-01-03 02:35:14,791 - INFO - ✅ CSV: Ambassidae.csv (4 rows, 5 documents)
+2026-01-03 02:35:14,833 - INFO - ✅ CSV: Anabantidae.csv (2 rows, 3 documents)
+2026-01-03 02:35:14,876 - INFO - ✅ CSV: Anguillidae.csv (1 rows, 2 documents)
+2026-01-03 02:35:14,921 - INFO - ✅ CSV: Aplocheilidae.csv (1 rows, 2 documents)
+2026-01-03 02:35:14,969 - INFO - ✅ CSV: Badidae.csv (8 rows, 9 documents)
+2026-01-03 02:35:15,016 - INFO - ✅ CSV: Bagridae.csv (19 rows, 20 documents)
+2026-01-03 02:35:15,061 - INFO - ✅ CSV: Balitoridae.csv (1 rows, 2 documents)
+2026-01-03 02:35:15,105 - INFO - ✅ CSV: Belonidae.csv (1 rows, 2 documents)
+2026-01-03 02:35:15,150 - INFO - ✅ CSV: Botiidae.csv (6 rows, 7 documents)
+2026-01-03 02:35:15,200 - INFO - ✅ CSV: Channidae.csv (12 rows, 13 documents)
+2026-01-03 02:35:15,244 - INFO - ✅ CSV: Cichlidae.csv (3 rows, 4 documents)
+2026-01-03 02:35:15,285 - INFO - ✅ CSV: Clariidae.csv (4 rows, 5 documents)
+2026-01-03 02:35:15,329 - INFO - ✅ CSV: Clupeidae.csv (3 rows, 4 documents)
+2026-01-03 02:35:15,375 - INFO - ✅ CSV: Cobitidae.csv (10 rows, 11 documents)
+2026-01-03 02:35:15,427 - INFO - ✅ CSV: Cyprinidae.csv (79 rows, 80 documents)
+2026-01-03 02:35:15,471 - INFO - ✅ CSV: Engraulidae.csv (2 rows, 3 documents)
+2026-01-03 02:35:15,516 - INFO - ✅ CSV: Gobiidae.csv (1 rows, 2 documents)
+2026-01-03 02:35:15,558 - INFO - ✅ CSV: Heteropneustidae.csv (1 rows, 2 documents)
+2026-01-03 02:35:15,606 - INFO - ✅ CSV: Mastacembelidae.csv (5 rows, 6 documents)
+2026-01-03 02:35:15,649 - INFO - ✅ CSV: Nandidae.csv (1 rows, 2 documents)
+2026-01-03 02:35:15,691 - INFO - ✅ CSV: Notopteridae.csv (2 rows, 3 documents)
+2026-01-03 02:35:15,734 - INFO - ✅ CSV: Osphronemidae.csv (5 rows, 6 documents)
+2026-01-03 02:35:15,776 - INFO - ✅ CSV: Pangasiidae.csv (1 rows, 2 documents)
+2026-01-03 02:35:15,873 - INFO - ✅ CSV: Poeciliidae.csv (1 rows, 2 documents)
+2026-01-03 02:35:15,916 - INFO - ✅ CSV: Pristigasteridae.csv (2 rows, 3 documents)
+2026-01-03 02:35:15,960 - INFO - ✅ CSV: Psilorhynchidae.csv (5 rows, 6 documents)
+2026-01-03 02:35:16,002 - INFO - ✅ CSV: Schilbeidae.csv (6 rows, 7 documents)
+2026-01-03 02:35:16,043 - INFO - ✅ CSV: Siluridae.csv (5 rows, 6 documents)
+2026-01-03 02:35:16,091 - INFO - ✅ CSV: Sisoridae.csv (27 rows, 28 documents)
+2026-01-03 02:35:16,135 - INFO - ✅ CSV: Synbranchidae.csv (3 rows, 4 documents)
+2026-01-03 02:35:16,222 - INFO - ✅ CSV: fish_mapping_merged_high_quality.csv (257 rows, 258 documents)
+2026-01-03 02:35:16,398 - INFO - ✅ CSV: fish_mapping_merged_master.csv (1417 rows, 1001 documents)
+2026-01-03 02:35:16,484 - INFO - ✅ CSV: fish_mapping_merged_production.csv (254 rows, 255 documents)
+2026-01-03 02:35:16,574 - INFO - ✅ CSV: fish_mapping_top_300.csv (300 rows, 301 documents)
+2026-01-03 02:35:16,586 - INFO - ✅ CSV: merge_summary.csv (1 rows, 2 documents)
+2026-01-03 02:35:16,770 - INFO - ✅ CSV: needs_enhancement.csv (1131 rows, 1001 documents)
+2026-01-03 02:35:16,783 - INFO - ✅ CSV: auto_enrichment_report.csv (40 rows, 41 documents)
+2026-01-03 02:35:16,804 - INFO - ✅ CSV: enhancement_priorities.csv (129 rows, 130 documents)
+2026-01-03 02:35:16,949 - INFO - ✅ CSV: needs_enrichment.csv (874 rows, 875 documents)
+2026-01-03 02:35:17,028 - INFO - ✅ CSV: needs_taxonomy.csv (1132 rows, 1001 documents)
+2026-01-03 02:35:17,031 - INFO - ✅ TXT: validation_issues.txt
+2026-01-03 02:35:17,032 - INFO - ✅ TXT: validation_warnings.txt
+2026-01-03 02:35:17,032 - INFO - ✅ Loaded 16446 documents
+2026-01-03 02:35:17,033 - INFO - ✂️ Chunking documents...
+2026-01-03 02:35:17,577 - INFO - ✅ Created 17649 chunks
+2026-01-03 02:35:17,578 - INFO - 🧠 Initializing embeddings...
+2026-01-03 02:35:17,579 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-01-03 02:35:23,160 - INFO - 🗄️ Building vector database...
+2026-01-03 02:35:23,161 - INFO - Processing in batches of 50...
+2026-01-03 02:35:24,381 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-01-03 02:41:50,900 - INFO - ✅ Vector database built successfully
+2026-01-03 02:41:50,902 - INFO - 📊 Build report saved: C:\Users\AMRISH\Documents\Meenasetu\vector_db_build_report.json
+2026-01-03 02:41:50,902 - INFO - 
+======================================================================
+2026-01-03 02:41:50,902 - INFO - ✨ BUILD COMPLETE WITH ML INTEGRATION ✨
+2026-01-03 02:41:50,902 - INFO - ======================================================================
+2026-01-03 02:41:50,903 - INFO - 📁 Total Files: 68
+2026-01-03 02:41:50,903 - INFO - 📄 Total Documents: 16446
+2026-01-03 02:41:50,903 - INFO - ✂️ Total Chunks: 17649
+2026-01-03 02:41:50,903 - INFO - 🤖 ML Classifications: 0
+2026-01-03 02:41:50,903 - INFO - ⏱️ Duration: 398.18 seconds
+2026-01-03 02:41:50,904 - INFO - 
+📊 File Type Breakdown:
+2026-01-03 02:41:50,904 - INFO -    PDFs: 0
+2026-01-03 02:41:50,904 - INFO -    CSVs: 59
+2026-01-03 02:41:50,904 - INFO -    JSONs: 1433
+2026-01-03 02:41:50,904 - INFO -    TXTs: 2
+2026-01-03 02:41:50,904 - INFO -    Images: 0 (0 classified)
+2026-01-03 02:41:50,905 - INFO -    Errors: 0
+2026-01-03 02:41:50,905 - INFO - 
+🤖 ML Model Info:
+2026-01-03 02:41:50,905 - INFO -    Model: Loaded from C:\Users\AMRISH\Documents\Meenasetu\training\checkpoints\best_model.pth
+2026-01-03 02:41:50,905 - INFO -    Device: cpu
+2026-01-03 02:41:50,905 - INFO -    Classes: 14
+2026-01-03 02:41:50,906 - INFO - ======================================================================
+
+2026-01-03 02:41:50,928 - INFO - 🎉 Vector database build completed successfully!

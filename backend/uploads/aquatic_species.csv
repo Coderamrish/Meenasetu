@@ -1,0 +1,7 @@
+Species,Habitat,Temperature_C,Production_Tons,Protein_Content,Status
+Catfish,Freshwater,22,500,18.5,Stable
+Rohu,Freshwater,28,800,19.2,High Demand
+Carp,Freshwater,25,600,17.8,Stable
+Trout,Cold Water,12,300,20.1,Premium
+Tilapia,Freshwater,26,700,19.5,Growing
+Salmon,Saltwater,8,450,21.3,Declining
