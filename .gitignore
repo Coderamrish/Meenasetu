@@ -13,3 +13,49 @@ __pycache__/
 
 # ML models handled by LFS
 *.pth
+# ===== ENV & SECRETS =====
+.env
+backend/.env
+
+# ===== VIRTUAL ENVS =====
+venv/
+venv-frontend/
+venv-backend/
+
+# ===== LOG FILES =====
+*.log
+meenasetu.log
+meenasetu_api.log
+meenasetu_production.log
+vector_db_build_enhanced.log
+
+# ===== DATABASES / VECTOR DB =====
+vector_db/
+chromadb/
+*.sqlite3
+
+# ===== ML MODELS & CHECKPOINTS =====
+*.pth
+*.keras
+models/
+MeenaSetuModels/
+training/checkpoints/
+training/outputs/
+
+# ===== DATASETS & UPLOADS =====
+FishDiseaseimage/
+FishImgDataset/
+backend/uploads/
+
+# ===== CACHE =====
+__pycache__/
+*.pyc
+
+# ===== IMAGES / PLOTS =====
+backend/outputs/
+*.png
+*.jpg
+*.jpeg
+
+# ===== REPORTS =====
+*.json
