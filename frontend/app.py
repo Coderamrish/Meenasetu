@@ -7,343 +7,131 @@ from datetime import datetime
 import json
 from pathlib import Path
 import time
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, List
 import base64
 from PIL import Image
 import io
 
 # ============================================================
-# 🎨 PAGE CONFIGURATION
+# PAGE CONFIGURATION
 # ============================================================
 st.set_page_config(
     page_title="🐠 MeenaSetu AI",
     page_icon="🐠",
     layout="wide",
-    initial_sidebar_state="expanded",
-    menu_items={
-        'Get Help': 'https://github.com/yourusername/meenasetu',
-        'Report a bug': "https://github.com/yourusername/meenasetu/issues",
-        'About': "# MeenaSetu AI\nIntelligent Aquatic Biodiversity Expert System"
-    }
+    initial_sidebar_state="expanded"
 )
 
 # ============================================================
-# 🎨 CUSTOM CSS STYLING
+# CUSTOM CSS
 # ============================================================
 st.markdown("""
 <style>
-    /* Main theme colors */
-    :root {
-        --primary-color: #1E88E5;
-        --secondary-color: #26C6DA;
-        --success-color: #66BB6A;
-        --warning-color: #FFA726;
-        --error-color: #EF5350;
-        --background-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
     
-    /* Custom header */
+    * { font-family: 'Inter', sans-serif; }
+    
     .main-header {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 2rem;
-        border-radius: 15px;
+        padding: 2.5rem;
+        border-radius: 20px;
         margin-bottom: 2rem;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
         text-align: center;
     }
     
     .main-header h1 {
         color: white;
-        font-size: 3rem;
+        font-size: 3.5rem;
         margin: 0;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+        font-weight: 700;
     }
     
     .main-header p {
-        color: rgba(255,255,255,0.9);
-        font-size: 1.2rem;
-        margin-top: 0.5rem;
+        color: rgba(255,255,255,0.95);
+        font-size: 1.3rem;
+        margin-top: 0.8rem;
     }
     
-    /* Card styling */
-    .info-card {
-        background: white;
-        padding: 1.5rem;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        margin-bottom: 1rem;
-        border-left: 4px solid #667eea;
-    }
-    
-    /* Stats container */
-    .stats-container {
-        display: flex;
-        gap: 1rem;
-        margin-bottom: 2rem;
-    }
-    
-    .stat-box {
-        flex: 1;
+    .metric-card {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 1.5rem;
-        border-radius: 12px;
+        padding: 1.8rem;
+        border-radius: 15px;
         color: white;
         text-align: center;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
     }
     
-    .stat-box h3 {
-        margin: 0;
-        font-size: 2rem;
-        font-weight: bold;
-    }
+    .metric-card h2 { margin: 0; font-size: 3rem; font-weight: 700; }
+    .metric-card p { margin: 0.5rem 0 0 0; opacity: 0.95; font-size: 1.1rem; }
     
-    .stat-box p {
-        margin: 0.5rem 0 0 0;
-        opacity: 0.9;
-    }
-    
-    /* Message styling */
     .user-message {
-        background: #E3F2FD;
-        padding: 1rem;
-        border-radius: 12px;
-        margin: 0.5rem 0;
-        border-left: 4px solid #1E88E5;
+        background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+        padding: 1.2rem;
+        border-radius: 15px;
+        margin: 1rem 0;
+        border-left: 5px solid #1E88E5;
     }
     
     .ai-message {
-        background: #F3E5F5;
-        padding: 1rem;
-        border-radius: 12px;
-        margin: 0.5rem 0;
-        border-left: 4px solid #9C27B0;
-    }
-    
-    /* Source citation */
-    .source-citation {
-        background: #FFF3E0;
-        padding: 0.8rem;
-        border-radius: 8px;
-        margin-top: 1rem;
-        border-left: 3px solid #FF9800;
-        font-size: 0.9rem;
-    }
-    
-    /* Upload section */
-    .upload-section {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 2rem;
-        border-radius: 12px;
-        margin-bottom: 2rem;
-    }
-    
-    /* Success/Error alerts */
-    .success-alert {
-        background: #C8E6C9;
-        color: #2E7D32;
-        padding: 1rem;
-        border-radius: 8px;
-        border-left: 4px solid #4CAF50;
+        background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%);
+        padding: 1.2rem;
+        border-radius: 15px;
         margin: 1rem 0;
+        border-left: 5px solid #9C27B0;
     }
     
-    .error-alert {
-        background: #FFCDD2;
-        color: #C62828;
-        padding: 1rem;
-        border-radius: 8px;
-        border-left: 4px solid #F44336;
+    .classification-card {
+        background: linear-gradient(135deg, #C8E6C9 0%, #A5D6A7 100%);
+        padding: 1.5rem;
+        border-radius: 15px;
         margin: 1rem 0;
+        border-left: 5px solid #4CAF50;
     }
     
-    /* Button styling */
-    .stButton>button {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        padding: 0.75rem 2rem;
-        font-weight: bold;
-        transition: all 0.3s;
+    .disease-alert {
+        background: linear-gradient(135deg, #FFCCBC 0%, #FFAB91 100%);
+        padding: 1.5rem;
+        border-radius: 15px;
+        margin: 1rem 0;
+        border-left: 5px solid #FF5722;
     }
     
-    .stButton>button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    .success-box {
+        background: linear-gradient(135deg, #C8E6C9 0%, #A5D6A7 100%);
+        color: #1B5E20;
+        padding: 1.2rem;
+        border-radius: 12px;
+        border-left: 5px solid #4CAF50;
+        margin: 1rem 0;
+        font-weight: 600;
     }
     
-    /* Sidebar styling */
-    .css-1d391kg {
-        background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    .error-box {
+        background: linear-gradient(135deg, #FFCDD2 0%, #EF9A9A 100%);
+        color: #B71C1C;
+        padding: 1.2rem;
+        border-radius: 12px;
+        border-left: 5px solid #F44336;
+        margin: 1rem 0;
+        font-weight: 600;
     }
     
-    /* Hide Streamlit branding */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
-    
-    /* Animations */
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .fade-in {
-        animation: fadeIn 0.5s ease-in;
-    }
+    header {visibility: hidden;}
 </style>
 """, unsafe_allow_html=True)
 
 # ============================================================
-# 🔧 API CONFIGURATION
+# CONFIGURATION
 # ============================================================
 API_BASE_URL = "http://localhost:8000"
 
 # ============================================================
-# 🛠️ UTILITY FUNCTIONS
+# SESSION STATE INITIALIZATION
 # ============================================================
-
-def make_api_request(endpoint: str, method: str = "GET", **kwargs) -> Optional[Dict]:
-    """Make API request with error handling"""
-    try:
-        url = f"{API_BASE_URL}{endpoint}"
-        if method == "GET":
-            response = requests.get(url, **kwargs)
-        elif method == "POST":
-            response = requests.post(url, **kwargs)
-        else:
-            return None
-        
-        response.raise_for_status()
-        return response.json()
-    except requests.exceptions.RequestException as e:
-        st.error(f"❌ API Error: {str(e)}")
-        return None
-
-def format_timestamp(timestamp: str) -> str:
-    """Format ISO timestamp to readable format"""
-    try:
-        dt = datetime.fromisoformat(timestamp.replace('Z', '+00:00'))
-        return dt.strftime("%B %d, %Y at %I:%M %p")
-    except:
-        return timestamp
-
-def get_file_icon(file_type: str) -> str:
-    """Get icon for file type"""
-    icons = {
-        'pdf': '📄',
-        'csv': '📊',
-        'json': '📋',
-        'txt': '📝',
-        'image': '🖼️',
-        'jpg': '🖼️',
-        'jpeg': '🖼️',
-        'png': '🖼️'
-    }
-    return icons.get(file_type.lower().replace('.', ''), '📁')
-
-def create_metric_card(title: str, value: Any, icon: str):
-    """Create a metric card with icon"""
-    st.markdown(f"""
-    <div class="stat-box fade-in">
-        <div style="font-size: 2.5rem;">{icon}</div>
-        <h3>{value}</h3>
-        <p>{title}</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-# ============================================================
-# 📊 VISUALIZATION FUNCTIONS
-# ============================================================
-
-def create_interactive_bar_chart(data: Dict, title: str, xlabel: str = "Category", ylabel: str = "Value"):
-    """Create interactive bar chart with Plotly"""
-    df = pd.DataFrame(list(data.items()), columns=[xlabel, ylabel])
-    
-    fig = go.Figure(data=[
-        go.Bar(
-            x=df[xlabel],
-            y=df[ylabel],
-            marker=dict(
-                color=df[ylabel],
-                colorscale='Viridis',
-                showscale=True
-            ),
-            text=df[ylabel],
-            textposition='auto',
-            hovertemplate='<b>%{x}</b><br>Value: %{y}<extra></extra>'
-        )
-    ])
-    
-    fig.update_layout(
-        title=dict(text=title, font=dict(size=24, color='#2C3E50')),
-        xaxis_title=xlabel,
-        yaxis_title=ylabel,
-        template='plotly_white',
-        height=500,
-        showlegend=False,
-        hovermode='x unified'
-    )
-    
-    return fig
-
-def create_interactive_pie_chart(data: Dict, title: str):
-    """Create interactive pie chart with Plotly"""
-    labels = list(data.keys())
-    values = list(data.values())
-    
-    fig = go.Figure(data=[
-        go.Pie(
-            labels=labels,
-            values=values,
-            hole=0.3,
-            textposition='auto',
-            textinfo='label+percent',
-            hovertemplate='<b>%{label}</b><br>Value: %{value}<br>Percentage: %{percent}<extra></extra>',
-            marker=dict(
-                colors=px.colors.qualitative.Set3,
-                line=dict(color='white', width=2)
-            )
-        )
-    ])
-    
-    fig.update_layout(
-        title=dict(text=title, font=dict(size=24, color='#2C3E50')),
-        template='plotly_white',
-        height=500,
-        showlegend=True
-    )
-    
-    return fig
-
-def create_line_chart(df: pd.DataFrame, x_col: str, y_col: str, title: str):
-    """Create interactive line chart"""
-    fig = px.line(
-        df, 
-        x=x_col, 
-        y=y_col,
-        title=title,
-        template='plotly_white',
-        markers=True
-    )
-    
-    fig.update_traces(
-        line=dict(width=3, color='#667eea'),
-        marker=dict(size=10, color='#764ba2')
-    )
-    
-    fig.update_layout(
-        title=dict(font=dict(size=24, color='#2C3E50')),
-        height=500,
-        hovermode='x unified'
-    )
-    
-    return fig
-
-# ============================================================
-# 🎯 SESSION STATE INITIALIZATION
-# ============================================================
-
 if 'conversation_history' not in st.session_state:
     st.session_state.conversation_history = []
 
@@ -351,485 +139,524 @@ if 'uploaded_files' not in st.session_state:
     st.session_state.uploaded_files = []
 
 if 'stats' not in st.session_state:
-    st.session_state.stats = {
-        'queries': 0,
-        'uploads': 0,
-        'visualizations': 0
-    }
+    st.session_state.stats = {'queries': 0, 'uploads': 0, 'visualizations': 0, 'classifications': 0}
 
 # ============================================================
-# 🏠 MAIN HEADER
+# HELPER FUNCTIONS
 # ============================================================
+def make_api_request(endpoint: str, method: str = "GET", **kwargs) -> Optional[Dict]:
+    """Make API request with error handling"""
+    try:
+        url = f"{API_BASE_URL}{endpoint}"
+        
+        if method == "GET":
+            response = requests.get(url, timeout=30, **kwargs)
+        elif method == "POST":
+            response = requests.post(url, timeout=60, **kwargs)
+        elif method == "DELETE":
+            response = requests.delete(url, timeout=30, **kwargs)
+        
+        response.raise_for_status()
+        return response.json()
+    
+    except requests.exceptions.ConnectionError:
+        st.error("🔌 Cannot connect to API server at http://localhost:8000")
+        return None
+    except requests.exceptions.Timeout:
+        st.error("⏱️ Request timeout")
+        return None
+    except Exception as e:
+        st.error(f"❌ Error: {str(e)}")
+        return None
 
+def get_file_icon(file_type: str) -> str:
+    """Get emoji for file type"""
+    icons = {'pdf': '📄', 'csv': '📊', 'json': '📋', 'txt': '📝', 'jpg': '🖼️', 'jpeg': '🖼️', 'png': '🖼️'}
+    return icons.get(file_type.lower().replace('.', ''), '📁')
+
+def create_plotly_bar_chart(data: Dict, title: str, xlabel: str = "", ylabel: str = ""):
+    """Create bar chart"""
+    df = pd.DataFrame(list(data.items()), columns=['Category', 'Value'])
+    
+    fig = go.Figure(data=[
+        go.Bar(
+            x=df['Category'],
+            y=df['Value'],
+            marker=dict(color=df['Value'], colorscale='Viridis'),
+            text=df['Value'],
+            texttemplate='%{text:.1f}',
+            textposition='auto'
+        )
+    ])
+    
+    fig.update_layout(
+        title=title,
+        xaxis_title=xlabel or 'Category',
+        yaxis_title=ylabel or 'Value',
+        template='plotly_white',
+        height=500
+    )
+    return fig
+
+def create_plotly_pie_chart(data: Dict, title: str):
+    """Create pie chart"""
+    fig = go.Figure(data=[
+        go.Pie(
+            labels=list(data.keys()),
+            values=list(data.values()),
+            hole=0.4,
+            textinfo='label+percent'
+        )
+    ])
+    
+    fig.update_layout(title=title, template='plotly_white', height=500)
+    return fig
+
+# ============================================================
+# MAIN HEADER
+# ============================================================
 st.markdown("""
-<div class="main-header fade-in">
+<div class="main-header">
     <h1>🐠 MeenaSetu AI</h1>
     <p>Intelligent Aquatic Biodiversity Expert System</p>
-    <p style="font-size: 0.9rem; margin-top: 0.5rem;">
-        Powered by RAG, ML Classification & Advanced Analytics
+    <p style="font-size: 1rem; margin-top: 0.8rem;">
+        🤖 Multi-Model Ensemble | 📚 17K+ Documents | 🧠 Advanced RAG
     </p>
 </div>
 """, unsafe_allow_html=True)
 
 # ============================================================
-# 📊 DASHBOARD METRICS
+# HEALTH CHECK
 # ============================================================
-
-# Fetch system stats
 health_data = make_api_request("/health")
-stats_data = make_api_request("/stats")
 
-if health_data and stats_data:
+if health_data and health_data.get('status') == 'healthy':
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
-        create_metric_card(
-            "Documents in DB",
-            stats_data.get('statistics', {}).get('database_stats', {}).get('total_documents', 0),
-            "📚"
-        )
+        st.markdown(f"""
+        <div class="metric-card">
+            <div style="font-size: 2.5rem;">📚</div>
+            <h2>{health_data['metrics']['vector_db_documents']:,}</h2>
+            <p>Documents</p>
+        </div>
+        """, unsafe_allow_html=True)
     
     with col2:
-        create_metric_card(
-            "ML Species",
-            stats_data.get('statistics', {}).get('ml_species_count', 0),
-            "🤖"
-        )
+        st.markdown(f"""
+        <div class="metric-card">
+            <div style="font-size: 2.5rem;">🤖</div>
+            <h2>{health_data['metrics']['ml_models_loaded']}</h2>
+            <p>ML Models</p>
+        </div>
+        """, unsafe_allow_html=True)
     
     with col3:
-        create_metric_card(
-            "Queries Processed",
-            stats_data.get('statistics', {}).get('session_info', {}).get('queries_processed', 0),
-            "❓"
-        )
+        st.markdown(f"""
+        <div class="metric-card">
+            <div style="font-size: 2.5rem;">❓</div>
+            <h2>{health_data['metrics']['queries_processed']}</h2>
+            <p>Queries</p>
+        </div>
+        """, unsafe_allow_html=True)
     
     with col4:
-        ml_status = stats_data.get('statistics', {}).get('ml_model_status', 'unknown')
-        status_icon = "✅" if ml_status == "loaded" else "⚠️"
-        create_metric_card(
-            "ML Model Status",
-            ml_status.upper(),
-            status_icon
-        )
+        st.markdown("""
+        <div class="metric-card">
+            <div style="font-size: 2.5rem;">✅</div>
+            <h2>ONLINE</h2>
+            <p>Status</p>
+        </div>
+        """, unsafe_allow_html=True)
+else:
+    st.error("🔌 API server is not running. Start it with: `uvicorn main:app --reload`")
+    st.stop()
 
 st.markdown("<br>", unsafe_allow_html=True)
 
 # ============================================================
-# 🎨 MAIN TABS
+# TABS
 # ============================================================
-
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
-    "💬 Chat & Query",
-    "📤 Upload Files",
-    "📊 Visualizations",
-    "🖼️ Image Classification",
-    "📈 Analytics & Stats"
+    "💬 Chat",
+    "🖼️ Fish ID",
+    "🔬 Disease",
+    "📊 Visualize",
+    "📈 Stats"
 ])
 
 # ============================================================
-# 💬 TAB 1: CHAT & QUERY
+# TAB 1: CHAT
 # ============================================================
-
 with tab1:
-    st.markdown("### 💬 Ask MeenaSetu AI")
-    st.markdown("Ask questions about fish species, aquaculture, or any uploaded documents.")
-    
-    # Query input
-    query = st.text_area(
-        "Your Question:",
-        placeholder="Example: Which fish species has the highest protein content?",
-        height=100,
-        key="query_input"
-    )
-    
-    col1, col2, col3 = st.columns([1, 1, 4])
-    
-    with col1:
-        ask_button = st.button("🚀 Ask", type="primary", use_container_width=True)
-    
-    with col2:
-        clear_button = st.button("🧹 Clear History", use_container_width=True)
-    
-    if clear_button:
-        result = make_api_request("/conversation/clear", method="POST")
-        if result:
-            st.session_state.conversation_history = []
-            st.success("✅ Conversation history cleared!")
-            st.rerun()
-    
-    if ask_button and query:
-        with st.spinner("🤔 MeenaSetu is thinking..."):
-            result = make_api_request(
-                "/rag/query",
-                method="POST",
-                json={"query": query, "include_sources": True}
-            )
-            
-            if result:
-                st.session_state.conversation_history.append({
-                    "query": query,
-                    "response": result,
-                    "timestamp": datetime.now().isoformat()
-                })
-                st.session_state.stats['queries'] += 1
-                st.rerun()
-    
-    # Display conversation history
-    if st.session_state.conversation_history:
-        st.markdown("---")
-        st.markdown("### 📜 Conversation History")
-        
-        for i, conv in enumerate(reversed(st.session_state.conversation_history)):
-            with st.container():
-                # User message
-                st.markdown(f"""
-                <div class="user-message fade-in">
-                    <strong>🙋 You asked:</strong><br>
-                    {conv['query']}
-                </div>
-                """, unsafe_allow_html=True)
-                
-                # AI response
-                response = conv['response']
-                st.markdown(f"""
-                <div class="ai-message fade-in">
-                    <strong>🐠 MeenaSetu:</strong><br>
-                    {response['answer']}
-                </div>
-                """, unsafe_allow_html=True)
-                
-                # Sources
-                if response.get('sources'):
-                    with st.expander(f"📚 View {response['source_count']} Sources"):
-                        for src in response['sources']:
-                            icon = get_file_icon(src['type'])
-                            st.markdown(f"""
-                            <div class="source-citation">
-                                <strong>{icon} {src['filename']}</strong> ({src['type']})<br>
-                                <em>{src['snippet'][:200]}...</em>
-                                {f"<br>🤖 <strong>ML Classified:</strong> {src['ml_species']}" if src.get('ml_classified') else ''}
-                            </div>
-                            """, unsafe_allow_html=True)
-                
-                st.markdown("<br>", unsafe_allow_html=True)
-
-# ============================================================
-# 📤 TAB 2: UPLOAD FILES
-# ============================================================
-
-with tab2:
-    st.markdown("### 📤 Upload Documents & Images")
-    st.markdown("Upload PDFs, CSVs, JSON, text files, or images for analysis.")
+    st.markdown("### 💬 Chat with MeenaSetu AI")
     
     col1, col2 = st.columns([2, 1])
     
     with col1:
-        uploaded_files = st.file_uploader(
-            "Choose files",
-            type=['pdf', 'csv', 'json', 'txt', 'jpg', 'jpeg', 'png', 'gif', 'bmp'],
-            accept_multiple_files=True,
-            key="file_uploader"
-        )
+        query = st.text_area("Your Question:", placeholder="Ask about fish species, aquaculture, or upload an image...", height=100)
     
     with col2:
-        st.markdown("**Supported Formats:**")
-        st.markdown("""
-        - 📄 PDF Documents
-        - 📊 CSV Data
-        - 📋 JSON Files
-        - 📝 Text Files
-        - 🖼️ Images (Fish ID)
-        """)
-    
-    if uploaded_files:
-        upload_button = st.button("🚀 Upload & Process", type="primary", use_container_width=True)
+        st.markdown("**📎 Optional Image**")
+        chat_image = st.file_uploader("Upload fish image", type=['jpg', 'jpeg', 'png'], key="chat_img", label_visibility="collapsed")
         
-        if upload_button:
-            progress_bar = st.progress(0)
-            status_text = st.empty()
-            
-            for idx, file in enumerate(uploaded_files):
-                progress = (idx + 1) / len(uploaded_files)
-                progress_bar.progress(progress)
-                status_text.text(f"Processing {file.name}... ({idx + 1}/{len(uploaded_files)})")
-                
-                # Upload file
-                files = {'file': (file.name, file.getvalue(), file.type)}
-                result = make_api_request("/upload/file", method="POST", files=files)
-                
-                if result and result.get('status') == 'success':
-                    st.session_state.uploaded_files.append({
-                        'filename': file.name,
-                        'type': result.get('file_type'),
-                        'chunks': result.get('chunks_created'),
-                        'ml_classified': result.get('ml_classified', False),
-                        'timestamp': datetime.now().isoformat()
-                    })
-                    st.session_state.stats['uploads'] += 1
-                    
-                    st.success(f"✅ {file.name} - {result.get('message')}")
-                else:
-                    st.error(f"❌ Failed to upload {file.name}")
-                
-                time.sleep(0.2)
-            
-            progress_bar.progress(1.0)
-            status_text.text("✅ All files processed!")
-            time.sleep(1)
-            st.rerun()
+        if chat_image:
+            img = Image.open(chat_image)
+            st.image(img, caption="Attached", width=200)
     
-    # Display uploaded files
-    if st.session_state.uploaded_files:
+    col_a, col_b = st.columns([1, 5])
+    
+    with col_a:
+        ask_btn = st.button("🚀 Ask", type="primary")
+    
+    with col_b:
+        clear_btn = st.button("🧹 Clear")
+    
+    if clear_btn:
+        make_api_request("/conversation/clear", method="DELETE")
+        st.session_state.conversation_history = []
+        st.success("✅ Cleared!")
+        time.sleep(1)
+        st.rerun()
+    
+    if ask_btn and query:
+        with st.spinner("🤔 Thinking..."):
+            classify_result = None
+            enhanced_query = query
+            
+            # Classify image if uploaded
+            if chat_image:
+                files = {'file': (chat_image.name, chat_image.getvalue(), chat_image.type)}
+                classify_result = make_api_request("/classify/fish", method="POST", files=files)
+                
+                if classify_result and classify_result.get('status') == 'success':
+                    species = classify_result['species']
+                    conf = classify_result['confidence']
+                    enhanced_query = f"[Image: {species} ({conf*100:.1f}%)] {query}"
+            
+            # Get answer
+            result = make_api_request("/query/simple", method="POST", data={"query": enhanced_query})
+            
+            if result:
+                st.session_state.conversation_history.append({
+                    'query': query,
+                    'response': result,
+                    'classification': classify_result,
+                    'timestamp': datetime.now().isoformat()
+                })
+                st.session_state.stats['queries'] += 1
+                st.rerun()
+    
+    # Display history
+    if st.session_state.conversation_history:
         st.markdown("---")
-        st.markdown("### 📁 Recently Uploaded Files")
+        st.markdown("### 📜 Conversation")
         
-        df = pd.DataFrame(st.session_state.uploaded_files)
-        st.dataframe(
-            df[['filename', 'type', 'chunks', 'ml_classified']],
-            use_container_width=True,
-            hide_index=True
-        )
-
-# ============================================================
-# 📊 TAB 3: VISUALIZATIONS
-# ============================================================
-
-with tab3:
-    st.markdown("### 📊 Data Visualizations")
-    st.markdown("Create beautiful charts from your data.")
-    
-    viz_type = st.selectbox(
-        "Select Visualization Type",
-        ["Bar Chart", "Pie Chart", "Line Chart", "Analyze CSV for Suggestions"]
-    )
-    
-    if viz_type in ["Bar Chart", "Pie Chart"]:
-        st.markdown("#### Enter Data Manually")
-        
-        col1, col2 = st.columns(2)
-        
-        with col1:
-            title = st.text_input("Chart Title", "My Chart")
+        for conv in reversed(st.session_state.conversation_history[-5:]):
+            st.markdown(f'<div class="user-message"><strong>🙋 You:</strong><br>{conv["query"]}</div>', unsafe_allow_html=True)
             
-        with col2:
-            num_entries = st.number_input("Number of data points", 2, 20, 5)
-        
-        data = {}
-        st.markdown("**Enter your data:**")
-        
-        cols = st.columns(2)
-        for i in range(num_entries):
-            with cols[i % 2]:
-                label = st.text_input(f"Label {i+1}", f"Item {i+1}", key=f"label_{i}")
-                value = st.number_input(f"Value {i+1}", 0.0, 10000.0, float(i+1)*10, key=f"value_{i}")
-                data[label] = value
-        
-        if st.button("🎨 Generate Visualization", type="primary"):
-            with st.spinner("Creating visualization..."):
-                if viz_type == "Bar Chart":
-                    fig = create_interactive_bar_chart(data, title)
-                else:
-                    fig = create_interactive_pie_chart(data, title)
-                
-                st.plotly_chart(fig, use_container_width=True)
-                st.session_state.stats['visualizations'] += 1
-                st.success("✅ Visualization created successfully!")
-    
-    elif viz_type == "Analyze CSV for Suggestions":
-        st.markdown("#### Upload CSV for Analysis")
-        
-        csv_file = st.file_uploader("Choose CSV file", type=['csv'], key="csv_analyzer")
-        
-        if csv_file:
-            if st.button("🔍 Analyze CSV", type="primary"):
-                with st.spinner("Analyzing CSV..."):
-                    files = {'file': (csv_file.name, csv_file.getvalue(), 'text/csv')}
-                    result = make_api_request("/visualize/analyze-csv", method="POST", files=files)
-                    
-                    if result and result.get('status') == 'success':
-                        st.success(f"✅ {result.get('message')}")
-                        
-                        st.markdown("#### 💡 Suggested Visualizations")
-                        
-                        for i, suggestion in enumerate(result.get('suggestions', [])):
-                            with st.expander(f"Suggestion {i+1}: {suggestion['description']}"):
-                                if suggestion['type'] == 'bar':
-                                    fig = create_interactive_bar_chart(
-                                        suggestion['data'],
-                                        suggestion['description']
-                                    )
-                                else:
-                                    fig = create_interactive_pie_chart(
-                                        suggestion['data'],
-                                        suggestion['description']
-                                    )
-                                st.plotly_chart(fig, use_container_width=True)
+            if conv.get('classification'):
+                cls = conv['classification']
+                st.markdown(f"""
+                <div class="classification-card">
+                    <strong>🎯 Detected:</strong> <strong>{cls['species']}</strong> 
+                    (Confidence: {cls['confidence']*100:.1f}%)
+                </div>
+                """, unsafe_allow_html=True)
+                st.progress(cls['confidence'])
+            
+            st.markdown(f'<div class="ai-message"><strong>🐠 MeenaSetu:</strong><br>{conv["response"]["answer"]}</div>', unsafe_allow_html=True)
+            st.markdown("<br>", unsafe_allow_html=True)
 
 # ============================================================
-# 🖼️ TAB 4: IMAGE CLASSIFICATION
+# TAB 2: FISH CLASSIFICATION
 # ============================================================
-
-with tab4:
-    st.markdown("### 🖼️ Fish Species Classification")
-    st.markdown("Upload an image of a fish for AI-powered species identification.")
+with tab2:
+    st.markdown("### 🖼️ Fish Species Identification")
     
-    col1, col2 = st.columns([1, 1])
+    col1, col2 = st.columns(2)
     
     with col1:
-        image_file = st.file_uploader(
-            "Upload Fish Image",
-            type=['jpg', 'jpeg', 'png', 'gif', 'bmp'],
-            key="image_classifier"
-        )
+        fish_image = st.file_uploader("Upload Fish Image", type=['jpg', 'jpeg', 'png'], key="fish_id")
         
-        if image_file:
-            image = Image.open(image_file)
-            st.image(image, caption="Uploaded Image", use_container_width=True)
+        if fish_image:
+            img = Image.open(fish_image)
+            st.image(img, caption="Fish Image", width=400)
             
-            if st.button("🔍 Classify Species", type="primary", use_container_width=True):
-                with st.spinner("🤖 AI is analyzing the image..."):
-                    files = {'file': (image_file.name, image_file.getvalue(), image_file.type)}
-                    result = make_api_request("/classify/image", method="POST", files=files)
+            if st.button("🔍 Identify Species", type="primary"):
+                with st.spinner("🤖 Analyzing..."):
+                    files = {'file': (fish_image.name, fish_image.getvalue(), fish_image.type)}
+                    result = make_api_request("/classify/fish", method="POST", files=files)
                     
                     if result and result.get('status') == 'success':
                         with col2:
-                            st.markdown("### 🎯 Classification Results")
+                            st.markdown("### 🎯 Results")
                             
                             st.markdown(f"""
-                            <div class="success-alert fade-in">
-                                <h2>🐠 {result['predicted_species']}</h2>
-                                <h3>Confidence: {result['confidence']*100:.1f}%</h3>
+                            <div class="classification-card">
+                                <h2>🐠 {result['species']}</h2>
+                                <p style="font-size: 1.5rem;"><strong>Confidence: {result['confidence']*100:.2f}%</strong></p>
+                                <p><strong>Model:</strong> {result['model_info']['model_used']}</p>
                             </div>
                             """, unsafe_allow_html=True)
                             
-                            # Confidence meter
                             st.progress(result['confidence'])
                             
                             st.markdown("#### 🏆 Top 3 Predictions")
+                            for i, pred in enumerate(result['top3_predictions'], 1):
+                                st.write(f"**{i}. {pred['species']}** - {pred['confidence']*100:.2f}%")
+                                st.progress(pred['confidence'])
                             
-                            for i, pred in enumerate(result.get('top3_predictions', []), 1):
-                                confidence = pred['confidence'] * 100
+                            st.session_state.stats['classifications'] += 1
+
+# ============================================================
+# TAB 3: DISEASE DETECTION
+# ============================================================
+with tab3:
+    st.markdown("### 🔬 Fish Disease Detection")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        disease_image = st.file_uploader("Upload Sick Fish Image", type=['jpg', 'jpeg', 'png'], key="disease_img")
+        
+        if disease_image:
+            img = Image.open(disease_image)
+            st.image(img, caption="Disease Analysis", width=400)
+            
+            description = st.text_area("Describe symptoms (optional):", height=80)
+            
+            if st.button("🔬 Detect Disease", type="primary"):
+                with st.spinner("🔬 Analyzing..."):
+                    files = {'file': (disease_image.name, disease_image.getvalue(), disease_image.type)}
+                    data = {'description': description, 'get_treatment': 'true'}
+                    
+                    result = make_api_request("/detect/disease", method="POST", files=files, data=data)
+                    
+                    if result:
+                        with col2:
+                            if result.get('status') == 'detected':
                                 st.markdown(f"""
-                                <div class="info-card">
-                                    <strong>{i}. {pred['species']}</strong><br>
-                                    Confidence: {confidence:.1f}%
+                                <div class="disease-alert">
+                                    <h3>⚠️ {result['primary_disease']}</h3>
+                                    <p><strong>Confidence:</strong> {result.get('confidence', 0)*100:.1f}%</p>
                                 </div>
                                 """, unsafe_allow_html=True)
-                                st.progress(pred['confidence'])
+                                
+                                if result.get('recommendations'):
+                                    st.markdown("#### 💊 Treatment")
+                                    for i, rec in enumerate(result['recommendations'], 1):
+                                        st.write(f"**{i}.** {rec}")
+                            
+                            elif result.get('status') == 'healthy':
+                                st.markdown('<div class="success-box">✅ No disease detected!</div>', unsafe_allow_html=True)
+                            
+                            else:
+                                st.markdown(f'<div class="error-box">❌ {result.get("message", "Detection failed")}</div>', unsafe_allow_html=True)
+
+# ============================================================
+# TAB 4: VISUALIZATIONS
+# ============================================================
+with tab4:
+    st.markdown("### 📊 Data Visualizations")
+    
+    viz_mode = st.radio("Mode:", ["Manual Entry", "Upload CSV"], horizontal=True)
+    
+    if viz_mode == "Manual Entry":
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            chart_type = st.selectbox("Chart Type", ["Bar", "Pie", "Line"])
+            title = st.text_input("Title", "My Chart")
+            num_points = st.slider("Data points", 2, 10, 5)
+        
+        with col2:
+            if chart_type in ["Bar", "Line"]:
+                xlabel = st.text_input("X-axis", "Category")
+                ylabel = st.text_input("Y-axis", "Value")
+            else:
+                xlabel = ylabel = ""
+        
+        st.markdown("#### Enter Data")
+        data = {}
+        
+        for i in range(num_points):
+            col_l, col_v = st.columns(2)
+            with col_l:
+                label = st.text_input(f"Label {i+1}", f"Item {i+1}", key=f"l_{i}")
+            with col_v:
+                value = st.number_input(f"Value {i+1}", 0.0, 10000.0, float((i+1)*10), key=f"v_{i}")
+            data[label] = value
+        
+        if st.button("🎨 Generate", type="primary"):
+            with st.spinner("Creating..."):
+                if chart_type == "Bar":
+                    fig = create_plotly_bar_chart(data, title, xlabel, ylabel)
+                elif chart_type == "Pie":
+                    fig = create_plotly_pie_chart(data, title)
+                else:  # Line
+                    df = pd.DataFrame(list(data.items()), columns=['X', 'Y'])
+                    fig = px.line(df, x='X', y='Y', title=title, markers=True)
+                
+                st.plotly_chart(fig, use_container_width=True)
+                
+                # Save via API
+                api_type = chart_type.lower()
+                api_data = {
+                    "plot_type": api_type,
+                    "data": data,
+                    "title": title,
+                    "xlabel": xlabel,
+                    "ylabel": ylabel
+                }
+                
+                result = make_api_request("/visualize/create", method="POST", json=api_data)
+                
+                if result and result.get('status') == 'success':
+                    st.success(f"✅ Saved! Download: {API_BASE_URL}{result.get('download_url', '')}")
+                    st.session_state.stats['visualizations'] += 1
+    
+    else:  # CSV Upload
+        csv_file = st.file_uploader("Upload CSV", type=['csv'], key="csv_viz")
+        
+        if csv_file:
+            df = pd.read_csv(csv_file)
+            st.dataframe(df.head(10))
+            st.write(f"**Shape:** {df.shape[0]} rows × {df.shape[1]} columns")
+            
+            numeric_cols = df.select_dtypes(include=['number']).columns.tolist()
+            categorical_cols = df.select_dtypes(include=['object']).columns.tolist()
+            
+            col1, col2, col3 = st.columns(3)
+            
+            with col1:
+                x_col = st.selectbox("X-axis", categorical_cols if categorical_cols else df.columns.tolist())
+            
+            with col2:
+                y_col = st.selectbox("Y-axis", numeric_cols if numeric_cols else df.columns.tolist())
+            
+            with col3:
+                auto_type = st.selectbox("Type", ["Bar", "Pie", "Line", "Scatter"])
+            
+            if st.button("📊 Create", type="primary"):
+                with st.spinner("Generating..."):
+                    try:
+                        if auto_type == "Bar" and categorical_cols and numeric_cols:
+                            data = df.groupby(x_col)[y_col].mean().to_dict()
+                            fig = create_plotly_bar_chart(data, f"{y_col} by {x_col}", x_col, y_col)
+                        
+                        elif auto_type == "Pie" and x_col in categorical_cols:
+                            data = df[x_col].value_counts().head(10).to_dict()
+                            fig = create_plotly_pie_chart(data, f"Distribution of {x_col}")
+                        
+                        elif auto_type == "Scatter":
+                            fig = px.scatter(df, x=x_col, y=y_col, title=f"{y_col} vs {x_col}")
+                        
+                        else:
+                            df_sorted = df.sort_values(x_col)
+                            fig = px.line(df_sorted, x=x_col, y=y_col, title=f"{y_col} vs {x_col}", markers=True)
+                        
+                        st.plotly_chart(fig, use_container_width=True)
+                        st.success("✅ Visualization created!")
+                        st.session_state.stats['visualizations'] += 1
                     
-                    elif result and result.get('status') == 'no_model':
-                        st.warning("⚠️ ML model not available. Please ensure the model is trained.")
-                    else:
-                        st.error("❌ Classification failed. Please try again.")
+                    except Exception as e:
+                        st.error(f"❌ Error: {str(e)}")
 
 # ============================================================
-# 📈 TAB 5: ANALYTICS & STATS
+# TAB 5: ANALYTICS
 # ============================================================
-
 with tab5:
-    st.markdown("### 📈 System Analytics & Statistics")
+    st.markdown("### 📈 System Statistics")
+    
+    stats_data = make_api_request("/stats")
     
     if stats_data:
         statistics = stats_data.get('statistics', {})
-        
-        # Session Info
-        st.markdown("#### 🎯 Current Session")
         session_info = statistics.get('session_info', {})
-        
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            st.metric("Documents Processed", session_info.get('documents_processed', 0))
-        with col2:
-            st.metric("Queries Processed", session_info.get('queries_processed', 0))
-        with col3:
-            st.metric("Images Classified", session_info.get('images_classified', 0))
-        
-        # Database Stats
-        st.markdown("#### 🗄️ Vector Database")
         db_stats = statistics.get('database_stats', {})
         
+        col1, col2, col3, col4 = st.columns(4)
+        
+        with col1:
+            st.metric("Docs Processed", session_info.get('documents_processed', 0))
+        
+        with col2:
+            st.metric("Queries", session_info.get('queries_processed', 0))
+        
+        with col3:
+            st.metric("Images", session_info.get('images_classified', 0))
+        
+        with col4:
+            st.metric("Viz Created", st.session_state.stats['visualizations'])
+        
+        st.markdown("---")
+        st.markdown("#### 🗄️ Vector Database")
+        
         col1, col2 = st.columns(2)
+        
         with col1:
             st.metric("Total Documents", db_stats.get('total_documents', 0))
+        
         with col2:
-            st.metric("Collection", db_stats.get('collection_name', 'N/A'))
+            st.metric("ML Status", statistics.get('ml_model_status', 'unknown').upper())
         
-        # File Processing Stats
-        st.markdown("#### 📁 File Processing Statistics")
-        file_stats = statistics.get('file_processing_stats', {})
+        # Species list
+        species_data = make_api_request("/docs/species-list")
         
-        if file_stats:
-            fig = create_interactive_bar_chart(
-                file_stats,
-                "Files Processed by Type",
-                "File Type",
-                "Count"
-            )
-            st.plotly_chart(fig, use_container_width=True)
+        if species_data and species_data.get('species'):
+            st.markdown("---")
+            st.markdown(f"#### 🐠 Classifiable Species ({species_data.get('total_species', 0)})")
+            
+            with st.expander("View All Species"):
+                species_list = species_data.get('species', [])
+                cols = st.columns(3)
+                
+                for i, species in enumerate(species_list):
+                    with cols[i % 3]:
+                        st.write(f"• {species}")
         
-        # ML Model Info
-        st.markdown("#### 🤖 Machine Learning Model")
-        
-        col1, col2 = st.columns(2)
-        with col1:
-            ml_status = statistics.get('ml_model_status', 'unknown')
-            status_color = "🟢" if ml_status == "loaded" else "🔴"
-            st.markdown(f"**Status:** {status_color} {ml_status.upper()}")
-        with col2:
-            st.metric("Species Trained", statistics.get('ml_species_count', 0))
-        
-        # System Configuration
-        with st.expander("⚙️ System Configuration"):
-            config_data = make_api_request("/config")
-            if config_data:
-                st.json(config_data)
-        
-        # Refresh button
-        if st.button("🔄 Refresh Statistics", use_container_width=True):
+        if st.button("🔄 Refresh"):
             st.rerun()
 
 # ============================================================
-# 🔗 SIDEBAR
+# SIDEBAR
 # ============================================================
-
 with st.sidebar:
     st.markdown("### 🐠 MeenaSetu AI")
     st.markdown("---")
     
-    st.markdown("#### 🎯 Quick Actions")
-    
-    if st.button("🏠 Home", use_container_width=True):
-        st.rerun()
-    
-    if st.button("📚 Documentation", use_container_width=True):
-        st.info("Documentation coming soon!")
-    
-    if st.button("❓ Help", use_container_width=True):
-        st.info("""
-        **How to use MeenaSetu AI:**
-        
-        1. **Chat:** Ask questions about fish species
-        2. **Upload:** Add PDF, CSV, JSON, images
-        3. **Visualize:** Create charts from data
-        4. **Classify:** Identify fish from images
-        5. **Analyze:** View system statistics
-        """)
+    st.markdown("#### 📊 Session Stats")
+    st.write(f"- Queries: {st.session_state.stats['queries']}")
+    st.write(f"- Classifications: {st.session_state.stats['classifications']}")
+    st.write(f"- Visualizations: {st.session_state.stats['visualizations']}")
     
     st.markdown("---")
-    st.markdown("#### 📊 Session Stats")
-    st.metric("Queries", st.session_state.stats['queries'])
-    st.metric("Uploads", st.session_state.stats['uploads'])
-    st.metric("Visualizations", st.session_state.stats['visualizations'])
+    st.markdown("#### 🚀 Quick Actions")
+    
+    if st.button("📚 API Docs"):
+        st.write(f"[Open Docs]({API_BASE_URL}/docs)")
+    
+    if st.button("💾 Export Chat"):
+        st.write(f"[Download]({API_BASE_URL}/conversation/export)")
     
     st.markdown("---")
     st.markdown("#### ℹ️ About")
     st.markdown("""
-    **Version:** 1.0.0  
-    **Powered by:**  
-    - 🤖 LangChain RAG
-    - 🧠 Groq LLM
-    - 📊 ML Classification
-    - 🎨 Plotly Visualizations
+    **MeenaSetu AI v2.0**
     
-    ---
-    Made with ❤️ By Amrish Kumar Tiwary Lead AI Full Stack Developer""")
+    - 🤖 3 ML Models
+    - 📚 17K+ Documents
+    - 💬 Groq LLM
+    - 🔬 Disease Detection
+    
+    Made with ❤️ by  
+    **Amrish Kumar Tiwary**
+    """)
+
+st.markdown("---")
+st.markdown("""
+<div style="text-align: center; color: #666;">
+    <p>🐠 MeenaSetu AI - Intelligent Aquatic Expert | Version 2.0.0 | © 2026</p>
+</div>
+""", unsafe_allow_html=True)

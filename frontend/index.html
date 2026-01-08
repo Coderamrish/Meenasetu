@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeenaSetu AI - Fish Intelligence Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-fish me-2"></i>
+                <strong>MeenaSetu AI</strong>
+            </a>
+            <div class="navbar-text">
+                <span class="badge bg-light text-primary">Fish Intelligence Platform</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 mb-3">AI-Powered Fish Analysis</h1>
+                    <p class="lead mb-4">
+                        Upload fish images to instantly identify species and detect diseases. 
+                        Powered by advanced deep learning models for accurate aquaculture insights.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-light btn-lg" onclick="scrollToUpload()">
+                            <i class="fas fa-upload me-2"></i>Try Now
+                        </button>
+                        <button class="btn btn-outline-light btn-lg" onclick="scrollToFeatures()">
+                            <i class="fas fa-info-circle me-2"></i>Learn More
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/29/12/13/fish-1869685_1280.jpg" 
+                         alt="Fish Illustration" class="hero-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mt-5" id="mainContent">
+        <div class="row">
+            <!-- Upload Section -->
+            <div class="col-lg-6">
+                <div class="card shadow-lg upload-card">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0"><i class="fas fa-cloud-upload-alt me-2"></i>Upload Fish Image</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="upload-area" id="uploadArea">
+                            <i class="fas fa-cloud-upload-alt fa-3x mb-3"></i>
+                            <h4>Drag & Drop or Click to Upload</h4>
+                            <p class="text-muted">Supported formats: JPG, PNG, WebP (Max 10MB)</p>
+                            <input type="file" id="imageInput" accept="image/*" class="d-none">
+                            <button class="btn btn-primary btn-lg mt-3" onclick="document.getElementById('imageInput').click()">
+                                <i class="fas fa-folder-open me-2"></i>Browse Files
+                            </button>
+                        </div>
+                        
+                        <!-- Preview -->
+                        <div id="previewSection" class="mt-4" style="display: none;">
+                            <h5>Image Preview</h5>
+                            <div class="text-center">
+                                <img id="imagePreview" class="img-fluid rounded shadow" 
+                                     style="max-height: 300px;" alt="Preview">
+                            </div>
+                            <div class="mt-3 text-center">
+                                <button class="btn btn-success me-2" onclick="analyzeImage()">
+                                    <i class="fas fa-search me-2"></i>Analyze Image
+                                </button>
+                                <button class="btn btn-outline-secondary" onclick="clearImage()">
+                                    <i class="fas fa-times me-2"></i>Clear
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Model Status -->
+                <div class="card shadow-sm mt-4">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0"><i class="fas fa-microchip me-2"></i>System Status</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="status-card" id="speciesStatus">
+                                    <div class="status-icon">
+                                        <i class="fas fa-fish"></i>
+                                    </div>
+                                    <div class="status-info">
+                                        <h6>Species Model</h6>
+                                        <span class="badge bg-warning">Loading...</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="status-card" id="diseaseStatus">
+                                    <div class="status-icon">
+                                        <i class="fas fa-heartbeat"></i>
+                                    </div>
+                                    <div class="status-info">
+                                        <h6>Disease Model</h6>
+                                        <span class="badge bg-warning">Loading...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="col-lg-6">
+                <!-- Loading -->
+                <div class="text-center p-5" id="loadingSpinner" style="display: none;">
+                    <div class="spinner-border text-primary" style="width: 4rem; height: 4rem;" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <h4 class="mt-3">Analyzing Image...</h4>
+                    <p class="text-muted">Please wait while we process your fish image</p>
+                </div>
+
+                <!-- Species Results -->
+                <div class="card shadow-lg mb-4" id="speciesResults" style="display: none;">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0"><i class="fas fa-fish me-2"></i>Species Identification</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center mb-4">
+                            <h3 id="predictedSpecies" class="text-success">Loading...</h3>
+                            <div class="mt-3">
+                                <h5 id="speciesConfidence">Confidence: 0%</h5>
+                                <div class="progress" style="height: 20px;">
+                                    <div class="progress-bar bg-success" id="confidenceBar" 
+                                         style="width: 0%; transition: width 1s ease-in-out;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h6>Top Predictions:</h6>
+                        <div id="topPredictions" class="mt-3"></div>
+                    </div>
+                </div>
+
+                <!-- Disease Results -->
+                <div class="card shadow-lg" id="diseaseResults" style="display: none;">
+                    <div class="card-header bg-danger text-white">
+                        <h5 class="mb-0"><i class="fas fa-heartbeat me-2"></i>Health Analysis</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center mb-4">
+                            <div id="healthStatus">
+                                <span class="badge bg-secondary" style="font-size: 1.2em;">Analyzing...</span>
+                            </div>
+                            <div class="mt-3">
+                                <h5 id="diseaseConfidence">Confidence: 0%</h5>
+                                <div class="progress" style="height: 20px;">
+                                    <div class="progress-bar bg-danger" id="diseaseConfidenceBar" 
+                                         style="width: 0%; transition: width 1s ease-in-out;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <h6>Health Details:</h6>
+                        <div id="diseaseDetails" class="mt-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="row mt-5" id="featuresSection">
+            <div class="col-12">
+                <h2 class="text-center mb-4">Advanced Features</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="feature-card text-center p-4">
+                            <i class="fas fa-brain feature-icon"></i>
+                            <h4>AI-Powered Analysis</h4>
+                            <p>Uses deep learning models trained on thousands of fish images for accurate identification.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="feature-card text-center p-4">
+                            <i class="fas fa-bolt feature-icon"></i>
+                            <h4>Real-Time Processing</h4>
+                            <p>Get instant results for species classification and disease detection within seconds.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="feature-card text-center p-4">
+                            <i class="fas fa-shield-alt feature-icon"></i>
+                            <h4>Reliable Detection</h4>
+                            <p>High accuracy models that help in early disease detection and species identification.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-fish me-2"></i>MeenaSetu AI</h5>
+                    <p>Advanced AI platform for fish species identification and disease detection.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">© 2026 MeenaSetu AI. All rights reserved.</p>
+                    <p>Powered by FastAPI, PyTorch & TensorFlow</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

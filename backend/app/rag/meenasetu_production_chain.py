@@ -1,12 +1,3 @@
-"""
-MeenaSetu AI - Production Chain with Fixed Model Loading
-FIXES:
-- Robust class mapping loading for disease models
-- Better error handling and logging
-- Support for multiple JSON formats
-- Graceful degradation when models fail
-"""
-
 import os
 import json
 import logging
@@ -76,23 +67,33 @@ for env_path in env_paths:
         break
 
 # ============================================================
-# ⚙️ CONFIGURATION
+# ⚙️ CONFIGURATION - FIXED PATH RESOLUTION
 # ============================================================
 class Config:
-    """Production configuration"""
-    SCRIPT_DIR = Path(__file__).resolve().parent
-    BASE_DIR = SCRIPT_DIR.parent.parent.parent
+    """Production configuration with fixed paths"""
     
-    # Verify BASE_DIR
-    if not (BASE_DIR / "training").exists():
-        BASE_DIR = Path.cwd()
-        if not (BASE_DIR / "training").exists():
-            current = SCRIPT_DIR
-            for _ in range(5):
-                if (current / "training").exists():
-                    BASE_DIR = current
-                    break
-                current = current.parent
+    # Get script directory
+    SCRIPT_DIR = Path(__file__).resolve().parent
+    
+    # Method 1: Try to find BASE_DIR by looking for 'training' folder
+    BASE_DIR = None
+    current = SCRIPT_DIR
+    for _ in range(6):  # Search up to 6 levels
+        if (current / "training" / "checkpoints").exists():
+            BASE_DIR = current
+            logger.info(f"✓ Found BASE_DIR: {BASE_DIR}")
+            break
+        current = current.parent
+    
+    # Method 2: Fallback to hardcoded path if search fails
+    if BASE_DIR is None:
+        BASE_DIR = Path(r"C:\Users\AMRISH\Documents\Meenasetu")
+        logger.warning(f"⚠️ Using hardcoded BASE_DIR: {BASE_DIR}")
+    
+    # Verify BASE_DIR is correct
+    if not (BASE_DIR / "training" / "checkpoints").exists():
+        logger.error(f"❌ CRITICAL: Cannot find training/checkpoints in {BASE_DIR}")
+        logger.error(f"   Please check your project structure!")
     
     # Directories
     VECTOR_DB_DIR = BASE_DIR / "models" / "vector_db"
@@ -100,22 +101,29 @@ class Config:
     OUTPUTS_DIR = BASE_DIR / "backend" / "outputs"
     CACHE_DIR = BASE_DIR / "backend" / "cache"
     TRAINING_DIR = BASE_DIR / "training"
+    CHECKPOINTS_DIR = TRAINING_DIR / "checkpoints"
+    
+    # Log paths for debugging
+    logger.info(f"📁 Project Structure:")
+    logger.info(f"   BASE_DIR: {BASE_DIR}")
+    logger.info(f"   TRAINING_DIR: {TRAINING_DIR} (exists: {TRAINING_DIR.exists()})")
+    logger.info(f"   CHECKPOINTS_DIR: {CHECKPOINTS_DIR} (exists: {CHECKPOINTS_DIR.exists()})")
     
     # Species Classification Models
     SPECIES_MODEL_CONFIGS = {
         'fish_species_model': {
-            'path': TRAINING_DIR / "checkpoints" / "fish_model.pth",
-            'class_mapping': TRAINING_DIR / "checkpoints" / "class_mapping1.json",
+            'path': CHECKPOINTS_DIR / "fish_model.pth",
+            'class_mapping': CHECKPOINTS_DIR / "class_mapping1.json",
             'priority': 1
         },
         'best_model': {
-            'path': TRAINING_DIR / "checkpoints" / "best_model.pth",
-            'class_mapping': TRAINING_DIR / "checkpoints" / "class_mapping.json",
+            'path': CHECKPOINTS_DIR / "best_model.pth",
+            'class_mapping': CHECKPOINTS_DIR / "class_mapping.json",
             'priority': 2
         },
         'final_model': {
-            'path': TRAINING_DIR / "checkpoints" / "final_model.pth",
-            'class_mapping': TRAINING_DIR / "checkpoints" / "class_mapping.json",
+            'path': CHECKPOINTS_DIR / "final_model.pth",
+            'class_mapping': CHECKPOINTS_DIR / "class_mapping.json",
             'priority': 3
         }
     }
@@ -123,13 +131,13 @@ class Config:
     # Disease Detection Models (Keras)
     DISEASE_MODEL_CONFIGS = {
         'disease_model_final': {
-            'path': TRAINING_DIR / "checkpoints" / "final.keras",
-            'class_mapping': TRAINING_DIR / "checkpoints" / "classes2.json",
+            'path': CHECKPOINTS_DIR / "final.keras",
+            'class_mapping': CHECKPOINTS_DIR / "classes2.json",
             'priority': 1
         },
         'disease_model_s1': {
-            'path': TRAINING_DIR / "checkpoints" / "s1.keras",
-            'class_mapping': TRAINING_DIR / "checkpoints" / "classes2.json",
+            'path': CHECKPOINTS_DIR / "s1.keras",
+            'class_mapping': CHECKPOINTS_DIR / "classes2.json",
             'priority': 2
         }
     }
@@ -150,8 +158,10 @@ class Config:
     
     @staticmethod
     def setup_directories():
+        """Create necessary directories"""
         for directory in [Config.UPLOADS_DIR, Config.OUTPUTS_DIR, Config.CACHE_DIR]:
             directory.mkdir(parents=True, exist_ok=True)
+        logger.info("✓ Directories setup complete")
 
 Config.setup_directories()
 
@@ -180,36 +190,52 @@ class FishDiseaseDetector:
             with open(str(mapping_path), 'r', encoding='utf-8') as f:
                 mapping_raw = json.load(f)
             
-            logger.info(f"   Raw mapping type: {type(mapping_raw)}, keys: {list(mapping_raw.keys())[:5]}")
+            logger.info(f"   📋 Raw mapping type: {type(mapping_raw)}")
+            logger.info(f"   📋 Sample: {list(mapping_raw.items())[:3]}")
             
-            # Case 1: Numeric keys {"0": "disease", "1": "disease"}
+            # Normalize to disease_name -> id format
+            disease_to_id = {}
+            
+            # Case 1: {"0": "disease", "1": "disease"} - id_to_disease format
             if all(str(k).isdigit() for k in mapping_raw.keys()):
-                logger.info("   Format: Numeric keys (id -> disease)")
-                return {disease_name: int(id_str) for id_str, disease_name in mapping_raw.items()}
+                logger.info("   ✓ Format: id_to_disease (numeric string keys)")
+                disease_to_id = {disease_name: int(id_str) 
+                                for id_str, disease_name in mapping_raw.items()}
             
-            # Case 2: Has disease_to_id key
+            # Case 2: {"disease_to_id": {...}}
             elif 'disease_to_id' in mapping_raw:
-                logger.info("   Format: disease_to_id")
-                return mapping_raw['disease_to_id']
+                logger.info("   ✓ Format: disease_to_id nested")
+                disease_to_id = {k: int(v) for k, v in mapping_raw['disease_to_id'].items()}
             
-            # Case 3: Has id_to_disease key
+            # Case 3: {"id_to_disease": {"0": "disease"}}
             elif 'id_to_disease' in mapping_raw:
-                logger.info("   Format: id_to_disease")
-                return {disease_name: int(id_str) 
-                       for id_str, disease_name in mapping_raw['id_to_disease'].items()}
+                logger.info("   ✓ Format: id_to_disease nested")
+                disease_to_id = {disease_name: int(id_str) 
+                                for id_str, disease_name in mapping_raw['id_to_disease'].items()}
             
-            # Case 4: Direct disease_to_id format
-            elif all(isinstance(v, (int, str)) and (isinstance(v, int) or v.isdigit()) 
+            # Case 4: {"disease": 0, "disease": 1} - already disease_to_id
+            elif all(isinstance(v, (int, str)) and (isinstance(v, int) or str(v).isdigit()) 
                     for v in mapping_raw.values()):
-                logger.info("   Format: Direct disease_to_id")
-                return {k: int(v) for k, v in mapping_raw.items()}
+                logger.info("   ✓ Format: direct disease_to_id")
+                disease_to_id = {k: int(v) for k, v in mapping_raw.items()}
             
             else:
-                logger.warning(f"   Unknown format. Sample: {list(mapping_raw.items())[:2]}")
+                logger.warning(f"   ✗ Unknown format. Keys: {list(mapping_raw.keys())[:3]}")
                 return None
+            
+            if not disease_to_id:
+                logger.error("   ✗ Mapping is empty after processing")
+                return None
+            
+            logger.info(f"   ✓ Loaded {len(disease_to_id)} disease classes")
+            logger.info(f"   📋 Classes: {list(disease_to_id.keys())[:5]}...")
+            
+            return disease_to_id
                 
         except Exception as e:
-            logger.error(f"   Error loading mapping: {e}")
+            logger.error(f"   ✗ Error loading mapping: {e}")
+            import traceback
+            logger.error(traceback.format_exc())
             return None
     
     def _load_all_models(self):
@@ -220,87 +246,113 @@ class FishDiseaseDetector:
             model_path = config['path']
             mapping_path = config['class_mapping']
             
-            logger.info(f"Attempting: {model_name}")
-            logger.info(f"  Model: {model_path} (exists: {model_path.exists()})")
-            logger.info(f"  Mapping: {mapping_path} (exists: {mapping_path.exists()})")
+            logger.info(f"\n{'='*60}")
+            logger.info(f"🔍 Attempting: {model_name}")
+            logger.info(f"   Model: {model_path}")
+            logger.info(f"   Exists: {model_path.exists()}")
+            logger.info(f"   Mapping: {mapping_path}")
+            logger.info(f"   Exists: {mapping_path.exists()}")
             
-            if not model_path.exists() or not mapping_path.exists():
-                logger.warning(f"  ✗ Files missing for {model_name}")
+            if not model_path.exists():
+                logger.warning(f"   ✗ Model file not found")
+                continue
+                
+            if not mapping_path.exists():
+                logger.warning(f"   ✗ Mapping file not found")
                 continue
             
             try:
-                # Load model
-                logger.info(f"  Loading Keras model...")
-                model = keras.models.load_model(str(model_path), compile=False)
-                logger.info(f"  ✓ Model loaded: {model.input_shape} -> {model.output_shape}")
-                
-                # Load class mapping
+                # Step 1: Load class mapping FIRST
+                logger.info(f"   📥 Step 1: Loading class mapping...")
                 class_mapping = self._load_class_mapping(mapping_path)
                 
                 if not class_mapping or len(class_mapping) == 0:
-                    logger.error(f"  ✗ Invalid class mapping for {model_name}")
+                    logger.error(f"   ✗ Invalid or empty class mapping")
                     continue
                 
-                # Verify dimensions
+                # Step 2: Load Keras model
+                logger.info(f"   📥 Step 2: Loading Keras model...")
+                model = keras.models.load_model(str(model_path), compile=False)
+                logger.info(f"   ✓ Model loaded: {model.input_shape} -> {model.output_shape}")
+                
+                # Step 3: Verify dimensions
                 model_classes = model.output_shape[-1]
                 mapping_classes = len(class_mapping)
-                logger.info(f"  Classes: Model={model_classes}, Mapping={mapping_classes}")
+                logger.info(f"   🔍 Step 3: Verifying dimensions...")
+                logger.info(f"      Model output: {model_classes} classes")
+                logger.info(f"      Mapping has: {mapping_classes} classes")
                 
                 if model_classes != mapping_classes:
-                    logger.warning(f"  ⚠️ Dimension mismatch! Continuing anyway...")
+                    logger.error(f"   ✗ DIMENSION MISMATCH!")
+                    logger.error(f"      Model expects {model_classes} but mapping has {mapping_classes}")
+                    continue
                 
                 # Success!
                 self.models[model_name] = model
                 self.class_mappings[model_name] = class_mapping
                 available_models.append((config['priority'], model_name))
                 
-                logger.info(f"  ✓ Success! Diseases: {list(class_mapping.keys())[:5]}...")
+                logger.info(f"   ✅ SUCCESS! {model_name} loaded")
                 
             except Exception as e:
-                logger.error(f"  ✗ Failed: {e}")
+                logger.error(f"   ✗ Failed to load {model_name}: {e}")
                 import traceback
-                logger.error(f"  {traceback.format_exc()}")
+                logger.error(traceback.format_exc())
         
+        logger.info(f"\n{'='*60}")
         if available_models:
             available_models.sort(key=lambda x: x[0])
             self.primary_model_name = available_models[0][1]
-            logger.info(f"🎯 Primary model: {self.primary_model_name}")
+            logger.info(f"🎯 Primary disease model: {self.primary_model_name}")
             logger.info(f"✅ Disease detection ready ({len(self.models)} model(s))")
+            
+            # Log available diseases
+            primary_mapping = self.class_mappings[self.primary_model_name]
+            logger.info(f"📋 Available diseases ({len(primary_mapping)}):")
+            for disease, idx in sorted(primary_mapping.items(), key=lambda x: x[1])[:10]:
+                logger.info(f"   [{idx}] {disease}")
         else:
             logger.warning("⚠️ No disease models loaded")
     
     def detect_disease(self, image_path: str) -> Dict[str, Any]:
         """Detect fish disease from image"""
         if not self.is_available or not self.models:
-            return {"status": "unavailable", "message": "Disease detection not available"}
+            return {
+                "status": "unavailable", 
+                "message": "Disease detection not available"
+            }
         
         try:
-            # Preprocess
+            # Preprocess image
             img = Image.open(image_path).convert('RGB').resize((224, 224))
             img_array = np.array(img) / 255.0
             img_array = np.expand_dims(img_array, axis=0)
             
-            # Predict
+            # Get model and mapping
             model = self.models[self.primary_model_name]
             class_mapping = self.class_mappings[self.primary_model_name]
             id_to_disease = {v: k for k, v in class_mapping.items()}
             
+            # Predict
             predictions = model.predict(img_array, verbose=0)
             predicted_id = int(np.argmax(predictions[0]))
             confidence = float(predictions[0][predicted_id])
             
             disease_name = id_to_disease.get(predicted_id, f"Unknown_ID_{predicted_id}")
             
-            # Top 3
+            # Top 3 predictions
             top3_indices = np.argsort(predictions[0])[-3:][::-1]
             top3_predictions = [{
-                "disease": id_to_disease.get(idx, f"Unknown_{idx}"),
+                "disease": id_to_disease.get(int(idx), f"Unknown_{idx}"),
                 "confidence": float(predictions[0][idx])
             } for idx in top3_indices]
             
             # Health status
             is_healthy = any(kw in disease_name.lower() 
-                           for kw in ['healthy', 'normal', 'no_disease'])
+                           for kw in ['healthy', 'normal', 'no_disease', 'no disease'])
+            
+            logger.info(f"🏥 Detection: {disease_name} ({confidence:.1%})")
+            logger.info(f"   Health: {'🟢 Healthy' if is_healthy else '🔴 Disease'}")
             
             return {
                 "status": "success",
@@ -314,6 +366,8 @@ class FishDiseaseDetector:
             
         except Exception as e:
             logger.error(f"Detection error: {e}")
+            import traceback
+            logger.error(traceback.format_exc())
             return {"status": "error", "message": str(e)}
     
     @property
@@ -328,7 +382,7 @@ class FishDiseaseDetector:
         return sorted(primary.keys())
 
 # ============================================================
-# 🐟 SPECIES CLASSIFICATION (Keep existing - already works)
+# 🐟 SPECIES CLASSIFICATION
 # ============================================================
 class EnhancedFishClassifier:
     """Multi-model ensemble fish species classifier"""
@@ -350,6 +404,7 @@ class EnhancedFishClassifier:
         
         for model_name, config in Config.SPECIES_MODEL_CONFIGS.items():
             if not config['path'].exists():
+                logger.info(f"  Skipping {model_name} (file not found)")
                 continue
                 
             try:
@@ -381,15 +436,15 @@ class EnhancedFishClassifier:
                 self.models[model_name] = model
                 self.class_mappings[model_name] = class_mapping
                 available_models.append((config['priority'], model_name))
-                logger.info(f"✓ Loaded {model_name} ({len(class_mapping)} species)")
+                logger.info(f"  ✓ Loaded {model_name} ({len(class_mapping)} species)")
             except Exception as e:
-                logger.error(f"✗ Failed {model_name}: {e}")
+                logger.error(f"  ✗ Failed {model_name}: {e}")
         
         if available_models:
             available_models.sort(key=lambda x: x[0])
             self.primary_model_name = available_models[0][1]
             logger.info(f"🎯 Primary species model: {self.primary_model_name}")
-    
+            
     def _load_class_mapping(self, checkpoint: Dict, external_path: str) -> Optional[Dict]:
         """Load species mapping"""
         class_mapping = None
@@ -464,6 +519,7 @@ class EnhancedFishClassifier:
                 return self._single_model_predict(img_tensor)
             return self._ensemble_predict(img_tensor)
         except Exception as e:
+            logger.error(f"Classification error: {e}")
             return {"status": "error", "message": str(e)}
         finally:
             if self.device.type == 'cuda':
@@ -531,7 +587,7 @@ class EnhancedFishClassifier:
         return len(self.models) > 0
 
 # ============================================================
-# 📊 VISUALIZATION ENGINE (Keep existing)
+# 📊 VISUALIZATION ENGINE
 # ============================================================
 class VisualizationEngine:
     """Visualization engine"""
@@ -603,7 +659,7 @@ class VisualizationEngine:
         return str(filepath)
 
 # ============================================================
-# 🗄️ VECTOR DATABASE (Keep existing)
+# 🗄️ VECTOR DATABASE
 # ============================================================
 class VectorDatabaseManager:
     """Vector database operations"""
@@ -640,7 +696,7 @@ class VectorDatabaseManager:
             return []
 
 # ============================================================
-# 💬 ADVANCED RAG CHAIN (Keep existing)
+# 💬 ADVANCED RAG CHAIN
 # ============================================================
 class AdvancedRAGChain:
     """RAG chain with ML integration"""
@@ -666,6 +722,14 @@ class AdvancedRAGChain:
     
     def _build_chain(self):
         """Build RAG chain"""
+        """
+MeenaSetu AI - Production Chain (Part 2 - Continuation)
+"""
+
+# ... (First part with all imports and classes above) ...
+
+# Continuation of AdvancedRAGChain class:
+
         system_prompt = """You are **MeenaSetu AI** 🐠 - expert in fish species identification, disease detection, and aquaculture.
 
 **CAPABILITIES:**
