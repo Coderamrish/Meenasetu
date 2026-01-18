@@ -12,9 +12,7 @@ import base64
 from PIL import Image
 import io
 
-# ============================================================
 # PAGE CONFIGURATION
-# ============================================================
 st.set_page_config(
     page_title="🐠 MeenaSetu AI",
     page_icon="🐠",
@@ -22,9 +20,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# ============================================================
 # CUSTOM CSS
-# ============================================================
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
@@ -124,14 +120,10 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# ============================================================
 # CONFIGURATION
-# ============================================================
 API_BASE_URL = "http://localhost:8000"
 
-# ============================================================
 # SESSION STATE INITIALIZATION
-# ============================================================
 if 'conversation_history' not in st.session_state:
     st.session_state.conversation_history = []
 
@@ -140,10 +132,8 @@ if 'uploaded_files' not in st.session_state:
 
 if 'stats' not in st.session_state:
     st.session_state.stats = {'queries': 0, 'uploads': 0, 'visualizations': 0, 'classifications': 0}
-
-# ============================================================
 # HELPER FUNCTIONS
-# ============================================================
+
 def make_api_request(endpoint: str, method: str = "GET", **kwargs) -> Optional[Dict]:
     """Make API request with error handling"""
     try:
@@ -160,19 +150,19 @@ def make_api_request(endpoint: str, method: str = "GET", **kwargs) -> Optional[D
         return response.json()
     
     except requests.exceptions.ConnectionError:
-        st.error("🔌 Cannot connect to API server at http://localhost:8000")
+        st.error(" Cannot connect to API server at http://localhost:8000")
         return None
     except requests.exceptions.Timeout:
-        st.error("⏱️ Request timeout")
+        st.error(" Request timeout")
         return None
     except Exception as e:
-        st.error(f"❌ Error: {str(e)}")
+        st.error(f" Error: {str(e)}")
         return None
 
 def get_file_icon(file_type: str) -> str:
     """Get emoji for file type"""
     icons = {'pdf': '📄', 'csv': '📊', 'json': '📋', 'txt': '📝', 'jpg': '🖼️', 'jpeg': '🖼️', 'png': '🖼️'}
-    return icons.get(file_type.lower().replace('.', ''), '📁')
+    return icons.get(file_type.lower().replace('.', ''), '')
 
 def create_plotly_bar_chart(data: Dict, title: str, xlabel: str = "", ylabel: str = ""):
     """Create bar chart"""
@@ -211,23 +201,17 @@ def create_plotly_pie_chart(data: Dict, title: str):
     
     fig.update_layout(title=title, template='plotly_white', height=500)
     return fig
-
-# ============================================================
 # MAIN HEADER
-# ============================================================
 st.markdown("""
 <div class="main-header">
     <h1>🐠 MeenaSetu AI</h1>
     <p>Intelligent Aquatic Biodiversity Expert System</p>
     <p style="font-size: 1rem; margin-top: 0.8rem;">
-        🤖 Multi-Model Ensemble | 📚 17K+ Documents | 🧠 Advanced RAG
+        🤖 Multi-Model Ensemble | 📚 50K+ Documents | 🧠 Advanced RAG | Fish Disease and Species Detection
     </p>
 </div>
 """, unsafe_allow_html=True)
-
-# ============================================================
 # HEALTH CHECK
-# ============================================================
 health_data = make_api_request("/health")
 
 if health_data and health_data.get('status') == 'healthy':
@@ -236,7 +220,7 @@ if health_data and health_data.get('status') == 'healthy':
     with col1:
         st.markdown(f"""
         <div class="metric-card">
-            <div style="font-size: 2.5rem;">📚</div>
+            <div style="font-size: 2.5rem;"></div>
             <h2>{health_data['metrics']['vector_db_documents']:,}</h2>
             <p>Documents</p>
         </div>
@@ -245,7 +229,7 @@ if health_data and health_data.get('status') == 'healthy':
     with col2:
         st.markdown(f"""
         <div class="metric-card">
-            <div style="font-size: 2.5rem;">🤖</div>
+            <div style="font-size: 2.5rem;"></div>
             <h2>{health_data['metrics']['ml_models_loaded']}</h2>
             <p>ML Models</p>
         </div>
@@ -254,7 +238,7 @@ if health_data and health_data.get('status') == 'healthy':
     with col3:
         st.markdown(f"""
         <div class="metric-card">
-            <div style="font-size: 2.5rem;">❓</div>
+            <div style="font-size: 2.5rem;"></div>
             <h2>{health_data['metrics']['queries_processed']}</h2>
             <p>Queries</p>
         </div>
@@ -263,20 +247,17 @@ if health_data and health_data.get('status') == 'healthy':
     with col4:
         st.markdown("""
         <div class="metric-card">
-            <div style="font-size: 2.5rem;">✅</div>
+            <div style="font-size: 2.5rem;"></div>
             <h2>ONLINE</h2>
             <p>Status</p>
         </div>
         """, unsafe_allow_html=True)
 else:
-    st.error("🔌 API server is not running. Start it with: `uvicorn main:app --reload`")
+    st.error(" API server is not running. Start it with: `uvicorn main:app --reload`")
     st.stop()
 
 st.markdown("<br>", unsafe_allow_html=True)
-
-# ============================================================
 # TABS
-# ============================================================
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "💬 Chat",
     "🖼️ Fish ID",
@@ -285,9 +266,7 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "📈 Stats"
 ])
 
-# ============================================================
-# TAB 1: CHAT
-# ============================================================
+# TAB 1: CHAT - COMPLETELY FIXED VERSION
 with tab1:
     st.markdown("### 💬 Chat with MeenaSetu AI")
     
@@ -297,7 +276,7 @@ with tab1:
         query = st.text_area("Your Question:", placeholder="Ask about fish species, aquaculture, or upload an image...", height=100)
     
     with col2:
-        st.markdown("**📎 Optional Image**")
+        st.markdown("** Optional Image**")
         chat_image = st.file_uploader("Upload fish image", type=['jpg', 'jpeg', 'png'], key="chat_img", label_visibility="collapsed")
         
         if chat_image:
@@ -307,7 +286,7 @@ with tab1:
     col_a, col_b = st.columns([1, 5])
     
     with col_a:
-        ask_btn = st.button("🚀 Ask", type="primary")
+        ask_btn = st.button(" Ask", type="primary")
     
     with col_b:
         clear_btn = st.button("🧹 Clear")
@@ -315,62 +294,201 @@ with tab1:
     if clear_btn:
         make_api_request("/conversation/clear", method="DELETE")
         st.session_state.conversation_history = []
-        st.success("✅ Cleared!")
+        st.success(" Cleared!")
         time.sleep(1)
         st.rerun()
     
     if ask_btn and query:
         with st.spinner("🤔 Thinking..."):
             classify_result = None
-            enhanced_query = query
-            
-            # Classify image if uploaded
+            disease_result = None
             if chat_image:
-                files = {'file': (chat_image.name, chat_image.getvalue(), chat_image.type)}
-                classify_result = make_api_request("/classify/fish", method="POST", files=files)
+                chat_image.seek(0)
                 
-                if classify_result and classify_result.get('status') == 'success':
-                    species = classify_result['species']
-                    conf = classify_result['confidence']
-                    enhanced_query = f"[Image: {species} ({conf*100:.1f}%)] {query}"
+                # Species Classification
+                st.info("🐟 Classifying species...")
+                files_classify = {'file': (chat_image.name, chat_image.getvalue(), chat_image.type)}
+                classify_result = make_api_request(
+                    "/classify/fish", 
+                    method="POST", 
+                    files=files_classify,
+                    data={'detect_disease': 'false'}
+                )
+                
+                # Disease Detection
+                st.info("🔬 Checking for diseases...")
+                chat_image.seek(0)
+                files_disease = {'file': (chat_image.name, chat_image.getvalue(), chat_image.type)}
+                disease_result = make_api_request(
+                    "/detect/disease", 
+                    method="POST", 
+                    files=files_disease,
+                    data={'description': query, 'get_treatment': 'true'}
+                )
+            context_parts = []
             
-            # Get answer
+            # Add species info
+            if classify_result and classify_result.get('status') == 'success':
+                species = classify_result.get('species', 'Unknown')
+                conf = classify_result.get('confidence', 0)
+                context_parts.append(f"Species Identified: {species} (Confidence: {conf*100:.1f}%)")
+            
+            # Add disease info - CRITICAL FIX: Only send clean summary
+            if disease_result:
+                api_status = disease_result.get('status', '')
+                
+                if api_status == 'healthy':
+                    # Fish is healthy
+                    context_parts.append(
+                        "Health Status: The fish appears HEALTHY. "
+                        "No significant diseases were detected by the AI model."
+                    )
+                    
+                    # Add note about model uncertainty if present
+                    if disease_result.get('warning'):
+                        context_parts.append(
+                            f"Note: {disease_result.get('warning')}"
+                        )
+                
+                elif api_status == 'detected':
+                    # Disease detected
+                    disease_name = disease_result.get('primary_disease', 'Unknown Disease')
+                    confidence = disease_result.get('confidence', 0)
+                    
+                    context_parts.append(
+                        f"Health Status: DISEASE DETECTED - {disease_name} "
+                        f"(AI Confidence: {confidence*100:.1f}%)"
+                    )
+                    
+                    # Add treatment recommendations if available
+                    if disease_result.get('recommendations'):
+                        recs_text = "\n".join([f"- {rec}" for rec in disease_result['recommendations'][:3]])
+                        context_parts.append(f"Recommended Actions:\n{recs_text}")
+                
+                elif api_status == 'error':
+                    context_parts.append(
+                        f"Health Status: Unable to detect diseases - {disease_result.get('message', 'Error occurred')}"
+                    )
+            
+            # ========================================
+            # STEP 3: Create final prompt for LLM
+            # ========================================
+            if context_parts:
+                # Build structured context
+                structured_context = "\n\n".join(context_parts)
+                
+                # Create enhanced query
+                enhanced_query = f"""Based on the following fish analysis results:
+
+{structured_context}
+
+User's Question: {query}
+
+Please provide a helpful answer in a friendly, conversational tone. Mix Hindi and English naturally. Use emojis appropriately."""
+            else:
+                # No image - just use original query
+                enhanced_query = query
+            
+            # ========================================
+            # STEP 4: Get AI response
+            # ========================================
+            st.info("🤖 Generating answer...")
             result = make_api_request("/query/simple", method="POST", data={"query": enhanced_query})
             
             if result:
+                # Store in history with CLEAN data
                 st.session_state.conversation_history.append({
                     'query': query,
                     'response': result,
                     'classification': classify_result,
+                    'disease': disease_result,
                     'timestamp': datetime.now().isoformat()
                 })
                 st.session_state.stats['queries'] += 1
+                
+                if classify_result:
+                    st.session_state.stats['classifications'] += 1
+                
                 st.rerun()
-    
-    # Display history
+
     if st.session_state.conversation_history:
         st.markdown("---")
         st.markdown("### 📜 Conversation")
         
         for conv in reversed(st.session_state.conversation_history[-5:]):
-            st.markdown(f'<div class="user-message"><strong>🙋 You:</strong><br>{conv["query"]}</div>', unsafe_allow_html=True)
+            # User message
+            st.markdown(
+                f'<div class="user-message"><strong>🙋 You:</strong><br>{conv["query"]}</div>', 
+                unsafe_allow_html=True
+            )
             
-            if conv.get('classification'):
+            # Species classification card
+            if conv.get('classification') and conv['classification'].get('status') == 'success':
                 cls = conv['classification']
                 st.markdown(f"""
                 <div class="classification-card">
-                    <strong>🎯 Detected:</strong> <strong>{cls['species']}</strong> 
+                    <strong> Species Detected:</strong> <strong>{cls['species']}</strong> 
                     (Confidence: {cls['confidence']*100:.1f}%)
                 </div>
                 """, unsafe_allow_html=True)
                 st.progress(cls['confidence'])
             
-            st.markdown(f'<div class="ai-message"><strong>🐠 MeenaSetu:</strong><br>{conv["response"]["answer"]}</div>', unsafe_allow_html=True)
+            # Disease detection card - PROPERLY FIXED
+            if conv.get('disease'):
+                disease = conv['disease']
+                api_status = disease.get('status', '')
+                
+                if api_status == 'detected':
+                    # Disease detected - show alert
+                    disease_name = disease.get('primary_disease', 'Unknown')
+                    disease_conf = disease.get('confidence', 0)
+                    
+                    st.markdown(f"""
+                    <div class="disease-alert">
+                        <h4> Disease Detected: {disease_name}</h4>
+                        <p><strong>Confidence:</strong> {disease_conf*100:.1f}%</p>
+                    </div>
+                    """, unsafe_allow_html=True)
+                    
+                    st.progress(disease_conf)
+                    
+                    # Show recommendations
+                    if disease.get('recommendations'):
+                        with st.expander(" View Treatment Recommendations", expanded=True):
+                            for i, rec in enumerate(disease['recommendations'], 1):
+                                st.markdown(f"**{i}.** {rec}")
+                
+                elif api_status == 'healthy':
+                    # Healthy - show success message
+                    st.markdown("""
+                    <div class="success-box">
+                         <strong>Fish appears healthy!</strong> No significant diseases detected.
+                    </div>
+                    """, unsafe_allow_html=True)
+                    
+                    # Show warning if model was uncertain
+                    if disease.get('warning'):
+                        with st.expander("ℹ Technical Details"):
+                            st.info(disease['warning'])
+                            st.caption(f"Model confidence: {disease.get('confidence', 0)*100:.1f}%")
+                
+                elif api_status == 'error':
+                    st.markdown(f"""
+                    <div class="error-box">
+                         Disease detection error: {disease.get('message', 'Unknown error')}
+                    </div>
+                    """, unsafe_allow_html=True)
+                
+                elif api_status == 'unavailable':
+                    st.warning(" Disease detection is currently unavailable")
+            
+            # AI response
+            st.markdown(
+                f'<div class="ai-message"><strong> MeenaSetu:</strong><br>{conv["response"]["answer"]}</div>', 
+                unsafe_allow_html=True
+            )
             st.markdown("<br>", unsafe_allow_html=True)
-
-# ============================================================
 # TAB 2: FISH CLASSIFICATION
-# ============================================================
 with tab2:
     st.markdown("### 🖼️ Fish Species Identification")
     
@@ -646,9 +764,11 @@ with st.sidebar:
     **MeenaSetu AI v2.0**
     
     - 🤖 3 ML Models
-    - 📚 17K+ Documents
+    - 📚 50K+ Documents
     - 💬 Groq LLM
     - 🔬 Disease Detection
+    - Species detection
+    - Data Visualizations
     
     Made with ❤️ by  
     **Amrish Kumar Tiwary**

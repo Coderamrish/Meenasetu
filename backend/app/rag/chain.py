@@ -1,12 +1,3 @@
-"""
-MeenaSetu AI - Production Chain with Fixed Model Loading
-FIXES:
-- Robust class mapping loading for disease models
-- Better error handling and logging
-- Support for multiple JSON formats
-- Graceful degradation when models fail
-"""
-
 import os
 import json
 import logging
@@ -19,22 +10,18 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 import numpy as np
-
 # PyTorch for Species Classification
 import torch
 import torch.nn as nn
 import torchvision.transforms as transforms
 from torchvision.models import efficientnet_b0, EfficientNet_B0_Weights
-
-# TensorFlow/Keras for Disease Detection
+# Keras 3 for Disease Detection (NOT tf_keras)
 try:
-    import tensorflow as tf
-    from tensorflow import keras
-    TENSORFLOW_AVAILABLE = True
+    import keras  # <-- FIXED: Use keras instead of tensorflow.keras
+    KERAS_AVAILABLE = True
 except ImportError:
-    TENSORFLOW_AVAILABLE = False
-    print("⚠️ TensorFlow not available - disease detection disabled")
-
+    KERAS_AVAILABLE = False
+    print("⚠️ Keras not available - disease detection disabled")
 # LangChain
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_chroma import Chroma
@@ -46,12 +33,9 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.messages import HumanMessage, AIMessage
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.document_loaders import PyPDFLoader
-
 from dotenv import load_dotenv
 
-# ============================================================
-# 📋 LOGGING & ENVIRONMENT
-# ============================================================
+# LOGGING & ENVIRONMENT
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -75,14 +59,10 @@ for env_path in env_paths:
         logger.info(f"✓ Loaded .env from: {env_path}")
         break
 
-# ============================================================
-# ⚙️ CONFIGURATION
-# ============================================================
+#  CONFIGURATION
 class Config:
-    """Production configuration"""
     SCRIPT_DIR = Path(__file__).resolve().parent
     BASE_DIR = SCRIPT_DIR.parent.parent.parent
-    
     # Verify BASE_DIR
     if not (BASE_DIR / "training").exists():
         BASE_DIR = Path.cwd()
@@ -120,18 +100,13 @@ class Config:
         }
     }
     
-    # Disease Detection Models (Keras)
+    # Disease Detection Models (Keras 3)
     DISEASE_MODEL_CONFIGS = {
         'disease_model_final': {
-            'path': TRAINING_DIR / "checkpoints" / "final.keras",
-            'class_mapping': TRAINING_DIR / "checkpoints" / "classes2.json",
+            'path': TRAINING_DIR / "checkpoints" / "best_efficientnet_freshwater.keras",
+            'class_mapping': TRAINING_DIR / "checkpoints" / "disease_class_mapping.json",
             'priority': 1
         },
-        'disease_model_s1': {
-            'path': TRAINING_DIR / "checkpoints" / "s1.keras",
-            'class_mapping': TRAINING_DIR / "checkpoints" / "classes2.json",
-            'priority': 2
-        }
     }
     
     # LLM Configuration
@@ -155,166 +130,390 @@ class Config:
 
 Config.setup_directories()
 
-# ============================================================
-# 🏥 FIXED DISEASE DETECTION SYSTEM
-# ============================================================
+# FIXED DISEASE DETECTION SYSTEM
 class FishDiseaseDetector:
-    """Fish disease detection - FIXED VERSION"""
-    
     def __init__(self):
         self.models = {}
         self.class_mappings = {}
+        self.id_to_disease_maps = {}
         self.primary_model_name = None
-        self.is_available = TENSORFLOW_AVAILABLE
+        self.is_available = KERAS_AVAILABLE
         
         if not self.is_available:
-            logger.warning("🏥 Disease Detection DISABLED (TensorFlow not available)")
+            logger.warning(" Disease Detection DISABLED (Keras not available)")
             return
         
-        logger.info("🏥 Initializing Fish Disease Detection System")
+        logger.info(" Initializing Fish Disease Detection System")
         self._load_all_models()
     
     def _load_class_mapping(self, mapping_path: Path) -> Optional[Dict[str, int]]:
-        """Load and normalize class mapping to disease_name -> id format"""
         try:
-            with open(str(mapping_path), 'r', encoding='utf-8') as f:
-                mapping_raw = json.load(f)
-            
-            logger.info(f"   Raw mapping type: {type(mapping_raw)}, keys: {list(mapping_raw.keys())[:5]}")
-            
-            # Case 1: Numeric keys {"0": "disease", "1": "disease"}
-            if all(str(k).isdigit() for k in mapping_raw.keys()):
-                logger.info("   Format: Numeric keys (id -> disease)")
-                return {disease_name: int(id_str) for id_str, disease_name in mapping_raw.items()}
-            
-            # Case 2: Has disease_to_id key
-            elif 'disease_to_id' in mapping_raw:
-                logger.info("   Format: disease_to_id")
-                return mapping_raw['disease_to_id']
-            
-            # Case 3: Has id_to_disease key
-            elif 'id_to_disease' in mapping_raw:
-                logger.info("   Format: id_to_disease")
-                return {disease_name: int(id_str) 
-                       for id_str, disease_name in mapping_raw['id_to_disease'].items()}
-            
-            # Case 4: Direct disease_to_id format
-            elif all(isinstance(v, (int, str)) and (isinstance(v, int) or v.isdigit()) 
-                    for v in mapping_raw.values()):
-                logger.info("   Format: Direct disease_to_id")
-                return {k: int(v) for k, v in mapping_raw.items()}
-            
-            else:
-                logger.warning(f"   Unknown format. Sample: {list(mapping_raw.items())[:2]}")
+            if not mapping_path.exists():
+                logger.error(f"   ✗ Mapping file not found: {mapping_path}")
                 return None
+            
+            with open(str(mapping_path), 'r', encoding='utf-8') as f:
+                raw_data = json.load(f)
+            
+            logger.info(f"   Loaded JSON from {mapping_path.name}")
+            logger.info(f"   Raw data type: {type(raw_data)}")
+            
+            # STRATEGY 1: Direct dict format {"disease_name": id}
+            if isinstance(raw_data, dict):
+                # Check if values are integers (disease -> id format)
+                if all(isinstance(v, int) for v in raw_data.values()):
+                    logger.info("    Format: disease_name -> id")
+                    return {str(k): int(v) for k, v in raw_data.items()}
                 
+                # Check if keys are numeric strings (id -> disease format)
+                if all(str(k).isdigit() for k in raw_data.keys()):
+                    logger.info("    Format: id -> disease_name (converting)")
+                    # Convert {"0": "disease", "1": "disease"} to {"disease": 0}
+                    result = {}
+                    for id_str, disease_name in raw_data.items():
+                        result[str(disease_name)] = int(id_str)
+                    logger.info(f"    Converted {len(result)} mappings")
+                    return result
+                
+                # Check for nested structures
+                if 'disease_to_id' in raw_data:
+                    logger.info("    Format: nested disease_to_id")
+                    return {str(k): int(v) for k, v in raw_data['disease_to_id'].items()}
+                
+                if 'id_to_disease' in raw_data:
+                    logger.info("    Format: nested id_to_disease (converting)")
+                    result = {}
+                    for id_str, disease_name in raw_data['id_to_disease'].items():
+                        result[str(disease_name)] = int(id_str)
+                    return result
+            
+            # STRATEGY 2: List format [diseases...]
+            if isinstance(raw_data, list):
+                logger.info("    Format: list of diseases")
+                return {str(disease): idx for idx, disease in enumerate(raw_data)}
+            
+            logger.error("    Unknown JSON format")
+            logger.error(f"   Sample data: {str(raw_data)[:200]}")
+            return None
+                
+        except json.JSONDecodeError as e:
+            logger.error(f"    JSON parse error: {e}")
+            return None
         except Exception as e:
-            logger.error(f"   Error loading mapping: {e}")
+            logger.error(f"    Error loading mapping: {e}")
+            import traceback
+            logger.error(f"   {traceback.format_exc()}")
             return None
     
     def _load_all_models(self):
-        """Load disease models with robust error handling"""
         available_models = []
         
         for model_name, config in Config.DISEASE_MODEL_CONFIGS.items():
             model_path = config['path']
             mapping_path = config['class_mapping']
             
-            logger.info(f"Attempting: {model_name}")
-            logger.info(f"  Model: {model_path} (exists: {model_path.exists()})")
-            logger.info(f"  Mapping: {mapping_path} (exists: {mapping_path.exists()})")
+            logger.info(f"\n{'='*60}")
+            logger.info(f" Loading: {model_name}")
+            logger.info(f"{'='*60}")
+            logger.info(f"   Model: {model_path.name}")
+            logger.info(f"   Path: {model_path}")
+            logger.info(f"   Exists: {model_path.exists()}")
+            logger.info(f"   Mapping: {mapping_path.name}")
+            logger.info(f"   Exists: {mapping_path.exists()}")
             
-            if not model_path.exists() or not mapping_path.exists():
-                logger.warning(f"  ✗ Files missing for {model_name}")
+            if not model_path.exists():
+                logger.warning(f"   Model file missing: {model_path}")
+                continue
+            
+            if not mapping_path.exists():
+                logger.warning(f"   Mapping file missing: {mapping_path}")
                 continue
             
             try:
-                # Load model
-                logger.info(f"  Loading Keras model...")
+                # STEP 1: Load class mapping
+                logger.info(f"   Step 1: Loading class mapping...")
+                with open(str(mapping_path), 'r', encoding='utf-8') as f:
+                    raw_data = json.load(f)
+                
+                # Convert to disease->id format
+                class_mapping = {}
+                if isinstance(raw_data, dict):
+                    if all(str(k).isdigit() for k in raw_data.keys()):
+                        # Format: {"0": "disease1", "1": "disease2"}
+                        for id_str, disease_name in raw_data.items():
+                            class_mapping[str(disease_name)] = int(id_str)
+                    else:
+                        # Format: {"disease1": 0, "disease2": 1}
+                        class_mapping = {str(k): int(v) for k, v in raw_data.items()}
+                
+                logger.info(f"   Loaded {len(class_mapping)} disease classes")
+                
+                # STEP 2: Load Keras 3 model
+                logger.info(f"   Step 2: Loading Keras model...")
                 model = keras.models.load_model(str(model_path), compile=False)
-                logger.info(f"  ✓ Model loaded: {model.input_shape} -> {model.output_shape}")
+                logger.info(f"  Model loaded")
+                logger.info(f"   Input shape: {model.input_shape}")
+                logger.info(f"   Output shape: {model.output_shape}")
                 
-                # Load class mapping
-                class_mapping = self._load_class_mapping(mapping_path)
-                
-                if not class_mapping or len(class_mapping) == 0:
-                    logger.error(f"  ✗ Invalid class mapping for {model_name}")
-                    continue
-                
-                # Verify dimensions
+                # STEP 3: Verify dimensions
                 model_classes = model.output_shape[-1]
                 mapping_classes = len(class_mapping)
-                logger.info(f"  Classes: Model={model_classes}, Mapping={mapping_classes}")
                 
                 if model_classes != mapping_classes:
-                    logger.warning(f"  ⚠️ Dimension mismatch! Continuing anyway...")
+                    logger.error(f"   DIMENSION MISMATCH!")
+                    logger.error(f"    Model outputs: {model_classes} classes")
+                    logger.error(f"    Mapping has: {mapping_classes} classes")
+                    logger.error(f"   Skipping this model")
+                    continue
                 
-                # Success!
+                # STEP 4: Create reverse mapping
+                id_to_disease = {v: k for k, v in class_mapping.items()}
+                
+                # STEP 5: Store everything
                 self.models[model_name] = model
                 self.class_mappings[model_name] = class_mapping
+                self.id_to_disease_maps[model_name] = id_to_disease
                 available_models.append((config['priority'], model_name))
                 
-                logger.info(f"  ✓ Success! Diseases: {list(class_mapping.keys())[:5]}...")
+                logger.info(f"   FULLY LOADED: {model_name}")
+                logger.info(f"  {'='*60}\n")
                 
             except Exception as e:
-                logger.error(f"  ✗ Failed: {e}")
+                logger.error(f"   EXCEPTION while loading {model_name}")
+                logger.error(f"  Error: {str(e)}")
                 import traceback
-                logger.error(f"  {traceback.format_exc()}")
+                logger.error(f"  Traceback:\n{traceback.format_exc()}")
+                logger.info(f"  {'='*60}\n")
         
+        # Set primary model
         if available_models:
             available_models.sort(key=lambda x: x[0])
             self.primary_model_name = available_models[0][1]
-            logger.info(f"🎯 Primary model: {self.primary_model_name}")
-            logger.info(f"✅ Disease detection ready ({len(self.models)} model(s))")
+            
+            logger.info(f"\n{'='*70}")
+            logger.info(f" DISEASE DETECTION SYSTEM READY")
+            logger.info(f"{'='*70}")
+            logger.info(f" Primary model: {self.primary_model_name}")
+            logger.info(f" Total models loaded: {len(self.models)}")
+            logger.info(f" Disease classes: {len(self.class_mappings[self.primary_model_name])}")
+            logger.info(f"{'='*70}\n")
         else:
-            logger.warning("⚠️ No disease models loaded")
+            logger.error(f"\n{'='*70}")
+            logger.error(" NO DISEASE MODELS LOADED")
+            logger.error(f"{'='*70}\n")
     
     def detect_disease(self, image_path: str) -> Dict[str, Any]:
-        """Detect fish disease from image"""
         if not self.is_available or not self.models:
-            return {"status": "unavailable", "message": "Disease detection not available"}
+            return {
+                "status": "unavailable", 
+                "message": "Disease detection not available"
+            }
         
         try:
-            # Preprocess
             img = Image.open(image_path).convert('RGB').resize((224, 224))
             img_array = np.array(img) / 255.0
             img_array = np.expand_dims(img_array, axis=0)
             
-            # Predict
             model = self.models[self.primary_model_name]
-            class_mapping = self.class_mappings[self.primary_model_name]
-            id_to_disease = {v: k for k, v in class_mapping.items()}
+            id_to_disease = self.id_to_disease_maps[self.primary_model_name]
             
             predictions = model.predict(img_array, verbose=0)
             predicted_id = int(np.argmax(predictions[0]))
             confidence = float(predictions[0][predicted_id])
             
+            # Get disease name
             disease_name = id_to_disease.get(predicted_id, f"Unknown_ID_{predicted_id}")
             
-            # Top 3
+            # Get top 3 predictions
             top3_indices = np.argsort(predictions[0])[-3:][::-1]
-            top3_predictions = [{
-                "disease": id_to_disease.get(idx, f"Unknown_{idx}"),
-                "confidence": float(predictions[0][idx])
-            } for idx in top3_indices]
+            top3_predictions = [
+                {
+                    "disease": id_to_disease.get(int(idx), f"Unknown_{idx}"),
+                    "confidence": float(predictions[0][idx])
+                }
+                for idx in top3_indices
+            ]
             
-            # Health status
-            is_healthy = any(kw in disease_name.lower() 
-                           for kw in ['healthy', 'normal', 'no_disease'])
+            healthy_keywords = ['healthy', 'normal', 'no disease', 'no_disease', 'good', 'fine']
             
-            return {
+            # Separate disease vs healthy predictions
+            disease_predictions = [
+                p for p in top3_predictions 
+                if not any(kw in p['disease'].lower() for kw in healthy_keywords)
+            ]
+            
+            healthy_predictions = [
+                p for p in top3_predictions
+                if any(kw in p['disease'].lower() for kw in healthy_keywords)
+            ]
+            
+            # Calculate total confidence for each category
+            total_disease_conf = sum(p['confidence'] for p in disease_predictions)
+            total_healthy_conf = sum(p['confidence'] for p in healthy_predictions)
+            
+            logger.info(f" Voting Analysis:")
+            logger.info(f"   Disease votes: {len(disease_predictions)} predictions (combined: {total_disease_conf:.1%})")
+            logger.info(f"   Healthy votes: {len(healthy_predictions)} predictions (combined: {total_healthy_conf:.1%})")
+            logger.info(f"   Top prediction: {disease_name} ({confidence:.1%})")
+            
+            # THRESHOLDS
+            HIGH_CONFIDENCE = 0.60              
+            MEDIUM_CONFIDENCE = 0.45            
+            COMBINED_DISEASE_THRESHOLD = 0.50   
+            STRONG_DISEASE_SIGNAL = 0.40        
+            
+            # CASE 1: Strong combined disease signal
+            if total_disease_conf >= COMBINED_DISEASE_THRESHOLD:
+            
+                top_disease = max(disease_predictions, key=lambda x: x['confidence'])
+                
+                is_actually_healthy = False
+                final_diagnosis = top_disease['disease']
+                final_confidence = top_disease['confidence']
+                
+                logger.warning(
+                    f" DISEASE DETECTED (voting): Multiple disease signals "
+                    f"(combined: {total_disease_conf:.1%}) - "
+                    f"Top disease: {final_diagnosis} ({final_confidence:.1%})"
+                )
+            
+            # CASE 2: No healthy predictions AND reasonable disease signal
+            elif len(healthy_predictions) == 0 and total_disease_conf >= STRONG_DISEASE_SIGNAL:
+                # All top-3 are diseases AND they sum to >40%
+                top_disease = disease_predictions[0]  # Highest disease
+                
+                is_actually_healthy = False
+                final_diagnosis = top_disease['disease']
+                final_confidence = top_disease['confidence']
+                
+                logger.warning(
+                    f" DISEASE DETECTED (unanimous): No healthy predictions, "
+                    f"diseases at {total_disease_conf:.1%} - "
+                    f"Reporting: {final_diagnosis} ({final_confidence:.1%})"
+                )
+            
+            # CASE 3: High confidence single prediction
+            elif confidence >= HIGH_CONFIDENCE:
+                is_predicted_healthy = any(kw in disease_name.lower() for kw in healthy_keywords)
+                is_actually_healthy = is_predicted_healthy
+                final_diagnosis = disease_name
+                final_confidence = confidence
+                
+                logger.info(f" High confidence single prediction ({confidence:.1%}): {final_diagnosis}")
+            
+            # CASE 4: Medium confidence single prediction
+            elif confidence >= MEDIUM_CONFIDENCE:
+                is_predicted_healthy = any(kw in disease_name.lower() for kw in healthy_keywords)
+                
+                if is_predicted_healthy:
+                    # Predicted healthy - check if diseases are competing
+                    if disease_predictions and disease_predictions[0]['confidence'] > 0.35:
+                        gap = confidence - disease_predictions[0]['confidence']
+                        
+                        if gap < 0.10:  # Less than 10% gap
+                            # Too close - report disease to be safe
+                            is_actually_healthy = False
+                            final_diagnosis = disease_predictions[0]['disease']
+                            final_confidence = disease_predictions[0]['confidence']
+                            logger.warning(
+                                f" Close call: Healthy {confidence:.1%} vs "
+                                f"{final_diagnosis} {final_confidence:.1%} - "
+                                f"Reporting disease to be safe"
+                            )
+                        else:
+                            # Healthy clearly stronger
+                            is_actually_healthy = True
+                            final_diagnosis = "healthy"
+                            final_confidence = confidence
+                            logger.info(f" Likely healthy ({confidence:.1%})")
+                    else:
+                        # No strong disease signal
+                        is_actually_healthy = True
+                        final_diagnosis = "healthy"
+                        final_confidence = confidence
+                        logger.info(f" Healthy ({confidence:.1%})")
+                else:
+                    # Predicted disease with medium confidence
+                    is_actually_healthy = False
+                    final_diagnosis = disease_name
+                    final_confidence = confidence
+                    logger.info(f" Disease detected: {final_diagnosis} ({confidence:.1%})")
+            
+            # CASE 5: Low confidence - use voting
+            else:
+                if total_disease_conf > total_healthy_conf and total_disease_conf > 0.38:
+                    # Diseases collectively stronger AND above minimum threshold
+                    top_disease = max(disease_predictions, key=lambda x: x['confidence'])
+                    
+                    is_actually_healthy = False
+                    final_diagnosis = top_disease['disease']
+                    final_confidence = top_disease['confidence']
+                    
+                    logger.warning(
+                        f" Low individual confidence but diseases collectively strong "
+                        f"(combined: {total_disease_conf:.1%}) - "
+                        f"Reporting: {final_diagnosis} ({final_confidence:.1%})"
+                    )
+                else:
+                    # Default to healthy
+                    is_actually_healthy = True
+                    final_diagnosis = "healthy"
+                    final_confidence = confidence
+                    
+                    logger.info(
+                        f" Defaulting to healthy - weak signals "
+                        f"(disease: {total_disease_conf:.1%}, healthy: {total_healthy_conf:.1%})"
+                    )
+            
+            result = {
                 "status": "success",
-                "predicted_disease": disease_name,
-                "confidence": confidence,
-                "is_healthy": is_healthy,
+                "predicted_disease": final_diagnosis,
+                "confidence": final_confidence,
+                "is_healthy": is_actually_healthy,
                 "top3_predictions": top3_predictions,
                 "model_used": self.primary_model_name,
-                "total_classes": len(class_mapping)
+                "total_classes": len(id_to_disease),
+                "voting_stats": {
+                    "total_disease_confidence": total_disease_conf,
+                    "total_healthy_confidence": total_healthy_conf,
+                    "disease_votes": len(disease_predictions),
+                    "healthy_votes": len(healthy_predictions)
+                }
             }
+            
+            # Add confidence notes
+            if final_confidence >= HIGH_CONFIDENCE:
+                result['confidence_note'] = "HIGH - Reliable prediction"
+            elif final_confidence >= MEDIUM_CONFIDENCE:
+                result['confidence_note'] = "MEDIUM - Good prediction"
+            elif total_disease_conf >= COMBINED_DISEASE_THRESHOLD:
+                result['confidence_note'] = f"VOTING-BASED - Multiple disease signals ({total_disease_conf:.0%})"
+            else:
+                result['confidence_note'] = "LOW - Verify recommended"
+            
+            # Add warnings for edge cases
+            if total_disease_conf >= COMBINED_DISEASE_THRESHOLD and final_confidence < MEDIUM_CONFIDENCE:
+                result['warning'] = (
+                    f"Disease detected based on voting (combined confidence: {total_disease_conf:.1%}). "
+                    f"Individual prediction confidence is {final_confidence:.1%}. "
+                    f"Manual verification recommended."
+                )
+            elif is_actually_healthy and total_disease_conf > 0.40:
+                result['warning'] = (
+                    f"Fish appears healthy, but disease signals detected at {total_disease_conf:.1%}. "
+                    f"Monitor closely for next 24-48 hours."
+                )
+            
+            return result
             
         except Exception as e:
             logger.error(f"Detection error: {e}")
-            return {"status": "error", "message": str(e)}
+            import traceback
+            logger.error(traceback.format_exc())
+            return {
+                "status": "error", 
+                "message": str(e)
+            }
     
     @property
     def is_loaded(self) -> bool:
@@ -326,12 +525,8 @@ class FishDiseaseDetector:
             return []
         primary = self.class_mappings.get(self.primary_model_name, {})
         return sorted(primary.keys())
-
-# ============================================================
-# 🐟 SPECIES CLASSIFICATION (Keep existing - already works)
-# ============================================================
+#  SPECIES CLASSIFICATION
 class EnhancedFishClassifier:
-    """Multi-model ensemble fish species classifier"""
     
     def __init__(self, enable_ensemble: bool = True):
         self.device = Config.DEVICE
@@ -340,7 +535,7 @@ class EnhancedFishClassifier:
         self.transforms = None
         self.enable_ensemble = enable_ensemble
         
-        logger.info(f"🐟 Initializing Species Classification (Ensemble: {enable_ensemble})")
+        logger.info(f" Initializing Species Classification (Ensemble: {enable_ensemble})")
         self._load_all_models()
         self._setup_transforms()
     
@@ -381,14 +576,14 @@ class EnhancedFishClassifier:
                 self.models[model_name] = model
                 self.class_mappings[model_name] = class_mapping
                 available_models.append((config['priority'], model_name))
-                logger.info(f"✓ Loaded {model_name} ({len(class_mapping)} species)")
+                logger.info(f" Loaded {model_name} ({len(class_mapping)} species)")
             except Exception as e:
-                logger.error(f"✗ Failed {model_name}: {e}")
+                logger.error(f" Failed {model_name}: {e}")
         
         if available_models:
             available_models.sort(key=lambda x: x[0])
             self.primary_model_name = available_models[0][1]
-            logger.info(f"🎯 Primary species model: {self.primary_model_name}")
+            logger.info(f" Primary species model: {self.primary_model_name}")
     
     def _load_class_mapping(self, checkpoint: Dict, external_path: str) -> Optional[Dict]:
         """Load species mapping"""
@@ -529,17 +724,15 @@ class EnhancedFishClassifier:
     @property
     def is_loaded(self) -> bool:
         return len(self.models) > 0
+#  VISUALIZATION ENGINE
 
-# ============================================================
-# 📊 VISUALIZATION ENGINE (Keep existing)
-# ============================================================
 class VisualizationEngine:
     """Visualization engine"""
     
     def __init__(self):
         sns.set_style("whitegrid")
         plt.rcParams['figure.figsize'] = (12, 7)
-        logger.info("🎨 Visualization Engine initialized")
+        logger.info(" Visualization Engine initialized")
     
     def create_visualization(self, plot_type: str, data: Dict, title: str, **kwargs) -> Optional[str]:
         """Create visualization"""
@@ -602,14 +795,13 @@ class VisualizationEngine:
         plt.close()
         return str(filepath)
 
-# ============================================================
-# 🗄️ VECTOR DATABASE (Keep existing)
-# ============================================================
+
+# VECTOR DATABASE
 class VectorDatabaseManager:
     """Vector database operations"""
     
     def __init__(self):
-        logger.info("🗄️ Initializing Vector Database...")
+        logger.info(" Initializing Vector Database...")
         
         self.embeddings = HuggingFaceEmbeddings(
             model_name=Config.EMBED_MODEL,
@@ -623,7 +815,7 @@ class VectorDatabaseManager:
             collection_name=Config.VECTOR_DB_COLLECTION
         )
         self.document_count = self.vector_db._collection.count()
-        logger.info(f"✓ Vector DB loaded: {self.document_count} documents")
+        logger.info(f" Vector DB loaded: {self.document_count} documents")
         
         self.retriever = self.vector_db.as_retriever(
             search_type="similarity",
@@ -638,15 +830,13 @@ class VectorDatabaseManager:
         except Exception as e:
             logger.error(f"Search error: {e}")
             return []
+# ADVANCED RAG CHAIN
 
-# ============================================================
-# 💬 ADVANCED RAG CHAIN (Keep existing)
-# ============================================================
 class AdvancedRAGChain:
     """RAG chain with ML integration"""
     
     def __init__(self, vector_db, fish_classifier, disease_detector, viz_engine):
-        logger.info("🔗 Initializing Advanced RAG Chain...")
+        logger.info(" Initializing Advanced RAG Chain...")
         
         self.vector_db = vector_db
         self.fish_classifier = fish_classifier
@@ -666,31 +856,56 @@ class AdvancedRAGChain:
     
     def _build_chain(self):
         """Build RAG chain"""
-        system_prompt = """You are **MeenaSetu AI** 🐠 - expert in fish species identification, disease detection, and aquaculture.
+        system_prompt = """You are **MeenaSetu AI** 🐠 - India's intelligent aquatic assistant for farmers, students, and researchers.
 
-**CAPABILITIES:**
-- AI-powered species classification
-- Disease detection and diagnosis
-- Aquaculture knowledge Q&A
-- Data visualization
+## 🎯 YOUR EXPERTISE
+- **Species Identification:** Recognize fish from descriptions/images
+- **Disease Detection:** Identify common fish diseases and symptoms  
+- **Aquaculture Guidance:** Practical farming advice for Indian conditions
+- **Health Monitoring:** Preventive care and early warning signs
+- **Regional Knowledge:** South Asian freshwater ecosystems
 
-**RULES:**
-1. Use only provided context for specific facts
-2. Never invent data or statistics
-3. Respond naturally and conversationally
-4. Mix Hindi + English where helpful
-5. Use relevant emojis
+## 📊 KNOWLEDGE SOURCES
+You have access to:
+1. **Provided Context:** {context} (ALWAYS check this first)
+2. **General Aquatic Knowledge:** Common fish species, widespread diseases
+3. **Scientific Principles:** Basic aquaculture, fish biology, water chemistry
 
-**CONTEXT:**
+## 🚨 CRITICAL RULES
+1. **CONTEXT IS KING:** For specific facts, names, statistics → MUST use {context}
+2. **GENERAL KNOWLEDGE OK:** For common species/diseases not in context, use your knowledge but say: "Generally, [common knowledge]"
+3. **NO INVENTION:** Never create fake species, diseases, or data
+4. **UNCERTAINTY IS OK:** If unsure → "Is bare mein pukka data nahi hai / Confirmed information not available"
+5. **SAFETY FIRST:** No medication dosages → Only preventive measures
+
+## 🗣️ COMMUNICATION STYLE
+- **Language:** Match user's language (English)
+- **Tone:** Friendly, practical, non-alarming
+- **Clarity:** Explain simply, avoid jargon
+- **Emojis:** Use 🐟🌊💊📊🔬 where helpful
+- **Farmer-Friendly:** "Aap yeh try kar sakte hain" not "Implement this protocol"
+
+## 🏥 DISEASE GUIDELINES
+- If disease in {context} → Use that detailed information
+- If common disease (ich, fin rot, dropsy) not in {context} → Use general knowledge
+- **Always add:** "For serious cases, local fisheries officer se consult karein"
+
+## 🐟 SPECIES GUIDELINES  
+- If species in {context} → Use local names & details from context
+- If common Indian species (rohu, katla, magur) not in {context} → Use general knowledge
+- **Always mention:** "Pehchanne ke liye [key feature] dekhein"
+
+## 📦 PROVIDED INFORMATION
 {context}
 
-**CONVERSATION:**
+## 💬 CONVERSATION HISTORY
 {chat_history}
 
-**QUESTION:**
+## ❓ USER'S QUESTION
 {question}
 
-**RESPONSE:**"""
+## ✍️ YOUR RESPONSE
+[Start directly. Be helpful. Mix languages naturally. End with practical next step.]"""
         
         prompt = ChatPromptTemplate.from_template(system_prompt)
         
@@ -751,16 +966,13 @@ class AdvancedRAGChain:
     
     def clear_history(self):
         self.chat_messages = []
-
-# ============================================================
-# 🌍 MEENASETU AI - MAIN APPLICATION
-# ============================================================
+# MEENASETU AI - MAIN APPLICATION
 class MeenasetuAI:
     """Production MeenaSetu AI with Species & Disease Detection"""
     
     def __init__(self):
         logger.info("=" * 80)
-        logger.info("🐠 MEENASETU AI - PRODUCTION SYSTEM 🏥")
+        logger.info(" MEENASETU AI - PRODUCTION SYSTEM 🏥")
         logger.info("=" * 80)
         
         # Initialize components
@@ -791,20 +1003,24 @@ class MeenasetuAI:
             "documents_uploaded": 0
         }
         
-        logger.info("✅ MeenaSetu AI fully initialized!")
-        logger.info(f"🐟 Species Models: {len(self.fish_classifier.models)}")
-        logger.info(f"🏥 Disease Models: {len(self.disease_detector.models) if self.disease_detector.is_loaded else 0}")
-        logger.info(f"📚 Vector DB: {self.vector_db.document_count} documents")
+        logger.info("=" * 80)
+        logger.info(" MEENASETU AI INITIALIZATION COMPLETE")
+        logger.info("=" * 80)
+        logger.info(f" Species Models: {len(self.fish_classifier.models)}")
+        logger.info(f" Disease Models: {len(self.disease_detector.models) if self.disease_detector.is_loaded else 0}")
+        logger.info(f" Vector DB: {self.vector_db.document_count} documents")
+        logger.info(f" Device: {Config.DEVICE}")
+        logger.info("=" * 80)
         
         if not self.fish_classifier.is_loaded:
-            logger.warning("⚠️ Species models not loaded")
+            logger.warning(" Species classification unavailable")
         
         if not self.disease_detector.is_loaded:
-            logger.warning("⚠️ Disease models not loaded")
+            logger.warning(" Disease detection unavailable")
     
     def process_query(self, query: str, image_path: str = None) -> Dict[str, Any]:
         """Process user query with optional image"""
-        logger.info(f"❓ Processing: {query[:80]}...")
+        logger.info(f" Processing query: {query[:80]}...")
         
         result = {
             "query": query,
@@ -818,6 +1034,7 @@ class MeenasetuAI:
         
         # Handle image if provided
         if image_path and Path(image_path).exists():
+            logger.info(f" Processing image: {Path(image_path).name}")
             image_result = self._process_image(image_path, query)
             result.update(image_result)
         
@@ -826,19 +1043,25 @@ class MeenasetuAI:
         
         if result.get('image_classification'):
             ic = result['image_classification']
-            context_addition += f"\n\n**Species:** {ic['predicted_species']} ({ic['confidence']:.1%})"
+            context_addition += f"\n\n**Species Classification:**\n"
+            context_addition += f"- Predicted: {ic['predicted_species']}\n"
+            context_addition += f"- Confidence: {ic['confidence']:.1%}\n"
         
         if result.get('disease_detection'):
             dd = result['disease_detection']
             if dd['status'] == 'success':
-                health = "🟢 Healthy" if dd.get('is_healthy') else "🔴 Disease"
-                context_addition += f"\n\n**Health:** {health}\n{dd['predicted_disease']} ({dd['confidence']:.1%})"
+                health_status = " Healthy" if dd.get('is_healthy') else " Disease Detected"
+                context_addition += f"\n**Disease Detection:**\n"
+                context_addition += f"- Status: {health_status}\n"
+                context_addition += f"- Diagnosis: {dd['predicted_disease']}\n"
+                context_addition += f"- Confidence: {dd['confidence']:.1%}\n"
         
         # Add to history and get answer
         self.rag_chain.add_to_history("user", query)
         
         if context_addition:
-            answer = self.rag_chain.invoke(query, context_override=context_addition)
+            full_context = f"{context_addition}\n\nUser Question: {query}"
+            answer = self.rag_chain.invoke(query, context_override=full_context)
         else:
             answer = self.rag_chain.invoke(query)
         
@@ -852,7 +1075,7 @@ class MeenasetuAI:
         if result.get('disease_detection') and result['disease_detection']['status'] == 'success':
             self.session_stats['diseases_detected'] += 1
         
-        logger.info("✅ Query processed successfully")
+        logger.info(" Query processed successfully")
         return result
     
     def _process_image(self, image_path: str, query: str) -> Dict:
@@ -861,21 +1084,27 @@ class MeenasetuAI:
         
         # Species classification
         if self.fish_classifier.is_loaded:
+            logger.info("   Running species classification...")
             classification = self.fish_classifier.classify_image(image_path)
             if classification['status'] == 'success':
                 result['image_classification'] = classification
-                logger.info(f"🐟 Species: {classification['predicted_species']} ({classification['confidence']:.1%})")
+                logger.info(f"   Species: {classification['predicted_species']} "
+                          f"({classification['confidence']:.1%})")
         
         # Disease detection
-        disease_keywords = ['disease', 'sick', 'unhealthy', 'symptoms', 'treatment', 'health']
+        disease_keywords = ['disease', 'sick', 'unhealthy', 'symptoms', 'treatment', 
+                          'health', 'diagnosis', 'infected', 'infection']
         should_check_disease = any(kw in query.lower() for kw in disease_keywords)
         
+        # Always check disease if we have a species classification OR if query mentions health
         if self.disease_detector.is_loaded and (should_check_disease or result.get('image_classification')):
+            logger.info("   Running disease detection...")
             disease_result = self.disease_detector.detect_disease(image_path)
             if disease_result['status'] == 'success':
                 result['disease_detection'] = disease_result
-                health = "Healthy" if disease_result.get('is_healthy') else disease_result['predicted_disease']
-                logger.info(f"🏥 Health: {health} ({disease_result['confidence']:.1%})")
+                health = ("Healthy" if disease_result.get('is_healthy') 
+                         else disease_result['predicted_disease'])
+                logger.info(f"   Health: {health} ({disease_result['confidence']:.1%})")
         
         return result
     
@@ -883,6 +1112,7 @@ class MeenasetuAI:
         """Upload and process document"""
         try:
             ext = Path(file_path).suffix.lower()
+            logger.info(f" Uploading document: {Path(file_path).name} ({ext})")
             
             if ext == '.pdf':
                 loader = PyPDFLoader(file_path)
@@ -930,6 +1160,8 @@ class MeenasetuAI:
             
             self.session_stats['documents_uploaded'] += 1
             
+            logger.info(f"✓ Uploaded {Path(file_path).name} ({len(chunks)} chunks)")
+            
             return {
                 "status": "success",
                 "filename": Path(file_path).name,
@@ -954,26 +1186,35 @@ class MeenasetuAI:
                 "species_loaded": self.fish_classifier.is_loaded,
                 "disease_loaded": self.disease_detector.is_loaded,
                 "ensemble_enabled": self.fish_classifier.enable_ensemble,
-                "tensorflow_available": TENSORFLOW_AVAILABLE,
-                "device": str(Config.DEVICE)
+                "keras_available": KERAS_AVAILABLE,
+                "device": str(Config.DEVICE),
+                "available_diseases": (self.disease_detector.available_diseases 
+                                     if self.disease_detector.is_loaded else [])
             },
             "conversation": {
                 "messages": len(self.rag_chain.chat_messages)
             }
         }
     
+    def get_conversation_history(self) -> List[Dict]:
+        """Get conversation history as list of dicts"""
+        history = []
+        for msg in self.rag_chain.chat_messages:
+            if isinstance(msg, HumanMessage):
+                history.append({"role": "user", "content": msg.content})
+            elif isinstance(msg, AIMessage):
+                history.append({"role": "assistant", "content": msg.content})
+        return history
+    
     def clear_conversation(self):
         """Clear conversation history"""
         self.rag_chain.clear_history()
-        logger.info("🧹 Conversation history cleared")
-
-# ============================================================
-# 🧪 TESTING & DEMONSTRATION
-# ============================================================
+        logger.info(" Conversation history cleared")
+#  TESTING & DEMONSTRATION
 def main():
     """Production demonstration"""
     print("\n" + "=" * 80)
-    print("🐠 MEENASETU AI - PRODUCTION SYSTEM")
+    print(" MEENASETU AI - FIXED PRODUCTION SYSTEM TEST")
     print("=" * 80 + "\n")
     
     try:
@@ -981,61 +1222,86 @@ def main():
         ai = MeenasetuAI()
         
         # Test 1: General query
-        print("\n📝 TEST 1: General Aquatic Query")
-        print("-" * 80)
+        print("\n" + "=" * 80)
+        print(" TEST 1: General Aquatic Query")
+        print("=" * 80)
         result = ai.process_query("What are the main fish species in West Bengal?")
-        print(f"Answer: {result['answer'][:200]}...")
+        print(f"\n Answer:\n{result['answer'][:300]}...\n")
         
         # Test 2: Follow-up
-        print("\n\n🔄 TEST 2: Follow-up Question")
-        print("-" * 80)
-        result = ai.process_query("Which one is most commercially important?")
-        print(f"Answer: {result['answer'][:200]}...")
-        
-        # Test 3: Statistics
-        print("\n\n📊 TEST 3: System Statistics")
-        print("-" * 80)
-        stats = ai.get_statistics()
-        print(f"✓ Queries Processed: {stats['session']['queries_processed']}")
-        print(f"✓ Database Documents: {stats['database']['total_documents']}")
-        print(f"✓ Species Models: {stats['ml_models']['species_models']}")
-        print(f"✓ Disease Models: {stats['ml_models']['disease_models']}")
-        print(f"✓ Species Loaded: {stats['ml_models']['species_loaded']}")
-        print(f"✓ Disease Loaded: {stats['ml_models']['disease_loaded']}")
-        print(f"✓ TensorFlow: {stats['ml_models']['tensorflow_available']}")
-        print(f"✓ Device: {stats['ml_models']['device']}")
-        
-        # Test 4: Image capabilities
-        print("\n\n🖼️ TEST 4: Image Processing Capabilities")
-        print("-" * 80)
-        print(f"Species Classification: {'✅ Ready' if ai.fish_classifier.is_loaded else '❌ Not loaded'}")
-        print(f"Disease Detection: {'✅ Ready' if ai.disease_detector.is_loaded else '❌ Not loaded'}")
-        
-        if ai.disease_detector.is_loaded:
-            diseases = ai.disease_detector.available_diseases
-            print(f"Available Diseases: {len(diseases)}")
-            if diseases:
-                print(f"  Sample: {', '.join(diseases[:5])}")
-        
         print("\n" + "=" * 80)
-        print("✨ PRODUCTION DEMO COMPLETE ✨")
-        print("=" * 80 + "\n")
+        print(" TEST 2: Follow-up Question")
+        print("=" * 80)
+        result = ai.process_query("Which one is most commercially important?")
+        print(f"\n Answer:\n{result['answer'][:300]}...\n")
         
-        print("\n📋 FEATURES AVAILABLE:")
+        # Test 3: System Statistics
+        print("\n" + "=" * 80)
+        print(" TEST 3: System Statistics")
+        print("=" * 80)
+        stats = ai.get_statistics()
+        
+        print(f"\n Session Stats:")
+        print(f"  • Queries Processed: {stats['session']['queries_processed']}")
+        print(f"  • Images Classified: {stats['session']['images_classified']}")
+        print(f"  • Diseases Detected: {stats['session']['diseases_detected']}")
+        
+        print(f"\n Database:")
+        print(f"  • Total Documents: {stats['database']['total_documents']}")
+        print(f"  • Collection: {stats['database']['collection']}")
+        
+        print(f"\n ML Models:")
+        print(f"  • Species Models: {stats['ml_models']['species_models']}")
+        print(f"  • Disease Models: {stats['ml_models']['disease_models']}")
+        print(f"  • Species Loaded: {'' if stats['ml_models']['species_loaded'] else '❌'}")
+        print(f"  • Disease Loaded: {'' if stats['ml_models']['disease_loaded'] else '❌'}")
+        print(f"  • Keras: {'' if stats['ml_models']['keras_available'] else '❌'}")
+        print(f"  • Device: {stats['ml_models']['device']}")
+        
+        if stats['ml_models']['available_diseases']:
+            print(f"\n Available Diseases ({len(stats['ml_models']['available_diseases'])}):")
+            for i, disease in enumerate(stats['ml_models']['available_diseases'][:10], 1):
+                print(f"  {i}. {disease}")
+            if len(stats['ml_models']['available_diseases']) > 10:
+                print(f"  ... and {len(stats['ml_models']['available_diseases']) - 10} more")
+        
+        # Test 4: Feature Summary
+        print("\n" + "=" * 80)
+        print(" FEATURE SUMMARY")
+        print("=" * 80)
+        
         features = [
-            ("🐟 Species Classification", f"Ensemble of {len(ai.fish_classifier.models)} models"),
-            ("🏥 Disease Detection", f"{len(ai.disease_detector.models) if ai.disease_detector.is_loaded else 0} Keras models"),
-            ("💬 RAG-based Q&A", "Conversational memory"),
-            ("📊 Data Visualization", "Plotly, Matplotlib"),
-            ("📁 Document Processing", "PDF, CSV, Images"),
-            ("🔍 Semantic Search", f"{ai.vector_db.document_count} documents")
+            (" Species Classification", 
+             f"{' ' if ai.fish_classifier.is_loaded else ' '}"
+             f"Ensemble of {len(ai.fish_classifier.models)} models"),
+            
+            (" Disease Detection", 
+             f"{' ' if ai.disease_detector.is_loaded else ' '}"
+             f"{len(ai.disease_detector.models) if ai.disease_detector.is_loaded else 0} Keras models"),
+            
+            (" RAG-based Q&A", 
+             " Conversational memory with context"),
+            
+            (" Data Visualization", 
+             " Plotly, Matplotlib charts"),
+            
+            (" Document Processing", 
+             " PDF, CSV, TXT, Images"),
+            
+            (" Semantic Search", 
+             f" {ai.vector_db.document_count} documents indexed")
         ]
         
-        for feature, detail in features:
-            print(f"  {feature}: {detail}")
+        print()
+        for feature, status in features:
+            print(f"  {feature:.<40} {status}")
+        
+        print("\n" + "=" * 80)
+        print(" PRODUCTION DEMO COMPLETE")
+        print("=" * 80 + "\n")
         
     except Exception as e:
-        print(f"\n❌ Error during demo: {e}")
+        print(f"\n Error during demo: {e}")
         import traceback
         traceback.print_exc()
 

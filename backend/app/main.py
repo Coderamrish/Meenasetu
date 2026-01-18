@@ -215,17 +215,20 @@ async def health_check():
     
     stats = meenasetu_ai.get_statistics()
     
+    # Calculate total models loaded
+    total_models = stats['ml_models']['species_models'] + stats['ml_models']['disease_models']
+    
     return {
         "status": "healthy",
         "components": {
             "ai_core": "operational",
             "vector_db": "operational" if stats['database']['total_documents'] > 0 else "empty",
-            "ml_models": "operational" if stats['ml_models']['loaded'] > 0 else "unavailable",
+            "ml_models": "operational" if total_models > 0 else "unavailable",
             "llm": "operational"
         },
         "metrics": {
             "vector_db_documents": stats['database']['total_documents'],
-            "ml_models_loaded": stats['ml_models']['loaded'],
+            "ml_models_loaded": total_models,
             "queries_processed": stats['session']['queries_processed'],
             "uptime_start": stats['session']['start_time']
         },
@@ -239,8 +242,15 @@ async def get_statistics():
         raise HTTPException(status_code=503, detail="AI not initialized")
     
     stats = meenasetu_ai.get_statistics()
+    
+    # Fix the structure for frontend compatibility
     return {
-        "statistics": stats,
+        "statistics": {
+            "session_info": stats['session'],
+            "database_stats": stats['database'],
+            "ml_model_status": "loaded" if (stats['ml_models']['species_loaded'] or stats['ml_models']['disease_loaded']) else "unavailable"
+        },
+        "ml_models": stats['ml_models'],
         "performance": {
             "avg_query_time": "~1.2s",
             "cache_hit_rate": "N/A",
@@ -248,7 +258,6 @@ async def get_statistics():
         },
         "timestamp": datetime.now().isoformat()
     }
-
 # ============================================================
 # 💬 INTELLIGENT RAG QUERY ENDPOINTS
 # ============================================================
@@ -359,6 +368,7 @@ async def batch_query(req: BatchQueryRequest):
 # ============================================================
 # 🖼️ IMAGE CLASSIFICATION & DISEASE DETECTION
 # ============================================================
+
 @app.post("/classify/fish", tags=["Fish Classification"])
 async def classify_fish_species(
     file: UploadFile = File(...),
@@ -412,20 +422,19 @@ async def classify_fish_species(
             "model_info": {
                 "model_used": classification.get('model_used'),
                 "ensemble": classification.get('ensemble', False),
-                "models_agree": classification.get('models_agree', 1),
-                "total_models": classification.get('total_models', 1)
+                "agreement": classification.get('agreement', 1.0)
             }
         }
         
         # Disease detection if requested
-        if detect_disease:
-            disease_result = meenasetu_ai.fish_classifier.detect_disease(str(temp_path), description)
+        if detect_disease and meenasetu_ai.disease_detector.is_loaded:
+            disease_result = meenasetu_ai.disease_detector.detect_disease(str(temp_path))
             response['disease_detection'] = disease_result
             
             # Add recommendations if disease detected
-            if disease_result.get('status') == 'detected':
+            if disease_result.get('status') == 'success' and not disease_result.get('is_healthy'):
                 response['recommendations'] = _get_disease_recommendations(
-                    disease_result.get('primary_disease', '')
+                    disease_result.get('predicted_disease', '')
                 )
         
         # Clean up
@@ -452,10 +461,16 @@ async def detect_fish_disease(
     - Get disease diagnosis with confidence
     - Receive treatment recommendations
     
-    **Detects 8+ common fish diseases**
+    **Detects 6+ common fish diseases**
     """
     if meenasetu_ai is None:
         raise HTTPException(status_code=503, detail="AI not initialized")
+    
+    if not meenasetu_ai.disease_detector.is_loaded:
+        raise HTTPException(
+            status_code=503,
+            detail="Disease detection not available. Please check if models are loaded."
+        )
     
     # Validate image
     allowed_ext = {'.jpg', '.jpeg', '.png', '.gif', '.bmp'}
@@ -472,77 +487,166 @@ async def detect_fish_disease(
             shutil.copyfileobj(file.file, buffer)
         
         # Detect disease
-        disease_result = meenasetu_ai.fish_classifier.detect_disease(str(temp_path), description)
+        disease_result = meenasetu_ai.disease_detector.detect_disease(str(temp_path))
         
-        response = DiseaseDetectionResponse(
-            status=disease_result['status'],
-            primary_disease=disease_result.get('primary_disease'),
-            confidence=disease_result.get('confidence'),
-            all_detected=disease_result.get('all_detected', []),
-            image_analysis=disease_result.get('image_analysis'),
-            message=disease_result.get('message')
-        )
+        # ========================================
+        # CRITICAL FIX: Proper response formatting
+        # ========================================
+        logger.info(f"🔬 Disease Detection Raw Result: {disease_result}")
         
-        # Add treatment recommendations
-        if get_treatment and disease_result.get('status') == 'detected':
-            response.recommendations = _get_disease_recommendations(
-                disease_result.get('primary_disease', '')
+        if disease_result['status'] == 'success':
+            is_healthy = disease_result.get('is_healthy', False)
+            predicted_disease = disease_result.get('predicted_disease', 'Unknown')
+            confidence = disease_result.get('confidence', 0.0)
+            
+            # Log for debugging
+            logger.info(f"🏥 Disease: {predicted_disease}, Healthy: {is_healthy}, Conf: {confidence}")
+            
+            # FIXED: Check if disease name indicates health
+            healthy_keywords = ['healthy', 'normal', 'no_disease', 'no disease', 'good', 'fine']
+            is_actually_healthy = (
+                is_healthy or 
+                any(keyword in predicted_disease.lower() for keyword in healthy_keywords)
             )
+            
+            if is_actually_healthy:
+                # Healthy fish
+                response = DiseaseDetectionResponse(
+                    status='healthy',
+                    primary_disease=None,
+                    confidence=confidence,
+                    all_detected=[],
+                    recommendations=None,
+                    message="Fish appears healthy - no disease detected"
+                )
+                logger.info("✅ Response: HEALTHY")
+            else:
+                # Disease detected
+                response = DiseaseDetectionResponse(
+                    status='detected',
+                    primary_disease=predicted_disease,
+                    confidence=confidence,
+                    all_detected=[predicted_disease],
+                    message=f"Disease detected: {predicted_disease}"
+                )
+                
+                # Add treatment recommendations
+                if get_treatment:
+                    response.recommendations = _get_disease_recommendations(predicted_disease)
+                
+                logger.info(f"⚠️ Response: DISEASE DETECTED - {predicted_disease}")
+        
+        else:
+            # Error case
+            response = DiseaseDetectionResponse(
+                status='error',
+                message=disease_result.get('message', 'Detection failed')
+            )
+            logger.error(f"❌ Response: ERROR - {disease_result.get('message')}")
         
         # Clean up
         temp_path.unlink()
+        
+        # Log final response
+        logger.info(f"📤 Final API Response Status: {response.status}")
         
         return response
     
     except Exception as e:
         logger.error(f"❌ Disease detection error: {e}")
+        import traceback
+        logger.error(traceback.format_exc())
         temp_path.unlink(missing_ok=True)
         raise HTTPException(status_code=500, detail=str(e))
 
+
 def _get_disease_recommendations(disease_name: str) -> List[str]:
     """Get treatment recommendations for detected disease"""
+    
+    # Normalize disease name for matching
+    disease_lower = disease_name.lower().replace('_', ' ').replace('-', ' ')
+    
     recommendations_db = {
-        "Fin Rot": [
-            "Isolate affected fish immediately",
-            "Improve water quality - perform 25-50% water change",
-            "Treat with antibacterial medication (e.g., Melafix)",
-            "Add aquarium salt (1 tablespoon per 5 gallons)",
-            "Monitor ammonia and nitrite levels closely"
+        "fin rot": [
+            "🏥 Isolate affected fish immediately to prevent spread",
+            "💧 Perform 25-50% water change to improve water quality",
+            "💊 Treat with antibacterial medication (e.g., Melafix, API Fin & Body Cure)",
+            "🧂 Add aquarium salt (1 tablespoon per 5 gallons)",
+            "📊 Monitor ammonia and nitrite levels daily",
+            "🌡️ Maintain stable water temperature (75-80°F)",
+            "⏱️ Continue treatment for 7-10 days after symptoms disappear"
         ],
-        "Ich": [
-            "Raise water temperature to 86°F (30°C) gradually",
-            "Add aquarium salt (1 tablespoon per gallon)",
-            "Treat with copper-based or malachite green medication",
-            "Increase aeration during treatment",
-            "Continue treatment for 10-14 days even after spots disappear"
+        "ich": [
+            "🌡️ Gradually raise water temperature to 86°F (30°C) over 24 hours",
+            "🧂 Add aquarium salt (1 tablespoon per gallon)",
+            "💊 Treat with copper-based or malachite green medication",
+            "💨 Increase aeration during treatment",
+            "⏱️ Continue treatment for 10-14 days even after white spots disappear",
+            "🔄 Perform daily 25% water changes",
+            "🚫 Remove carbon filters during treatment"
         ],
-        "Dropsy": [
-            "Isolate fish immediately - highly contagious",
-            "Add Epsom salt (1-3 teaspoons per 5 gallons)",
-            "Treat with broad-spectrum antibiotic",
-            "Reduce feeding or fast for 24-48 hours",
-            "Maintain pristine water quality"
+        "white spot": [  # Alias for Ich
+            "🌡️ Gradually raise water temperature to 86°F (30°C)",
+            "💊 Use anti-parasitic medication (malachite green/formalin)",
+            "🧂 Add aquarium salt for osmotic pressure",
+            "⏱️ Treat for full lifecycle (14 days minimum)",
+            "💨 Increase aeration significantly"
         ],
-        "Columnaris": [
-            "Isolate affected fish",
-            "Treat with antibiotic medication (e.g., Kanamycin)",
-            "Perform daily water changes (25-30%)",
-            "Reduce stress factors (overcrowding, aggression)",
-            "Monitor for 7-10 days after symptoms disappear"
+        "dropsy": [
+            "🚨 Isolate fish IMMEDIATELY - highly contagious",
+            "🧂 Add Epsom salt (1-3 teaspoons per 5 gallons)",
+            "💊 Treat with broad-spectrum antibiotic (Kanaplex recommended)",
+            "🍽️ Reduce feeding or fast for 24-48 hours",
+            "💧 Maintain pristine water quality with daily water changes",
+            "⚠️ Note: Advanced dropsy has poor prognosis",
+            "🏥 Consult aquatic veterinarian if available"
+        ],
+        "columnaris": [
+            "🏥 Isolate affected fish immediately",
+            "💊 Treat with antibiotic medication (Kanamycin or Nitrofurazone)",
+            "💧 Perform daily 25-30% water changes",
+            "🌡️ Lower temperature slightly (72-75°F) - bacteria thrives in warmth",
+            "🧂 Add aquarium salt (1 teaspoon per gallon)",
+            "😌 Reduce stress factors (overcrowding, aggression)",
+            "⏱️ Monitor for 7-10 days after symptoms disappear"
+        ],
+        "fungus": [
+            "🏥 Isolate fish to quarantine tank",
+            "💊 Use antifungal medication (Methylene Blue, Pimafix)",
+            "🧂 Add aquarium salt (1-2 tablespoons per 5 gallons)",
+            "💧 Improve water quality immediately",
+            "🌡️ Ensure stable temperature",
+            "⏱️ Treat for 10-14 days",
+            "🔍 Monitor for secondary bacterial infections"
+        ],
+        "bacterial": [
+            "💊 Use broad-spectrum antibiotic (API Triple Sulfa, Kanaplex)",
+            "💧 Perform 50% water change before treatment",
+            "🏥 Isolate if possible",
+            "⏱️ Complete full medication course (usually 5-7 days)",
+            "🚫 Remove carbon from filter",
+            "📊 Test water parameters daily"
         ]
     }
     
-    # Return specific recommendations or general advice
-    return recommendations_db.get(
-        disease_name,
-        [
-            "Isolate affected fish",
-            "Improve water quality",
-            "Consult with aquatic veterinarian",
-            "Monitor fish closely for 7-10 days",
-            "Maintain optimal tank parameters"
-        ]
-    )
+    # Try to find matching recommendations
+    for key, recs in recommendations_db.items():
+        if key in disease_lower:
+            logger.info(f"💊 Found {len(recs)} recommendations for: {key}")
+            return recs
+    
+    # Default general recommendations if no match
+    logger.warning(f"⚠️ No specific recommendations for: {disease_name}, using general advice")
+    return [
+        "🏥 Isolate affected fish to prevent spread",
+        "💧 Improve water quality - perform 30% water change",
+        "📊 Test water parameters (ammonia, nitrite, nitrate, pH)",
+        "🌡️ Ensure stable water temperature",
+        "🩺 Consult with aquatic veterinarian or local fish store expert",
+        "📸 Take clear photos for professional diagnosis",
+        "⏱️ Monitor fish closely for next 7-10 days",
+        "🚫 Avoid overfeeding during treatment"
+    ]
 
 # ============================================================
 # 📊 VISUALIZATION ENDPOINTS
@@ -1035,6 +1139,7 @@ async def get_configuration():
             "embedding_model": Config.EMBED_MODEL,
             "llm_model": Config.GROQ_MODEL,
             "ml_models": list(Config.MODEL_CONFIGS.keys())
+            
         },
         "parameters": {
             "chunk_size": Config.CHUNK_SIZE,
@@ -1154,17 +1259,28 @@ async def get_species_list():
 @app.get("/docs/diseases", tags=["Documentation"])
 async def get_disease_info():
     """Get information about detectable fish diseases"""
+    if meenasetu_ai is None or not meenasetu_ai.disease_detector.is_loaded:
+        return {
+            "detectable_diseases": [],
+            "disease_info": {},
+            "total_diseases": 0,
+            "status": "unavailable",
+            "message": "Disease detection models not loaded",
+            "timestamp": datetime.now().isoformat()
+        }
+    
+    available_diseases = meenasetu_ai.disease_detector.available_diseases
+    
     return {
-        "detectable_diseases": list(Config.DISEASE_KEYWORDS.keys()),
+        "detectable_diseases": available_diseases,
         "disease_info": {
             disease: {
                 "name": disease.replace('_', ' ').title(),
-                "keywords": keywords,
                 "severity": "Medium to High"
             }
-            for disease, keywords in Config.DISEASE_KEYWORDS.items()
+            for disease in available_diseases
         },
-        "total_diseases": len(Config.DISEASE_KEYWORDS),
+        "total_diseases": len(available_diseases),
         "timestamp": datetime.now().isoformat()
     }
 
@@ -1234,7 +1350,7 @@ if __name__ == "__main__":
         "main:app",
         host="0.0.0.0",
         port=8000,
-        reload=True,
+        reload=False,
         log_level="info",
         access_log=True
     )

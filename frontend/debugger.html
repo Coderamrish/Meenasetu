@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeenaSetu API Debugger</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .card h2 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            margin: 5px;
+        }
+
+        .status-online {
+            background: #10b981;
+            color: white;
+        }
+
+        .status-offline {
+            background: #ef4444;
+            color: white;
+        }
+
+        .status-loading {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s;
+            margin: 5px;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+
+        .btn-success {
+            background: #10b981;
+            color: white;
+        }
+
+        .btn-danger {
+            background: #ef4444;
+            color: white;
+        }
+
+        .upload-area {
+            border: 3px dashed #667eea;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #f9fafb;
+        }
+
+        .upload-area:hover {
+            background: #f3f4f6;
+            border-color: #5568d3;
+        }
+
+        .preview-image {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .log-container {
+            background: #1f2937;
+            color: #10b981;
+            padding: 20px;
+            border-radius: 8px;
+            height: 400px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .log-entry {
+            margin-bottom: 8px;
+            padding: 4px;
+        }
+
+        .log-error {
+            color: #ef4444;
+        }
+
+        .log-success {
+            color: #10b981;
+        }
+
+        .log-info {
+            color: #60a5fa;
+        }
+
+        .log-warning {
+            color: #f59e0b;
+        }
+
+        .spinner {
+            border: 4px solid #f3f4f6;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .result-item {
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .confidence-bar {
+            background: #e5e7eb;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .confidence-fill {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            height: 100%;
+            transition: width 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .endpoint-test {
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        .endpoint-test code {
+            background: #1f2937;
+            color: #10b981;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .api-url-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .api-url-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐟 MeenaSetu API Debugger & Tester</h1>
+            <p>Comprehensive testing and debugging tool for your Fish AI API</p>
+        </div>
+
+        <div class="grid">
+            <!-- API Connection -->
+            <div class="card">
+                <h2>🔌 API Connection</h2>
+                <input type="text" id="apiUrl" class="api-url-input" value="http://localhost:8000" placeholder="API Base URL">
+                <button class="btn btn-primary" onclick="testConnection()">Test Connection</button>
+                <button class="btn btn-primary" onclick="checkStatus()">Check Model Status</button>
+                <button class="btn btn-primary" onclick="testAllEndpoints()">Test All Endpoints</button>
+                <div id="connectionStatus" style="margin-top: 20px;"></div>
+            </div>
+
+            <!-- Image Upload Test -->
+            <div class="card">
+                <h2>📸 Image Upload Test</h2>
+                <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                    <div id="uploadPrompt">
+                        <p style="font-size: 48px; margin-bottom: 10px;">📁</p>
+                        <p><strong>Click to select an image</strong></p>
+                        <p style="color: #666; font-size: 13px;">or drag and drop here</p>
+                    </div>
+                    <img id="previewImage" class="preview-image" style="display: none;">
+                </div>
+                <input type="file" id="fileInput" accept="image/*" onchange="handleFileSelect(event)">
+                <div style="text-align: center; margin-top: 15px;">
+                    <button class="btn btn-success" id="analyzeBtn" onclick="analyzeImage()" style="display: none;">
+                        Analyze Image
+                    </button>
+                    <button class="btn btn-danger" id="clearBtn" onclick="clearUpload()" style="display: none;">
+                        Clear
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="card" id="resultsCard" style="display: none;">
+            <h2>📊 Analysis Results</h2>
+            <div id="resultsContainer"></div>
+        </div>
+
+        <!-- Debug Log -->
+        <div class="card">
+            <h2>📋 Debug Log</h2>
+            <button class="btn btn-danger" onclick="clearLog()">Clear Log</button>
+            <button class="btn btn-primary" onclick="exportLog()">Export Log</button>
+            <div class="log-container" id="logContainer">
+                <div class="log-entry log-info">Ready to debug...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentFile = null;
+        const API_BASE_URL = () => document.getElementById('apiUrl').value;
+
+        function addLog(message, type = 'info') {
+            const logContainer = document.getElementById('logContainer');
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = document.createElement('div');
+            logEntry.className = `log-entry log-${type}`;
+            logEntry.textContent = `[${timestamp}] ${message}`;
+            logContainer.appendChild(logEntry);
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+
+        function clearLog() {
+            document.getElementById('logContainer').innerHTML = '<div class="log-entry log-info">Log cleared...</div>';
+        }
+
+        function exportLog() {
+            const logText = document.getElementById('logContainer').innerText;
+            const blob = new Blob([logText], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `meenasetu-debug-${Date.now()}.log`;
+            a.click();
+            addLog('Log exported successfully', 'success');
+        }
+
+        async function testConnection() {
+            addLog('Testing connection to API...', 'info');
+            const statusDiv = document.getElementById('connectionStatus');
+            statusDiv.innerHTML = '<div class="spinner"></div>';
+
+            try {
+                const response = await fetch(`${API_BASE_URL()}/`, {
+                    method: 'GET',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    addLog(`✓ Connection successful! Status: ${data.status}`, 'success');
+                    addLog(`Models loaded: ${data.models_loaded}`, 'info');
+                    
+                    statusDiv.innerHTML = `
+                        <div class="result-item">
+                            <span class="status-badge status-online">✓ API Online</span>
+                            <p style="margin-top: 10px;"><strong>Status:</strong> ${data.status}</p>
+                            <p><strong>Models:</strong> ${data.models_loaded ? '✓ Loaded' : '✗ Not Loaded'}</p>
+                            <p><strong>Message:</strong> ${data.message}</p>
+                        </div>
+                    `;
+                } else {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+            } catch (error) {
+                addLog(`✗ Connection failed: ${error.message}`, 'error');
+                statusDiv.innerHTML = `
+                    <div class="result-item">
+                        <span class="status-badge status-offline">✗ API Offline</span>
+                        <p style="margin-top: 10px; color: #ef4444;"><strong>Error:</strong> ${error.message}</p>
+                        <p style="font-size: 13px; color: #666;">Make sure the backend server is running on ${API_BASE_URL()}</p>
+                    </div>
+                `;
+            }
+        }
+
+        async function checkStatus() {
+            addLog('Checking model status...', 'info');
+            
+            try {
+                const response = await fetch(`${API_BASE_URL()}/status`);
+                const data = await response.json();
+                
+                addLog(`Species Model: ${data.species_loaded ? 'Loaded' : 'Not Loaded'}`, data.species_loaded ? 'success' : 'error');
+                addLog(`Disease Model: ${data.disease_loaded ? 'Loaded' : 'Not Loaded'}`, data.disease_loaded ? 'success' : 'error');
+                
+                const statusDiv = document.getElementById('connectionStatus');
+                statusDiv.innerHTML = `
+                    <div class="result-item">
+                        <h4 style="margin-bottom: 10px;">Model Status</h4>
+                        <p><span class="status-badge ${data.species_loaded ? 'status-online' : 'status-offline'}">
+                            Species: ${data.species_loaded ? '✓ Ready' : '✗ Offline'}
+                        </span></p>
+                        <p><span class="status-badge ${data.disease_loaded ? 'status-online' : 'status-offline'}">
+                            Disease: ${data.disease_loaded ? '✓ Ready' : '✗ Offline'}
+                        </span></p>
+                        ${data.message ? `<p style="margin-top: 10px; color: #666;"><strong>Note:</strong> ${data.message}</p>` : ''}
+                    </div>
+                `;
+            } catch (error) {
+                addLog(`✗ Status check failed: ${error.message}`, 'error');
+            }
+        }
+
+        async function testAllEndpoints() {
+            addLog('Testing all API endpoints...', 'info');
+            const endpoints = ['/', '/health', '/status'];
+            
+            for (const endpoint of endpoints) {
+                try {
+                    const response = await fetch(`${API_BASE_URL()}${endpoint}`);
+                    const data = await response.json();
+                    addLog(`✓ ${endpoint} - Status: ${response.status}`, 'success');
+                    addLog(`  Response: ${JSON.stringify(data).substring(0, 100)}...`, 'info');
+                } catch (error) {
+                    addLog(`✗ ${endpoint} - Failed: ${error.message}`, 'error');
+                }
+            }
+        }
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            if (!file.type.startsWith('image/')) {
+                addLog('✗ Invalid file type. Please select an image.', 'error');
+                alert('Please select an image file');
+                return;
+            }
+
+            if (file.size > 10 * 1024 * 1024) {
+                addLog('✗ File too large. Maximum size is 10MB.', 'error');
+                alert('File size must be less than 10MB');
+                return;
+            }
+
+            currentFile = file;
+            addLog(`✓ File selected: ${file.name} (${(file.size / 1024).toFixed(2)} KB)`, 'success');
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('uploadPrompt').style.display = 'none';
+                const preview = document.getElementById('previewImage');
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+                document.getElementById('analyzeBtn').style.display = 'inline-block';
+                document.getElementById('clearBtn').style.display = 'inline-block';
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function clearUpload() {
+            currentFile = null;
+            document.getElementById('fileInput').value = '';
+            document.getElementById('uploadPrompt').style.display = 'block';
+            document.getElementById('previewImage').style.display = 'none';
+            document.getElementById('analyzeBtn').style.display = 'none';
+            document.getElementById('clearBtn').style.display = 'none';
+            document.getElementById('resultsCard').style.display = 'none';
+            addLog('Upload cleared', 'info');
+        }
+
+        async function analyzeImage() {
+            if (!currentFile) {
+                addLog('✗ No file selected', 'error');
+                return;
+            }
+
+            addLog(`Starting analysis of ${currentFile.name}...`, 'info');
+            const resultsCard = document.getElementById('resultsCard');
+            const resultsContainer = document.getElementById('resultsContainer');
+            
+            resultsCard.style.display = 'block';
+            resultsContainer.innerHTML = '<div class="spinner"></div><p style="text-align: center;">Analyzing image...</p>';
+
+            const formData = new FormData();
+            formData.append('file', currentFile);
+
+            try {
+                addLog('Sending POST request to /upload...', 'info');
+                const startTime = Date.now();
+                
+                const response = await fetch(`${API_BASE_URL()}/upload`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const processingTime = Date.now() - startTime;
+                addLog(`Response received in ${processingTime}ms`, 'info');
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`HTTP ${response.status}: ${errorText}`);
+                }
+
+                const result = await response.json();
+                addLog('✓ Analysis completed successfully!', 'success');
+                addLog(`Raw response: ${JSON.stringify(result).substring(0, 200)}...`, 'info');
+
+                displayResults(result);
+
+            } catch (error) {
+                addLog(`✗ Analysis failed: ${error.message}`, 'error');
+                addLog(`Error stack: ${error.stack}`, 'error');
+                
+                resultsContainer.innerHTML = `
+                    <div class="result-item" style="border-left-color: #ef4444;">
+                        <h3 style="color: #ef4444;">❌ Analysis Failed</h3>
+                        <p><strong>Error:</strong> ${error.message}</p>
+                        <p style="font-size: 13px; color: #666; margin-top: 10px;">
+                            Check the debug log below for more details. Common issues:
+                        </p>
+                        <ul style="margin-top: 10px; color: #666; font-size: 13px;">
+                            <li>ML models not loaded properly on the backend</li>
+                            <li>Missing dependencies (TensorFlow, PyTorch, PIL)</li>
+                            <li>Invalid image format or corrupted file</li>
+                            <li>Backend server error (check server console)</li>
+                        </ul>
+                    </div>
+                `;
+            }
+        }
+
+        function displayResults(result) {
+            const container = document.getElementById('resultsContainer');
+            let html = '';
+
+            // File Information
+            html += `
+                <div class="result-item">
+                    <h3>📁 File Information</h3>
+                    <p><strong>Filename:</strong> ${result.filename || 'N/A'}</p>
+                    <p><strong>Size:</strong> ${result.file_size ? (result.file_size / 1024).toFixed(2) + ' KB' : 'N/A'}</p>
+                    <p><strong>Type:</strong> ${result.content_type || 'N/A'}</p>
+                </div>
+            `;
+
+            // Species Detection
+            if (result.species_detection) {
+                const species = result.species_detection;
+                if (species.status === 'success') {
+                    addLog(`Species detected: ${species.predicted_species} (${(species.confidence * 100).toFixed(1)}%)`, 'success');
+                    
+                    html += `
+                        <div class="result-item">
+                            <h3>🐟 Species Detection</h3>
+                            <p><strong>Predicted Species:</strong> ${species.predicted_species}</p>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" style="width: ${species.confidence * 100}%">
+                                    ${(species.confidence * 100).toFixed(1)}%
+                                </div>
+                            </div>
+                    `;
+
+                    if (species.top3_predictions) {
+                        html += '<p style="margin-top: 15px;"><strong>Top 3 Predictions:</strong></p>';
+                        species.top3_predictions.forEach((pred, i) => {
+                            html += `
+                                <div style="margin: 10px 0;">
+                                    <p>${i + 1}. ${pred.species} - ${(pred.confidence * 100).toFixed(1)}%</p>
+                                    <div class="confidence-bar" style="height: 10px;">
+                                        <div class="confidence-fill" style="width: ${pred.confidence * 100}%; font-size: 0;"></div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                    }
+                    html += '</div>';
+                } else {
+                    addLog(`Species detection failed: ${species.message || 'Unknown error'}`, 'error');
+                    html += `<div class="result-item" style="border-left-color: #ef4444;">
+                        <h3>🐟 Species Detection</h3>
+                        <p style="color: #ef4444;">Status: ${species.status}</p>
+                        <p>${species.message || 'Detection failed'}</p>
+                    </div>`;
+                }
+            }
+
+            // Disease Detection
+            if (result.disease_detection) {
+                const disease = result.disease_detection;
+                if (disease.status === 'success') {
+                    const isHealthy = disease.is_healthy;
+                    addLog(`Health status: ${isHealthy ? 'Healthy' : disease.predicted_disease} (${(disease.confidence * 100).toFixed(1)}%)`, isHealthy ? 'success' : 'warning');
+                    
+                    html += `
+                        <div class="result-item" style="border-left-color: ${isHealthy ? '#10b981' : '#ef4444'};">
+                            <h3>🏥 Disease Detection</h3>
+                            <p><strong>Status:</strong> <span style="color: ${isHealthy ? '#10b981' : '#ef4444'};">
+                                ${isHealthy ? '✓ Healthy' : '⚠ Disease Detected'}
+                            </span></p>
+                            <p><strong>Diagnosis:</strong> ${disease.predicted_disease}</p>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" style="width: ${disease.confidence * 100}%; background: ${isHealthy ? '#10b981' : '#ef4444'};">
+                                    ${(disease.confidence * 100).toFixed(1)}%
+                                </div>
+                            </div>
+                    `;
+
+                    if (disease.top3_predictions) {
+                        html += '<p style="margin-top: 15px;"><strong>Top 3 Predictions:</strong></p>';
+                        disease.top3_predictions.forEach((pred, i) => {
+                            const predHealthy = pred.disease.toLowerCase().includes('healthy');
+                            html += `
+                                <div style="margin: 10px 0;">
+                                    <p>${i + 1}. ${pred.disease} - ${(pred.confidence * 100).toFixed(1)}%</p>
+                                    <div class="confidence-bar" style="height: 10px;">
+                                        <div class="confidence-fill" style="width: ${pred.confidence * 100}%; background: ${predHealthy ? '#10b981' : '#ef4444'}; font-size: 0;"></div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                    }
+                    html += '</div>';
+                } else {
+                    addLog(`Disease detection failed: ${disease.message || 'Unknown error'}`, 'error');
+                    html += `<div class="result-item" style="border-left-color: #ef4444;">
+                        <h3>🏥 Disease Detection</h3>
+                        <p style="color: #ef4444;">Status: ${disease.status}</p>
+                        <p>${disease.message || 'Detection failed'}</p>
+                    </div>`;
+                }
+            }
+
+            container.innerHTML = html;
+        }
+
+        // Setup drag and drop
+        const uploadArea = document.querySelector('.upload-area');
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#667eea';
+            uploadArea.style.background = '#f3f4f6';
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.style.borderColor = '#667eea';
+            uploadArea.style.background = '#f9fafb';
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#667eea';
+            uploadArea.style.background = '#f9fafb';
+            
+            if (e.dataTransfer.files.length) {
+                document.getElementById('fileInput').files = e.dataTransfer.files;
+                handleFileSelect({ target: { files: e.dataTransfer.files } });
+            }
+        });
+
+        // Initial connection test
+        addLog('Debugger initialized', 'success');
+        addLog('Click "Test Connection" to verify API connectivity', 'info');
+    </script>
+</body>
+</html>

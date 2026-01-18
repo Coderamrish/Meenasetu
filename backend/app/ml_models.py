@@ -10,6 +10,7 @@ import numpy as np
 from typing import Dict, Any, Optional
 import tensorflow as tf
 from tensorflow import keras
+from datetime import datetime
 
 # ============================================================
 # ⚙️ CONFIGURATION
@@ -35,7 +36,7 @@ class Config:
     DISEASE_MODEL_CONFIGS = {
         'disease_model_final': {
             'path': CHECKPOINTS_DIR / "final.keras",
-            'class_mapping': CHECKPOINTS_DIR / "classes2.json"
+            'class_mapping': CHECKPOINTS_DIR / "classes.json"
         }
     }
     

@@ -78,15 +78,9 @@ class Config:
     
     # Disease Detection Model configurations
     DISEASE_MODEL_CONFIGS = {
-        'disease_model_s1': {
-            'path': BASE_DIR / "training" / "checkpoints" / "s1.keras",
-            'class_mapping': BASE_DIR / "training" / "checkpoints" / "classes2.json",
-            'priority': 2,
-            'purpose': 'disease_detection'
-        },
         'disease_model_final': {
-            'path': BASE_DIR / "training" / "checkpoints" / "final.keras",
-            'class_mapping': BASE_DIR / "training" / "checkpoints" / "classes2.json",
+            'path': BASE_DIR / "training" / "checkpoints" / "best_efficientnet_freshwater.keras",
+            'class_mapping': BASE_DIR / "training" / "checkpoints" / "disease_class_mapping.json",
             'priority': 1,
             'purpose': 'disease_detection'
         }

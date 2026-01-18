@@ -6,6 +6,8 @@ from pathlib import Path
 import uuid
 from datetime import datetime
 import os
+import traceback
+import sys
 
 # Import ML models
 try:
@@ -47,7 +49,9 @@ async def root():
             "/": "API documentation (this page)",
             "/health": "Health check",
             "/status": "Model status",
+            "/diagnostics": "System diagnostics",
             "/upload": "Upload and process image (POST)",
+            "/test-models": "Test models with detailed output (POST)",
             "/docs": "Interactive API documentation"
         }
     }
@@ -74,44 +78,252 @@ async def get_status():
             "message": "Models failed to load"
         }
 
+@app.get("/diagnostics")
+async def run_diagnostics():
+    """
+    Comprehensive system diagnostics
+    """
+    diagnostics = {
+        "timestamp": datetime.now().isoformat(),
+        "python_version": sys.version,
+        "models_loaded": MODELS_LOADED,
+        "uploads_dir": str(UPLOADS_DIR.absolute()),
+        "uploads_dir_exists": UPLOADS_DIR.exists(),
+        "uploads_dir_writable": UPLOADS_DIR.exists() and os.access(UPLOADS_DIR, os.W_OK),
+    }
+    
+    # Check imports
+    import_status = {}
+    required_packages = {
+        'PIL': 'Pillow',
+        'numpy': 'numpy',
+        'tensorflow': 'tensorflow',
+        'torch': 'torch',
+        'cv2': 'opencv-python'
+    }
+    
+    for package, pip_name in required_packages.items():
+        try:
+            __import__(package)
+            import_status[package] = {"status": "✓ Installed", "pip_name": pip_name}
+        except ImportError:
+            import_status[package] = {"status": "✗ Not Found", "pip_name": pip_name}
+    
+    diagnostics["packages"] = import_status
+    
+    # Check ML models if loaded
+    if MODELS_LOADED:
+        try:
+            from .ml_models import meenasetu_models
+            model_status = meenasetu_models.get_status()
+            diagnostics["models"] = model_status
+        except Exception as e:
+            diagnostics["models"] = {"error": str(e)}
+    else:
+        diagnostics["models"] = {"status": "not_loaded"}
+    
+    return diagnostics
+
 @app.post("/upload")
 async def upload_image(file: UploadFile = File(...)):
     """
     Upload and process fish image for species classification and disease detection
+    WITH ENHANCED ERROR HANDLING AND DIAGNOSTICS
     """
+    file_path = None
+    
     try:
-        # Validate file type
-        if not file.content_type.startswith('image/'):
-            raise HTTPException(status_code=400, detail="File must be an image")
+        # Step 1: Validate file type
+        print(f"\n{'='*60}")
+        print(f"[UPLOAD] Starting image upload process")
+        print(f"[UPLOAD] Filename: {file.filename}")
+        print(f"[UPLOAD] Content-Type: {file.content_type}")
+        print(f"{'='*60}\n")
         
-        # Generate unique filename
+        if not file.content_type.startswith('image/'):
+            raise HTTPException(
+                status_code=400, 
+                detail=f"File must be an image. Got: {file.content_type}"
+            )
+        
+        # Step 2: Generate unique filename and save
         file_extension = Path(file.filename).suffix
         unique_filename = f"{uuid.uuid4()}{file_extension}"
         file_path = UPLOADS_DIR / unique_filename
         
-        # Save uploaded file
+        print(f"[SAVE] Saving to: {file_path}")
+        
         with open(file_path, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
         
-        # Process image with ML models
-        if MODELS_LOADED:
-            result = meenasetu_models.process_image(str(file_path))
-        else:
-            result = {
-                "status": "models_not_loaded",
-                "message": "ML models failed to load on server startup"
-            }
+        file_size = file_path.stat().st_size
+        print(f"[SAVE] ✓ File saved successfully ({file_size} bytes)")
         
-        # Add file info to result
+        # Step 3: Verify file exists and is readable
+        if not file_path.exists():
+            raise Exception(f"File was not saved correctly: {file_path}")
+        
+        print(f"[VERIFY] ✓ File exists and is readable")
+        
+        # Step 4: Process with ML models
+        print(f"[MODELS] Starting ML model processing...")
+        print(f"[MODELS] Models loaded: {MODELS_LOADED}")
+        
+        if not MODELS_LOADED:
+            return JSONResponse(
+                status_code=200,
+                content={
+                    "status": "models_not_loaded",
+                    "message": "ML models failed to load on server startup",
+                    "filename": file.filename,
+                    "uploaded_filename": unique_filename,
+                    "file_size": file_size,
+                    "content_type": file.content_type
+                }
+            )
+        
+        # Process the image
+        print(f"[PROCESS] Calling process_image()...")
+        try:
+            result = meenasetu_models.process_image(str(file_path))
+            print(f"[PROCESS] ✓ Image processing completed successfully")
+            print(f"[RESULT] Keys in result: {result.keys()}")
+        except Exception as process_error:
+            print(f"[ERROR] Image processing failed: {process_error}")
+            traceback.print_exc()
+            raise Exception(f"Image processing failed: {str(process_error)}")
+        
+        # Step 5: Add file info to result
         result["filename"] = file.filename
         result["uploaded_filename"] = unique_filename
-        result["file_size"] = file_path.stat().st_size
+        result["file_size"] = file_size
         result["content_type"] = file.content_type
         
-        return result
+        print(f"\n{'='*60}")
+        print(f"[SUCCESS] Upload and analysis completed successfully")
+        print(f"{'='*60}\n")
+        
+        return JSONResponse(status_code=200, content=result)
+        
+    except HTTPException as he:
+        # Re-raise HTTP exceptions as-is
+        print(f"[HTTP_ERROR] {he.detail}")
+        raise he
         
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        # Detailed error logging
+        error_type = type(e).__name__
+        error_message = str(e)
+        error_traceback = traceback.format_exc()
+        
+        print(f"\n{'!'*60}")
+        print(f"[CRITICAL ERROR] Unhandled exception in upload endpoint")
+        print(f"[ERROR TYPE] {error_type}")
+        print(f"[ERROR MESSAGE] {error_message}")
+        print(f"[TRACEBACK]")
+        print(error_traceback)
+        print(f"{'!'*60}\n")
+        
+        # Clean up file if it was created
+        if file_path and file_path.exists():
+            try:
+                file_path.unlink()
+                print(f"[CLEANUP] Removed failed upload file: {file_path}")
+            except:
+                pass
+        
+        # Return detailed error to client
+        return JSONResponse(
+            status_code=500,
+            content={
+                "status": "error",
+                "error_type": error_type,
+                "error_message": error_message,
+                "traceback": error_traceback.split('\n'),
+                "suggestions": [
+                    "Check if ML models are properly initialized",
+                    "Verify image file is valid and not corrupted",
+                    "Ensure all required packages are installed (PIL, numpy, tensorflow, torch)",
+                    "Check model file paths and permissions",
+                    "Review the traceback above for specific error location"
+                ]
+            }
+        )
+
+@app.post("/test-models")
+async def test_models(file: UploadFile = File(...)):
+    """
+    Test ML models with detailed step-by-step output
+    """
+    results = {
+        "steps": [],
+        "errors": [],
+        "success": False
+    }
+    
+    file_path = None
+    
+    try:
+        # Save file
+        results["steps"].append("Saving uploaded file...")
+        file_extension = Path(file.filename).suffix
+        unique_filename = f"test_{uuid.uuid4()}{file_extension}"
+        file_path = UPLOADS_DIR / unique_filename
+        
+        with open(file_path, "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
+        
+        results["steps"].append(f"✓ File saved: {file_path}")
+        
+        # Load image
+        results["steps"].append("Loading image with PIL...")
+        from PIL import Image
+        img = Image.open(file_path)
+        results["steps"].append(f"✓ Image loaded: {img.size} pixels, mode: {img.mode}")
+        
+        # Test species model
+        if MODELS_LOADED:
+            results["steps"].append("Testing species classification...")
+            try:
+                species_result = meenasetu_models.classify_species(str(file_path))
+                results["steps"].append(f"✓ Species: {species_result}")
+            except AttributeError:
+                results["steps"].append("⚠ classify_species() method not found, trying process_image()...")
+                try:
+                    full_result = meenasetu_models.process_image(str(file_path))
+                    results["steps"].append(f"✓ Full result: {full_result}")
+                except Exception as e:
+                    results["errors"].append(f"process_image() error: {str(e)}")
+            except Exception as e:
+                results["errors"].append(f"Species classification error: {str(e)}")
+                results["errors"].append(traceback.format_exc())
+            
+            # Test disease model
+            results["steps"].append("Testing disease detection...")
+            try:
+                disease_result = meenasetu_models.detect_disease(str(file_path))
+                results["steps"].append(f"✓ Disease: {disease_result}")
+            except AttributeError:
+                results["steps"].append("⚠ detect_disease() method not found (using process_image() above)")
+            except Exception as e:
+                results["errors"].append(f"Disease detection error: {str(e)}")
+                results["errors"].append(traceback.format_exc())
+        else:
+            results["errors"].append("Models not loaded")
+        
+        results["success"] = len(results["errors"]) == 0
+        
+    except Exception as e:
+        results["errors"].append(f"Critical error: {str(e)}")
+        results["traceback"] = traceback.format_exc()
+    
+    finally:
+        # Cleanup
+        if file_path and file_path.exists():
+            file_path.unlink()
+            results["steps"].append("✓ Cleaned up test file")
+    
+    return results
 
 @app.get("/test-upload")
 async def test_upload_page():
