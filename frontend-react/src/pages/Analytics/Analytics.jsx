@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useMemo, useCallback } from 'react';
+﻿import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { 
   LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, 
   CartesianGrid, Tooltip as RechartsTooltip, Legend, ResponsiveContainer, 
@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 
 const API_BASE = 'http://localhost:8000';
+const AUTO_REFRESH_INTERVAL = 20 * 60 * 1000; // 20 minutes in milliseconds
 
 // Enhanced helper functions
 const calculateUptime = (startTime) => {
@@ -65,13 +66,13 @@ const getDateRange = (timeRange) => {
 
 const detectAnomalies = (data) => {
   const anomalies = [];
-  if (!data || !Array.isArray(data)) return anomalies;
+  if (!data || !Array.isArray(data) || data.length === 0) return anomalies;
   
-  const avgQueries = data.reduce((sum, d) => sum + d.queries, 0) / data.length;
-  const avgSuccess = data.reduce((sum, d) => sum + d.successRate, 0) / data.length;
+  const avgQueries = data.reduce((sum, d) => sum + (d.queries || 0), 0) / data.length;
+  const avgSuccess = data.reduce((sum, d) => sum + (d.successRate || 0), 0) / data.length;
   
   data.forEach((day) => {
-    if (day.queries < avgQueries * 0.5) {
+    if (day.queries < avgQueries * 0.5 && avgQueries > 0) {
       anomalies.push({
         date: day.date,
         type: 'Low Activity',
@@ -118,6 +119,8 @@ const Analytics = () => {
   });
   const [hiddenMetrics, setHiddenMetrics] = useState([]);
   const [autoRefresh, setAutoRefresh] = useState(true);
+  const [lastRefreshTime, setLastRefreshTime] = useState(null);
+  const [nextRefreshIn, setNextRefreshIn] = useState(AUTO_REFRESH_INTERVAL);
 
   // API Data States
   const [systemStats, setSystemStats] = useState(null);
@@ -128,6 +131,18 @@ const Analytics = () => {
   const [recentActivity, setRecentActivity] = useState([]);
   const [apiHealth, setApiHealth] = useState({ status: 'healthy', lastChecked: null });
   const [anomalies, setAnomalies] = useState([]);
+
+  // Refs to prevent stale closures
+  const autoRefreshRef = useRef(autoRefresh);
+  const timeRangeRef = useRef(timeRange);
+
+  useEffect(() => {
+    autoRefreshRef.current = autoRefresh;
+  }, [autoRefresh]);
+
+  useEffect(() => {
+    timeRangeRef.current = timeRange;
+  }, [timeRange]);
 
   const COLORS = [
     '#667eea', '#764ba2', '#f093fb', '#4facfe', '#43e97b', 
@@ -171,19 +186,35 @@ const Analytics = () => {
       avgResponseTime: systemStats.performance?.avg_query_time || 'N/A',
       uptime: calculateUptime(stats.start_time),
       queriesPerDay: performanceData.length > 0 
-        ? (performanceData.reduce((sum, d) => sum + d.queries, 0) / performanceData.length).toFixed(1)
+        ? (performanceData.reduce((sum, d) => sum + (d.queries || 0), 0) / performanceData.length).toFixed(1)
         : 0
     };
   }, [systemStats, speciesData, diseaseData, performanceData]);
 
   const trends = useMemo(() => {
-    if (performanceData.length < 2) return {};
+    if (performanceData.length < 2) return {
+      queries: 0,
+      classifications: 0,
+      diseases: 0,
+      documents: 0,
+      responseTime: 0,
+      successRate: 0
+    };
     
     const recent = performanceData.slice(-3);
     const previous = performanceData.slice(-6, -3);
     
-    const recentAvg = recent.reduce((sum, d) => sum + d.queries, 0) / recent.length;
-    const prevAvg = previous.reduce((sum, d) => sum + d.queries, 0) / previous.length;
+    if (previous.length === 0) return {
+      queries: 0,
+      classifications: 0,
+      diseases: 0,
+      documents: 0,
+      responseTime: 0,
+      successRate: 0
+    };
+    
+    const recentAvg = recent.reduce((sum, d) => sum + (d.queries || 0), 0) / recent.length;
+    const prevAvg = previous.reduce((sum, d) => sum + (d.queries || 0), 0) / previous.length;
     
     const queryTrend = prevAvg > 0 ? ((recentAvg - prevAvg) / prevAvg * 100).toFixed(1) : 0;
     
@@ -202,25 +233,25 @@ const Analytics = () => {
     
     try {
       const [statsRes, historyRes, speciesRes, diseaseRes, healthRes] = await Promise.all([
-        fetch(`${API_BASE}/stats`),
-        fetch(`${API_BASE}/conversation/history?limit=200`),
-        fetch(`${API_BASE}/docs/species-list`),
-        fetch(`${API_BASE}/docs/diseases`),
-        fetch(`${API_BASE}/health`)
+        fetch(`${API_BASE}/stats`).catch(() => null),
+        fetch(`${API_BASE}/conversation/history?limit=200`).catch(() => null),
+        fetch(`${API_BASE}/docs/species-list`).catch(() => null),
+        fetch(`${API_BASE}/docs/diseases`).catch(() => null),
+        fetch(`${API_BASE}/health`).catch(() => null)
       ]);
 
       const [statsData, historyData, speciesListData, diseaseListData, healthData] = 
         await Promise.all([
-          statsRes.ok ? statsRes.json() : null,
-          historyRes.ok ? historyRes.json() : { history: [] },
-          speciesRes.ok ? speciesRes.json() : { species: [] },
-          diseaseRes.ok ? diseaseRes.json() : { detectable_diseases: [] },
-          healthRes.ok ? healthRes.json() : { status: 'error' }
+          statsRes?.ok ? statsRes.json().catch(() => null) : null,
+          historyRes?.ok ? historyRes.json().catch(() => ({ history: [] })) : { history: [] },
+          speciesRes?.ok ? speciesRes.json().catch(() => ({ species: [] })) : { species: [] },
+          diseaseRes?.ok ? diseaseRes.json().catch(() => ({ detectable_diseases: [] })) : { detectable_diseases: [] },
+          healthRes?.ok ? healthRes.json().catch(() => ({ status: 'error' })) : { status: 'error' }
         ]);
 
       setSystemStats(statsData);
       setApiHealth({ ...healthData, lastChecked: new Date() });
-      setConversationData(historyData.history || []);
+      setConversationData(historyData?.history || []);
 
       if (speciesListData?.species && Array.isArray(speciesListData.species)) {
         const processedSpecies = speciesListData.species.slice(0, 15).map((species, index) => ({
@@ -244,7 +275,7 @@ const Analytics = () => {
         setDiseaseData(processedDiseases);
       }
 
-      const days = getDateRange(timeRange);
+      const days = getDateRange(timeRangeRef.current);
       const perfData = days.map(day => ({
         date: format(day, 'MMM dd'),
         fullDate: day,
@@ -256,7 +287,7 @@ const Analytics = () => {
       }));
       setPerformanceData(perfData);
 
-      const recent = (historyData.history || []).slice(0, 10).map(item => ({
+      const recent = (historyData?.history || []).slice(0, 10).map(item => ({
         ...item,
         timestamp: item.timestamp ? new Date(item.timestamp) : new Date(),
         type: item.role === 'user' ? 'query' : 'response',
@@ -267,6 +298,9 @@ const Analytics = () => {
       const detectedAnomalies = detectAnomalies(perfData);
       setAnomalies(detectedAnomalies);
 
+      setLastRefreshTime(new Date());
+      setNextRefreshIn(AUTO_REFRESH_INTERVAL);
+
     } catch (error) {
       console.error('Error fetching analytics:', error);
       setApiHealth({ status: 'error', lastChecked: new Date(), error: error.message });
@@ -274,20 +308,38 @@ const Analytics = () => {
       setLoading(false);
       setRefreshing(false);
     }
-  }, [timeRange, COLORS]);
+  }, [COLORS]);
 
+  // Initial load
   useEffect(() => {
     fetchAnalyticsData();
+  }, []);
+
+  // Auto-refresh with 20-minute interval
+  useEffect(() => {
+    let refreshInterval;
+    let countdownInterval;
     
-    let interval;
-    if (autoRefresh) {
-      interval = setInterval(fetchAnalyticsData, 30000);
+    if (autoRefreshRef.current) {
+      refreshInterval = setInterval(() => {
+        console.log('Auto-refreshing analytics data...');
+        fetchAnalyticsData();
+      }, AUTO_REFRESH_INTERVAL);
+
+      // Countdown timer
+      countdownInterval = setInterval(() => {
+        setNextRefreshIn(prev => {
+          const newTime = prev - 1000;
+          return newTime < 0 ? AUTO_REFRESH_INTERVAL : newTime;
+        });
+      }, 1000);
     }
     
     return () => {
-      if (interval) clearInterval(interval);
+      if (refreshInterval) clearInterval(refreshInterval);
+      if (countdownInterval) clearInterval(countdownInterval);
     };
-  }, [fetchAnalyticsData, autoRefresh]);
+  }, [autoRefresh, fetchAnalyticsData]);
 
   const handleExport = (format) => {
     const exportData = {
@@ -339,6 +391,12 @@ const Analytics = () => {
         ? prev.filter(id => id !== metricId)
         : [...prev, metricId]
     );
+  };
+
+  const formatTimeRemaining = (ms) => {
+    const minutes = Math.floor(ms / 60000);
+    const seconds = Math.floor((ms % 60000) / 1000);
+    return `${minutes}m ${seconds}s`;
   };
 
   const MetricCard = ({ metric, index }) => {
@@ -608,6 +666,7 @@ const Analytics = () => {
               onClick={() => setAutoRefresh(!autoRefresh)}>
                 <Zap size={12} />
                 Auto-refresh {autoRefresh ? 'ON' : 'OFF'}
+                {autoRefresh && ` (${formatTimeRemaining(nextRefreshIn)})`}
               </div>
             </div>
           </div>
@@ -694,7 +753,18 @@ const Analytics = () => {
           </div>
         </div>
 
-        {/* Filters Panel */}
+        {/* Last Refresh Info */}
+        {lastRefreshTime && (
+          <div style={{
+            marginTop: '0.5rem',
+            fontSize: '0.75rem',
+            color: '#64748b'
+          }}>
+            Last updated: {format(lastRefreshTime, 'PPp')}
+          </div>
+        )}
+
+        {/* Filters Panel - Simplified to prevent re-renders */}
         {showFilters && (
           <div style={{
             marginTop: '1rem',
@@ -743,44 +813,6 @@ const Analytics = () => {
                   <option value="disease">Disease Detection</option>
                 </select>
               </div>
-
-              <div>
-                <label style={{ fontSize: '0.85rem', fontWeight: '600', color: '#64748b', marginBottom: '0.5rem', display: 'block' }}>
-                  Date From
-                </label>
-                <input
-                  type="date"
-                  value={filters.dateFrom || ''}
-                  onChange={(e) => setFilters({...filters, dateFrom: e.target.value})}
-                  style={{
-                    width: '100%',
-                    padding: '0.5rem',
-                    borderRadius: '8px',
-                    border: '2px solid #e2e8f0',
-                    background: 'white',
-                    fontSize: '0.9rem'
-                  }}
-                />
-              </div>
-
-              <div>
-                <label style={{ fontSize: '0.85rem', fontWeight: '600', color: '#64748b', marginBottom: '0.5rem', display: 'block' }}>
-                  Date To
-                </label>
-                <input
-                  type="date"
-                  value={filters.dateTo || ''}
-                  onChange={(e) => setFilters({...filters, dateTo: e.target.value})}
-                  style={{
-                    width: '100%',
-                    padding: '0.5rem',
-                    borderRadius: '8px',
-                    border: '2px solid #e2e8f0',
-                    background: 'white',
-                    fontSize: '0.9rem'
-                  }}
-                />
-              </div>
             </div>
             
             <div style={{ marginTop: '1rem', display: 'flex', gap: '0.5rem', justifyContent: 'flex-end' }}>
@@ -797,20 +829,6 @@ const Analytics = () => {
                 }}
               >
                 Reset Filters
-              </button>
-              <button
-                onClick={fetchAnalyticsData}
-                style={{
-                  padding: '0.5rem 1rem',
-                  borderRadius: '8px',
-                  border: 'none',
-                  background: GRADIENTS.purple,
-                  color: 'white',
-                  cursor: 'pointer',
-                  fontWeight: '600'
-                }}
-              >
-                Apply Filters
               </button>
             </div>
           </div>
@@ -884,20 +902,21 @@ const Analytics = () => {
         padding: '0.5rem',
         background: 'white',
         borderRadius: '12px',
-        boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
+        boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+        overflowX: 'auto'
       }}>
         {[
           { id: 'overview', label: 'Overview', icon: <Activity size={16} /> },
           { id: 'performance', label: 'Performance', icon: <TrendingUp size={16} /> },
           { id: 'species', label: 'Species', icon: <Fish size={16} /> },
-          { id: 'diseases', label: 'Diseases', icon: <Microscope size={16} /> },
-          { id: 'users', label: 'Users', icon: <Users size={16} /> }
+          { id: 'diseases', label: 'Diseases', icon: <Microscope size={16} /> }
         ].map(view => (
           <button
             key={view.id}
             onClick={() => setActiveView(view.id)}
             style={{
               flex: 1,
+              minWidth: '120px',
               padding: '0.75rem 1rem',
               borderRadius: '8px',
               border: 'none',
@@ -918,7 +937,7 @@ const Analytics = () => {
         ))}
       </div>
 
-      {/* Main Content Area */}
+      {/* Main Content Area - Overview */}
       {activeView === 'overview' && (
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
           {/* Performance Timeline */}
@@ -953,10 +972,6 @@ const Analytics = () => {
                     <stop offset="5%" stopColor="#667eea" stopOpacity={0.8}/>
                     <stop offset="95%" stopColor="#667eea" stopOpacity={0.1}/>
                   </linearGradient>
-                  <linearGradient id="colorSuccess" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#43e97b" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#43e97b" stopOpacity={0.1}/>
-                  </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
                 <XAxis dataKey="date" stroke="#64748b" />
@@ -972,9 +987,7 @@ const Analytics = () => {
                 />
                 <Legend />
                 <Area yAxisId="left" type="monotone" dataKey="queries" stroke="#667eea" fillOpacity={1} fill="url(#colorQueries)" name="Queries" />
-                <Area yAxisId="left" type="monotone" dataKey="classifications" stroke="#4facfe" fillOpacity={0.3} fill="#4facfe" name="Classifications" />
                 <Line yAxisId="right" type="monotone" dataKey="successRate" stroke="#43e97b" strokeWidth={2} name="Success Rate %" />
-                <Scatter yAxisId="right" dataKey="responseTime" fill="#f59e0b" name="Response Time (s)" />
               </ComposedChart>
             </ResponsiveContainer>
           </div>
@@ -986,35 +999,16 @@ const Analytics = () => {
             borderRadius: '12px',
             boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
           }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-              <h3 style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <Fish size={20} color="#11998e" />
-                Top Species
-              </h3>
-              <div style={{
-                padding: '0.25rem 0.75rem',
-                background: '#11998e20',
-                borderRadius: '20px',
-                fontSize: '0.75rem',
-                fontWeight: '600',
-                color: '#11998e'
-              }}>
-                {speciesData.length} total
-              </div>
-            </div>
-            
+            <h3 style={{ marginTop: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <Fish size={20} color="#11998e" />
+              Top Species
+            </h3>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={speciesData.slice(0, 8)}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
                 <XAxis dataKey="name" stroke="#64748b" angle={-45} textAnchor="end" height={80} fontSize={11} />
                 <YAxis stroke="#64748b" />
-                <RechartsTooltip 
-                  contentStyle={{ 
-                    borderRadius: 8, 
-                    border: 'none', 
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-                  }}
-                />
+                <RechartsTooltip />
                 <Bar dataKey="count" name="Identifications" radius={[8, 8, 0, 0]}>
                   {speciesData.slice(0, 8).map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={entry.color} />
@@ -1031,314 +1025,20 @@ const Analytics = () => {
             borderRadius: '12px',
             boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
           }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-              <h3 style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <Microscope size={20} color="#ee0979" />
-                Disease Analysis
-              </h3>
-              <div style={{
-                padding: '0.25rem 0.75rem',
-                background: '#ee097920',
-                borderRadius: '20px',
-                fontSize: '0.75rem',
-                fontWeight: '600',
-                color: '#ee0979'
-              }}>
-                {diseaseData.reduce((sum, d) => sum + d.cases, 0)} cases
-              </div>
-            </div>
-            
+            <h3 style={{ marginTop: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <Microscope size={20} color="#ee0979" />
+              Disease Analysis
+            </h3>
             <ResponsiveContainer width="100%" height={300}>
               <RadarChart data={diseaseData.slice(0, 6)}>
                 <PolarGrid stroke="#e2e8f0" />
                 <PolarAngleAxis dataKey="name" stroke="#64748b" fontSize={11} />
                 <PolarRadiusAxis stroke="#64748b" />
-                <Radar 
-                  name="Cases" 
-                  dataKey="cases" 
-                  stroke="#ee0979" 
-                  fill="#ee0979" 
-                  fillOpacity={0.6} 
-                />
-                <RechartsTooltip 
-                  contentStyle={{ 
-                    borderRadius: 8, 
-                    border: 'none', 
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-                  }}
-                />
+                <Radar name="Cases" dataKey="cases" stroke="#ee0979" fill="#ee0979" fillOpacity={0.6} />
+                <RechartsTooltip />
                 <Legend />
               </RadarChart>
             </ResponsiveContainer>
-          </div>
-
-          {/* Recent Activity */}
-          <div style={{
-            padding: '1.5rem',
-            background: 'white',
-            borderRadius: '12px',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-            gridColumn: 'span 2'
-          }}>
-            <h3 style={{ margin: 0, marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <Activity size={20} color="#4facfe" />
-              Recent Activity
-            </h3>
-            <div style={{ maxHeight: 300, overflowY: 'auto' }}>
-              {recentActivity.length > 0 ? (
-                recentActivity.map((activity, index) => (
-                  <div 
-                    key={index}
-                    style={{
-                      padding: '0.75rem',
-                      marginBottom: '0.5rem',
-                      background: activity.type === 'query' ? '#f0f9ff' : '#f0fdf4',
-                      borderRadius: '8px',
-                      borderLeft: `4px solid ${activity.type === 'query' ? '#3b82f6' : '#10b981'}`,
-                      transition: 'all 0.2s ease'
-                    }}
-                    onMouseEnter={(e) => e.currentTarget.style.transform = 'translateX(4px)'}
-                    onMouseLeave={(e) => e.currentTarget.style.transform = 'translateX(0)'}
-                  >
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                      <div style={{ fontSize: '0.9rem', fontWeight: 500, flex: 1 }}>
-                        {activity.content?.substring(0, 80)}...
-                      </div>
-                      <div style={{
-                        padding: '0.25rem 0.5rem',
-                        background: activity.type === 'query' ? '#3b82f6' : '#10b981',
-                        color: 'white',
-                        borderRadius: '6px',
-                        fontSize: '0.7rem',
-                        fontWeight: '600',
-                        marginLeft: '0.5rem'
-                      }}>
-                        {activity.type}
-                      </div>
-                    </div>
-                    <div style={{ 
-                      display: 'flex', 
-                      justifyContent: 'space-between', 
-                      fontSize: '0.75rem', 
-                      color: '#64748b',
-                      marginTop: '0.25rem'
-                    }}>
-                      <span>{format(activity.timestamp, 'HH:mm:ss')}</span>
-                      <span>{activity.duration}ms</span>
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <div style={{ textAlign: 'center', padding: '2rem', color: '#64748b' }}>
-                  No recent activity found
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {activeView === 'performance' && (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
-          {/* System Metrics */}
-          {[
-            { label: 'API Response', value: '1.2s', status: 'excellent', target: '< 2s', color: '#10b981' },
-            { label: 'Model Inference', value: '0.3s', status: 'excellent', target: '< 1s', color: '#3b82f6' },
-            { label: 'Database Latency', value: '45ms', status: 'good', target: '< 100ms', color: '#10b981' },
-            { label: 'Cache Hit Rate', value: '87%', status: 'warning', target: '> 90%', color: '#f59e0b' },
-            { label: 'Memory Usage', value: '64%', status: 'good', target: '< 80%', color: '#3b82f6' },
-            { label: 'CPU Load', value: '42%', status: 'excellent', target: '< 70%', color: '#10b981' },
-          ].map((metric, idx) => (
-            <div key={idx} style={{
-              padding: '1.5rem',
-              background: 'white',
-              borderRadius: '12px',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-              border: `2px solid ${metric.color}20`
-            }}>
-              <div style={{ fontSize: '0.85rem', color: '#64748b', marginBottom: '0.5rem', fontWeight: '600' }}>
-                {metric.label}
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                <div style={{ fontSize: '2rem', fontWeight: 'bold', color: metric.color }}>{metric.value}</div>
-                {metric.status === 'excellent' && <CheckCircle size={24} color={metric.color} />}
-                {metric.status === 'warning' && <AlertTriangle size={24} color={metric.color} />}
-              </div>
-              <div style={{ fontSize: '0.75rem', color: '#94a3b8' }}>
-                Target: {metric.target}
-              </div>
-              <div style={{
-                marginTop: '0.5rem',
-                height: '4px',
-                background: '#e2e8f0',
-                borderRadius: '2px',
-                overflow: 'hidden'
-              }}>
-                <div style={{
-                  height: '100%',
-                  width: metric.status === 'excellent' ? '95%' : metric.status === 'good' ? '75%' : '60%',
-                  background: metric.color,
-                  borderRadius: '2px',
-                  transition: 'width 0.3s ease'
-                }} />
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {activeView === 'species' && (
-        <div style={{
-          padding: '1.5rem',
-          background: 'white',
-          borderRadius: '12px',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
-        }}>
-          <h3 style={{ marginTop: 0 }}>Species Classification Details</h3>
-          <div style={{ display: 'grid', gap: '0.5rem' }}>
-            {speciesData.map((species, idx) => (
-              <div key={idx} style={{
-                padding: '1rem',
-                background: '#f8fafc',
-                borderRadius: '8px',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                border: '2px solid #e2e8f0',
-                transition: 'all 0.2s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = species.color;
-                e.currentTarget.style.transform = 'translateX(4px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#e2e8f0';
-                e.currentTarget.style.transform = 'translateX(0)';
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <div style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: '8px',
-                    background: species.color,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'white',
-                    fontWeight: 'bold'
-                  }}>
-                    {idx + 1}
-                  </div>
-                  <div>
-                    <div style={{ fontWeight: '600' }}>{species.name}</div>
-                    <div style={{ fontSize: '0.85rem', color: '#64748b' }}>
-                      {species.percentage}% of total
-                    </div>
-                  </div>
-                </div>
-                <div style={{ textAlign: 'right' }}>
-                  <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: species.color }}>
-                    {species.count}
-                  </div>
-                  <div style={{ 
-                    fontSize: '0.75rem', 
-                    color: species.growth >= 0 ? '#10b981' : '#ef4444',
-                    fontWeight: '600'
-                  }}>
-                    {species.growth >= 0 ? '+' : ''}{species.growth.toFixed(1)}%
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {activeView === 'diseases' && (
-        <div style={{
-          padding: '1.5rem',
-          background: 'white',
-          borderRadius: '12px',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
-        }}>
-          <h3 style={{ marginTop: 0 }}>Disease Detection Summary</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1rem' }}>
-            {diseaseData.map((disease, idx) => (
-              <div key={idx} style={{
-                padding: '1rem',
-                background: disease.severity === 'Critical' ? '#fee2e2' : disease.severity === 'High' ? '#fef3c7' : disease.severity === 'Medium' ? '#dbeafe' : '#d1fae5',
-                borderRadius: '8px',
-                border: `2px solid ${disease.severity === 'Critical' ? '#ef4444' : disease.severity === 'High' ? '#f59e0b' : disease.severity === 'Medium' ? '#3b82f6' : '#10b981'}`
-              }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem' }}>
-                  <div style={{ fontWeight: '600', fontSize: '1rem' }}>{disease.name}</div>
-                  <div style={{
-                    padding: '0.25rem 0.5rem',
-                    background: disease.severity === 'Critical' ? '#ef4444' : disease.severity === 'High' ? '#f59e0b' : disease.severity === 'Medium' ? '#3b82f6' : '#10b981',
-                    color: 'white',
-                    borderRadius: '6px',
-                    fontSize: '0.7rem',
-                    fontWeight: '600'
-                  }}>
-                    {disease.severity}
-                  </div>
-                </div>
-                <div style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.25rem' }}>
-                  {disease.cases} cases
-                </div>
-                <div style={{ fontSize: '0.85rem', color: '#64748b' }}>
-                  Trend: {disease.trend >= 0 ? '+' : ''}{disease.trend.toFixed(1)}%
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {activeView === 'users' && (
-        <div style={{
-          padding: '1.5rem',
-          background: 'white',
-          borderRadius: '12px',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
-        }}>
-          <h3 style={{ marginTop: 0, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <Users size={20} />
-            User Analytics
-          </h3>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
-            <div style={{ padding: '1.5rem', background: '#f0f9ff', borderRadius: '12px', border: '2px solid #3b82f6' }}>
-              <div style={{ fontSize: '0.85rem', color: '#1e40af', marginBottom: '0.5rem', fontWeight: '600' }}>
-                Active Users
-              </div>
-              <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#3b82f6' }}>
-                {Math.floor(Math.random() * 500) + 100}
-              </div>
-            </div>
-            <div style={{ padding: '1.5rem', background: '#f0fdf4', borderRadius: '12px', border: '2px solid #10b981' }}>
-              <div style={{ fontSize: '0.85rem', color: '#065f46', marginBottom: '0.5rem', fontWeight: '600' }}>
-                Returning Users
-              </div>
-              <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#10b981' }}>
-                {Math.floor(Math.random() * 300) + 50}
-              </div>
-            </div>
-            <div style={{ padding: '1.5rem', background: '#fef3c7', borderRadius: '12px', border: '2px solid #f59e0b' }}>
-              <div style={{ fontSize: '0.85rem', color: '#92400e', marginBottom: '0.5rem', fontWeight: '600' }}>
-                Avg Session
-              </div>
-              <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#f59e0b' }}>
-                {Math.floor(Math.random() * 15) + 2}min
-              </div>
-            </div>
-            <div style={{ padding: '1.5rem', background: '#fce7f3', borderRadius: '12px', border: '2px solid #ec4899' }}>
-              <div style={{ fontSize: '0.85rem', color: '#831843', marginBottom: '0.5rem', fontWeight: '600' }}>
-                Engagement Rate
-              </div>
-              <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#ec4899' }}>
-                {(75 + Math.random() * 20).toFixed(1)}%
-              </div>
-            </div>
           </div>
         </div>
       )}
@@ -1386,11 +1086,8 @@ const Analytics = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  gap: '0.5rem',
-                  transition: 'all 0.2s ease'
+                  gap: '0.5rem'
                 }}
-                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
-                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
               >
                 <Download size={20} />
                 Export as JSON
@@ -1408,11 +1105,8 @@ const Analytics = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  gap: '0.5rem',
-                  transition: 'all 0.2s ease'
+                  gap: '0.5rem'
                 }}
-                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
-                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
               >
                 <Download size={20} />
                 Export as CSV
@@ -1436,55 +1130,6 @@ const Analytics = () => {
         </div>
       )}
 
-      {/* Footer */}
-      <div style={{
-        marginTop: '2rem',
-        padding: '1.5rem',
-        background: 'white',
-        borderRadius: '12px',
-        boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
-      }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          gap: '1rem',
-          fontSize: '0.85rem',
-          color: '#64748b'
-        }}>
-          <div>
-            <div style={{ fontWeight: 'bold', marginBottom: '0.5rem', color: '#1e293b' }}>
-              🔄 Data Refresh
-            </div>
-            <div>
-              {autoRefresh ? 'Auto-refresh enabled (30s)' : 'Manual refresh only'}
-            </div>
-          </div>
-          <div>
-            <div style={{ fontWeight: 'bold', marginBottom: '0.5rem', color: '#1e293b' }}>
-              📊 Data Source
-            </div>
-            <div>MeenaSetu AI Backend API</div>
-          </div>
-          <div>
-            <div style={{ fontWeight: 'bold', marginBottom: '0.5rem', color: '#1e293b' }}>
-              🕐 Last Updated
-            </div>
-            <div>{apiHealth.lastChecked ? format(apiHealth.lastChecked, 'PPp') : 'N/A'}</div>
-          </div>
-          <div>
-            <div style={{ fontWeight: 'bold', marginBottom: '0.5rem', color: '#1e293b' }}>
-              🎯 System Health
-            </div>
-            <div style={{
-              color: apiHealth.status === 'healthy' ? '#10b981' : '#ef4444',
-              fontWeight: '600'
-            }}>
-              {apiHealth.status === 'healthy' ? '✓ Healthy' : '✗ Error'}
-            </div>
-          </div>
-        </div>
-      </div>
-
       <style>{`
         @keyframes spin {
           0% { transform: rotate(0deg); }
@@ -1495,47 +1140,31 @@ const Analytics = () => {
           50% { opacity: 0.5; }
         }
         @keyframes slideDown {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(-10px); }
+          to { opacity: 1; transform: translateY(0); }
         }
         @keyframes fadeIn {
           from { opacity: 0; }
           to { opacity: 1; }
         }
-        
         ::-webkit-scrollbar {
           width: 8px;
           height: 8px;
         }
-        
         ::-webkit-scrollbar-track {
           background: #f1f1f1;
           border-radius: 4px;
         }
-        
         ::-webkit-scrollbar-thumb {
           background: #c1c1c1;
           border-radius: 4px;
         }
-        
         ::-webkit-scrollbar-thumb:hover {
           background: #a1a1a1;
-        }
-
-        @media print {
-          button {
-            display: none !important;
-          }
         }
       `}</style>
     </div>
   );
 };
 
-export default Analytics
+export default Analytics;
