@@ -1,69 +1,18 @@
 ﻿import React, { useState, useEffect, useRef } from 'react';
 import { 
-  Container, 
-  Typography, 
-  Box, 
-  Grid, 
-  Card, 
-  CardContent,
-  Avatar,
-  Chip,
-  Stack,
-  Paper,
-  alpha,
-  Button,
-  IconButton,
-  Dialog,
-  DialogContent,
-  Fab,
-  Tooltip,
-  useTheme
-} from '@mui/material';
-import {
-  Psychology as PsychologyIcon,
-  Storage as StorageIcon,
-  Cloud as CloudIcon,
-  AutoAwesome as AutoAwesomeIcon,
-  Waves as WavesIcon,
-  RocketLaunch as RocketLaunchIcon,
-  EmojiEvents as EmojiEventsIcon,
-  Groups as GroupsIcon,
-  Lightbulb as LightbulbIcon,
-  LinkedIn as LinkedInIcon,
-  GitHub as GitHubIcon,
-  Email as EmailIcon,
-  Verified as VerifiedIcon,
-  ArrowUpward as ArrowUpwardIcon,
-  PlayCircle as PlayCircleIcon,
-  Star as StarIcon,
-  TrendingUp as TrendingUpIcon,
-  Speed as SpeedIcon,
-  Security as SecurityIcon,
-  Share as ShareIcon,
-  Close as CloseIcon,
-  Mouse as MouseIcon
-} from '@mui/icons-material';
-import { motion } from 'framer-motion';
-
-// Helper function to extract color from gradient
-const extractColorFromGradient = (gradient) => {
-  // Extract first color from gradient string
-  const match = gradient.match(/#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})/);
-  return match ? match[0] : '#0277bd';
-};
+  TrendingUp, TrendingDown, Award, Users, Zap, Target,
+  Download, Share2, ArrowUp, PlayCircle, X, ChevronDown,
+  Linkedin, Github, Mail, CheckCircle, Star, Code, Database,
+  Cloud, Cpu, Globe, Shield, BarChart2, Activity, Rocket,
+  Lightbulb, Heart, Eye, MousePointer
+} from 'lucide-react';
 
 const About = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [stats, setStats] = useState({ users: 0, predictions: 0, accuracy: 0, papers: 0 });
   const [videoOpen, setVideoOpen] = useState(false);
-  const containerRef = useRef(null);
-  const theme = useTheme();
-
-  // Animation variants
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 60 },
-    visible: { opacity: 1, y: 0 }
-  };
+  const [activeSection, setActiveSection] = useState('hero');
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Scroll progress handler
   useEffect(() => {
@@ -71,6 +20,19 @@ const About = () => {
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       setScrollProgress((winScroll / height) * 100);
+      setShowScrollTop(winScroll > 500);
+
+      // Update active section
+      const sections = ['hero', 'mission', 'features', 'creator', 'tech', 'journey', 'team'];
+      const current = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      if (current) setActiveSection(current);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -101,6 +63,73 @@ const About = () => {
     increment(15, 'papers');
   }, []);
 
+  const GRADIENTS = {
+    purple: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    green: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
+    orange: 'linear-gradient(135deg, #ee0979 0%, #ff6a00 100%)',
+    blue: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+    pink: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+    teal: 'linear-gradient(135deg, #0ba360 0%, #3cba92 100%)'
+  };
+
+  const achievements = [
+    { icon: <Award size={24} />, text: 'Best AI Innovation 2024', count: '1st', color: '#fbbf24', gradient: GRADIENTS.orange },
+    { icon: <CheckCircle size={24} />, text: 'ISO 27001 Certified', count: '99.9%', color: '#10b981', gradient: GRADIENTS.green },
+    { icon: <Users size={24} />, text: 'Active Users', count: `${stats.users.toLocaleString()}+`, color: '#3b82f6', gradient: GRADIENTS.blue },
+    { icon: <Star size={24} />, text: 'Research Papers', count: `${stats.papers}+`, color: '#8b5cf6', gradient: GRADIENTS.purple }
+  ];
+
+  const features = [
+    {
+      icon: <Cpu size={32} />,
+      title: 'Advanced AI Models',
+      description: 'State-of-the-art deep learning models for fish classification and disease detection',
+      stats: '98.5% accuracy',
+      gradient: GRADIENTS.purple,
+      color: '#667eea'
+    },
+    {
+      icon: <Eye size={32} />,
+      title: 'Computer Vision',
+      description: 'Cutting-edge image recognition technology trained on thousands of aquatic species',
+      stats: '10,000+ images',
+      gradient: GRADIENTS.pink,
+      color: '#f093fb'
+    },
+    {
+      icon: <Database size={32} />,
+      title: 'Big Data Analytics',
+      description: 'Scalable data processing pipeline handling millions of data points',
+      stats: '1M+ data points',
+      gradient: GRADIENTS.blue,
+      color: '#4facfe'
+    },
+    {
+      icon: <Cloud size={32} />,
+      title: 'Cloud Infrastructure',
+      description: 'Robust AWS-powered architecture ensuring high availability',
+      stats: '99.9% uptime',
+      gradient: GRADIENTS.green,
+      color: '#43e97b'
+    },
+    {
+      icon: <Zap size={32} />,
+      title: 'Real-time Processing',
+      description: 'Instant AI predictions and analytics with minimal latency',
+      stats: '< 2 seconds',
+      gradient: GRADIENTS.orange,
+      color: '#fa709a'
+    },
+    {
+      icon: <Rocket size={32} />,
+      title: 'Continuous Innovation',
+      description: 'Regular updates with new features based on latest research',
+      stats: 'Monthly updates',
+      gradient: GRADIENTS.teal,
+      color: '#30cfd0'
+    }
+  ];
+
   const techStack = [
     { name: 'React.js', level: 95, color: '#61dafb', icon: '⚛️' },
     { name: 'Node.js', level: 92, color: '#68a063', icon: '🟢' },
@@ -109,164 +138,20 @@ const About = () => {
     { name: 'PyTorch', level: 88, color: '#ee4c2c', icon: '🔥' },
     { name: 'MongoDB', level: 85, color: '#47a248', icon: '🍃' },
     { name: 'PostgreSQL', level: 87, color: '#336791', icon: '🐘' },
-    { name: 'AWS', level: 82, color: '#ff9900', icon: '☁️' },
-  ];
-
-  const features = [
-    {
-      icon: <PsychologyIcon sx={{ fontSize: 40 }} />,
-      title: 'Advanced AI Models',
-      description: 'State-of-the-art deep learning models for fish classification and disease detection',
-      stats: '98.5% accuracy',
-      gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      primaryColor: '#667eea',
-      delay: 0
-    },
-    {
-      icon: <WavesIcon sx={{ fontSize: 40 }} />,
-      title: 'Computer Vision',
-      description: 'Cutting-edge image recognition technology trained on thousands of aquatic species',
-      stats: '10,000+ images',
-      gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-      primaryColor: '#f093fb',
-      delay: 0.1
-    },
-    {
-      icon: <StorageIcon sx={{ fontSize: 40 }} />,
-      title: 'Big Data Analytics',
-      description: 'Scalable data processing pipeline handling millions of data points',
-      stats: '1M+ data points',
-      gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-      primaryColor: '#4facfe',
-      delay: 0.2
-    },
-    {
-      icon: <CloudIcon sx={{ fontSize: 40 }} />,
-      title: 'Cloud Infrastructure',
-      description: 'Robust AWS-powered architecture ensuring high availability',
-      stats: '99.9% uptime',
-      gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
-      primaryColor: '#43e97b',
-      delay: 0.3
-    },
-    {
-      icon: <AutoAwesomeIcon sx={{ fontSize: 40 }} />,
-      title: 'Real-time Processing',
-      description: 'Instant AI predictions and analytics with minimal latency',
-      stats: '< 2 seconds',
-      gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
-      primaryColor: '#fa709a',
-      delay: 0.4
-    },
-    {
-      icon: <RocketLaunchIcon sx={{ fontSize: 40 }} />,
-      title: 'Continuous Innovation',
-      description: 'Regular updates with new features based on latest research',
-      stats: 'Monthly updates',
-      gradient: 'linear-gradient(135deg, #30cfd0 0%, #330867 100%)',
-      primaryColor: '#30cfd0',
-      delay: 0.5
-    },
+    { name: 'AWS', level: 82, color: '#ff9900', icon: '☁️' }
   ];
 
   const milestones = [
-    { 
-      year: '2024', 
-      title: 'Platform Launch', 
-      description: 'MeenaSetu AI officially launched with core features',
-      icon: '🚀',
-      color: '#0277bd'
-    },
-    { 
-      year: '2024', 
-      title: '50,000+ Predictions', 
-      description: 'Crossed major milestone in AI predictions',
-      icon: '📈',
-      color: '#00897b'
-    },
-    { 
-      year: '2024', 
-      title: '98.5% Accuracy', 
-      description: 'Achieved industry-leading accuracy rate',
-      icon: '🎯',
-      color: '#ff6f00'
-    },
-    { 
-      year: '2025', 
-      title: 'Global Expansion', 
-      description: 'Serving researchers in 50+ countries',
-      icon: '🌍',
-      color: '#7b1fa2'
-    },
-  ];
-
-  const achievements = [
-    { 
-      icon: <EmojiEventsIcon />, 
-      text: 'Best AI Innovation 2024', 
-      color: '#fbbf24',
-      count: '1st'
-    },
-    { 
-      icon: <VerifiedIcon />, 
-      text: 'ISO 27001 Certified', 
-      color: '#10b981',
-      count: '99.9%'
-    },
-    { 
-      icon: <GroupsIcon />, 
-      text: 'Active Users', 
-      color: '#3b82f6',
-      count: `${stats.users}+`
-    },
-    { 
-      icon: <LightbulbIcon />, 
-      text: 'Research Papers', 
-      color: '#8b5cf6',
-      count: `${stats.papers}+`
-    },
-  ];
-
-  const testimonials = [
-    {
-      name: 'Dr. Sarah Chen',
-      role: 'Marine Biologist',
-      content: 'MeenaSetu AI has revolutionized our research. The accuracy is phenomenal!',
-      avatar: 'SC'
-    },
-    {
-      name: 'Prof. Rajesh Kumar',
-      role: 'Aquaculture Expert',
-      content: 'An indispensable tool for modern fish farming. Highly recommended!',
-      avatar: 'RK'
-    },
-    {
-      name: 'Lisa Thompson',
-      role: 'Conservationist',
-      content: 'The platform has helped us identify endangered species more effectively.',
-      avatar: 'LT'
-    }
+    { year: '2024', title: 'Platform Launch', description: 'MeenaSetu AI officially launched with core features', icon: '🚀', color: '#667eea' },
+    { year: '2024', title: '50,000+ Predictions', description: 'Crossed major milestone in AI predictions', icon: '📈', color: '#10b981' },
+    { year: '2024', title: '98.5% Accuracy', description: 'Achieved industry-leading accuracy rate', icon: '🎯', color: '#f59e0b' },
+    { year: '2025', title: 'Global Expansion', description: 'Serving researchers in 50+ countries', icon: '🌍', color: '#8b5cf6' }
   ];
 
   const teamMembers = [
-    {
-      name: 'Amrish Tiwary',
-      role: 'Founder & Lead Developer',
-      avatar: 'AT',
-      skills: ['AI/ML', 'Full Stack', 'Cloud']
-    },
-    {
-      name: 'Dr. Meena Sharma',
-      role: 'Marine Biology Advisor',
-      avatar: 'MS',
-      skills: ['Marine Biology', 'Research', 'Conservation']
-    },
-    {
-      name: 'Alex Johnson',
-      role: 'AI Research Lead',
-      avatar: 'AJ',
-      skills: ['Deep Learning', 'CV', 'NLP']
-    }
+    { name: 'Amrish Tiwary', role: 'Founder & Lead Developer', avatar: 'AT', skills: ['AI/ML', 'Full Stack', 'Cloud'], color: '#667eea' },
+    { name: 'Dr. Meena Sharma', role: 'Marine Biology Advisor', avatar: 'MS', skills: ['Marine Biology', 'Research', 'Conservation'], color: '#10b981' },
+    { name: 'Alex Johnson', role: 'AI Research Lead', avatar: 'AJ', skills: ['Deep Learning', 'CV', 'NLP'], color: '#f59e0b' }
   ];
 
   const scrollToTop = () => {
@@ -274,1318 +159,1078 @@ const About = () => {
   };
 
   return (
-    <Box 
-      ref={containerRef}
-      sx={{ 
-        bgcolor: 'background.default', 
-        minHeight: '100vh',
-        position: 'relative',
-        overflow: 'hidden',
-        '&::before': {
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          height: '100vh',
-          background: 'radial-gradient(ellipse at 50% 0%, rgba(2, 119, 189, 0.1) 0%, transparent 60%)',
-          pointerEvents: 'none',
-          zIndex: 0,
-        },
-        '&::after': {
-          content: '""',
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: '50vh',
-          background: 'radial-gradient(ellipse at 50% 100%, rgba(0, 137, 123, 0.1) 0%, transparent 60%)',
-          pointerEvents: 'none',
-          zIndex: 0,
-        }
-      }}
-    >
+    <div style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(to bottom, #f8fafc 0%, #e2e8f0 100%)',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+    }}>
       {/* Scroll Progress Bar */}
-      <Box
-        sx={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          height: 4,
-          bgcolor: alpha(theme.palette.primary.main, 0.1),
-          zIndex: 9999,
-        }}
-      >
-        <Box
-          sx={{
-            height: '100%',
-            width: `${scrollProgress}%`,
-            background: 'linear-gradient(90deg, #0277bd, #00897b)',
-            transition: 'width 0.1s ease',
-          }}
-        />
-      </Box>
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        height: 4,
+        background: 'rgba(102, 126, 234, 0.1)',
+        zIndex: 9999
+      }}>
+        <div style={{
+          height: '100%',
+          width: `${scrollProgress}%`,
+          background: GRADIENTS.purple,
+          transition: 'width 0.1s ease'
+        }} />
+      </div>
 
       {/* Floating Action Buttons */}
-      <Box sx={{ position: 'fixed', bottom: 32, right: 32, zIndex: 1000, display: 'flex', flexDirection: 'column', gap: 2 }}>
-        <Tooltip title="Scroll to top">
-          <Fab
-            color="primary"
-            size="medium"
-            onClick={scrollToTop}
-            sx={{
-              background: 'linear-gradient(135deg, #0277bd 0%, #00897b 100%)',
-              boxShadow: '0 8px 32px rgba(2, 119, 189, 0.3)',
-            }}
-          >
-            <ArrowUpwardIcon />
-          </Fab>
-        </Tooltip>
-        
-        <Tooltip title="Share">
-          <Fab
-            size="medium"
-            sx={{
-              bgcolor: 'background.paper',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
-            }}
-          >
-            <ShareIcon />
-          </Fab>
-        </Tooltip>
-      </Box>
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          style={{
+            position: 'fixed',
+            bottom: 32,
+            right: 32,
+            width: 56,
+            height: 56,
+            borderRadius: '50%',
+            border: 'none',
+            background: GRADIENTS.purple,
+            color: 'white',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: '0 8px 32px rgba(102, 126, 234, 0.4)',
+            zIndex: 1000,
+            transition: 'all 0.3s ease',
+            animation: 'fadeIn 0.3s ease'
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
+          onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+        >
+          <ArrowUp size={24} />
+        </button>
+      )}
 
-      {/* Animated Background Elements */}
-      <Box
-        sx={{
+      {/* Hero Section */}
+      <div id="hero" style={{
+        position: 'relative',
+        overflow: 'hidden',
+        background: 'linear-gradient(135deg, #0a1929 0%, #1a2332 50%, #0d2b36 100%)',
+        color: 'white',
+        padding: '8rem 2rem 6rem',
+        marginBottom: '4rem'
+      }}>
+        {/* Animated Background */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          opacity: 0.3,
+          background: `
+            radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.2) 0%, transparent 40%),
+            radial-gradient(circle at 80% 20%, rgba(67, 233, 123, 0.2) 0%, transparent 40%)
+          `
+        }} />
+
+        <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              padding: '0.75rem 1.5rem',
+              background: 'rgba(255,255,255,0.1)',
+              backdropFilter: 'blur(10px)',
+              borderRadius: '30px',
+              border: '1px solid rgba(255,255,255,0.2)',
+              marginBottom: '2rem',
+              animation: 'pulse 2s infinite'
+            }}>
+              <Zap size={20} />
+              <span style={{ fontWeight: '700', fontSize: '1rem' }}>Pioneering AI in Aquatic Research</span>
+            </div>
+
+            <h1 style={{
+              fontSize: 'clamp(2.5rem, 6vw, 4rem)',
+              fontWeight: '900',
+              marginBottom: '1.5rem',
+              background: 'linear-gradient(135deg, #fff 0%, #4fc3f7 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              lineHeight: 1.2
+            }}>
+              Revolutionizing Aquatic Intelligence
+            </h1>
+
+            <p style={{
+              fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+              opacity: 0.9,
+              maxWidth: '800px',
+              margin: '0 auto 3rem',
+              lineHeight: 1.6
+            }}>
+              Powered by cutting-edge artificial intelligence, MeenaSetu transforms how researchers 
+              study and protect marine ecosystems. Join the future of aquatic conservation today.
+            </p>
+
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <button
+                onClick={() => setVideoOpen(true)}
+                style={{
+                  padding: '1rem 2rem',
+                  borderRadius: '12px',
+                  border: 'none',
+                  background: GRADIENTS.purple,
+                  color: 'white',
+                  fontSize: '1.1rem',
+                  fontWeight: '700',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  boxShadow: '0 8px 24px rgba(102, 126, 234, 0.4)',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+              >
+                <PlayCircle size={20} />
+                Watch Demo
+              </button>
+
+              <button style={{
+                padding: '1rem 2rem',
+                borderRadius: '12px',
+                border: '2px solid rgba(255,255,255,0.3)',
+                background: 'transparent',
+                color: 'white',
+                fontSize: '1.1rem',
+                fontWeight: '700',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}>
+                Get Started
+              </button>
+            </div>
+          </div>
+
+          {/* Live Stats */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: '1.5rem',
+            marginTop: '4rem'
+          }}>
+            {achievements.map((achievement, index) => (
+              <div key={index} style={{
+                padding: '2rem',
+                background: 'rgba(255,255,255,0.05)',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                borderRadius: '16px',
+                textAlign: 'center',
+                transition: 'all 0.3s ease',
+                cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
+              }}>
+                <div style={{
+                  fontSize: '2.5rem',
+                  fontWeight: '700',
+                  color: achievement.color,
+                  marginBottom: '0.5rem'
+                }}>
+                  {achievement.count}
+                </div>
+                <div style={{ color: achievement.color, marginBottom: '0.5rem' }}>
+                  {achievement.icon}
+                </div>
+                <div style={{ fontSize: '0.9rem', opacity: 0.9, fontWeight: '600' }}>
+                  {achievement.text}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Scroll Indicator */}
+          <div style={{
+            textAlign: 'center',
+            marginTop: '4rem',
+            animation: 'bounce 2s infinite'
+          }}>
+            <MousePointer size={32} style={{ opacity: 0.5 }} />
+            <div style={{ fontSize: '0.85rem', opacity: 0.5, marginTop: '0.5rem' }}>
+              Scroll to explore
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+        {/* Mission & Vision */}
+        <div id="mission" style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))',
+          gap: '2rem',
+          marginBottom: '6rem'
+        }}>
+          <div style={{
+            padding: '3rem',
+            background: 'white',
+            borderRadius: '20px',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
+            border: '2px solid rgba(102, 126, 234, 0.1)',
+            position: 'relative',
+            overflow: 'hidden',
+            transition: 'all 0.3s ease'
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
+          onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+            <div style={{
+              position: 'absolute',
+              top: -50,
+              right: -50,
+              width: 150,
+              height: 150,
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%)'
+            }} />
+            
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', position: 'relative', zIndex: 1 }}>
+              <div style={{
+                width: 56,
+                height: 56,
+                borderRadius: '12px',
+                background: GRADIENTS.purple,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white'
+              }}>
+                <Target size={28} />
+              </div>
+              <h2 style={{ margin: 0, fontSize: '2rem', fontWeight: '800' }}>Our Mission</h2>
+            </div>
+
+            <p style={{ fontSize: '1.1rem', lineHeight: 1.8, color: '#475569', position: 'relative', zIndex: 1 }}>
+              To democratize access to advanced AI technology for aquatic research, 
+              making world-class fish species identification and disease detection 
+              accessible to researchers, conservationists, and aquaculture professionals 
+              worldwide. We're committed to protecting marine biodiversity through 
+              innovative technology.
+            </p>
+          </div>
+
+          <div style={{
+            padding: '3rem',
+            background: 'white',
+            borderRadius: '20px',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
+            border: '2px solid rgba(240, 147, 251, 0.1)',
+            position: 'relative',
+            overflow: 'hidden',
+            transition: 'all 0.3s ease'
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
+          onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+            <div style={{
+              position: 'absolute',
+              top: -50,
+              right: -50,
+              width: 150,
+              height: 150,
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(240, 147, 251, 0.1) 0%, transparent 70%)'
+            }} />
+            
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', position: 'relative', zIndex: 1 }}>
+              <div style={{
+                width: 56,
+                height: 56,
+                borderRadius: '12px',
+                background: GRADIENTS.pink,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white'
+              }}>
+                <Lightbulb size={28} />
+              </div>
+              <h2 style={{ margin: 0, fontSize: '2rem', fontWeight: '800' }}>Our Vision</h2>
+            </div>
+
+            <p style={{ fontSize: '1.1rem', lineHeight: 1.8, color: '#475569', position: 'relative', zIndex: 1 }}>
+              To become the world's leading AI platform for aquatic intelligence, 
+              enabling groundbreaking discoveries in marine biology, sustainable 
+              aquaculture, and ocean conservation. We envision a future where AI-powered 
+              insights help preserve our oceans for generations to come.
+            </p>
+          </div>
+        </div>
+
+        {/* Platform Features */}
+        <div id="features" style={{ marginBottom: '6rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 style={{
+              fontSize: 'clamp(2rem, 4vw, 3rem)',
+              fontWeight: '900',
+              marginBottom: '1rem',
+              background: GRADIENTS.purple,
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
+            }}>
+              Advanced Platform Features
+            </h2>
+            <p style={{ fontSize: '1.2rem', color: '#64748b', maxWidth: '800px', margin: '0 auto' }}>
+              Built with cutting-edge technology to deliver exceptional performance, accuracy, and user experience
+            </p>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+            gap: '2rem'
+          }}>
+            {features.map((feature, index) => (
+              <div key={index} style={{
+                padding: '2.5rem',
+                background: 'white',
+                borderRadius: '20px',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
+                transition: 'all 0.3s ease',
+                cursor: 'pointer',
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                e.currentTarget.style.boxShadow = '0 16px 48px rgba(0,0,0,0.12)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.08)';
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: 4,
+                  background: feature.gradient
+                }} />
+
+                <div style={{
+                  width: 80,
+                  height: 80,
+                  borderRadius: '16px',
+                  background: feature.gradient,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  margin: '0 auto 1.5rem',
+                  boxShadow: `0 8px 24px ${feature.color}40`
+                }}>
+                  {feature.icon}
+                </div>
+
+                <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '1rem', textAlign: 'center' }}>
+                  {feature.title}
+                </h3>
+
+                <p style={{ fontSize: '1rem', lineHeight: 1.7, color: '#64748b', marginBottom: '1.5rem', textAlign: 'center' }}>
+                  {feature.description}
+                </p>
+
+                <div style={{
+                  display: 'inline-block',
+                  padding: '0.5rem 1rem',
+                  background: feature.gradient,
+                  color: 'white',
+                  borderRadius: '20px',
+                  fontSize: '0.9rem',
+                  fontWeight: '700',
+                  margin: '0 auto',
+                  display: 'block',
+                  width: 'fit-content',
+                  textAlign: 'center'
+                }}>
+                  {feature.stats}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Creator Section */}
+        <div id="creator" style={{
+          padding: '4rem',
+          background: 'linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)',
+          borderRadius: '24px',
+          color: 'white',
+          marginBottom: '6rem',
+          boxShadow: '0 20px 60px rgba(15, 32, 39, 0.4)',
+          position: 'relative',
+          overflow: 'hidden'
+        }}>
+          <div style={{
+            position: 'absolute',
+            top: -100,
+            right: -100,
+            width: 300,
+            height: 300,
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(102, 126, 234, 0.2) 0%, transparent 70%)',
+            animation: 'rotate 20s linear infinite'
+          }} />
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '3rem',
+            alignItems: 'center',
+            position: 'relative',
+            zIndex: 1
+          }}>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{
+                width: 200,
+                height: 200,
+                borderRadius: '50%',
+                background: GRADIENTS.purple,
+                margin: '0 auto 2rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '4rem',
+                fontWeight: '800',
+                border: '4px solid rgba(255,255,255,0.2)',
+                boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
+                transition: 'all 0.3s ease',
+                cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
+                AT
+              </div>
+
+              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginBottom: '1.5rem' }}>
+                {[
+                  { icon: <Linkedin size={20} />, color: '#0077b5' },
+                  { icon: <Github size={20} />, color: '#333' },
+                  { icon: <Mail size={20} />, color: '#ea4335' }
+                ].map((social, idx) => (
+                  <div key={idx} style={{
+                    width: 48,
+                    height: 48,
+                    borderRadius: '50%',
+                    background: social.color,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.2) rotate(5deg)'}
+                  onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1) rotate(0deg)'}>
+                    {social.icon}
+                  </div>
+                ))}
+              </div>
+
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '0.5rem 1rem',
+                background: 'rgba(16, 185, 129, 0.2)',
+                border: '1px solid rgba(16, 185, 129, 0.3)',
+                borderRadius: '20px',
+                fontSize: '0.85rem',
+                fontWeight: '600',
+                color: '#10b981'
+              }}>
+                <CheckCircle size={16} />
+                Verified Profile
+              </div>
+            </div>
+
+            <div>
+              <div style={{
+                display: 'inline-block',
+                padding: '0.5rem 1rem',
+                background: 'rgba(255,255,255,0.1)',
+                borderRadius: '20px',
+                fontSize: '0.9rem',
+                fontWeight: '700',
+                marginBottom: '1rem'
+              }}>
+                Creator & Lead Developer
+              </div>
+
+              <h2 style={{ fontSize: '2.5rem', fontWeight: '900', marginBottom: '0.5rem' }}>
+                Amrish Kumar Tiwary
+              </h2>
+
+              <h3 style={{ fontSize: '1.3rem', color: '#4fc3f7', marginBottom: '2rem', fontWeight: '600' }}>
+                Full Stack AI Engineer | Machine Learning Expert | Visionary
+              </h3>
+
+              <p style={{ fontSize: '1rem', lineHeight: 1.8, opacity: 0.95, marginBottom: '1.5rem' }}>
+                A passionate Full Stack AI Engineer with expertise in building intelligent systems 
+                that solve real-world environmental challenges. With extensive experience in machine learning, 
+                computer vision, and full-stack development, Amrish created MeenaSetu AI to bridge 
+                the critical gap between cutting-edge AI technology and aquatic research needs.
+              </p>
+
+              <p style={{ fontSize: '1rem', lineHeight: 1.8, opacity: 0.95, marginBottom: '2rem' }}>
+                Specializing in Python, TensorFlow, PyTorch, React, and cloud technologies, 
+                he leads a team dedicated to leveraging AI for environmental conservation and sustainable 
+                development.
+              </p>
+
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                {[
+                  { skill: 'AI/ML', level: 98, color: '#667eea' },
+                  { skill: 'Deep Learning', level: 96, color: '#10b981' },
+                  { skill: 'Full Stack', level: 95, color: '#f59e0b' },
+                  { skill: 'Cloud', level: 92, color: '#8b5cf6' }
+                ].map((item, idx) => (
+                  <div key={idx} style={{
+                    padding: '0.5rem 1rem',
+                    background: `${item.color}20`,
+                    border: `1px solid ${item.color}40`,
+                    borderRadius: '20px',
+                    fontSize: '0.9rem',
+                    fontWeight: '700',
+                    color: item.color,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    transition: 'all 0.3s ease',
+                    cursor: 'pointer'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+                  onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
+                    <TrendingUp size={14} />
+                    {item.skill} {item.level}%
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Tech Stack */}
+        <div id="tech" style={{ marginBottom: '6rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 style={{
+              fontSize: 'clamp(2rem, 4vw, 3rem)',
+              fontWeight: '900',
+              marginBottom: '1rem',
+              background: GRADIENTS.purple,
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
+            }}>
+              Technology Stack
+            </h2>
+            <p style={{ fontSize: '1.2rem', color: '#64748b' }}>
+              Built with industry-leading technologies and frameworks
+            </p>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: '2rem'
+          }}>
+            {techStack.map((tech, index) => (
+              <div key={index} style={{
+                padding: '2rem',
+                background: 'white',
+                borderRadius: '16px',
+                boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
+                transition: 'all 0.3s ease',
+                cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.12)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.08)';
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+                  <span style={{ fontSize: '2rem' }}>{tech.icon}</span>
+                  <div style={{ flex: 1 }}>
+                    <h4 style={{ margin: 0, fontSize: '1.1rem', fontWeight: '700' }}>{tech.name}</h4>
+                    <div style={{ fontSize: '0.9rem', fontWeight: '800', color: tech.color }}>
+                      {tech.level}%
+                    </div>
+                  </div>
+                </div>
+
+                <div style={{
+                  height: 8,
+                  background: `${tech.color}20`,
+                  borderRadius: '4px',
+                  overflow: 'hidden'
+                }}>
+                  <div style={{
+                    width: `${tech.level}%`,
+                    height: '100%',
+                    background: tech.color,
+                    borderRadius: '4px',
+                    transition: 'width 1s ease',
+                    animation: 'progressBar 1.5s ease'
+                  }} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Journey Timeline */}
+        <div id="journey" style={{ marginBottom: '6rem' }}>
+          <h2 style={{
+            fontSize: 'clamp(2rem, 4vw, 3rem)',
+            fontWeight: '900',
+            textAlign: 'center',
+            marginBottom: '4rem',
+            background: GRADIENTS.purple,
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+          }}>
+            Our Journey Timeline
+          </h2>
+
+          <div style={{ position: 'relative' }}>
+            {milestones.map((milestone, index) => (
+              <div key={index} style={{
+                position: 'relative',
+                paddingLeft: 'clamp(4rem, 8vw, 6rem)',
+                marginBottom: '3rem'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  left: '2rem',
+                  top: '1.5rem',
+                  width: 20,
+                  height: 20,
+                  borderRadius: '50%',
+                  background: milestone.color,
+                  border: '4px solid white',
+                  boxShadow: `0 0 0 4px ${milestone.color}40`,
+                  zIndex: 2
+                }} />
+
+                {index < milestones.length - 1 && (
+                  <div style={{
+                    position: 'absolute',
+                    left: '2.6rem',
+                    top: '3rem',
+                    width: 4,
+                    height: 'calc(100% + 1rem)',
+                    background: `linear-gradient(180deg, ${milestone.color} 0%, ${milestones[index + 1].color} 100%)`
+                  }} />
+                )}
+
+                <div style={{
+                  padding: '2rem',
+                  background: 'white',
+                  borderRadius: '16px',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateX(10px)';
+                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.12)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateX(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.08)';
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+                    <div style={{
+                      width: 48,
+                      height: 48,
+                      borderRadius: '12px',
+                      background: `linear-gradient(135deg, ${milestone.color} 0%, ${milestone.color}cc 100%)`,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '1.5rem'
+                    }}>
+                      {milestone.icon}
+                    </div>
+                    <div style={{ flex: 1 }}>
+                      <div style={{
+                        display: 'inline-block',
+                        padding: '0.25rem 0.75rem',
+                        background: `${milestone.color}20`,
+                        color: milestone.color,
+                        borderRadius: '12px',
+                        fontSize: '0.85rem',
+                        fontWeight: '800',
+                        marginBottom: '0.5rem'
+                      }}>
+                        {milestone.year}
+                      </div>
+                      <h3 style={{ margin: 0, fontSize: '1.3rem', fontWeight: '800' }}>
+                        {milestone.title}
+                      </h3>
+                    </div>
+                  </div>
+                  <p style={{ fontSize: '1rem', color: '#64748b', margin: 0 }}>
+                    {milestone.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Team Members */}
+        <div id="team" style={{ marginBottom: '6rem' }}>
+          <h2 style={{
+            fontSize: 'clamp(2rem, 4vw, 3rem)',
+            fontWeight: '900',
+            textAlign: 'center',
+            marginBottom: '4rem',
+            background: GRADIENTS.purple,
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+          }}>
+            Meet Our Team
+          </h2>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '2rem'
+          }}>
+            {teamMembers.map((member, index) => (
+              <div key={index} style={{
+                padding: '2.5rem',
+                background: 'white',
+                borderRadius: '20px',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
+                textAlign: 'center',
+                transition: 'all 0.3s ease',
+                cursor: 'pointer',
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                e.currentTarget.style.boxShadow = '0 16px 48px rgba(0,0,0,0.12)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.08)';
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: 4,
+                  background: `linear-gradient(90deg, ${member.color} 0%, ${member.color}cc 100%)`
+                }} />
+
+                <div style={{
+                  width: 100,
+                  height: 100,
+                  borderRadius: '50%',
+                  background: `linear-gradient(135deg, ${member.color} 0%, ${member.color}cc 100%)`,
+                  margin: '0 auto 1.5rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '2.5rem',
+                  fontWeight: '800',
+                  color: 'white',
+                  border: `4px solid ${member.color}40`
+                }}>
+                  {member.avatar}
+                </div>
+
+                <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '0.5rem' }}>
+                  {member.name}
+                </h3>
+
+                <p style={{ fontSize: '1rem', color: member.color, fontWeight: '600', marginBottom: '1.5rem' }}>
+                  {member.role}
+                </p>
+
+                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+                  {member.skills.map((skill, idx) => (
+                    <span key={idx} style={{
+                      padding: '0.4rem 0.8rem',
+                      background: `${member.color}20`,
+                      border: `1px solid ${member.color}40`,
+                      borderRadius: '12px',
+                      fontSize: '0.85rem',
+                      fontWeight: '600',
+                      color: member.color
+                    }}>
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Final CTA */}
+        <div style={{
+          padding: 'clamp(3rem, 8vw, 5rem)',
+          background: 'white',
+          borderRadius: '24px',
+          boxShadow: '0 20px 60px rgba(102, 126, 234, 0.15)',
+          textAlign: 'center',
+          position: 'relative',
+          overflow: 'hidden',
+          marginBottom: '4rem'
+        }}>
+          <div style={{
+            position: 'absolute',
+            top: -100,
+            right: -100,
+            width: 300,
+            height: 300,
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%)'
+          }} />
+          
+          <div style={{
+            position: 'absolute',
+            bottom: -100,
+            left: -100,
+            width: 300,
+            height: 300,
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(118, 75, 162, 0.1) 0%, transparent 70%)'
+          }} />
+
+          <div style={{ position: 'relative', zIndex: 1 }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: '900', marginBottom: '1rem' }}>
+              Join the AI Revolution in Aquatic Research
+            </h2>
+
+            <p style={{ fontSize: '1.2rem', color: '#64748b', marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem' }}>
+              Be part of a global community using cutting-edge AI to protect our oceans and advance marine science
+            </p>
+
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '3rem' }}>
+              <button style={{
+                padding: '1.25rem 2.5rem',
+                borderRadius: '12px',
+                border: 'none',
+                background: GRADIENTS.purple,
+                color: 'white',
+                fontSize: '1.1rem',
+                fontWeight: '800',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                boxShadow: '0 8px 24px rgba(102, 126, 234, 0.4)',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 16px 40px rgba(102, 126, 234, 0.5)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(102, 126, 234, 0.4)';
+              }}>
+                <Rocket size={20} />
+                Start Free Trial
+              </button>
+
+              <button style={{
+                padding: '1.25rem 2.5rem',
+                borderRadius: '12px',
+                border: '2px solid #667eea',
+                background: 'transparent',
+                color: '#667eea',
+                fontSize: '1.1rem',
+                fontWeight: '800',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(102, 126, 234, 0.1)';
+                e.currentTarget.style.transform = 'translateY(-4px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}>
+                Schedule Demo
+              </button>
+            </div>
+
+            <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '0.75rem 1.5rem',
+                background: 'rgba(102, 126, 234, 0.1)',
+                borderRadius: '25px',
+                fontSize: '1rem',
+                fontWeight: '700',
+                color: '#667eea'
+              }}>
+                <Activity size={20} />
+                {stats.users.toLocaleString()}+ Active Researchers
+              </div>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '0.75rem 1.5rem',
+                background: 'rgba(67, 233, 123, 0.1)',
+                borderRadius: '25px',
+                fontSize: '1rem',
+                fontWeight: '700',
+                color: '#43e97b'
+              }}>
+                <Shield size={20} />
+                {stats.predictions.toLocaleString()}+ Predictions Made
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Video Dialog */}
+      {videoOpen && (
+        <div style={{
           position: 'fixed',
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
-          pointerEvents: 'none',
-          zIndex: -1,
-          overflow: 'hidden',
+          background: 'rgba(0,0,0,0.8)',
+          backdropFilter: 'blur(8px)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 9999,
+          padding: '2rem',
+          animation: 'fadeIn 0.3s ease'
         }}
-      >
-        {[...Array(20)].map((_, i) => (
-          <Box
-            key={i}
-            sx={{
-              position: 'absolute',
-              width: Math.random() * 100 + 50,
-              height: Math.random() * 100 + 50,
-              background: `radial-gradient(circle, ${alpha('#0277bd', 0.05)} 0%, transparent 70%)`,
-              borderRadius: '50%',
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animation: `float ${Math.random() * 20 + 20}s linear infinite`,
-              animationDelay: `${Math.random() * 5}s`,
-              '@keyframes float': {
-                '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
-                '50%': { transform: `translateY(${Math.random() * 100 - 50}px) rotate(${Math.random() * 180 - 90}deg)` },
-              }
-            }}
-          />
-        ))}
-      </Box>
-
-      {/* Hero Section */}
-      <Box
-        component={motion.div}
-        initial="hidden"
-        animate="visible"
-        variants={fadeInUp}
-        sx={{
-          position: 'relative',
-          overflow: 'hidden',
-          background: 'linear-gradient(135deg, #0a1929 0%, #0d2b36 100%)',
-          color: 'white',
-          pt: { xs: 12, md: 16 },
-          pb: { xs: 8, md: 12 },
-          mb: 8,
-          '&::before': {
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: `
-              radial-gradient(circle at 20% 80%, rgba(2, 119, 189, 0.15) 0%, transparent 40%),
-              radial-gradient(circle at 80% 20%, rgba(0, 137, 123, 0.15) 0%, transparent 40%)
-            `,
-          },
-        }}
-      >
-        <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
-          <Box sx={{ textAlign: 'center', mb: 6 }}>
-            <motion.div
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{ duration: 0.8, type: 'spring' }}
-            >
-              <Chip
-                icon={<AutoAwesomeIcon />}
-                label="Pioneering AI in Aquatic Research"
-                sx={{
-                  mb: 4,
-                  backgroundColor: alpha('#fff', 0.1),
-                  color: 'white',
-                  fontWeight: 700,
-                  fontSize: '1rem',
-                  py: 2,
-                  px: 3,
-                  backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255,255,255,0.2)',
-                  animation: 'pulse 2s infinite',
-                  '@keyframes pulse': {
-                    '0%, 100%': { boxShadow: '0 0 0 0 rgba(255,255,255,0.4)' },
-                    '50%': { boxShadow: '0 0 0 10px rgba(255,255,255,0)' },
-                  }
-                }}
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <Typography
-                variant="h1"
-                component="h1"
-                gutterBottom
-                sx={{
-                  fontWeight: 900,
-                  fontSize: { xs: '2.5rem', md: '4rem' },
-                  mb: 3,
-                  background: 'linear-gradient(135deg, #fff 0%, #4fc3f7 100%)',
-                  backgroundClip: 'text',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  lineHeight: 1.2,
-                }}
-              >
-                Revolutionizing Aquatic Intelligence
-              </Typography>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-            >
-              <Typography
-                variant="h5"
-                sx={{
-                  opacity: 0.9,
-                  maxWidth: 800,
-                  mx: 'auto',
-                  fontWeight: 300,
-                  lineHeight: 1.6,
-                  mb: 6,
-                }}
-              >
-                Powered by cutting-edge artificial intelligence, MeenaSetu transforms how researchers 
-                study and protect marine ecosystems. Join the future of aquatic conservation today.
-              </Typography>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.6 }}
-            >
-              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="center">
-                <Button
-                  variant="contained"
-                  size="large"
-                  startIcon={<PlayCircleIcon />}
-                  onClick={() => setVideoOpen(true)}
-                  sx={{
-                    background: 'linear-gradient(135deg, #0277bd 0%, #00897b 100%)',
-                    px: 4,
-                    py: 1.5,
-                    fontSize: '1.1rem',
-                    fontWeight: 700,
-                    '&:hover': {
-                      transform: 'translateY(-2px)',
-                      boxShadow: '0 12px 40px rgba(2, 119, 189, 0.4)',
-                    },
-                    transition: 'all 0.3s ease',
-                  }}
-                >
-                  Watch Demo
-                </Button>
-                
-                <Button
-                  variant="outlined"
-                  size="large"
-                  sx={{
-                    borderColor: alpha('#fff', 0.3),
-                    color: 'white',
-                    px: 4,
-                    py: 1.5,
-                    fontSize: '1.1rem',
-                    fontWeight: 700,
-                    '&:hover': {
-                      borderColor: 'white',
-                      backgroundColor: alpha('#fff', 0.1),
-                      transform: 'translateY(-2px)',
-                    },
-                    transition: 'all 0.3s ease',
-                  }}
-                >
-                  Get Started
-                </Button>
-              </Stack>
-            </motion.div>
-          </Box>
-
-          {/* Live Stats Bar */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-          >
-            <Grid container spacing={3} sx={{ mt: 8 }}>
-              {achievements.map((achievement, index) => (
-                <Grid item xs={6} md={3} key={index}>
-                  <motion.div
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    transition={{ type: 'spring', stiffness: 300 }}
-                  >
-                    <Paper
-                      sx={{
-                        p: 3,
-                        textAlign: 'center',
-                        background: alpha('#fff', 0.05),
-                        backdropFilter: 'blur(20px)',
-                        border: '1px solid rgba(255,255,255,0.1)',
-                        color: 'white',
-                        borderRadius: 4,
-                        height: '100%',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        position: 'relative',
-                        overflow: 'hidden',
-                        '&::before': {
-                          content: '""',
-                          position: 'absolute',
-                          top: 0,
-                          left: 0,
-                          right: 0,
-                          height: 4,
-                          background: achievement.color,
-                        }
-                      }}
-                    >
-                      <Box sx={{ 
-                        color: achievement.color, 
-                        mb: 2,
-                        fontSize: '2.5rem',
-                        fontWeight: 700,
-                        lineHeight: 1,
-                      }}>
-                        {achievement.count}
-                      </Box>
-                      <Box sx={{ color: achievement.color, mb: 1 }}>
-                        {achievement.icon}
-                      </Box>
-                      <Typography variant="body2" fontWeight={600} sx={{ opacity: 0.9 }}>
-                        {achievement.text}
-                      </Typography>
-                    </Paper>
-                  </motion.div>
-                </Grid>
-              ))}
-            </Grid>
-          </motion.div>
-        </Container>
-
-        {/* Scroll Indicator */}
-        <Box
-          sx={{
-            position: 'absolute',
-            bottom: 40,
-            left: '50%',
-            transform: 'translateX(-50%)',
-            textAlign: 'center',
-            animation: 'bounce 2s infinite',
-            '@keyframes bounce': {
-              '0%, 100%': { transform: 'translateX(-50%) translateY(0)' },
-              '50%': { transform: 'translateX(-50%) translateY(-10px)' },
-            }
-          }}
-        >
-          <MouseIcon sx={{ color: alpha('#fff', 0.5), fontSize: 32 }} />
-          <Typography variant="caption" sx={{ display: 'block', color: alpha('#fff', 0.5), mt: 1 }}>
-            Scroll to explore
-          </Typography>
-        </Box>
-      </Box>
-
-      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
-        {/* Mission & Vision - Animated */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <Grid container spacing={4} sx={{ mb: 10 }}>
-            <Grid item xs={12} md={6}>
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-              >
-                <Card
-                  sx={{
-                    height: '100%',
-                    background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)',
-                    backdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(102, 126, 234, 0.2)',
-                    position: 'relative',
-                    overflow: 'hidden',
-                    '&::before': {
-                      content: '""',
-                      position: 'absolute',
-                      top: -50,
-                      right: -50,
-                      width: 100,
-                      height: 100,
-                      borderRadius: '50%',
-                      background: 'radial-gradient(circle, rgba(102, 126, 234, 0.2) 0%, transparent 70%)',
-                    }
-                  }}
-                >
-                  <CardContent sx={{ p: 5, position: 'relative', zIndex: 1 }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
-                      <Box sx={{
-                        width: 48,
-                        height: 48,
-                        borderRadius: 2,
-                        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        mr: 2,
-                        color: 'white',
-                      }}>
-                        <EmojiEventsIcon />
-                      </Box>
-                      <Typography variant="h4" fontWeight={800}>
-                        Our Mission
-                      </Typography>
-                    </Box>
-                    <Typography variant="body1" sx={{ lineHeight: 1.8, fontSize: '1.1rem' }}>
-                      To democratize access to advanced AI technology for aquatic research, 
-                      making world-class fish species identification and disease detection 
-                      accessible to researchers, conservationists, and aquaculture professionals 
-                      worldwide. We're committed to protecting marine biodiversity through 
-                      innovative technology that bridges the gap between cutting-edge AI and 
-                      practical conservation efforts.
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </Grid>
-
-            <Grid item xs={12} md={6}>
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ type: 'spring', stiffness: 300, delay: 0.1 }}
-              >
-                <Card
-                  sx={{
-                    height: '100%',
-                    background: 'linear-gradient(135deg, rgba(240, 147, 251, 0.1) 0%, rgba(245, 87, 108, 0.1) 100%)',
-                    backdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(240, 147, 251, 0.2)',
-                    position: 'relative',
-                    overflow: 'hidden',
-                    '&::before': {
-                      content: '""',
-                      position: 'absolute',
-                      top: -50,
-                      right: -50,
-                      width: 100,
-                      height: 100,
-                      borderRadius: '50%',
-                      background: 'radial-gradient(circle, rgba(240, 147, 251, 0.2) 0%, transparent 70%)',
-                    }
-                  }}
-                >
-                  <CardContent sx={{ p: 5, position: 'relative', zIndex: 1 }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
-                      <Box sx={{
-                        width: 48,
-                        height: 48,
-                        borderRadius: 2,
-                        background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        mr: 2,
-                        color: 'white',
-                      }}>
-                        <LightbulbIcon />
-                      </Box>
-                      <Typography variant="h4" fontWeight={800}>
-                        Our Vision
-                      </Typography>
-                    </Box>
-                    <Typography variant="body1" sx={{ lineHeight: 1.8, fontSize: '1.1rem' }}>
-                      To become the world's leading AI platform for aquatic intelligence, 
-                      enabling groundbreaking discoveries in marine biology, sustainable 
-                      aquaculture, and ocean conservation. We envision a future where AI-powered 
-                      insights help preserve our oceans for generations to come, creating a 
-                      sustainable balance between technological advancement and environmental 
-                      stewardship.
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </Grid>
-          </Grid>
-        </motion.div>
-
-        {/* Platform Features with 3D Effect */}
-        <Box sx={{ mb: 12 }}>
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <Typography
-              variant="h2"
-              textAlign="center"
-              gutterBottom
-              fontWeight={900}
-              sx={{ 
-                mb: 2,
-                background: 'linear-gradient(135deg, #0277bd 0%, #00897b 100%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
-            >
-              Advanced Platform Features
-            </Typography>
-            <Typography
-              variant="h6"
-              textAlign="center"
-              color="text.secondary"
-              sx={{ mb: 8, maxWidth: 800, mx: 'auto' }}
-            >
-              Built with cutting-edge technology to deliver exceptional performance, accuracy, and user experience
-            </Typography>
-          </motion.div>
-
-          <Grid container spacing={4}>
-            {features.map((feature, index) => (
-              <Grid item xs={12} md={4} key={index}>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  whileHover={{ 
-                    scale: 1.05,
-                    rotateX: 5,
-                    rotateY: 5,
-                    transition: { type: 'spring', stiffness: 300 }
-                  }}
-                  viewport={{ once: true }}
-                  transition={{ delay: feature.delay }}
-                  style={{ perspective: 1000 }}
-                >
-                  <Card
-                    sx={{
-                      height: '100%',
-                      position: 'relative',
-                      overflow: 'hidden',
-                      transition: 'all 0.3s ease',
-                      borderRadius: 4,
-                      background: 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%)',
-                      backdropFilter: 'blur(10px)',
-                      border: '1px solid rgba(255,255,255,0.3)',
-                      boxShadow: '0 20px 60px rgba(0,0,0,0.1)',
-                      '&::before': {
-                        content: '""',
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        height: 4,
-                        background: feature.gradient,
-                      },
-                    }}
-                  >
-                    <CardContent sx={{ p: 4, height: '100%', display: 'flex', flexDirection: 'column' }}>
-                      <Box
-                        sx={{
-                          width: 80,
-                          height: 80,
-                          borderRadius: 3,
-                          background: feature.gradient,
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          mb: 3,
-                          color: 'white',
-                          alignSelf: 'center',
-                          boxShadow: `0 10px 30px ${alpha(feature.primaryColor, 0.3)}`,
-                        }}
-                      >
-                        {feature.icon}
-                      </Box>
-                      <Typography variant="h5" gutterBottom fontWeight={800} textAlign="center">
-                        {feature.title}
-                      </Typography>
-                      <Typography 
-                        variant="body1" 
-                        color="text.secondary" 
-                        sx={{ 
-                          lineHeight: 1.7, 
-                          mb: 3,
-                          flexGrow: 1,
-                          textAlign: 'center'
-                        }}
-                      >
-                        {feature.description}
-                      </Typography>
-                      <Chip
-                        label={feature.stats}
-                        size="small"
-                        sx={{
-                          alignSelf: 'center',
-                          background: feature.gradient,
-                          color: 'white',
-                          fontWeight: 700,
-                          fontSize: '0.9rem',
-                          py: 1,
-                        }}
-                      />
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
-        {/* Creator Section - Enhanced */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <Card
-            sx={{
-              mb: 12,
-              background: 'linear-gradient(135deg, rgba(15, 32, 39, 0.95) 0%, rgba(32, 58, 67, 0.95) 50%, rgba(44, 83, 100, 0.95) 100%)',
-              color: 'white',
-              overflow: 'hidden',
-              position: 'relative',
-              borderRadius: 4,
-              border: '1px solid rgba(255,255,255,0.1)',
-              boxShadow: '0 30px 90px rgba(15, 32, 39, 0.4)',
-            }}
-          >
-            <Box
-              sx={{
-                position: 'absolute',
-                top: -100,
-                right: -100,
-                width: 300,
-                height: 300,
-                borderRadius: '50%',
-                background: 'radial-gradient(circle, rgba(2, 119, 189, 0.2) 0%, transparent 70%)',
-                animation: 'rotate 20s linear infinite',
-                '@keyframes rotate': {
-                  '0%': { transform: 'rotate(0deg)' },
-                  '100%': { transform: 'rotate(360deg)' },
-                }
-              }}
-            />
-            <CardContent sx={{ p: { xs: 4, md: 6 }, position: 'relative', zIndex: 1 }}>
-              <Grid container spacing={6} alignItems="center">
-                <Grid item xs={12} md={4} sx={{ textAlign: 'center' }}>
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Avatar
-                      sx={{
-                        width: 200,
-                        height: 200,
-                        mx: 'auto',
-                        mb: 3,
-                        border: '4px solid rgba(255,255,255,0.2)',
-                        background: 'linear-gradient(135deg, #0277bd 0%, #00897b 100%)',
-                        fontSize: '4rem',
-                        fontWeight: 800,
-                        boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
-                      }}
-                    >
-                      AT
-                    </Avatar>
-                  </motion.div>
-                  
-                  <Stack direction="row" spacing={2} justifyContent="center" sx={{ mb: 4 }}>
-                    {[
-                      { icon: <LinkedInIcon />, color: '#0077b5', label: 'LinkedIn' },
-                      { icon: <GitHubIcon />, color: '#333', label: 'GitHub' },
-                      { icon: <EmailIcon />, color: '#ea4335', label: 'Email' },
-                    ].map((social, index) => (
-                      <Tooltip key={index} title={social.label}>
-                        <motion.div whileHover={{ scale: 1.2, rotate: 5 }}>
-                          <Avatar 
-                            sx={{ 
-                              bgcolor: social.color, 
-                              width: 48, 
-                              height: 48, 
-                              cursor: 'pointer',
-                              '&:hover': {
-                                boxShadow: `0 0 0 4px ${alpha(social.color, 0.3)}`,
-                              },
-                              transition: 'all 0.3s ease',
-                            }}
-                          >
-                            {social.icon}
-                          </Avatar>
-                        </motion.div>
-                      </Tooltip>
-                    ))}
-                  </Stack>
-
-                  <Chip
-                    icon={<VerifiedIcon />}
-                    label="Verified Profile"
-                    size="small"
-                    sx={{
-                      backgroundColor: alpha('#10b981', 0.2),
-                      color: '#10b981',
-                      fontWeight: 600,
-                      border: '1px solid rgba(16, 185, 129, 0.3)',
-                    }}
-                  />
-                </Grid>
-
-                <Grid item xs={12} md={8}>
-                  <motion.div
-                    initial={{ x: 50 }}
-                    animate={{ x: 0 }}
-                    transition={{ delay: 0.2 }}
-                  >
-                    <Chip
-                      label="Creator & Lead Developer"
-                      size="medium"
-                      sx={{
-                        mb: 3,
-                        backgroundColor: alpha('#fff', 0.1),
-                        color: 'white',
-                        fontWeight: 700,
-                        fontSize: '0.9rem',
-                        py: 1,
-                      }}
-                    />
-                    <Typography variant="h2" gutterBottom fontWeight={900}>
-                      Amrish Kumar Tiwary
-                    </Typography>
-                    <Typography variant="h5" gutterBottom sx={{ opacity: 0.9, mb: 4, color: '#4fc3f7' }}>
-                      Full Stack AI Engineer | Machine Learning Expert | Visionary
-                    </Typography>
-                    
-                    <Box sx={{ mb: 4 }}>
-                      <Typography variant="body1" paragraph sx={{ lineHeight: 1.8, opacity: 0.95, mb: 2 }}>
-                        A passionate Full Stack AI Engineer with expertise in building intelligent systems 
-                        that solve real-world environmental challenges. With extensive experience in machine learning, 
-                        computer vision, and full-stack development, Amrish created MeenaSetu AI to bridge 
-                        the critical gap between cutting-edge AI technology and aquatic research needs.
-                      </Typography>
-                      <Typography variant="body1" sx={{ lineHeight: 1.8, opacity: 0.95 }}>
-                        Specializing in Python, TensorFlow, PyTorch, React, and cloud technologies, 
-                        he leads a team dedicated to leveraging AI for environmental conservation and sustainable 
-                        development. His vision for MeenaSetu AI is to create an accessible platform that 
-                        empowers researchers and conservationists worldwide with powerful AI tools.
-                      </Typography>
-                    </Box>
-
-                    <Stack direction="row" spacing={2} sx={{ flexWrap: 'wrap', gap: 1.5, mt: 4 }}>
-                      {[
-                        { skill: 'AI/ML', level: 98, color: '#0277bd' },
-                        { skill: 'Deep Learning', level: 96, color: '#00897b' },
-                        { skill: 'Full Stack', level: 95, color: '#ff6f00' },
-                        { skill: 'Cloud Computing', level: 92, color: '#7b1fa2' },
-                        { skill: 'Computer Vision', level: 94, color: '#d32f2f' },
-                      ].map((item, index) => (
-                        <motion.div
-                          key={index}
-                          whileHover={{ scale: 1.05 }}
-                        >
-                          <Chip
-                            label={`${item.skill} ${item.level}%`}
-                            sx={{
-                              backgroundColor: alpha(item.color, 0.1),
-                              color: item.color,
-                              fontWeight: 700,
-                              fontSize: '0.9rem',
-                              py: 1,
-                              px: 2,
-                              border: `1px solid ${alpha(item.color, 0.3)}`,
-                              '& .MuiChip-label': {
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: 1,
-                              }
-                            }}
-                            icon={<TrendingUpIcon sx={{ fontSize: 16, color: item.color }} />}
-                          />
-                        </motion.div>
-                      ))}
-                    </Stack>
-                  </motion.div>
-                </Grid>
-              </Grid>
-            </CardContent>
-          </Card>
-        </motion.div>
-
-        {/* Tech Stack with Animated Progress */}
-        <Box sx={{ mb: 12 }}>
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <Typography variant="h2" textAlign="center" gutterBottom fontWeight={900} sx={{ mb: 2 }}>
-              Technology Stack
-            </Typography>
-            <Typography
-              variant="h6"
-              textAlign="center"
-              color="text.secondary"
-              sx={{ mb: 8, maxWidth: 800, mx: 'auto' }}
-            >
-              Built with industry-leading technologies and frameworks for maximum performance and scalability
-            </Typography>
-          </motion.div>
-
-          <Grid container spacing={4}>
-            {techStack.map((tech, index) => (
-              <Grid item xs={12} sm={6} md={3} key={index}>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  whileHover={{ scale: 1.05 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <Card
-                    sx={{
-                      height: '100%',
-                      position: 'relative',
-                      overflow: 'hidden',
-                      borderRadius: 3,
-                      background: 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%)',
-                      backdropFilter: 'blur(10px)',
-                      border: '1px solid rgba(255,255,255,0.3)',
-                      '&::before': {
-                        content: '""',
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        height: 4,
-                        background: tech.color,
-                      }
-                    }}
-                  >
-                    <CardContent sx={{ p: 3 }}>
-                      <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                        <Typography variant="h4" sx={{ mr: 2 }}>
-                          {tech.icon}
-                        </Typography>
-                        <Typography variant="h6" fontWeight={700} sx={{ flexGrow: 1 }}>
-                          {tech.name}
-                        </Typography>
-                        <Typography variant="body1" fontWeight={800} color={tech.color}>
-                          {tech.level}%
-                        </Typography>
-                      </Box>
-                      
-                      <Box sx={{ position: 'relative', height: 8, bgcolor: alpha(tech.color, 0.1), borderRadius: 4, overflow: 'hidden' }}>
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${tech.level}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 1.5, delay: index * 0.2 }}
-                          style={{
-                            height: '100%',
-                            backgroundColor: tech.color,
-                            borderRadius: 4,
-                          }}
-                        />
-                      </Box>
-                      
-                      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1 }}>
-                        Expert proficiency
-                      </Typography>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
-        {/* Interactive Timeline */}
-        <Box sx={{ mb: 12 }}>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <Typography variant="h2" textAlign="center" gutterBottom fontWeight={900} sx={{ mb: 8 }}>
-              Our Journey Timeline
-            </Typography>
-          </motion.div>
-
-          <Box sx={{ position: 'relative', pl: { xs: 0, md: 8 } }}>
-            {/* Vertical line */}
-            <Box
-              sx={{
-                position: 'absolute',
-                left: { xs: 32, md: 64 },
-                top: 0,
-                bottom: 0,
-                width: 4,
-                background: 'linear-gradient(180deg, #0277bd 0%, #00897b 100%)',
-                display: { xs: 'none', md: 'block' },
-              }}
-            />
-
-            {milestones.map((milestone, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-              >
-                <Box sx={{ 
-                  position: 'relative', 
-                  mb: 6,
-                  pl: { xs: 8, md: 12 },
-                  '&::before': {
-                    content: '""',
-                    position: 'absolute',
-                    left: { xs: 24, md: 56 },
-                    top: 24,
-                    width: 20,
-                    height: 20,
-                    borderRadius: '50%',
-                    background: milestone.color,
-                    border: '4px solid white',
-                    boxShadow: `0 0 0 4px ${alpha(milestone.color, 0.25)}`,
-                    zIndex: 2,
-                  }
-                }}>
-                  <Card
-                    sx={{
-                      borderRadius: 4,
-                      overflow: 'hidden',
-                      position: 'relative',
-                      '&:hover': {
-                        transform: 'translateX(10px)',
-                        '& .timeline-icon': {
-                          transform: 'scale(1.2) rotate(10deg)',
-                        }
-                      },
-                      transition: 'all 0.3s ease',
-                    }}
-                  >
-                    <CardContent sx={{ p: 4 }}>
-                      <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                        <Box
-                          className="timeline-icon"
-                          sx={{
-                            width: 48,
-                            height: 48,
-                            borderRadius: 2,
-                            background: `linear-gradient(135deg, ${milestone.color} 0%, ${alpha(milestone.color, 0.7)} 100%)`,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            mr: 3,
-                            color: 'white',
-                            fontSize: '1.5rem',
-                            transition: 'transform 0.3s ease',
-                          }}
-                        >
-                          {milestone.icon}
-                        </Box>
-                        <Box sx={{ flexGrow: 1 }}>
-                          <Chip
-                            label={milestone.year}
-                            size="small"
-                            sx={{
-                              mb: 1,
-                              background: `linear-gradient(135deg, ${milestone.color} 0%, ${alpha(milestone.color, 0.7)} 100%)`,
-                              color: 'white',
-                              fontWeight: 800,
-                            }}
-                          />
-                          <Typography variant="h5" fontWeight={800}>
-                            {milestone.title}
-                          </Typography>
-                        </Box>
-                      </Box>
-                      <Typography variant="body1" color="text.secondary">
-                        {milestone.description}
-                      </Typography>
-                    </CardContent>
-                  </Card>
-                </Box>
-              </motion.div>
-            ))}
-          </Box>
-        </Box>
-
-        {/* Testimonials Carousel */}
-        <Box sx={{ mb: 12 }}>
-          <Typography variant="h2" textAlign="center" gutterBottom fontWeight={900} sx={{ mb: 8 }}>
-            What Our Users Say
-          </Typography>
-
-          <Grid container spacing={4}>
-            {testimonials.map((testimonial, index) => (
-              <Grid item xs={12} md={4} key={index}>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={{ scale: 1.05 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <Card
-                    sx={{
-                      height: '100%',
-                      background: 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%)',
-                      backdropFilter: 'blur(10px)',
-                      border: '1px solid rgba(255,255,255,0.3)',
-                      borderRadius: 4,
-                      position: 'relative',
-                      overflow: 'hidden',
-                      '&::before': {
-                        content: '"❝"',
-                        position: 'absolute',
-                        top: 20,
-                        right: 20,
-                        fontSize: '4rem',
-                        color: alpha('#0277bd', 0.1),
-                        fontFamily: 'Georgia, serif',
-                      }
-                    }}
-                  >
-                    <CardContent sx={{ p: 4, height: '100%', display: 'flex', flexDirection: 'column' }}>
-                      <Typography variant="body1" paragraph sx={{ lineHeight: 1.8, mb: 4, flexGrow: 1, fontStyle: 'italic' }}>
-                        "{testimonial.content}"
-                      </Typography>
-                      
-                      <Box sx={{ display: 'flex', alignItems: 'center', mt: 'auto' }}>
-                        <Avatar
-                          sx={{
-                            width: 56,
-                            height: 56,
-                            mr: 2,
-                            background: 'linear-gradient(135deg, #0277bd 0%, #00897b 100%)',
-                            fontWeight: 800,
-                          }}
-                        >
-                          {testimonial.avatar}
-                        </Avatar>
-                        <Box>
-                          <Typography variant="h6" fontWeight={800}>
-                            {testimonial.name}
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            {testimonial.role}
-                          </Typography>
-                          <Stack direction="row" spacing={0.5} sx={{ mt: 0.5 }}>
-                            {[...Array(5)].map((_, i) => (
-                              <StarIcon key={i} sx={{ fontSize: 16, color: '#fbbf24' }} />
-                            ))}
-                          </Stack>
-                        </Box>
-                      </Box>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
-        {/* Team Members */}
-        <Box sx={{ mb: 12 }}>
-          <Typography variant="h2" textAlign="center" gutterBottom fontWeight={900} sx={{ mb: 8 }}>
-            Meet Our Team
-          </Typography>
-
-          <Grid container spacing={4}>
-            {teamMembers.map((member, index) => (
-              <Grid item xs={12} md={4} key={index}>
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -10 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                >
-                  <Card
-                    sx={{
-                      height: '100%',
-                      textAlign: 'center',
-                      background: 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%)',
-                      backdropFilter: 'blur(10px)',
-                      border: '1px solid rgba(255,255,255,0.3)',
-                      borderRadius: 4,
-                      overflow: 'hidden',
-                      position: 'relative',
-                      '&::before': {
-                        content: '""',
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        height: 4,
-                        background: index === 0 ? '#0277bd' : index === 1 ? '#00897b' : '#ff6f00',
-                      }
-                    }}
-                  >
-                    <CardContent sx={{ p: 4 }}>
-                      <Avatar
-                        sx={{
-                          width: 100,
-                          height: 100,
-                          mx: 'auto',
-                          mb: 3,
-                          border: '4px solid',
-                          borderColor: index === 0 ? '#0277bd' : index === 1 ? '#00897b' : '#ff6f00',
-                          background: `linear-gradient(135deg, ${index === 0 ? '#0277bd' : index === 1 ? '#00897b' : '#ff6f00'} 0%, ${alpha(index === 0 ? '#0277bd' : index === 1 ? '#00897b' : '#ff6f00', 0.7)} 100%)`,
-                          fontSize: '2.5rem',
-                          fontWeight: 800,
-                        }}
-                      >
-                        {member.avatar}
-                      </Avatar>
-                      
-                      <Typography variant="h5" gutterBottom fontWeight={800}>
-                        {member.name}
-                      </Typography>
-                      <Typography variant="body1" color="primary" fontWeight={600} gutterBottom>
-                        {member.role}
-                      </Typography>
-                      
-                      <Stack direction="row" spacing={1} justifyContent="center" sx={{ mt: 3, flexWrap: 'wrap', gap: 1 }}>
-                        {member.skills.map((skill, skillIndex) => (
-                          <Chip
-                            key={skillIndex}
-                            label={skill}
-                            size="small"
-                            sx={{
-                              backgroundColor: alpha('#0277bd', 0.1),
-                              color: '#0277bd',
-                              fontWeight: 600,
-                              border: '1px solid rgba(2, 119, 189, 0.3)',
-                            }}
-                          />
-                        ))}
-                      </Stack>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
-        {/* Final CTA */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <Card
-            sx={{
-              p: { xs: 4, md: 8 },
-              textAlign: 'center',
-              background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(102, 126, 234, 0.2)',
-              borderRadius: 4,
-              position: 'relative',
-              overflow: 'hidden',
-              '&::before': {
-                content: '""',
-                position: 'absolute',
-                top: -100,
-                right: -100,
-                width: 300,
-                height: 300,
-                borderRadius: '50%',
-                background: 'radial-gradient(circle, rgba(102, 126, 234, 0.2) 0%, transparent 70%)',
-              },
-              '&::after': {
-                content: '""',
-                position: 'absolute',
-                bottom: -100,
-                left: -100,
-                width: 300,
-                height: 300,
-                borderRadius: '50%',
-                background: 'radial-gradient(circle, rgba(118, 75, 162, 0.2) 0%, transparent 70%)',
-              }
-            }}
-          >
-            <Box sx={{ position: 'relative', zIndex: 1 }}>
-              <Typography variant="h2" gutterBottom fontWeight={900}>
-                Join the AI Revolution in Aquatic Research
-              </Typography>
-              <Typography variant="h5" paragraph sx={{ opacity: 0.9, mb: 6, maxWidth: 800, mx: 'auto' }}>
-                Be part of a global community using cutting-edge AI to protect our oceans and advance marine science
-              </Typography>
-              
-              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3} justifyContent="center" sx={{ mb: 6 }}>
-                <Button
-                  variant="contained"
-                  size="large"
-                  startIcon={<RocketLaunchIcon />}
-                  sx={{
-                    px: 6,
-                    py: 2,
-                    fontSize: '1.1rem',
-                    fontWeight: 800,
-                    background: 'linear-gradient(135deg, #0277bd 0%, #00897b 100%)',
-                    '&:hover': {
-                      transform: 'translateY(-4px)',
-                      boxShadow: '0 20px 40px rgba(2, 119, 189, 0.4)',
-                    },
-                    transition: 'all 0.3s ease',
-                  }}
-                >
-                  Start Free Trial
-                </Button>
-                
-                <Button
-                  variant="outlined"
-                  size="large"
-                  sx={{
-                    px: 6,
-                    py: 2,
-                    fontSize: '1.1rem',
-                    fontWeight: 800,
-                    borderColor: '#0277bd',
-                    color: '#0277bd',
-                    '&:hover': {
-                      backgroundColor: alpha('#0277bd', 0.1),
-                      borderColor: '#0277bd',
-                      transform: 'translateY(-4px)',
-                    },
-                    transition: 'all 0.3s ease',
-                  }}
-                >
-                  Schedule Demo
-                </Button>
-              </Stack>
-
-              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3} justifyContent="center">
-                <Chip
-                  icon={<SpeedIcon />}
-                  label={`${stats.users.toLocaleString()}+ Active Researchers`}
-                  sx={{
-                    backgroundColor: alpha('#0277bd', 0.1),
-                    color: '#0277bd',
-                    fontWeight: 700,
-                    fontSize: '1rem',
-                    py: 2,
-                    px: 3,
-                  }}
-                />
-                <Chip
-                  icon={<SecurityIcon />}
-                  label={`${stats.predictions.toLocaleString()}+ Predictions Made`}
-                  sx={{
-                    backgroundColor: alpha('#00897b', 0.1),
-                    color: '#00897b',
-                    fontWeight: 700,
-                    fontSize: '1rem',
-                    py: 2,
-                    px: 3,
-                  }}
-                />
-              </Stack>
-            </Box>
-          </Card>
-        </motion.div>
-      </Container>
-
-      {/* Video Dialog */}
-      <Dialog
-        open={videoOpen}
-        onClose={() => setVideoOpen(false)}
-        maxWidth="md"
-        fullWidth
-        PaperProps={{
-          sx: {
-            borderRadius: 4,
-            overflow: 'hidden',
+        onClick={() => setVideoOpen(false)}>
+          <div style={{
+            maxWidth: '900px',
+            width: '100%',
             background: 'linear-gradient(135deg, #0a1929 0%, #0d2b36 100%)',
-          }
-        }}
-      >
-        <DialogContent sx={{ p: 0, position: 'relative', aspectRatio: '16/9' }}>
-          <IconButton
-            onClick={() => setVideoOpen(false)}
-            sx={{
-              position: 'absolute',
-              top: 16,
-              right: 16,
-              bgcolor: 'rgba(0,0,0,0.5)',
-              color: 'white',
-              zIndex: 2,
-              '&:hover': {
-                bgcolor: 'rgba(0,0,0,0.7)',
-              }
-            }}
-          >
-            <CloseIcon />
-          </IconButton>
-          
-          <Box
-            sx={{
-              width: '100%',
-              height: '100%',
+            borderRadius: '20px',
+            overflow: 'hidden',
+            position: 'relative',
+            animation: 'slideUp 0.3s ease'
+          }}
+          onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setVideoOpen(false)}
+              style={{
+                position: 'absolute',
+                top: 16,
+                right: 16,
+                width: 40,
+                height: 40,
+                borderRadius: '50%',
+                border: 'none',
+                background: 'rgba(0,0,0,0.5)',
+                color: 'white',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                zIndex: 10,
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.8)'}
+              onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(0,0,0,0.5)'}
+            >
+              <X size={20} />
+            </button>
+
+            <div style={{
+              aspectRatio: '16/9',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              background: 'linear-gradient(135deg, #0a1929 0%, #0d2b36 100%)',
-            }}
-          >
-            <Typography color="white" variant="h6">
+              color: 'white',
+              fontSize: '1.5rem',
+              fontWeight: '700'
+            }}>
               Demo Video Placeholder
-            </Typography>
-          </Box>
-        </DialogContent>
-      </Dialog>
-    </Box>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <style>{`
+        @keyframes pulse {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
+          50% { box-shadow: 0 0 0 10px rgba(255,255,255,0); }
+        }
+        @keyframes bounce {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
+        @keyframes rotate {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes slideUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes progressBar {
+          from { width: 0; }
+        }
+        ::-webkit-scrollbar {
+          width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+          background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          border-radius: 10px;
+        }
+      `}</style>
+    </div>
   );
 };
 
