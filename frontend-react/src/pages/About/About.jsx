@@ -150,8 +150,8 @@ const About = () => {
 
   const teamMembers = [
     { name: 'Amrish Tiwary', role: 'Founder & Lead Developer', avatar: 'AT', skills: ['AI/ML', 'Full Stack', 'Cloud'], color: '#667eea' },
-    { name: 'Dr. Meena Sharma', role: 'Marine Biology Advisor', avatar: 'MS', skills: ['Marine Biology', 'Research', 'Conservation'], color: '#10b981' },
-    { name: 'Alex Johnson', role: 'AI Research Lead', avatar: 'AJ', skills: ['Deep Learning', 'CV', 'NLP'], color: '#f59e0b' }
+    { name: 'Sourabh Kumar', role: 'Marine Biology Advisor', avatar: 'SK', skills: ['Marine Biology', 'Research', 'Conservation'], color: '#10b981' },
+    { name: 'Aniket Raj', role: ' Research Lead', avatar: 'AR', skills: ['Deep Learning', 'CV', 'NLP'], color: '#f59e0b' }
   ];
 
   const scrollToTop = () => {
